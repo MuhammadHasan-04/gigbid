@@ -44,10 +44,10 @@ commands; its results will be added under `evals/results/*_open*.json` when keys
 
 | Variant | Evidence Recall@5 | MRR | nDCG@10 | Unsupported claims / proposal (before → after verification) | Judge score | GigSim reply rate | p95 latency per job (s) | Cost per proposal (USD) |
 |---|---|---|---|---|---|---|---|---|
-| V0 naive dense | 0.7583 | 0.9445 | 0.8333 | 0.1538 → 0 | n/a | 0.8248 | 0.5976 | 0 (rules) |
-| V5 multi-vector | 0.7809 | 0.9754 | 0.8427 | 0.5536 → 0 | n/a | 0.8661 | 0.6549 | 0 (rules) |
-| V8 corrective loop | 0.7779 | 0.9824 | 0.8208 | 0.4682 → 0 | n/a | 0.8364 | 0.6845 | 0 (rules) |
-| **Shipped (best)**: decompose + hybrid + contextual + structural | 0.7662 | 0.9894 | 0.8799 | 0.4612 → 0 | n/a | 0.8362 | 0.7024 | 0 (rules) |
+| V0 naive dense | 0.7583 | 0.9445 | 0.8333 | 0.1538 → 0 | n/a | 0.8248 | 0.5982 | 0 (rules) |
+| V5 multi-vector | 0.7809 | 0.9754 | 0.8427 | 0.5536 → 0 | n/a | 0.8661 | 0.6113 | 0 (rules) |
+| V8 corrective loop | 0.7779 | 0.9824 | 0.8208 | 0.4682 → 0 | n/a | 0.8364 | 0.6627 | 0 (rules) |
+| **Shipped (best)**: decompose + hybrid + contextual + structural | 0.7662 | 0.9894 | 0.8799 | 0.4612 → 0 | n/a | 0.8362 | 0.727 | 0 (rules) |
 
 Held-out (`rag_heuristic_heldout.json`): V0 nDCG@10 0.8394 vs shipped 0.8634.
 

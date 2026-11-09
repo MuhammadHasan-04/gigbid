@@ -20,7 +20,7 @@ _trace_id: contextvars.ContextVar[str | None] = contextvars.ContextVar("trace_id
 _node: contextvars.ContextVar[str | None] = contextvars.ContextVar("node", default=None)
 
 EMAIL = re.compile(r"[\w.+-]+@[\w-]+\.[\w.]+")
-PHONE = re.compile(r"\+?\d[\d\s().-]{8,}\d")
+PHONE = re.compile(r"\+\d[\d\s-]{7,}\d|\b\d{3}[\s.-]\d{3,4}[\s.-]\d{3,4}\b")
 CARD = re.compile(r"\b(?:\d[ -]?){13,19}\b")
 IBAN = re.compile(r"\b[A-Z]{2}\d{2}[A-Z0-9]{11,30}\b")
 

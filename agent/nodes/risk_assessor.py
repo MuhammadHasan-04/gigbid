@@ -10,7 +10,7 @@ from agent.handoffs import RiskReport
 SIGNALS = {
     "unpaid_work": [r"\bfor free\b", r"\bunpaid\b", r"\btest task\b.*\bfree\b", r"pay only if we like", r"free (trial|sample|test)"],
     "off_platform_contact": [r"\btelegram\b", r"\bwhatsapp\b", r"\bskype\b", r"[\w.+-]+@[\w-]+\.\w+", r"outside here",
-                             r"\+?\d[\d\s-]{8,}\d", r"contact me on"],
+                             r"\+\d[\d\s-]{7,}\d|\b\d{3}[\s.-]\d{3,4}[\s.-]\d{3,4}\b", r"contact me on"],
     "off_platform_payment": [r"\busdt\b", r"\bcrypto", r"\bwallet\b", r"gift cards?", r"western union", r"avoid fees", r"no platform fees"],
     "upfront_fee": [r"\$\d+ .*(kit|deposit|fee)", r"onboarding kit", r"refundable .* deposit", r"buy our"],
 }

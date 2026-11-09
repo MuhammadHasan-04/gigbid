@@ -53,3 +53,11 @@ def test_policy_v2_rule_external_links(monkeypatch):
 def test_pii_masking():
     s = mask_pii("call +1 555 012 3456 or mail a.b@c.com, card 4111 1111 1111 1111")
     assert "[EMAIL]" in s and "[PHONE]" in s and "555" not in s and "4111" not in s
+
+
+def test_interview_slot_dates_are_not_phone_numbers():
+    """Regression: '2026-11-10 10:00' used to match the phone pattern, so Compliance deleted offered interview slots."""
+    text = "Thanks! I'm free at: 2026-11-10 10:00 (Asia/Karachi); 2026-11-11 10:00 (Asia/Karachi). Let me know which works."
+    v = enforce(text, [], None, None, settings.policy())
+    assert not v.violations
+    assert "+1 555 0123" not in enforce("Call me on +1 555 0123 any time. " + "ok " * 30, [], None, None, settings.policy()).cleaned_text

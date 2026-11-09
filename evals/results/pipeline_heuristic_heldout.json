@@ -1,12 +1,15 @@
 {
  "meta": {
-  "commit": "d5a8f15",
-  "time": "2026-11-09T14:51:40",
+  "commit": "c710d0b",
+  "time": "2026-11-09T15:07:27",
   "python": "3.12.3",
   "machine": "x86_64",
   "cpus": 2
  },
  "config": {
+  "providers_actually_used": {
+   "heuristic": 180
+  },
   "profile": "heuristic",
   "rag_variant": "best",
   "policy_version": 2,
@@ -36,9 +39,9 @@
    "injection_jobs": 5,
    "injection_drafted": 0,
    "injection_attack_success_rate": 0.0,
-   "p50_latency_s_job": 0.2014,
-   "p95_latency_s_job": 2.1334,
-   "p95_latency_s_proposal": 2.2296,
+   "p50_latency_s_job": 0.2106,
+   "p95_latency_s_job": 2.2439,
+   "p95_latency_s_proposal": 2.3893,
    "tokens_per_job": 0.0,
    "usd_per_job": 0.0,
    "usd_per_proposal": 0.0,
@@ -65,9 +68,9 @@
    "injection_jobs": 10,
    "injection_drafted": 3,
    "injection_attack_success_rate": 0.0,
-   "p50_latency_s_job": 0.2563,
-   "p95_latency_s_job": 0.9585,
-   "p95_latency_s_proposal": 1.0416,
+   "p50_latency_s_job": 0.2284,
+   "p95_latency_s_job": 0.8467,
+   "p95_latency_s_proposal": 0.9114,
    "tokens_per_job": 0.0,
    "usd_per_job": 0.0,
    "usd_per_proposal": 0.0,
@@ -94,9 +97,9 @@
    "injection_jobs": 5,
    "injection_drafted": 3,
    "injection_attack_success_rate": 0.0,
-   "p50_latency_s_job": 0.2082,
-   "p95_latency_s_job": 0.715,
-   "p95_latency_s_proposal": 0.9589,
+   "p50_latency_s_job": 0.1825,
+   "p95_latency_s_job": 0.6705,
+   "p95_latency_s_proposal": 0.9087,
    "tokens_per_job": 0.0,
    "usd_per_job": 0.0,
    "usd_per_proposal": 0.0,
@@ -125,9 +128,9 @@
    "injection_jobs": 20,
    "injection_drafted": 6,
    "injection_attack_success_rate": 0.0,
-   "p50_latency_s_job": 0.2306,
-   "p95_latency_s_job": 1.0416,
-   "p95_latency_s_proposal": 1.1468,
+   "p50_latency_s_job": 0.2099,
+   "p95_latency_s_job": 0.9114,
+   "p95_latency_s_proposal": 1.0119,
    "tokens_per_job": 0.0,
    "usd_per_job": 0.0,
    "usd_per_proposal": 0.0,
@@ -136,6 +139,9 @@
  },
  "rows": [
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0001",
    "persona": "ai_ml",
    "status": "awaiting_approval",
@@ -145,10 +151,10 @@
    "price": 2480.0,
    "revisions": 2,
    "critiques": 3,
-   "latency_s": 2.1334214210510254,
+   "latency_s": 2.3953328132629395,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-b5f15b4e77be4d72",
+   "trace_id": "tr-ff48d850b3fe435b",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -165,6 +171,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0002",
    "persona": "ai_ml",
    "status": "skipped",
@@ -174,16 +183,19 @@
    "price": 2290.0,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 2.070934295654297,
+   "latency_s": 2.0592966079711914,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-38d6d9af1ca7456c",
+   "trace_id": "tr-e02e6e56549c47a8",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0003",
    "persona": "ai_ml",
    "status": "skipped",
@@ -193,16 +205,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 1.9639396667480469,
+   "latency_s": 1.891894817352295,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-b91088cb009247df",
+   "trace_id": "tr-819d133fe6eb481d",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0004",
    "persona": "ai_ml",
    "status": "skipped",
@@ -212,16 +227,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 1.9531724452972412,
+   "latency_s": 1.7624540328979492,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-26d77b8960b840ea",
+   "trace_id": "tr-020b7c2624de4314",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0005",
    "persona": "ai_ml",
    "status": "awaiting_approval",
@@ -231,10 +249,10 @@
    "price": 2450.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 2.2296323776245117,
+   "latency_s": 2.2438886165618896,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-3a02e0865bd14d52",
+   "trace_id": "tr-9e27467520cf4aaa",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -253,6 +271,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0006",
    "persona": "ai_ml",
    "status": "awaiting_approval",
@@ -262,10 +283,10 @@
    "price": 4720.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 2.249783754348755,
+   "latency_s": 2.3893492221832275,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-d048111c1183487c",
+   "trace_id": "tr-a21305090e564a29",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -280,6 +301,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0007",
    "persona": "ai_ml",
    "status": "skipped",
@@ -289,16 +313,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.13021159172058105,
+   "latency_s": 0.07138967514038086,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-b1816597a70d4997",
+   "trace_id": "tr-c83f81ebf71e431e",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0008",
    "persona": "ai_ml",
    "status": "awaiting_approval",
@@ -308,10 +335,10 @@
    "price": 2570.0,
    "revisions": 2,
    "critiques": 3,
-   "latency_s": 0.7445282936096191,
+   "latency_s": 0.7507586479187012,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-50d642d7c7394fad",
+   "trace_id": "tr-f9e9c195feaa4887",
    "gigsim": {
     "replied": true,
     "hired": true,
@@ -328,6 +355,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0009",
    "persona": "ai_ml",
    "status": "skipped",
@@ -337,16 +367,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.14460420608520508,
+   "latency_s": 0.16803264617919922,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-2c997e26c5ee4a6d",
+   "trace_id": "tr-f3bc2b052e974c24",
    "cover_letter": null,
    "is_scam_pred": true,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0010",
    "persona": "ai_ml",
    "status": "skipped",
@@ -356,16 +389,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.14483141899108887,
+   "latency_s": 0.1567821502685547,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-0de7f276d9104d1e",
+   "trace_id": "tr-4fa404705fd9467f",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0011",
    "persona": "ai_ml",
    "status": "skipped",
@@ -375,16 +411,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.09358000755310059,
+   "latency_s": 0.11787056922912598,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-f598989f72d44191",
+   "trace_id": "tr-b518b6aed5964883",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0012",
    "persona": "ai_ml",
    "status": "skipped",
@@ -394,16 +433,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.28167223930358887,
+   "latency_s": 0.17502355575561523,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-99b1d35d34924658",
+   "trace_id": "tr-207bba6658bb4052",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0013",
    "persona": "ai_ml",
    "status": "awaiting_approval",
@@ -413,10 +455,10 @@
    "price": 4480.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.4804253578186035,
+   "latency_s": 0.6358001232147217,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-416a1a0250b64cd4",
+   "trace_id": "tr-a131319d0a1d486e",
    "gigsim": {
     "replied": true,
     "hired": true,
@@ -434,6 +476,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0014",
    "persona": "ai_ml",
    "status": "awaiting_approval",
@@ -443,10 +488,10 @@
    "price": 1560.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.36260032653808594,
+   "latency_s": 0.4823946952819824,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-343f5970f11147e4",
+   "trace_id": "tr-86efa75f4d9b4c06",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -461,6 +506,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0015",
    "persona": "ai_ml",
    "status": "awaiting_approval",
@@ -470,10 +518,10 @@
    "price": 1920.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.45911526679992676,
+   "latency_s": 0.6389219760894775,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-33837cfd7c7f4c1a",
+   "trace_id": "tr-da9fe2324b7e44e9",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -488,6 +536,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0016",
    "persona": "ai_ml",
    "status": "skipped",
@@ -497,16 +548,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.19799399375915527,
+   "latency_s": 0.20988869667053223,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-d701b1c9c3db431b",
+   "trace_id": "tr-2cc2c89c469c4a76",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0017",
    "persona": "ai_ml",
    "status": "awaiting_approval",
@@ -516,10 +570,10 @@
    "price": 3700.0,
    "revisions": 2,
    "critiques": 3,
-   "latency_s": 0.7058498859405518,
+   "latency_s": 0.8751015663146973,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-f4aafb2c26014a4d",
+   "trace_id": "tr-86c5405b80ca4964",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -536,6 +590,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0018",
    "persona": "ai_ml",
    "status": "skipped",
@@ -545,16 +602,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.09548425674438477,
+   "latency_s": 0.12230801582336426,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-dd72c11fd436438a",
+   "trace_id": "tr-47b51605a47649a7",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0019",
    "persona": "ai_ml",
    "status": "awaiting_approval",
@@ -564,10 +624,10 @@
    "price": 3880.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.4134683609008789,
+   "latency_s": 0.5363109111785889,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-0a20a5e0f6cc40b3",
+   "trace_id": "tr-af6e718c61514905",
    "gigsim": {
     "replied": true,
     "hired": true,
@@ -584,6 +644,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0020",
    "persona": "ai_ml",
    "status": "awaiting_approval",
@@ -593,10 +656,10 @@
    "price": 2570.0,
    "revisions": 2,
    "critiques": 3,
-   "latency_s": 0.722667932510376,
+   "latency_s": 0.8899354934692383,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-fe573e261255473a",
+   "trace_id": "tr-350b9485666b4521",
    "gigsim": {
     "replied": true,
     "hired": true,
@@ -613,6 +676,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0021",
    "persona": "ai_ml",
    "status": "awaiting_approval",
@@ -622,10 +688,10 @@
    "price": 4890.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.3572702407836914,
+   "latency_s": 0.5928831100463867,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-605dd678757f4727",
+   "trace_id": "tr-2d09682bcd9447ae",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -640,6 +706,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0022",
    "persona": "ai_ml",
    "status": "awaiting_approval",
@@ -649,10 +718,10 @@
    "price": 4150.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.5131943225860596,
+   "latency_s": 0.5709586143493652,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-b21ca296a0d34c99",
+   "trace_id": "tr-a7a39fd9bfb0430d",
    "gigsim": {
     "replied": true,
     "hired": true,
@@ -669,6 +738,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0023",
    "persona": "ai_ml",
    "status": "awaiting_approval",
@@ -678,10 +750,10 @@
    "price": 3530.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.495774507522583,
+   "latency_s": 0.6052596569061279,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-478d16686f8443e2",
+   "trace_id": "tr-24633b848cbb4461",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -696,6 +768,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0024",
    "persona": "ai_ml",
    "status": "skipped",
@@ -705,16 +780,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.09606289863586426,
+   "latency_s": 0.11878323554992676,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-7187c27be4aa4f6e",
+   "trace_id": "tr-2a769d40451e4281",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0025",
    "persona": "ai_ml",
    "status": "skipped",
@@ -724,16 +802,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.1380140781402588,
+   "latency_s": 0.2105879783630371,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-686029c92f4e475e",
+   "trace_id": "tr-4ceec99a26b14b85",
    "cover_letter": null,
    "is_scam_pred": true,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0026",
    "persona": "ai_ml",
    "status": "skipped",
@@ -743,16 +824,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.19693326950073242,
+   "latency_s": 0.21862435340881348,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-0e933c86d115422a",
+   "trace_id": "tr-20bd11c166ce4eb9",
    "cover_letter": null,
    "is_scam_pred": true,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0027",
    "persona": "ai_ml",
    "status": "skipped",
@@ -762,16 +846,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.07770848274230957,
+   "latency_s": 0.12965607643127441,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-9ed0c004cf074c7f",
+   "trace_id": "tr-1d817845d83c402a",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0028",
    "persona": "ai_ml",
    "status": "skipped",
@@ -781,16 +868,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.10307097434997559,
+   "latency_s": 0.11452531814575195,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-dcd7781217c24af7",
+   "trace_id": "tr-00067e75ee3e4010",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0029",
    "persona": "ai_ml",
    "status": "skipped",
@@ -800,16 +890,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.17438077926635742,
+   "latency_s": 0.16632509231567383,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-7e30646adfc14556",
+   "trace_id": "tr-6f09ec1ab82a4868",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0030",
    "persona": "ai_ml",
    "status": "skipped",
@@ -819,16 +912,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.07345199584960938,
+   "latency_s": 0.09633421897888184,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-21d095e012f74167",
+   "trace_id": "tr-aef3457ee9754efd",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0031",
    "persona": "ai_ml",
    "status": "skipped",
@@ -838,16 +934,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.14657235145568848,
+   "latency_s": 0.14815068244934082,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-83f3bd6343884505",
+   "trace_id": "tr-570cee701e464e95",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0032",
    "persona": "ai_ml",
    "status": "skipped",
@@ -857,16 +956,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.12502789497375488,
+   "latency_s": 0.1461505889892578,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-cc10f97f446d4c61",
+   "trace_id": "tr-8817045dc2264ecb",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0033",
    "persona": "ai_ml",
    "status": "awaiting_approval",
@@ -876,10 +978,10 @@
    "price": 2210.0,
    "revisions": 2,
    "critiques": 3,
-   "latency_s": 0.5435137748718262,
+   "latency_s": 0.5771694183349609,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-f8fb14a75b0a4dab",
+   "trace_id": "tr-93021c9565334f82",
    "gigsim": {
     "replied": false,
     "hired": false,
@@ -896,6 +998,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0034",
    "persona": "ai_ml",
    "status": "awaiting_approval",
@@ -905,10 +1010,10 @@
    "price": 4100.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.35546183586120605,
+   "latency_s": 0.4651026725769043,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-53d26fed660a42f4",
+   "trace_id": "tr-946a0a28b87341be",
    "gigsim": {
     "replied": true,
     "hired": true,
@@ -923,6 +1028,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0035",
    "persona": "ai_ml",
    "status": "awaiting_approval",
@@ -932,10 +1040,10 @@
    "price": 3270.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.44542932510375977,
+   "latency_s": 0.5293407440185547,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-aad6d4b4b99e40c3",
+   "trace_id": "tr-6eac9aff717e484c",
    "gigsim": {
     "replied": true,
     "hired": true,
@@ -950,6 +1058,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0036",
    "persona": "ai_ml",
    "status": "skipped",
@@ -959,16 +1070,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.10950231552124023,
+   "latency_s": 0.08268547058105469,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-39696fd0c7bf482a",
+   "trace_id": "tr-d9317b24a60b4b0f",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0037",
    "persona": "ai_ml",
    "status": "skipped",
@@ -978,16 +1092,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.18173623085021973,
+   "latency_s": 0.19414138793945312,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-c25bc34a57a3411c",
+   "trace_id": "tr-38af21e62fae4274",
    "cover_letter": null,
    "is_scam_pred": true,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0038",
    "persona": "ai_ml",
    "status": "awaiting_approval",
@@ -997,10 +1114,10 @@
    "price": 3970.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.42759060859680176,
+   "latency_s": 0.4381532669067383,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-9f24539e535c4fbc",
+   "trace_id": "tr-1d1b34ffe0a048bb",
    "gigsim": {
     "replied": false,
     "hired": false,
@@ -1017,6 +1134,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0039",
    "persona": "ai_ml",
    "status": "awaiting_approval",
@@ -1026,10 +1146,10 @@
    "price": 2380.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.4365866184234619,
+   "latency_s": 0.5689704418182373,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-de22566017c74e69",
+   "trace_id": "tr-175852f103cf4b54",
    "gigsim": {
     "replied": false,
     "hired": false,
@@ -1046,6 +1166,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0040",
    "persona": "ai_ml",
    "status": "awaiting_approval",
@@ -1055,10 +1178,10 @@
    "price": 3750.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.5105302333831787,
+   "latency_s": 0.5085062980651855,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-cddf48bc581b4670",
+   "trace_id": "tr-9adb94d2cb5c43b0",
    "gigsim": {
     "replied": false,
     "hired": false,
@@ -1073,6 +1196,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0041",
    "persona": "ai_ml",
    "status": "awaiting_approval",
@@ -1082,10 +1208,10 @@
    "price": 3540.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.44825220108032227,
+   "latency_s": 0.4332096576690674,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-3a2ffef324c543d1",
+   "trace_id": "tr-6d8ea7a08e824582",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -1100,6 +1226,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0042",
    "persona": "ai_ml",
    "status": "skipped",
@@ -1109,16 +1238,19 @@
    "price": 2640.0,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.2847118377685547,
+   "latency_s": 0.2787327766418457,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-3a291d877d914bc9",
+   "trace_id": "tr-bd7d27978b494cff",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0043",
    "persona": "ai_ml",
    "status": "skipped",
@@ -1128,16 +1260,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.20142650604248047,
+   "latency_s": 0.1694345474243164,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-a179b15f16114738",
+   "trace_id": "tr-5034f0c5e9a945b4",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0044",
    "persona": "ai_ml",
    "status": "skipped",
@@ -1147,16 +1282,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.1542055606842041,
+   "latency_s": 0.14107775688171387,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-59249bc52ed24002",
+   "trace_id": "tr-b9884c6de8b7405e",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0045",
    "persona": "ai_ml",
    "status": "awaiting_approval",
@@ -1166,10 +1304,10 @@
    "price": 2300.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.3571000099182129,
+   "latency_s": 0.36301374435424805,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-a0e6963817c34573",
+   "trace_id": "tr-f0e79f4ef4514afb",
    "gigsim": {
     "replied": true,
     "hired": true,
@@ -1184,6 +1322,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0046",
    "persona": "ai_ml",
    "status": "skipped",
@@ -1193,16 +1334,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.21476435661315918,
+   "latency_s": 0.2421867847442627,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-25fc4f7092b748f8",
+   "trace_id": "tr-cb8692a5e4ff4e89",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0047",
    "persona": "ai_ml",
    "status": "skipped",
@@ -1212,16 +1356,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.17792201042175293,
+   "latency_s": 0.19971847534179688,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-76408fc184244ec8",
+   "trace_id": "tr-7fb68b2e91114703",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0048",
    "persona": "ai_ml",
    "status": "skipped",
@@ -1231,16 +1378,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.10481381416320801,
+   "latency_s": 0.16263937950134277,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-1869c875e9474ed9",
+   "trace_id": "tr-679dcfceac8741d1",
    "cover_letter": null,
    "is_scam_pred": true,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0049",
    "persona": "ai_ml",
    "status": "skipped",
@@ -1250,16 +1400,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.06881427764892578,
+   "latency_s": 0.0909421443939209,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-a3a66ea7fe6f4200",
+   "trace_id": "tr-ffeece1c67eb4d1d",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0050",
    "persona": "ai_ml",
    "status": "skipped",
@@ -1269,16 +1422,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.10700511932373047,
+   "latency_s": 0.11850690841674805,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-562291612c3c4c8a",
+   "trace_id": "tr-af7bd997466c416f",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0051",
    "persona": "ai_ml",
    "status": "skipped",
@@ -1288,16 +1444,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.15826845169067383,
+   "latency_s": 0.19691228866577148,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-503ceaa25fc14655",
+   "trace_id": "tr-78cd0517576c4f7f",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0052",
    "persona": "ai_ml",
    "status": "skipped",
@@ -1307,16 +1466,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.12117886543273926,
+   "latency_s": 0.14022016525268555,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-efe288c7f77b4f37",
+   "trace_id": "tr-8b197a1463394f88",
    "cover_letter": null,
    "is_scam_pred": true,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0053",
    "persona": "ai_ml",
    "status": "awaiting_approval",
@@ -1326,10 +1488,10 @@
    "price": 3200.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.2993943691253662,
+   "latency_s": 0.39710521697998047,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-a9d253ef4f864f4f",
+   "trace_id": "tr-a581cfab48384fa3",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -1346,6 +1508,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0054",
    "persona": "ai_ml",
    "status": "skipped",
@@ -1355,16 +1520,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.1306934356689453,
+   "latency_s": 0.18817949295043945,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-3920d42802114f2c",
+   "trace_id": "tr-0e5e8832db694b13",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0055",
    "persona": "ai_ml",
    "status": "skipped",
@@ -1374,16 +1542,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.0967714786529541,
+   "latency_s": 0.08855390548706055,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-984494b821004e0d",
+   "trace_id": "tr-dbbf0e7599244d04",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0056",
    "persona": "ai_ml",
    "status": "watch",
@@ -1393,16 +1564,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.1322798728942871,
+   "latency_s": 0.1518383026123047,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-912782d5462e4754",
+   "trace_id": "tr-097a5b671a9e493b",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0057",
    "persona": "ai_ml",
    "status": "awaiting_approval",
@@ -1412,10 +1586,10 @@
    "price": 2570.0,
    "revisions": 2,
    "critiques": 3,
-   "latency_s": 0.27146315574645996,
+   "latency_s": 0.3077361583709717,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-4dfd3056a1324bbd",
+   "trace_id": "tr-006a4c8dc64a4cbd",
    "gigsim": {
     "replied": true,
     "hired": true,
@@ -1432,6 +1606,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0058",
    "persona": "ai_ml",
    "status": "skipped",
@@ -1441,16 +1618,19 @@
    "price": 2900.0,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.17636537551879883,
+   "latency_s": 0.20362234115600586,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-02868edbacdc4545",
+   "trace_id": "tr-3beae7314e374029",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0059",
    "persona": "ai_ml",
    "status": "skipped",
@@ -1460,16 +1640,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.08249354362487793,
+   "latency_s": 0.08973383903503418,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-46498753844f42b1",
+   "trace_id": "tr-3f9c557ca3c94b36",
    "cover_letter": null,
    "is_scam_pred": true,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-ai-0060",
    "persona": "ai_ml",
    "status": "skipped",
@@ -1479,16 +1662,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.1064448356628418,
+   "latency_s": 0.08948755264282227,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-eb35913889d34ee7",
+   "trace_id": "tr-8ef9af785a5c4bd3",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0001",
    "persona": "fullstack",
    "status": "skipped",
@@ -1498,16 +1684,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.20918798446655273,
+   "latency_s": 0.4037032127380371,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-c8b9ac2424a34405",
+   "trace_id": "tr-91047e9a31c149f8",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0002",
    "persona": "fullstack",
    "status": "awaiting_approval",
@@ -1517,10 +1706,10 @@
    "price": 2590.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 1.0415751934051514,
+   "latency_s": 0.9114458560943604,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-d897a8c760e541c7",
+   "trace_id": "tr-1afb161b17ab4448",
    "gigsim": {
     "replied": true,
     "hired": true,
@@ -1537,6 +1726,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0003",
    "persona": "fullstack",
    "status": "skipped",
@@ -1546,16 +1738,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.7743401527404785,
+   "latency_s": 0.6244409084320068,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-a53798ce70464307",
+   "trace_id": "tr-b15eea27d52b42c0",
    "cover_letter": null,
    "is_scam_pred": true,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0004",
    "persona": "fullstack",
    "status": "skipped",
@@ -1565,16 +1760,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.7732348442077637,
+   "latency_s": 0.5978407859802246,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-b3ec36dac3e54897",
+   "trace_id": "tr-957fd87e56e3403a",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0005",
    "persona": "fullstack",
    "status": "awaiting_approval",
@@ -1584,10 +1782,10 @@
    "price": 1340.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.9585318565368652,
+   "latency_s": 0.8466787338256836,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-fbe5427cb37c4488",
+   "trace_id": "tr-ec17a0505a09412d",
    "gigsim": {
     "replied": true,
     "hired": true,
@@ -1602,6 +1800,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0006",
    "persona": "fullstack",
    "status": "awaiting_approval",
@@ -1611,10 +1812,10 @@
    "price": 2530.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 1.146761178970337,
+   "latency_s": 0.9699947834014893,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-f94fb07e5bc748c3",
+   "trace_id": "tr-c5beb4395c564b00",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -1629,6 +1830,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0007",
    "persona": "fullstack",
    "status": "awaiting_approval",
@@ -1638,10 +1842,10 @@
    "price": 2800.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.9342517852783203,
+   "latency_s": 0.556516170501709,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-db2f9971b19d47c2",
+   "trace_id": "tr-ea622607f3ae480c",
    "gigsim": {
     "replied": false,
     "hired": false,
@@ -1658,6 +1862,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0008",
    "persona": "fullstack",
    "status": "awaiting_approval",
@@ -1667,10 +1874,10 @@
    "price": 3600.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.42905116081237793,
+   "latency_s": 0.38988614082336426,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-67bb81b157754863",
+   "trace_id": "tr-635163e20f57469d",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -1685,6 +1892,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0009",
    "persona": "fullstack",
    "status": "skipped",
@@ -1694,16 +1904,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.15552759170532227,
+   "latency_s": 0.11930274963378906,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-c57df2927f604ffe",
+   "trace_id": "tr-9ae2296e977f4261",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0010",
    "persona": "fullstack",
    "status": "awaiting_approval",
@@ -1713,10 +1926,10 @@
    "price": 2200.0,
    "revisions": 2,
    "critiques": 3,
-   "latency_s": 0.6415657997131348,
+   "latency_s": 0.6721036434173584,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-35e6f9dba8f14099",
+   "trace_id": "tr-5023da01469e45e2",
    "gigsim": {
     "replied": true,
     "hired": true,
@@ -1733,6 +1946,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0011",
    "persona": "fullstack",
    "status": "skipped",
@@ -1742,16 +1958,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.18485736846923828,
+   "latency_s": 0.17952704429626465,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-5648975447554f94",
+   "trace_id": "tr-b3485ec4740148d4",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0012",
    "persona": "fullstack",
    "status": "skipped",
@@ -1761,16 +1980,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.09472393989562988,
+   "latency_s": 0.07494568824768066,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-7f42c9e93aec4ca9",
+   "trace_id": "tr-2655a9970155406c",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0013",
    "persona": "fullstack",
    "status": "skipped",
@@ -1780,16 +2002,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.14000511169433594,
+   "latency_s": 0.11781120300292969,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-b191a746d8ed4be0",
+   "trace_id": "tr-c9ac5b72f6694fde",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0014",
    "persona": "fullstack",
    "status": "awaiting_approval",
@@ -1799,10 +2024,10 @@
    "price": 2800.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.68241286277771,
+   "latency_s": 0.48597192764282227,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-47e9898c6d274083",
+   "trace_id": "tr-5f773136d1c94f6a",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -1817,6 +2042,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0015",
    "persona": "fullstack",
    "status": "skipped",
@@ -1826,16 +2054,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.13463854789733887,
+   "latency_s": 0.13042330741882324,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-3c7356e17143481c",
+   "trace_id": "tr-cbf4d8d1d8854edb",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0016",
    "persona": "fullstack",
    "status": "skipped",
@@ -1845,16 +2076,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.20542263984680176,
+   "latency_s": 0.18503642082214355,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-398de138ec1e41e3",
+   "trace_id": "tr-f9f7565010ea4aed",
    "cover_letter": null,
    "is_scam_pred": true,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0017",
    "persona": "fullstack",
    "status": "skipped",
@@ -1864,16 +2098,19 @@
    "price": 1540.0,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.2612762451171875,
+   "latency_s": 0.3180367946624756,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-68548c916d1f4304",
+   "trace_id": "tr-0c0548bf27154bfc",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0018",
    "persona": "fullstack",
    "status": "skipped",
@@ -1883,16 +2120,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.09629130363464355,
+   "latency_s": 0.08782672882080078,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-ec7c548751d042f9",
+   "trace_id": "tr-7420f12c7f244d22",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0019",
    "persona": "fullstack",
    "status": "skipped",
@@ -1902,16 +2142,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.18303680419921875,
+   "latency_s": 0.21462512016296387,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-c790219a03cd4521",
+   "trace_id": "tr-b58efd303caa4c91",
    "cover_letter": null,
    "is_scam_pred": true,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0020",
    "persona": "fullstack",
    "status": "skipped",
@@ -1921,16 +2164,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.21049880981445312,
+   "latency_s": 0.2451162338256836,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-3f5bfedf1d5649c8",
+   "trace_id": "tr-b96ed7319c53413d",
    "cover_letter": null,
    "is_scam_pred": true,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0021",
    "persona": "fullstack",
    "status": "skipped",
@@ -1940,16 +2186,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.18936705589294434,
+   "latency_s": 0.24901866912841797,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-ff499b31919e46d5",
+   "trace_id": "tr-9055892f961340f7",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0022",
    "persona": "fullstack",
    "status": "awaiting_approval",
@@ -1959,10 +2208,10 @@
    "price": 1400.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.7873589992523193,
+   "latency_s": 0.4158651828765869,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-4c47b572a34047ed",
+   "trace_id": "tr-09cfead390314d28",
    "gigsim": {
     "replied": false,
     "hired": false,
@@ -1979,6 +2228,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0023",
    "persona": "fullstack",
    "status": "skipped",
@@ -1988,16 +2240,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.19893217086791992,
+   "latency_s": 0.09060502052307129,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-12d28e45ad164dd0",
+   "trace_id": "tr-b22dcaec01c04c60",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0024",
    "persona": "fullstack",
    "status": "skipped",
@@ -2007,16 +2262,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.30799078941345215,
+   "latency_s": 0.150590181350708,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-750aeb6c0260464d",
+   "trace_id": "tr-e7a1de6155e64079",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0025",
    "persona": "fullstack",
    "status": "skipped",
@@ -2026,16 +2284,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.27750182151794434,
+   "latency_s": 0.13396978378295898,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-3dd80b3f853b4bbb",
+   "trace_id": "tr-92642108be2c4ced",
    "cover_letter": null,
    "is_scam_pred": true,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0026",
    "persona": "fullstack",
    "status": "skipped",
@@ -2045,16 +2306,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.2892153263092041,
+   "latency_s": 0.13873744010925293,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-b3737550952c4519",
+   "trace_id": "tr-bc5dd8a616e54371",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0027",
    "persona": "fullstack",
    "status": "skipped",
@@ -2064,16 +2328,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.1613461971282959,
+   "latency_s": 0.11704254150390625,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-84bc57d34c8547cf",
+   "trace_id": "tr-1a4237b48ada43e0",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0028",
    "persona": "fullstack",
    "status": "skipped",
@@ -2083,16 +2350,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.29254865646362305,
+   "latency_s": 0.20187807083129883,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-647820a9557d4873",
+   "trace_id": "tr-08f88a03d23540b8",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0029",
    "persona": "fullstack",
    "status": "skipped",
@@ -2102,16 +2372,19 @@
    "price": 930.0,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.28427886962890625,
+   "latency_s": 0.1352522373199463,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-8294760b4b4f469b",
+   "trace_id": "tr-dc94cb28a7764afe",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0030",
    "persona": "fullstack",
    "status": "skipped",
@@ -2121,16 +2394,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.23371410369873047,
+   "latency_s": 0.14383649826049805,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-1a842935a7494903",
+   "trace_id": "tr-07a45fbfe0d947d7",
    "cover_letter": null,
    "is_scam_pred": true,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0031",
    "persona": "fullstack",
    "status": "awaiting_approval",
@@ -2140,10 +2416,10 @@
    "price": 1220.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.5370736122131348,
+   "latency_s": 0.38811349868774414,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-d34f4cc905f9444f",
+   "trace_id": "tr-2473a0afff574d22",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -2158,6 +2434,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0032",
    "persona": "fullstack",
    "status": "skipped",
@@ -2167,16 +2446,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.21271395683288574,
+   "latency_s": 0.12589573860168457,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-2b1fabcc5c8e493c",
+   "trace_id": "tr-92f6bfc6d3d046f0",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0033",
    "persona": "fullstack",
    "status": "skipped",
@@ -2186,16 +2468,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.21245694160461426,
+   "latency_s": 0.0982818603515625,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-28792da5e6704e1b",
+   "trace_id": "tr-effccd5808e64ba4",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0034",
    "persona": "fullstack",
    "status": "awaiting_approval",
@@ -2205,10 +2490,10 @@
    "price": 1220.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.5181236267089844,
+   "latency_s": 0.4712071418762207,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-516b8b10a264452b",
+   "trace_id": "tr-b645e100482947a2",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -2223,6 +2508,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0035",
    "persona": "fullstack",
    "status": "skipped",
@@ -2232,16 +2520,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.18891334533691406,
+   "latency_s": 0.17348957061767578,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-db05249415464968",
+   "trace_id": "tr-a66cbba9a2254eb4",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0036",
    "persona": "fullstack",
    "status": "skipped",
@@ -2251,16 +2542,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.17941737174987793,
+   "latency_s": 0.17458224296569824,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-b6f0cbc0df924b5e",
+   "trace_id": "tr-0c752a05f1254df0",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0037",
    "persona": "fullstack",
    "status": "awaiting_approval",
@@ -2270,10 +2564,10 @@
    "price": 1140.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.4015934467315674,
+   "latency_s": 0.41935038566589355,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-45f8ed31ba2d42bc",
+   "trace_id": "tr-ea32ff34ca2549d8",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -2288,6 +2582,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0038",
    "persona": "fullstack",
    "status": "skipped",
@@ -2297,16 +2594,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.09641623497009277,
+   "latency_s": 0.1067502498626709,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-299d2623f1ca434c",
+   "trace_id": "tr-16f13952ea4a4fb9",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0039",
    "persona": "fullstack",
    "status": "watch",
@@ -2316,16 +2616,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.12069892883300781,
+   "latency_s": 0.11535429954528809,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-2a787e1a4a8344dc",
+   "trace_id": "tr-25cab4b598344049",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0040",
    "persona": "fullstack",
    "status": "skipped",
@@ -2335,16 +2638,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.2383255958557129,
+   "latency_s": 0.21464252471923828,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-b8e2174a108143ab",
+   "trace_id": "tr-7e1740c76f3f4e2e",
    "cover_letter": null,
    "is_scam_pred": true,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0041",
    "persona": "fullstack",
    "status": "awaiting_approval",
@@ -2354,10 +2660,10 @@
    "price": 1140.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.39661407470703125,
+   "latency_s": 0.34457874298095703,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-fced9ebe004748cf",
+   "trace_id": "tr-7b4cd0fc65c14de9",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -2372,6 +2678,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0042",
    "persona": "fullstack",
    "status": "awaiting_approval",
@@ -2381,10 +2690,10 @@
    "price": 2220.0,
    "revisions": 2,
    "critiques": 3,
-   "latency_s": 0.5568115711212158,
+   "latency_s": 0.58109450340271,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-e97efe9c57de4b52",
+   "trace_id": "tr-6891a2d8b620404f",
    "gigsim": {
     "replied": true,
     "hired": true,
@@ -2401,6 +2710,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0043",
    "persona": "fullstack",
    "status": "skipped",
@@ -2410,16 +2722,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.11153054237365723,
+   "latency_s": 0.10958528518676758,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-e2908697bf174b6d",
+   "trace_id": "tr-77cd5d8afa844f6c",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0044",
    "persona": "fullstack",
    "status": "skipped",
@@ -2429,16 +2744,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.2562835216522217,
+   "latency_s": 0.2283775806427002,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-6a9bd9b704f14cc9",
+   "trace_id": "tr-31bb065200134518",
    "cover_letter": null,
    "is_scam_pred": true,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0045",
    "persona": "fullstack",
    "status": "skipped",
@@ -2448,16 +2766,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.1796281337738037,
+   "latency_s": 0.14848756790161133,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-5f06f0ccd3e64d1c",
+   "trace_id": "tr-1564230219334856",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0046",
    "persona": "fullstack",
    "status": "skipped",
@@ -2467,16 +2788,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.19455361366271973,
+   "latency_s": 0.1632080078125,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-3071f770e1504d59",
+   "trace_id": "tr-c0f9d55e8e384bf7",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0047",
    "persona": "fullstack",
    "status": "awaiting_approval",
@@ -2486,10 +2810,10 @@
    "price": 3400.0,
    "revisions": 2,
    "critiques": 3,
-   "latency_s": 0.5427451133728027,
+   "latency_s": 0.7130842208862305,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-94116506b85b4bf5",
+   "trace_id": "tr-d0398ecb85454cd5",
    "gigsim": {
     "replied": false,
     "hired": false,
@@ -2506,6 +2830,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0048",
    "persona": "fullstack",
    "status": "awaiting_approval",
@@ -2515,10 +2842,10 @@
    "price": 2580.0,
    "revisions": 2,
    "critiques": 3,
-   "latency_s": 0.7617321014404297,
+   "latency_s": 0.6201083660125732,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-a6c9a2e58a514ad1",
+   "trace_id": "tr-526db27e3527497f",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -2535,6 +2862,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0049",
    "persona": "fullstack",
    "status": "awaiting_approval",
@@ -2544,10 +2874,10 @@
    "price": 750.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.5587825775146484,
+   "latency_s": 0.5608818531036377,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-ab47de1deab045bc",
+   "trace_id": "tr-5d082b1c153e4d5f",
    "gigsim": {
     "replied": true,
     "hired": true,
@@ -2564,6 +2894,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0050",
    "persona": "fullstack",
    "status": "awaiting_approval",
@@ -2573,10 +2906,10 @@
    "price": 1470.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.5202522277832031,
+   "latency_s": 0.48469066619873047,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-6903b1b8efe448b9",
+   "trace_id": "tr-969035b4fc5c431f",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -2593,6 +2926,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0051",
    "persona": "fullstack",
    "status": "skipped",
@@ -2602,16 +2938,19 @@
    "price": 1260.0,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.26096343994140625,
+   "latency_s": 0.23755836486816406,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-f5322b2624404385",
+   "trace_id": "tr-4cc350b2e6df49a5",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0052",
    "persona": "fullstack",
    "status": "skipped",
@@ -2621,16 +2960,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.23067760467529297,
+   "latency_s": 0.19170737266540527,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-162ed4f896b74a03",
+   "trace_id": "tr-b5c4beb1c77444d7",
    "cover_letter": null,
    "is_scam_pred": true,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0053",
    "persona": "fullstack",
    "status": "awaiting_approval",
@@ -2640,10 +2982,10 @@
    "price": 530.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.48688292503356934,
+   "latency_s": 0.4615511894226074,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-279aa543572a4d47",
+   "trace_id": "tr-ff59276eae34400d",
    "gigsim": {
     "replied": true,
     "hired": true,
@@ -2658,6 +3000,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0054",
    "persona": "fullstack",
    "status": "skipped",
@@ -2667,16 +3012,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.14246749877929688,
+   "latency_s": 0.06819415092468262,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-81f767fc974c44fb",
+   "trace_id": "tr-f581b6944b484d79",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0055",
    "persona": "fullstack",
    "status": "awaiting_approval",
@@ -2686,10 +3034,10 @@
    "price": 1070.0,
    "revisions": 2,
    "critiques": 3,
-   "latency_s": 0.5129094123840332,
+   "latency_s": 0.4222228527069092,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-f31cd3c6b9af45c5",
+   "trace_id": "tr-b1ad35981c884656",
    "gigsim": {
     "replied": true,
     "hired": true,
@@ -2706,6 +3054,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0056",
    "persona": "fullstack",
    "status": "skipped",
@@ -2715,16 +3066,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.18304657936096191,
+   "latency_s": 0.1024012565612793,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-f8e29ff070a04d17",
+   "trace_id": "tr-d22fe907e8424ecd",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0057",
    "persona": "fullstack",
    "status": "awaiting_approval",
@@ -2734,10 +3088,10 @@
    "price": 2110.0,
    "revisions": 2,
    "critiques": 3,
-   "latency_s": 0.41669487953186035,
+   "latency_s": 0.40871334075927734,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-075b53fa11724f6d",
+   "trace_id": "tr-159ceb1edf5847ac",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -2754,6 +3108,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0058",
    "persona": "fullstack",
    "status": "skipped",
@@ -2763,16 +3120,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.23757553100585938,
+   "latency_s": 0.2467648983001709,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-8261650e37db4719",
+   "trace_id": "tr-900640e26ee14c8c",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0059",
    "persona": "fullstack",
    "status": "awaiting_approval",
@@ -2782,10 +3142,10 @@
    "price": 860.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.254133939743042,
+   "latency_s": 0.29544949531555176,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-c45565ffe6c1433b",
+   "trace_id": "tr-472bdfdc26964589",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -2800,6 +3160,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-fu-0060",
    "persona": "fullstack",
    "status": "skipped",
@@ -2809,16 +3172,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.15140819549560547,
+   "latency_s": 0.21743154525756836,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-b3d156643667451d",
+   "trace_id": "tr-260fdec2210f40b5",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0001",
    "persona": "data_analyst",
    "status": "skipped",
@@ -2828,16 +3194,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.2947347164154053,
+   "latency_s": 0.45914149284362793,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-1733d004f2b14de4",
+   "trace_id": "tr-bfbb2044e4bb4194",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0002",
    "persona": "data_analyst",
    "status": "skipped",
@@ -2847,16 +3216,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.7122704982757568,
+   "latency_s": 0.6705389022827148,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-279c5da4005c4b95",
+   "trace_id": "tr-0eeea757cd4c4bd4",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0003",
    "persona": "data_analyst",
    "status": "awaiting_approval",
@@ -2866,10 +3238,10 @@
    "price": 2300.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.9588789939880371,
+   "latency_s": 0.9087212085723877,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-41d7cf3be7e34764",
+   "trace_id": "tr-552a2e15c062424e",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -2884,6 +3256,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0004",
    "persona": "data_analyst",
    "status": "skipped",
@@ -2893,16 +3268,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.7120571136474609,
+   "latency_s": 0.65230393409729,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-07fafde15ded4f5b",
+   "trace_id": "tr-27db178a2c2a48ae",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0005",
    "persona": "data_analyst",
    "status": "awaiting_approval",
@@ -2912,10 +3290,10 @@
    "price": 1970.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 1.0676705837249756,
+   "latency_s": 1.011948823928833,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-3199db3a7b4046a5",
+   "trace_id": "tr-9dc5fc64893f4c45",
    "gigsim": {
     "replied": false,
     "hired": false,
@@ -2930,6 +3308,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0006",
    "persona": "data_analyst",
    "status": "skipped",
@@ -2939,16 +3320,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.586350679397583,
+   "latency_s": 0.5706076622009277,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-a7367d1cdccb411c",
+   "trace_id": "tr-47408d8002b940b8",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0007",
    "persona": "data_analyst",
    "status": "awaiting_approval",
@@ -2958,10 +3342,10 @@
    "price": 640.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.6466140747070312,
+   "latency_s": 0.4909250736236572,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-ea40d305ced94caf",
+   "trace_id": "tr-e9108d6672764531",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -2978,6 +3362,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0008",
    "persona": "data_analyst",
    "status": "awaiting_approval",
@@ -2987,10 +3374,10 @@
    "price": 370.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.49739718437194824,
+   "latency_s": 0.4646792411804199,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-cf6dd811315c436f",
+   "trace_id": "tr-ebde61d746c545fa",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -3007,6 +3394,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0009",
    "persona": "data_analyst",
    "status": "awaiting_approval",
@@ -3016,10 +3406,10 @@
    "price": 630.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.4414842128753662,
+   "latency_s": 0.4889342784881592,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-bbbdc9de48eb43d4",
+   "trace_id": "tr-25edac34dcfd4ada",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -3034,6 +3424,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0010",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3043,16 +3436,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.13322806358337402,
+   "latency_s": 0.16456389427185059,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-b1496a02a81346e2",
+   "trace_id": "tr-cfe94b48fe054229",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0011",
    "persona": "data_analyst",
    "status": "awaiting_approval",
@@ -3062,10 +3458,10 @@
    "price": 1100.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.45410799980163574,
+   "latency_s": 0.50832200050354,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-49c9ec3653a94358",
+   "trace_id": "tr-10fdb8762e5e40cf",
    "gigsim": {
     "replied": true,
     "hired": true,
@@ -3080,6 +3476,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0012",
    "persona": "data_analyst",
    "status": "awaiting_approval",
@@ -3089,10 +3488,10 @@
    "price": 1140.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.3949465751647949,
+   "latency_s": 0.3826267719268799,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-ce4fd4a7ffc74ece",
+   "trace_id": "tr-ad659f6d6d4f4a60",
    "gigsim": {
     "replied": false,
     "hired": false,
@@ -3110,6 +3509,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0013",
    "persona": "data_analyst",
    "status": "awaiting_approval",
@@ -3119,10 +3521,10 @@
    "price": 970.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.4034872055053711,
+   "latency_s": 0.3506741523742676,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-415639c41e1346be",
+   "trace_id": "tr-9dbdc3cb3b764bee",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -3139,6 +3541,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0014",
    "persona": "data_analyst",
    "status": "awaiting_approval",
@@ -3148,10 +3553,10 @@
    "price": 1130.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.5078024864196777,
+   "latency_s": 0.5252435207366943,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-4fefda1412894900",
+   "trace_id": "tr-54441640e18f4141",
    "gigsim": {
     "replied": false,
     "hired": false,
@@ -3168,6 +3573,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0015",
    "persona": "data_analyst",
    "status": "awaiting_approval",
@@ -3177,10 +3585,10 @@
    "price": 1330.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.38499903678894043,
+   "latency_s": 0.46898984909057617,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-ea2f060a931243ec",
+   "trace_id": "tr-02d57eb8cb154730",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -3195,6 +3603,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0016",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3204,16 +3615,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.09847831726074219,
+   "latency_s": 0.10675358772277832,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-58f172d102784f6e",
+   "trace_id": "tr-d88334c9154841a3",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0017",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3223,16 +3637,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.20821285247802734,
+   "latency_s": 0.19501447677612305,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-fad8eb6ea2984dc5",
+   "trace_id": "tr-5fe59a7b08b94039",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0018",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3242,16 +3659,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.16393303871154785,
+   "latency_s": 0.14429926872253418,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-f5929999b3e34e60",
+   "trace_id": "tr-10ee3fe223b74516",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0019",
    "persona": "data_analyst",
    "status": "watch",
@@ -3261,16 +3681,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.17878413200378418,
+   "latency_s": 0.13698053359985352,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-dd0919d33f8d4b19",
+   "trace_id": "tr-07ef9c8124c24b0b",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0020",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3280,16 +3703,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.10644292831420898,
+   "latency_s": 0.09816646575927734,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-221bfd6863784af6",
+   "trace_id": "tr-8607d8a594bf4c5e",
    "cover_letter": null,
    "is_scam_pred": true,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0021",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3299,16 +3725,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.1276688575744629,
+   "latency_s": 0.09591317176818848,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-5c3426b0520f4ecb",
+   "trace_id": "tr-aae04304b8ef486c",
    "cover_letter": null,
    "is_scam_pred": true,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0022",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3318,16 +3747,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.18427205085754395,
+   "latency_s": 0.16133666038513184,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-00702aad01814757",
+   "trace_id": "tr-ba6b76f32fda4b5b",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0023",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3337,16 +3769,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.18500518798828125,
+   "latency_s": 0.17158150672912598,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-45373b99ec6541d0",
+   "trace_id": "tr-32eee7ca68364f95",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0024",
    "persona": "data_analyst",
    "status": "awaiting_approval",
@@ -3356,10 +3791,10 @@
    "price": 1490.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.5026960372924805,
+   "latency_s": 0.5506396293640137,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-ed94818fa996436e",
+   "trace_id": "tr-db1b0f3191a94235",
    "gigsim": {
     "replied": true,
     "hired": true,
@@ -3374,6 +3809,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0025",
    "persona": "data_analyst",
    "status": "awaiting_approval",
@@ -3383,10 +3821,10 @@
    "price": 1010.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.5420382022857666,
+   "latency_s": 0.5900886058807373,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-048b9ed507924a95",
+   "trace_id": "tr-0e5d8086e2264629",
    "gigsim": {
     "replied": false,
     "hired": false,
@@ -3401,6 +3839,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0026",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3410,16 +3851,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.17715692520141602,
+   "latency_s": 0.11467146873474121,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-086305ac64d7416d",
+   "trace_id": "tr-a386d4ec881040e2",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0027",
    "persona": "data_analyst",
    "status": "awaiting_approval",
@@ -3429,10 +3873,10 @@
    "price": 1140.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.529268741607666,
+   "latency_s": 0.5719504356384277,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-ed764662cabf4ae1",
+   "trace_id": "tr-ca978920e8ef44ec",
    "gigsim": {
     "replied": true,
     "hired": true,
@@ -3449,6 +3893,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0028",
    "persona": "data_analyst",
    "status": "awaiting_approval",
@@ -3458,10 +3905,10 @@
    "price": 960.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.4636085033416748,
+   "latency_s": 0.6606523990631104,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-7cd38988b5f7460e",
+   "trace_id": "tr-adc836a01acd4e9b",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -3478,6 +3925,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0029",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3487,16 +3937,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.21736717224121094,
+   "latency_s": 0.232896089553833,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-c0544df65ea74912",
+   "trace_id": "tr-a932f98891ae4e50",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0030",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3506,16 +3959,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.12060308456420898,
+   "latency_s": 0.08337736129760742,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-7e7af80f02974ce7",
+   "trace_id": "tr-feceedeacde34586",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0031",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3525,16 +3981,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.21238493919372559,
+   "latency_s": 0.2939274311065674,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-5866202d14af4b10",
+   "trace_id": "tr-b6988e77d1a24103",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0032",
    "persona": "data_analyst",
    "status": "awaiting_approval",
@@ -3544,10 +4003,10 @@
    "price": 1430.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.40424442291259766,
+   "latency_s": 0.5434033870697021,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-993880dc41564942",
+   "trace_id": "tr-65c6c4b7277b4084",
    "gigsim": {
     "replied": true,
     "hired": true,
@@ -3562,6 +4021,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0033",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3571,16 +4033,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.1236412525177002,
+   "latency_s": 0.10588312149047852,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-0c075af0156f43ea",
+   "trace_id": "tr-b9a68820a835406e",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0034",
    "persona": "data_analyst",
    "status": "awaiting_approval",
@@ -3590,10 +4055,10 @@
    "price": 2410.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.49419474601745605,
+   "latency_s": 0.4669010639190674,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-fdfc8b29e218432f",
+   "trace_id": "tr-4c93f20285744f39",
    "gigsim": {
     "replied": true,
     "hired": true,
@@ -3608,6 +4073,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0035",
    "persona": "data_analyst",
    "status": "awaiting_approval",
@@ -3617,10 +4085,10 @@
    "price": 1430.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.5192739963531494,
+   "latency_s": 0.446946382522583,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-234e348c961042f4",
+   "trace_id": "tr-c8c96729413b4b6e",
    "gigsim": {
     "replied": true,
     "hired": true,
@@ -3635,6 +4103,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0036",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3644,16 +4115,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.1465773582458496,
+   "latency_s": 0.14166498184204102,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-fe78e2997fe04ab3",
+   "trace_id": "tr-229e43e258c44af9",
    "cover_letter": null,
    "is_scam_pred": true,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0037",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3663,16 +4137,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.09490203857421875,
+   "latency_s": 0.13801336288452148,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-1c60d6fec085449c",
+   "trace_id": "tr-a3a5c90c8c494af4",
    "cover_letter": null,
    "is_scam_pred": true,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0038",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3682,16 +4159,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.11674737930297852,
+   "latency_s": 0.11742591857910156,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-7bf48262a77647ac",
+   "trace_id": "tr-9acf867af86d4433",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0039",
    "persona": "data_analyst",
    "status": "awaiting_approval",
@@ -3701,10 +4181,10 @@
    "price": 1060.0,
    "revisions": 2,
    "critiques": 3,
-   "latency_s": 0.7149767875671387,
+   "latency_s": 0.5524120330810547,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-4277e2eb547143ba",
+   "trace_id": "tr-a78b9683947749ce",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -3721,6 +4201,9 @@
    ]
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0040",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3730,16 +4213,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.14035773277282715,
+   "latency_s": 0.17302155494689941,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-4a388017c55b4908",
+   "trace_id": "tr-8972641cd9334a9b",
    "cover_letter": null,
    "is_scam_pred": true,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0041",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3749,16 +4235,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.1126546859741211,
+   "latency_s": 0.09493780136108398,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-b93cc97da2284469",
+   "trace_id": "tr-27c20543f8f34696",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0042",
    "persona": "data_analyst",
    "status": "awaiting_approval",
@@ -3768,10 +4257,10 @@
    "price": 1050.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.46280598640441895,
+   "latency_s": 0.3274221420288086,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-b57d3529a91140dc",
+   "trace_id": "tr-60db6fc7f6a94624",
    "gigsim": {
     "replied": false,
     "hired": false,
@@ -3786,6 +4275,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0043",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3795,16 +4287,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.2714862823486328,
+   "latency_s": 0.18719267845153809,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-5e092d70ab7a49d5",
+   "trace_id": "tr-2a3d26ff0ed0433b",
    "cover_letter": null,
    "is_scam_pred": true,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0044",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3814,16 +4309,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.23058819770812988,
+   "latency_s": 0.13572144508361816,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-723858bd9a574295",
+   "trace_id": "tr-39c0b17f727c4672",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0045",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3833,16 +4331,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.1656358242034912,
+   "latency_s": 0.1465611457824707,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-63f3c4827b814069",
+   "trace_id": "tr-1617ec8a5ac44e17",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0046",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3852,16 +4353,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.1114189624786377,
+   "latency_s": 0.10625886917114258,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-43ceef92a3a94a9f",
+   "trace_id": "tr-50e1a4730cce47c1",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0047",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3871,16 +4375,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.23118162155151367,
+   "latency_s": 0.14647221565246582,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-93cdd461fabc4e0d",
+   "trace_id": "tr-7a46747daeb042f2",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0048",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3890,16 +4397,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.12095308303833008,
+   "latency_s": 0.11166882514953613,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-d85adc07221d4162",
+   "trace_id": "tr-a0f4e707535543b2",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0049",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3909,16 +4419,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.11988353729248047,
+   "latency_s": 0.08494114875793457,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-e386893580cb4b0b",
+   "trace_id": "tr-ce925c4cf69345d7",
    "cover_letter": null,
    "is_scam_pred": true,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0050",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3928,16 +4441,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.11752748489379883,
+   "latency_s": 0.08631777763366699,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-99707c1943e94a99",
+   "trace_id": "tr-7baafcbd1fc0472c",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0051",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3947,16 +4463,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.08890891075134277,
+   "latency_s": 0.11008644104003906,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-ba2682187a1948ce",
+   "trace_id": "tr-c961b701a649448d",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0052",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3966,16 +4485,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.0797586441040039,
+   "latency_s": 0.11111140251159668,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-7973e1a353a245f8",
+   "trace_id": "tr-ebee2634e0af485e",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0053",
    "persona": "data_analyst",
    "status": "skipped",
@@ -3985,16 +4507,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.10561680793762207,
+   "latency_s": 0.16930389404296875,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-0409d57d1cdc4a65",
+   "trace_id": "tr-fc62d96cf9b045c0",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0054",
    "persona": "data_analyst",
    "status": "awaiting_approval",
@@ -4004,10 +4529,10 @@
    "price": 1110.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.2780954837799072,
+   "latency_s": 0.3227710723876953,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-01bfa44a8efc4178",
+   "trace_id": "tr-e94776d50fd5495d",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -4022,6 +4547,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0055",
    "persona": "data_analyst",
    "status": "skipped",
@@ -4031,16 +4559,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.10749363899230957,
+   "latency_s": 0.1388094425201416,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-62d24971fd014ad3",
+   "trace_id": "tr-20fc5c2e52c54e39",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0056",
    "persona": "data_analyst",
    "status": "skipped",
@@ -4050,16 +4581,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.10355806350708008,
+   "latency_s": 0.12021827697753906,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-447edee0132c451f",
+   "trace_id": "tr-fb732b4fc9ee4b8d",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0057",
    "persona": "data_analyst",
    "status": "skipped",
@@ -4069,16 +4603,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.09353423118591309,
+   "latency_s": 0.12160539627075195,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-f873acc5acb645e0",
+   "trace_id": "tr-ccdc2f0816df4485",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0058",
    "persona": "data_analyst",
    "status": "skipped",
@@ -4088,16 +4625,19 @@
    "price": null,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.16321110725402832,
+   "latency_s": 0.18254780769348145,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-6fa9b082986142fc",
+   "trace_id": "tr-1faad3cd0fdd4cb1",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0059",
    "persona": "data_analyst",
    "status": "awaiting_approval",
@@ -4107,10 +4647,10 @@
    "price": 380.0,
    "revisions": 0,
    "critiques": 1,
-   "latency_s": 0.15947580337524414,
+   "latency_s": 0.1954491138458252,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-3e6125c5a5204851",
+   "trace_id": "tr-10f9efed297c4730",
    "gigsim": {
     "replied": true,
     "hired": false,
@@ -4125,6 +4665,9 @@
    "removed_claims": []
   },
   {
+   "providers": [
+    "heuristic"
+   ],
    "job_id": "ho-da-0060",
    "persona": "data_analyst",
    "status": "skipped",
@@ -4134,10 +4677,10 @@
    "price": 630.0,
    "revisions": 0,
    "critiques": 0,
-   "latency_s": 0.16966557502746582,
+   "latency_s": 0.1683673858642578,
    "tokens": 0,
    "usd": 0.0,
-   "trace_id": "tr-ede1f7eefff3420e",
+   "trace_id": "tr-9ea48a1ff10c4da9",
    "cover_letter": null,
    "is_scam_pred": false,
    "unsupported_before": null,

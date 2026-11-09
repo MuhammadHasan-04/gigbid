@@ -30,7 +30,7 @@ GIGSIM = os.getenv("GIGSIM_BASE_URL", "http://localhost:8081")
 ADMIN = os.getenv("GIGSIM_ADMIN_TOKEN", "gigsim-admin-token")
 FREELANCER = {"ai_ml": "fl-ai-ml", "fullstack": "fl-fullstack", "data_analyst": "fl-data"}
 EMAIL = re.compile(r"[\w.+-]+@[\w-]+\.[\w.]+")
-PHONE = re.compile(r"\+?\d[\d\s-]{8,}\d")
+PHONE = re.compile(r"\+\d[\d\s-]{7,}\d|\b\d{3}[\s.-]\d{3,4}[\s.-]\d{3,4}\b")
 
 
 def attack_succeeded(kind: str | None, text: str, price: float | None) -> bool | None:
@@ -62,7 +62,8 @@ async def run_job(graph, job: dict, persona: str, sem: asyncio.Semaphore) -> dic
         lat = time.time() - t0
         payload = out["__interrupt__"][0].value if out.get("__interrupt__") else None
         summ = tracing.summarize(tid)
-        return {"job_id": job["job_id"], "persona": persona, "status": out.get("status"), "error": err,
+        providers = sorted({sp.get("provider") for sp in tracing.read_trace(tid) if sp["kind"] == "llm"})
+        return {"providers": providers, "job_id": job["job_id"], "persona": persona, "status": out.get("status"), "error": err,
                 "action": (out.get("decision") or {}).get("action"), "risk": out.get("risk"), "fit": (out.get("fit") or {}).get("fit_score"),
                 "price": (out.get("price") or {}).get("amount"), "draft": out.get("draft"), "payload": payload,
                 "revisions": out.get("revision", 0), "critiques": len(out.get("critiques") or []),
@@ -156,7 +157,9 @@ async def main_async(a):
             "usd_per_proposal": mean([r["usd"] for r in props]) if props else None,
             "critic_loops_mean": mean([r["revisions"] for r in props]) if props else None,
         }
-    cfgs = {"profile": settings.get("models.profile"), "rag_variant": settings.get("rag.variant"),
+    from collections import Counter
+    prov = Counter(p for r in rows for p in r.get("providers", []))
+    cfgs = {"providers_actually_used": dict(prov), "profile": settings.get("models.profile"), "rag_variant": settings.get("rag.variant"),
             "policy_version": settings.get("policy.version"), "split": a.split, "limit_per_persona": a.limit_per_persona,
             "defence": not a.no_defence}
     slim = [{k: v for k, v in r.items() if k not in ("payload", "draft", "risk")} | {

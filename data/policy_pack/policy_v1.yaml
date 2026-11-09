@@ -10,7 +10,7 @@ rules:
     severity: block
     description: "No email addresses, phone numbers, or messaging handles (Telegram, WhatsApp, Skype, Discord)."
     detector: regex
-    patterns: ['[\w.+-]+@[\w-]+\.[\w.]+', '\+?\d[\d\s-]{8,}\d', '(?i)\b(telegram|whatsapp|skype|discord|signal app)\b']
+    patterns: ['[\w.+-]+@[\w-]+\.[\w.]+', '\+\d[\d\s-]{7,}\d|\b\d{3}[\s.-]\d{3,4}[\s.-]\d{3,4}\b', '(?i)\b(telegram|whatsapp|skype|discord|signal app)\b']
     fix: remove_sentence
   - id: no_off_platform_payment
     severity: block
