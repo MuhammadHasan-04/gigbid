@@ -112,7 +112,42 @@ def _price(spec: dict, tin: int, tout: int) -> float:
     return (tin * pin + tout * pout) / 1e6
 
 
+_CACHE_DB = None
+
+
+def _cache():
+    """Optional response cache for evaluation re-runs (LLM_CACHE=1). Free-tier daily token limits make
+    re-running identical prompts (e.g. defence ablations on the same jobs) unaffordable otherwise.
+    Cached calls are marked cached=True in the trace and excluded from latency figures."""
+    global _CACHE_DB
+    if os.getenv("LLM_CACHE") != "1":
+        return None
+    if _CACHE_DB is None:
+        import sqlite3
+        p = Path(__file__).resolve().parents[1] / "data" / "processed" / "llm_cache.sqlite"
+        p.parent.mkdir(parents=True, exist_ok=True)
+        _CACHE_DB = sqlite3.connect(p, check_same_thread=False)
+        _CACHE_DB.execute("create table if not exists c (k text primary key, out text, tin int, tout int)")
+    return _CACHE_DB
+
+
 def _chat(spec: dict, system: str, user: str, json_mode: bool, max_tokens: int) -> tuple[str, int, int]:
+    db = _cache()
+    if db is not None:
+        import hashlib as _h
+        key = _h.sha256(json.dumps([spec["provider"], spec["model"], system, user, json_mode, max_tokens]).encode()).hexdigest()
+        row = db.execute("select out, tin, tout from c where k=?", (key,)).fetchone()
+        if row:
+            tracing.emit("llm_cache_hit", spec["model"])
+            return row[0], row[1], row[2]
+        out = _chat_live(spec, system, user, json_mode, max_tokens)
+        db.execute("insert or replace into c values (?,?,?,?)", (key, *out))
+        db.commit()
+        return out
+    return _chat_live(spec, system, user, json_mode, max_tokens)
+
+
+def _chat_live(spec: dict, system: str, user: str, json_mode: bool, max_tokens: int) -> tuple[str, int, int]:
     base, key_env = BASE_URLS[spec["provider"]]
     headers = {"Authorization": f"Bearer {os.getenv(key_env, 'none')}"} if key_env else {}
     body = {"model": spec["model"], "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
@@ -133,6 +168,9 @@ def _chat(spec: dict, system: str, user: str, json_mode: bool, max_tokens: int) 
     while attempt < attempts:
         try:
             r = httpx.post(f"{base}/chat/completions", json=body, headers=headers, timeout=timeout)
+            if r.status_code == 429 and ("per day" in r.text or "TPD" in r.text or "RPD" in r.text):
+                tracing.emit("quota_exhausted", spec["model"], detail=r.text[:200])
+                raise RuntimeError(f"daily quota exhausted for {spec['model']}")
             if r.status_code == 429 and rate_limited < settings.get("models.max_rate_limit_waits", 8):
                 # free-tier token-per-minute limits: wait as told instead of falling back to rules
                 rate_limited += 1

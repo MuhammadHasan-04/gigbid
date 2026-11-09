@@ -3,7 +3,7 @@
 # Two lanes run in parallel because each model has its own limits:
 #   lane A: gpt-oss-20b (cheap nodes) + gpt-oss-120b (writer/critic)   lane B: qwen3.8-27b (second open configuration)
 set -uo pipefail
-export PYTHONPATH=$PWD GIGBID__MARKETPLACE__MAX_REQUESTS_PER_MINUTE=100000 TRACE_DIR=${TRACE_DIR:-data/runtime/eval_traces}
+export GIGBID_NODE_TIMEOUT_SCALE=4 PYTHONPATH=$PWD GIGBID__MARKETPLACE__MAX_REQUESTS_PER_MINUTE=100000 TRACE_DIR=${TRACE_DIR:-data/runtime/eval_traces}
 PY=${PY:-.venv/bin/python}
 N=${N:-15}
 laneA() {

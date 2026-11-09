@@ -50,16 +50,30 @@ async def match(requirements: list[str], search: Search, job: dict) -> tuple[Fit
     if unsupported:
         reasons.append("no evidence for: " + ", ".join(unsupported))
     base = FitReport(fit_score=_score(matches), matches=matches, unsupported_requirements=unsupported, reasons=reasons)
-    ev_text = "\n".join(f"{k}: {v[:300]}" for k, v in list(evidence.items())[:14])
+    # show the model the evidence grouped per requirement (every candidate, short snippets)
+    by_req = []
+    for m in matches:
+        ids = m.evidence_ids or []
+        by_req.append(f"## {m.requirement}\n" + ("\n".join(f"{i}: {evidence.get(i, '')[:220]}" for i in ids) or "(no candidates)"))
     rep = llm.structured("fit_matcher", "fit_matcher", FitReport, lambda: base, max_tokens=1200,
-                         requirements=", ".join(requirements), evidence=ev_text)
-    # guard: only evidence ids the matcher was shown; score recomputed from strengths, never trusted
+                         requirements=", ".join(requirements), evidence="\n".join(by_req))
+    # merge: the model may confirm or downgrade a rule match only by citing ids it was shown; an answer that
+    # drops a requirement or cites unknown ids keeps the rule-based verdict (found in the open-profile run:
+    # the model returned "none" with no ids for requirements whose evidence it had been shown)
+    rule = {m.requirement: m for m in matches}
+    merged = []
     for m in rep.matches:
+        m.evidence_ids = [e.strip().removeprefix("[").removeprefix("E:").rstrip("]") for e in m.evidence_ids]
         m.evidence_ids = [e for e in m.evidence_ids if e in evidence]
-        if not m.evidence_ids:
-            m.strength = "none"
-    if not rep.matches:
-        rep = base
+        r = rule.get(m.requirement)
+        if r is None:
+            continue
+        if not m.evidence_ids and r.strength != "none":
+            m = r  # unexplained downgrade -> keep the rule verdict
+        merged.append(m)
+    seen = {m.requirement for m in merged}
+    merged += [m for m in matches if m.requirement not in seen]
+    rep.matches = merged
     rep.fit_score = _score(rep.matches)
     rep.unsupported_requirements = [m.requirement for m in rep.matches if m.strength == "none"]
     return rep, evidence

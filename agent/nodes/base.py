@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import asyncio
+import os
 import functools
 import time
 from typing import Awaitable, Callable
@@ -51,7 +52,7 @@ def node(name: str):
             with tracing.node_scope(name):
                 tracing.emit("node_start", name)
                 try:
-                    out = await asyncio.wait_for(fn(state, config or {}), NODE_TIMEOUT_S.get(name, 60))
+                    out = await asyncio.wait_for(fn(state, config or {}), NODE_TIMEOUT_S.get(name, 60) * float(os.getenv("GIGBID_NODE_TIMEOUT_SCALE", "1")))
                 except GraphInterrupt:
                     raise
                 except (ToolUnavailable, asyncio.TimeoutError, ConnectionError):
