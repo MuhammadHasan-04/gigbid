@@ -8,17 +8,17 @@ can prove each claim instead of inventing it.
 
 ```bash
 # your own portfolio folder: any mix of .md / .txt / .pdf files and repo folders containing a README.md
-uvx --from git+https://github.com/<you>/gigbid gigbid-portfolio-mcp --portfolio-dir ~/my-portfolio
+uvx --from git+https://github.com/MuhammadHasan-04/gigbid gigbid-portfolio-mcp --portfolio-dir ~/my-portfolio
 
 # or over HTTP (bearer token from PORTFOLIO_MCP_TOKENS="token:user")
-uvx --from git+https://github.com/<you>/gigbid gigbid-portfolio-mcp --portfolio-dir ~/my-portfolio --http --port 8101
+uvx --from git+https://github.com/MuhammadHasan-04/gigbid gigbid-portfolio-mcp --portfolio-dir ~/my-portfolio --http --port 8101
 ```
 
 Claude Desktop (`claude_desktop_config.json`):
 
 ```json
 { "mcpServers": { "portfolio": { "command": "uvx",
-  "args": ["--from", "git+https://github.com/<you>/gigbid", "gigbid-portfolio-mcp", "--portfolio-dir", "/Users/me/portfolio"] } } }
+  "args": ["--from", "git+https://github.com/MuhammadHasan-04/gigbid", "gigbid-portfolio-mcp", "--portfolio-dir", "/Users/me/portfolio"] } } }
 ```
 
 ## Tools, resources, prompts
