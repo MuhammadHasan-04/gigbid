@@ -10,7 +10,7 @@ message and Connects spend before anything leaves the system.
 | | |
 |---|---|
 | **Live app** | _set after deployment (see `docs/RUNBOOK.md`)_. Reviewer login is in the Classroom private comment |
-| **Demo video (3 min)** | _link_ |
+| **Demo video (3 min)** | [`docs/demo/gigbid_demo.mp4`](docs/demo/gigbid_demo.mp4) (captioned walkthrough; heuristic profile) |
 | **Portfolio MCP server** | [`mcp_servers/portfolio`](mcp_servers/portfolio/README.md): `uvx --from git+https://github.com/<you>/gigbid gigbid-portfolio-mcp --portfolio-dir ~/my-portfolio` |
 | **Technical write-up** | [`docs/WRITEUP.md`](docs/WRITEUP.md) (also published, link here) |
 | **Public traces** | a skipped scam, an approved proposal, a Critic loop: see `docs/traces/` |
