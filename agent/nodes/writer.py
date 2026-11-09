@@ -24,7 +24,7 @@ def _short(text: str, n: int = 140) -> str:
 
 
 def heuristic_draft(job: dict, spec: dict, fit: dict, price: dict, evidence: dict[str, str], persona: dict,
-                    style_rules: list[str], feedback: list[str]) -> ProposalDraft:
+                    style_rules: list[str], feedback: list[str], strategy: str = "A") -> ProposalDraft:
     strong = [m for m in fit.get("matches", []) if m["strength"] == "strong" and m["evidence_ids"]]
     strong.sort(key=lambda m: m["requirement"] in GENERIC)
     partial = [m for m in fit.get("matches", []) if m["strength"] == "partial" and m["evidence_ids"]]
@@ -56,6 +56,11 @@ def heuristic_draft(job: dict, spec: dict, fit: dict, price: dict, evidence: dic
     if price:
         sents.append(f"My fixed price for this scope is {price.get('amount', 0):.0f} USD.")
     sents.append("Which part of this is the most urgent for you?")
+    if strategy == "B":
+        # B = question-first and short: open with a diagnostic question, one proof, one plan line
+        q = (f"Before anything else: is the main risk in your {title.lower()} the {focus[0]} part or the hand-over to your team?")
+        proof = [x for x in sents if "[E:" in x][:1]
+        sents = [q] + proof + [x for x in sents if x.startswith("I would start")][:1] + [x for x in sents if x.startswith("My fixed price")]
     if any("short" in r.lower() for r in style_rules + feedback):
         sents = [sents[0]] + sents[1:3] + sents[-2:]
     answers = []
@@ -69,12 +74,12 @@ def heuristic_draft(job: dict, spec: dict, fit: dict, price: dict, evidence: dic
 
 
 def write(job: dict, spec: dict, fit: dict, price: dict, evidence: dict[str, str], persona: dict, style_rules: list[str],
-          exemplars: list[str], feedback: list[str], revision: int) -> ProposalDraft:
+          exemplars: list[str], feedback: list[str], revision: int, strategy: str = "A") -> ProposalDraft:
     matrix = [{"requirement": m["requirement"], "strength": m["strength"], "evidence": m["evidence_ids"]} for m in fit.get("matches", [])]
     ev_text = "\n".join(f"{k}: {_short(v, 600)}" for k, v in list(evidence.items())[:12])
     d = llm.structured(
-        "writer", "writer", ProposalDraft,
-        lambda: heuristic_draft(job, spec, fit, price, evidence, persona, style_rules, feedback), max_tokens=1500,
+        "writer", "writer" if strategy == "A" else "writer_b", ProposalDraft,
+        lambda: heuristic_draft(job, spec, fit, price, evidence, persona, style_rules, feedback, strategy), max_tokens=1500,
         freelancer_name=persona.get("name", ""), freelancer_title=persona.get("title", ""),
         unsupported=", ".join(fit.get("unsupported_requirements", [])) or "none",
         style_rules="; ".join(style_rules) or "none yet", exemplars="\n---\n".join(exemplars) or "none yet",
@@ -82,5 +87,6 @@ def write(job: dict, spec: dict, fit: dict, price: dict, evidence: dict[str, str
         matrix=json.dumps(matrix), evidence=ev_text, price=str(price.get("amount") if price else ""),
         feedback="; ".join(feedback))
     d.revision = revision
+    d.strategy = strategy
     d.cover_letter = d.cover_letter.strip()
     return d

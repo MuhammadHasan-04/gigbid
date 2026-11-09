@@ -80,6 +80,7 @@ class ProposalDraft(BaseModel):
     unsupported_before: int = 0
     unsupported_after: int = 0
     revision: int = 0
+    strategy: str = "A"
 
 
 class Critique(BaseModel):

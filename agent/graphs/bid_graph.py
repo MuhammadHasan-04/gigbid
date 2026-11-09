@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 from pathlib import Path
 
 from langgraph.graph import END, START, StateGraph
@@ -46,6 +47,18 @@ def _search(tools, persona: str, agent: str):
 
 def idem_key(state: dict, what: str) -> str:
     return hashlib.sha256(f"{state['user_id']}|{state['job_id']}|{what}".encode()).hexdigest()[:24]
+
+
+def assign_strategy(state: dict) -> str:
+    """X2 proposal experiments: deterministic A/B assignment by job id when enabled in config."""
+    exp = settings.get("experiments.proposal_ab") or {}
+    forced = (state.get("job") or {}).get("_force_strategy") or os.getenv("GIGBID_FORCE_STRATEGY")
+    if forced:
+        return forced
+    if not exp.get("enabled"):
+        return "A"
+    h = int(hashlib.sha256(state["job_id"].encode()).hexdigest()[:8], 16) / 0xFFFFFFFF
+    return "B" if h < exp.get("share_b", 0.5) else "A"
 
 
 # ------------------------------------------------------------------ nodes
@@ -174,7 +187,8 @@ async def writer_node(state: BidState, config) -> dict:
     ex = await exemplars(state["user_id"], state["job"].get("category"))
     fb = state["critiques"][-1]["issues"] if state.get("critiques") else []
     rev = state.get("revision", 0) + (1 if state.get("critiques") else 0)
-    d = write(state["job"], state["job_spec"], state["fit"], state["price"], state.get("evidence", {}), prof, rules, ex, fb, rev)
+    d = write(state["job"], state["job_spec"], state["fit"], state["price"], state.get("evidence", {}), prof, rules, ex, fb, rev,
+              strategy=assign_strategy(state))
     return {"draft": d.model_dump(), "revision": rev, "status": "drafting", "_log": f"draft r{rev}, {len(d.cover_letter.split())} words"}
 
 

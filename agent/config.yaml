@@ -92,3 +92,8 @@ memory:
 
 worker:
   scout_interval_minutes: 30   # GigSim; live mode uses marketplace.live_poll_interval_minutes
+
+experiments:
+  proposal_ab:                 # X2 signature extension (docs/EXTENSION.md)
+    enabled: false
+    share_b: 0.5               # A = evidence-first (writer.md), B = question-first, short (writer_b.md)
