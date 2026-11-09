@@ -9,7 +9,7 @@ export function getToken(): string | null {
   try { return localStorage.getItem("gigbid_token"); } catch { return null; }
 }
 export function setToken(t: string | null) {
-  try { t ? localStorage.setItem("gigbid_token", t) : localStorage.removeItem("gigbid_token"); } catch { /* storage unavailable */ }
+  try { if (t) localStorage.setItem("gigbid_token", t); else localStorage.removeItem("gigbid_token"); } catch { /* storage unavailable */ }
 }
 
 const auth: Middleware = {

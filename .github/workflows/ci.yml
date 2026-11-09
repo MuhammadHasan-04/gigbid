@@ -52,7 +52,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22, cache: npm, cache-dependency-path: apps/web/package-lock.json }
       - run: uv venv -p 3.12 .venv && uv pip install -e ".[dev]"
-      - run: cd apps/web && npm ci && npx tsc -b && npx vite build && npx playwright install --with-deps chromium
+      - run: cd apps/web && npm ci && npx eslint . && npx tsc -b && npx vite build && npx playwright install --with-deps chromium
       - name: typed API contract is up to date
         run: .venv/bin/python -m apps.api.export_openapi /tmp/openapi.json && diff <(python -m json.tool apps/web/openapi.json) <(python -m json.tool /tmp/openapi.json)
       - name: start GigSim and API
