@@ -1,39 +1,39 @@
 {
  "meta": {
-  "commit": "c710d0b",
-  "time": "2026-11-09T15:10:10",
+  "commit": "be5cf51",
+  "time": "2026-11-09T16:30:57",
   "python": "3.12.3",
   "machine": "x86_64",
   "cpus": 2
  },
  "profile": "heuristic",
  "n_paired": 232,
- "reply_rate_A": 0.8362,
+ "reply_rate_A": 0.8793,
  "reply_rate_B": 0.7586,
- "hire_rate_A": 0.3836,
+ "hire_rate_A": 0.4052,
  "hire_rate_B": 0.3793,
- "discordant_A_only": 45,
- "discordant_B_only": 27,
- "mcnemar_exact_p": 0.0444,
- "two_proportion_z": 2.079,
- "two_proportion_p": 0.0376,
+ "discordant_A_only": 46,
+ "discordant_B_only": 18,
+ "mcnemar_exact_p": 0.0006,
+ "two_proportion_z": 3.376,
+ "two_proportion_p": 0.0007,
  "by_persona": {
   "ai_ml": {
    "n": 82,
-   "reply_A": 0.9024,
+   "reply_A": 0.878,
    "reply_B": 0.7317
   },
   "fullstack": {
    "n": 85,
-   "reply_A": 0.7647,
+   "reply_A": 0.8941,
    "reply_B": 0.7647
   },
   "data_analyst": {
    "n": 65,
-   "reply_A": 0.8462,
+   "reply_A": 0.8615,
    "reply_B": 0.7846
   }
  },
- "mean_p_reply_A": 0.8567,
+ "mean_p_reply_A": 0.865,
  "mean_p_reply_B": 0.7909
 }

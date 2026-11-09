@@ -37,7 +37,11 @@ def is_claim(sentence: str) -> bool:
         return False
     if FUTURE.search(s) and not EXPERIENCE.search(s):
         return False
-    return bool(EXPERIENCE.search(s) or (tag_skills(s) and re.search(r"\b(i|my)\b", s, re.I)))
+    # A skill mention plus "I/my" is only a claim when the sentence asserts past work; framing sentences
+    # ("the core of the work is getting X right ... from my portfolio") are not. Found in failure analysis:
+    # the old rule deleted 94 of 107 removed sentences, almost all framing (evals/results/failure_analysis_before_verifier_fix.json).
+    past_work = re.search(r"\b(i|my)\b[^.]*\b(\w+ed|built|ran|led|made|wrote|shipped|done)\b", s, re.I)
+    return bool(EXPERIENCE.search(s) or (tag_skills(s) and past_work and not re.search(r"\b(is|are) getting\b", s, re.I)))
 
 
 def _skills_in(text: str) -> set[str]:

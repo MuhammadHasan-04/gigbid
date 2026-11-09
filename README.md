@@ -44,21 +44,21 @@ commands; its results will be added under `evals/results/*_open*.json` when keys
 
 | Variant | Evidence Recall@5 | MRR | nDCG@10 | Unsupported claims / proposal (before → after verification) | Judge score | GigSim reply rate | p95 latency per job (s) | Cost per proposal (USD) |
 |---|---|---|---|---|---|---|---|---|
-| V0 naive dense | 0.7583 | 0.9445 | 0.8333 | 0.1538 → 0 | n/a | 0.8248 | 0.5982 | 0 (rules) |
-| V5 multi-vector | 0.7809 | 0.9754 | 0.8427 | 0.5536 → 0 | n/a | 0.8661 | 0.6113 | 0 (rules) |
-| V8 corrective loop | 0.7779 | 0.9824 | 0.8208 | 0.4682 → 0 | n/a | 0.8364 | 0.6627 | 0 (rules) |
-| **Shipped (best)**: decompose + hybrid + contextual + structural | 0.7662 | 0.9894 | 0.8799 | 0.4612 → 0 | n/a | 0.8362 | 0.727 | 0 (rules) |
+| V0 naive dense | 0.7583 | 0.9445 | 0.8333 | 0.047 → 0.0 | n/a | 0.8333 | 0.528 | 0 (rules) |
+| V5 multi-vector | 0.7809 | 0.9754 | 0.8427 | 0.1562 → 0.0 | n/a | 0.875 | 0.59 | 0 (rules) |
+| V8 corrective loop | 0.7779 | 0.9824 | 0.8208 | 0.0591 → 0.0 | n/a | 0.8591 | 0.5703 | 0 (rules) |
+| **Shipped (best)**: decompose + hybrid + contextual + structural | 0.7662 | 0.9894 | 0.8799 | 0.056 → 0.0 | n/a | 0.8793 | 0.5648 | 0 (rules) |
 
 Held-out (`rag_heuristic_heldout.json`): V0 nDCG@10 0.8394 vs shipped 0.8634.
 
-**Decisions and safety** (dev, 600 jobs, `pipeline_heuristic_dev.json`): bid-or-skip F1 0.9482, scam precision 0.9221, recall 1.0, price inside the fair band 0.7026, injection attack success 0.0 on the 16 drafted injected jobs (43 injected jobs in total). Held-out (`pipeline_heuristic_heldout.json`): F1 0.9559.
+**Decisions and safety** (dev, 600 jobs, `pipeline_heuristic_dev.json`): bid-or-skip F1 0.9482, scam precision 0.9221, recall 1.0, price inside the fair band 0.7026, injection attack success 0.0 on the 16 drafted injected jobs (43 injected jobs in total). Held-out (`pipeline_heuristic_heldout.json`): F1 0.9559, GigSim reply rate 0.8769.
 
 **Multi-agent comparison** (R&D C): single ReAct agent vs `langgraph-supervisor` vs this graph needs a model endpoint. Runner: `evals/runners/agents_compare.py`. Pending.
 
-**Signature extension X2** (`ab_test_heuristic.json`): evidence-first (A) 0.8362 vs question-first (B) 0.7586 reply rate on 232 paired jobs, McNemar exact p = 0.0444.
+**Signature extension X2** (`ab_test_heuristic.json`): evidence-first (A) 0.8793 vs question-first (B) 0.7586 reply rate on 232 paired jobs, McNemar exact p = 0.0006.
 <!-- results:end -->
 
-The most surprising result is that **retrieval quality barely moved the simulated reply rate**. Across variants, nDCG@10 ranged from 0.8333 to 0.8799, but reply rates (0.8248–0.8661) sit within about one binomial standard error of each other. The variant with the best reply rate (V5) is not the best retriever. The writer, the verifier and the client model decide more than retrieval does. See the write-up.
+The most surprising result is that **the safety layer, not retrieval, moved the reply rate most**. The first claim verifier treated framing sentences ("the core of the work is getting X right…") as experience claims and deleted them, which removed the personalised opening from most drafts. Fixing that one rule raised the simulated reply rate from 0.8362 (`pipeline_heuristic_dev_before_verifier_fix.json`) to 0.8793, more than any retrieval variant changed it. See [`docs/WRITEUP.md`](docs/WRITEUP.md).
 
 ## Run it
 

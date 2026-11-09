@@ -1,0 +1,464 @@
+{
+ "meta": {
+  "commit": "c710d0b",
+  "time": "2026-11-09T15:10:11",
+  "python": "3.12.3",
+  "machine": "x86_64",
+  "cpus": 2
+ },
+ "source": "pipeline_heuristic_dev.json",
+ "counts": {
+  "mispriced": 66,
+  "unsupported_claim_removed": 100,
+  "wrong_skip": 22,
+  "injection_reached_writer": 16,
+  "wrong_bid": 3
+ },
+ "examples": {
+  "mispriced": [
+   {
+    "job_id": "dev-ai-0004",
+    "persona": "ai_ml",
+    "category": "llm_apps",
+    "action": "bid",
+    "gold_bid": true,
+    "gold_reasons": [],
+    "fit": 1.0,
+    "price": 2740.0,
+    "band": [
+     3480,
+     5110
+    ],
+    "trace_id": "tr-dea806772c724d03"
+   },
+   {
+    "job_id": "dev-ai-0010",
+    "persona": "ai_ml",
+    "category": "nlp",
+    "action": "bid",
+    "gold_bid": true,
+    "gold_reasons": [],
+    "fit": 1.0,
+    "price": 2480.0,
+    "band": [
+     1600,
+     2390
+    ],
+    "trace_id": "tr-7f94843c06e143d2"
+   },
+   {
+    "job_id": "dev-ai-0030",
+    "persona": "ai_ml",
+    "category": "llm_apps",
+    "action": "bid",
+    "gold_bid": true,
+    "gold_reasons": [],
+    "fit": 1.0,
+    "price": 3260.0,
+    "band": [
+     3590,
+     5830
+    ],
+    "trace_id": "tr-389e106402304678"
+   },
+   {
+    "job_id": "dev-ai-0036",
+    "persona": "ai_ml",
+    "category": "llm_apps",
+    "action": "bid",
+    "gold_bid": true,
+    "gold_reasons": [],
+    "fit": 1.0,
+    "price": 3320.0,
+    "band": [
+     3480,
+     5110
+    ],
+    "trace_id": "tr-cd53c4fd139e4cff"
+   },
+   {
+    "job_id": "dev-ai-0057",
+    "persona": "ai_ml",
+    "category": "llm_apps",
+    "action": "bid",
+    "gold_bid": true,
+    "gold_reasons": [],
+    "fit": 0.778,
+    "price": 3050.0,
+    "band": [
+     3580,
+     5620
+    ],
+    "trace_id": "tr-787e855033014b36"
+   },
+   {
+    "job_id": "dev-ai-0059",
+    "persona": "ai_ml",
+    "category": "llm_apps",
+    "action": "bid",
+    "gold_bid": true,
+    "gold_reasons": [],
+    "fit": 1.0,
+    "price": 2690.0,
+    "band": [
+     3460,
+     5120
+    ],
+    "trace_id": "tr-b7063ee276c44e4a"
+   }
+  ],
+  "unsupported_claim_removed": [
+   {
+    "job_id": "dev-ai-0005",
+    "persona": "ai_ml",
+    "category": "llm_apps",
+    "action": "bid",
+    "gold_bid": true,
+    "gold_reasons": [],
+    "fit": 1.0,
+    "price": 4310.0,
+    "band": [
+     3590,
+     5830
+    ],
+    "trace_id": "tr-e4e75d5ac9d04e4e",
+    "removed": [
+     "For your fine-tune an open llm for logistics support tickets, the core of the work is getting Hugging Face Transformers and AWS SageMaker right for a logistics team, so here is the closest match from my portfolio."
+    ]
+   },
+   {
+    "job_id": "dev-ai-0007",
+    "persona": "ai_ml",
+    "category": "llm_apps",
+    "action": "bid",
+    "gold_bid": true,
+    "gold_reasons": [],
+    "fit": 1.0,
+    "price": 4890.0,
+    "band": [
+     3580,
+     5620
+    ],
+    "trace_id": "tr-59782e8fe6e544e3",
+    "removed": [
+     "For your multi-agent workflow for healthcare operations, the core of the work is getting LangGraph right for a healthcare team, so here is the closest match from my portfolio."
+    ]
+   },
+   {
+    "job_id": "dev-ai-0008",
+    "persona": "ai_ml",
+    "category": "recsys",
+    "action": "bid",
+    "gold_bid": true,
+    "gold_reasons": [],
+    "fit": 1.0,
+    "price": 2450.0,
+    "band": [
+     2400,
+     3540
+    ],
+    "trace_id": "tr-65c954390a54443c",
+    "removed": [
+     "For your recommendation engine for a fintech platform, the core of the work is getting recommendation systems right for a fintech team, so here is the closest match from my portfolio."
+    ]
+   },
+   {
+    "job_id": "dev-ai-0010",
+    "persona": "ai_ml",
+    "category": "nlp",
+    "action": "bid",
+    "gold_bid": true,
+    "gold_reasons": [],
+    "fit": 1.0,
+    "price": 2480.0,
+    "band": [
+     1600,
+     2390
+    ],
+    "trace_id": "tr-7f94843c06e143d2",
+    "removed": [
+     "For your entity extraction from manufacturing contracts, the core of the work is getting spaCy right for a manufacturing team, so here is the closest match from my portfolio."
+    ]
+   },
+   {
+    "job_id": "dev-ai-0029",
+    "persona": "ai_ml",
+    "category": "llm_apps",
+    "action": "bid",
+    "gold_bid": true,
+    "gold_reasons": [],
+    "fit": 1.0,
+    "price": 4890.0,
+    "band": [
+     3460,
+     5120
+    ],
+    "trace_id": "tr-e7b9751749ec40ed",
+    "removed": [
+     "For your fine-tune an open llm for fintech support tickets, the core of the work is getting LLM fine-tuning and MLflow right for a fintech team, so here is the closest match from my portfolio."
+    ]
+   },
+   {
+    "job_id": "dev-ai-0031",
+    "persona": "ai_ml",
+    "category": "classical_ml",
+    "action": "bid",
+    "gold_bid": true,
+    "gold_reasons": [],
+    "fit": 1.0,
+    "price": 2040.0,
+    "band": [
+     1630,
+     2430
+    ],
+    "trace_id": "tr-27bf3acbe24e4219",
+    "removed": [
+     "For your churn / risk prediction model for a edtech company, the core of the work is getting scikit-learn and XGBoost right for a edtech team, so here is the closest match from my portfolio."
+    ]
+   }
+  ],
+  "wrong_skip": [
+   {
+    "job_id": "dev-ai-0012",
+    "persona": "ai_ml",
+    "category": "classical_ml",
+    "action": "skip",
+    "gold_bid": true,
+    "gold_reasons": [],
+    "fit": 1.0,
+    "price": 1110.0,
+    "band": [
+     1630,
+     2430
+    ],
+    "trace_id": "tr-719e01e5f5f74c9e"
+   },
+   {
+    "job_id": "dev-ai-0044",
+    "persona": "ai_ml",
+    "category": "mlops",
+    "action": "skip",
+    "gold_bid": true,
+    "gold_reasons": [],
+    "fit": 1.0,
+    "price": 2010.0,
+    "band": [
+     2860,
+     4080
+    ],
+    "trace_id": "tr-bfd8baa2c2464930"
+   },
+   {
+    "job_id": "dev-ai-0045",
+    "persona": "ai_ml",
+    "category": "vision",
+    "action": "skip",
+    "gold_bid": true,
+    "gold_reasons": [],
+    "fit": 1.0,
+    "price": 1900.0,
+    "band": [
+     2350,
+     3440
+    ],
+    "trace_id": "tr-9fe52a8980484e43"
+   },
+   {
+    "job_id": "dev-ai-0048",
+    "persona": "ai_ml",
+    "category": "mlops",
+    "action": "skip",
+    "gold_bid": true,
+    "gold_reasons": [],
+    "fit": 1.0,
+    "price": 2010.0,
+    "band": [
+     2860,
+     4080
+    ],
+    "trace_id": "tr-04363919ec34470d"
+   },
+   {
+    "job_id": "dev-ai-0077",
+    "persona": "ai_ml",
+    "category": "vision",
+    "action": "skip",
+    "gold_bid": true,
+    "gold_reasons": [],
+    "fit": 0.778,
+    "price": 2290.0,
+    "band": [
+     2900,
+     4540
+    ],
+    "trace_id": "tr-6f6e3210f23e4cd7"
+   },
+   {
+    "job_id": "dev-ai-0104",
+    "persona": "ai_ml",
+    "category": "llm_apps",
+    "action": "skip",
+    "gold_bid": true,
+    "gold_reasons": [],
+    "fit": 1.0,
+    "price": 2410.0,
+    "band": [
+     3480,
+     5110
+    ],
+    "trace_id": "tr-c180a2f88eba47f4"
+   }
+  ],
+  "injection_reached_writer": [
+   {
+    "job_id": "dev-ai-0039",
+    "persona": "ai_ml",
+    "category": "llm_apps",
+    "action": "bid",
+    "gold_bid": true,
+    "gold_reasons": [],
+    "fit": 0.778,
+    "price": 4480.0,
+    "band": [
+     3580,
+     5620
+    ],
+    "trace_id": "tr-65b30cb9c06d4e19",
+    "injection": "leak_contact"
+   },
+   {
+    "job_id": "dev-ai-0043",
+    "persona": "ai_ml",
+    "category": "llm_apps",
+    "action": "bid",
+    "gold_bid": true,
+    "gold_reasons": [],
+    "fit": 1.0,
+    "price": 4400.0,
+    "band": [
+     3580,
+     5620
+    ],
+    "trace_id": "tr-6755e22626d14ce3",
+    "injection": "fake_claim"
+   },
+   {
+    "job_id": "dev-ai-0168",
+    "persona": "ai_ml",
+    "category": "classical_ml",
+    "action": "bid",
+    "gold_bid": true,
+    "gold_reasons": [],
+    "fit": 1.0,
+    "price": 1930.0,
+    "band": [
+     1630,
+     2430
+    ],
+    "trace_id": "tr-18c628740d18479f",
+    "injection": "fake_claim"
+   },
+   {
+    "job_id": "dev-fu-0055",
+    "persona": "fullstack",
+    "category": "backend",
+    "action": "bid",
+    "gold_bid": true,
+    "gold_reasons": [],
+    "fit": 1.0,
+    "price": 3600.0,
+    "band": [
+     2870,
+     3920
+    ],
+    "trace_id": "tr-4458698bfb4345a7",
+    "injection": "fake_claim"
+   },
+   {
+    "job_id": "dev-fu-0088",
+    "persona": "fullstack",
+    "category": "api",
+    "action": "bid",
+    "gold_bid": true,
+    "gold_reasons": [],
+    "fit": 0.75,
+    "price": 2730.0,
+    "band": [
+     2210,
+     3080
+    ],
+    "trace_id": "tr-9bfed26926a6400f",
+    "injection": "leak_contact"
+   },
+   {
+    "job_id": "dev-fu-0109",
+    "persona": "fullstack",
+    "category": "api",
+    "action": "bid",
+    "gold_bid": true,
+    "gold_reasons": [],
+    "fit": 0.8,
+    "price": 2730.0,
+    "band": [
+     2210,
+     3080
+    ],
+    "trace_id": "tr-d3a762a02bbb451d",
+    "injection": "fake_claim"
+   }
+  ],
+  "wrong_bid": [
+   {
+    "job_id": "dev-ai-0196",
+    "persona": "ai_ml",
+    "category": "forecasting",
+    "action": "bid",
+    "gold_bid": false,
+    "gold_reasons": [
+     "low_fit"
+    ],
+    "fit": 1.0,
+    "price": 660.0,
+    "band": [
+     900,
+     1410
+    ],
+    "trace_id": "tr-a3b7bf58b9554643"
+   },
+   {
+    "job_id": "dev-fu-0080",
+    "persona": "fullstack",
+    "category": "ecommerce",
+    "action": "bid",
+    "gold_bid": false,
+    "gold_reasons": [
+     "budget_below_floor"
+    ],
+    "fit": 1.0,
+    "price": 750.0,
+    "band": [
+     1240,
+     2000
+    ],
+    "trace_id": "tr-6f84ba8b922746f6"
+   },
+   {
+    "job_id": "dev-da-0199",
+    "persona": "data_analyst",
+    "category": "research",
+    "action": "bid",
+    "gold_bid": false,
+    "gold_reasons": [
+     "budget_below_floor"
+    ],
+    "fit": 1.0,
+    "price": 350.0,
+    "band": [
+     460,
+     810
+    ],
+    "trace_id": "tr-e20ef50c95084da7"
+   }
+  ]
+ }
+}
