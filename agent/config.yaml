@@ -1,0 +1,94 @@
+# GigBid runtime configuration. Rules, models, budgets and thresholds live here, not in code.
+# Environment variables override with GIGBID__SECTION__KEY (e.g. GIGBID__MARKETPLACE__MODE=upwork_live).
+
+marketplace:
+  mode: gigsim                 # gigsim | upwork_live
+  max_requests_per_minute: 40  # stays under GigSim's 60/min
+  live_poll_interval_minutes: 240  # Upwork live mode: saved searches at most every 4 hours (RUNBOOK.md)
+
+policy:
+  version: 1                   # 1 = policy_v1.yaml, 2 = the 2 Nov "platform policy update"
+  dir: data/policy_pack
+
+models:
+  profile: open                # open | paid | heuristic   (MODEL_PROFILE env overrides)
+  profiles:
+    open:
+      # hosted open-weight models (free tier) so the deployed link works without a GPU
+      default: {provider: groq, model: openai/gpt-oss-20b}
+      nodes:
+        scout:          {provider: groq, model: openai/gpt-oss-20b}
+        analyst:        {provider: groq, model: openai/gpt-oss-20b}
+        risk_assessor:  {provider: groq, model: openai/gpt-oss-20b}
+        fit_matcher:    {provider: groq, model: openai/gpt-oss-20b}
+        pricing:        {provider: groq, model: openai/gpt-oss-20b}
+        writer:         {provider: groq, model: openai/gpt-oss-120b}
+        critic:         {provider: groq, model: openai/gpt-oss-120b}
+        verifier:       {provider: groq, model: openai/gpt-oss-20b}
+        compliance:     {provider: groq, model: openai/gpt-oss-20b}
+        client_liaison: {provider: groq, model: openai/gpt-oss-120b}
+        judge:          {provider: groq, model: openai/gpt-oss-120b}
+      fallback: {provider: heuristic, model: rules-v1}
+    open_local:
+      # same roles on a laptop with Ollama (CPU / <=8 GB VRAM)
+      default: {provider: ollama, model: "qwen3:4b"}
+      nodes:
+        writer:  {provider: ollama, model: "qwen3:8b"}
+        critic:  {provider: ollama, model: "qwen3:8b"}
+        client_liaison: {provider: ollama, model: "qwen3:8b"}
+      fallback: {provider: heuristic, model: rules-v1}
+    paid:
+      default: {provider: openrouter, model: openai/gpt-oss-20b}
+      nodes:
+        writer: {provider: openrouter, model: anthropic/claude-haiku-4.5}
+        critic: {provider: openrouter, model: anthropic/claude-haiku-4.5}
+      fallback: {provider: groq, model: openai/gpt-oss-20b}
+    heuristic:
+      # deterministic rules only: runs offline, used by CI and as the last-resort fallback
+      default: {provider: heuristic, model: rules-v1}
+      nodes: {}
+      fallback: {provider: heuristic, model: rules-v1}
+  # USD per 1M tokens (input, output); used for cost reporting
+  prices:
+    "groq:openai/gpt-oss-20b": [0.075, 0.30]
+    "groq:openai/gpt-oss-120b": [0.15, 0.60]
+    "groq:qwen/qwen3-32b": [0.29, 0.59]
+    "openrouter:anthropic/claude-haiku-4.5": [1.0, 5.0]
+    "openrouter:openai/gpt-oss-20b": [0.04, 0.16]
+  timeout_seconds: 45
+  max_retries: 2
+
+rag:
+  variant: best                # v0 | v1 | v2 | v4 | v5 | v6 | v7 | v8 | best  (see rag/variants)
+  embeddings: wordllama        # wordllama | ollama:nomic-embed-text | ollama:bge-m3
+  reranker: none               # none | bge (bge-reranker-v2-m3 via sentence-transformers) | llm
+  k: 8
+
+verification:
+  support_threshold: 0.5       # claim supported if entity overlap >= this and evidence retrieved
+  remove_unsupported: true
+
+budgets:
+  max_graph_steps: 40
+  max_revisions: 2
+  max_tokens_per_job: 30000
+  p95_latency_s_per_job: 20      # declared budget (report compares measured values)
+  p95_latency_s_per_proposal: 45
+  usd_per_job: 0.002
+  usd_per_proposal: 0.01
+
+thresholds:
+  minimum_fit_score: 0.55
+  maximum_risk_score: 0.60
+  watch_band: 0.10             # fit within this band below the minimum -> "watch"
+  connects_value_per_unit_usd: 0.15   # what a Connect costs the freelancer
+
+autonomy:
+  default_level: suggest       # suggest | auto_skip_low_fit   (never auto-send)
+
+memory:
+  style_promotion_min_occurrences: 2   # an edit pattern must repeat before it is promoted
+  outcome_promotion_min_samples: 3
+
+worker:
+  scout_interval_minutes: 30   # GigSim; live mode uses marketplace.live_poll_interval_minutes
