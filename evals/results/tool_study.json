@@ -1,0 +1,1692 @@
+{
+ "meta": {
+  "commit": "048d781",
+  "time": "2026-11-09T21:18:51",
+  "python": "3.12.3",
+  "machine": "x86_64",
+  "cpus": 2
+ },
+ "model": {
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b"
+ },
+ "toolsets": {
+  "fine": {
+   "n": 38,
+   "tool_selection_accuracy": 1.0,
+   "argument_accuracy": 0.9737,
+   "tokens_per_task": 719.6316,
+   "n_tools": 17,
+   "rows": [
+    {
+     "task": "t0",
+     "intent": "job_budget",
+     "call": {
+      "name": "get_job_budget",
+      "args": {
+       "job_id": "dev-ai-0004"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 1097,
+     "error": null
+    },
+    {
+     "task": "t1",
+     "intent": "client_verified",
+     "call": {
+      "name": "get_client_payment_status",
+      "args": {
+       "client_id": "cl-012"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 592,
+     "error": null
+    },
+    {
+     "task": "t2",
+     "intent": "client_reviews",
+     "call": {
+      "name": "get_client_reviews",
+      "args": {
+       "client_id": "cl-012"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 596,
+     "error": null
+    },
+    {
+     "task": "t3",
+     "intent": "job_desc",
+     "call": {
+      "name": "get_job_description",
+      "args": {
+       "job_id": "dev-ai-0004"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 590,
+     "error": null
+    },
+    {
+     "task": "t4",
+     "intent": "job_budget",
+     "call": {
+      "name": "get_job_budget",
+      "args": {
+       "job_id": "dev-fu-0010"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 588,
+     "error": null
+    },
+    {
+     "task": "t5",
+     "intent": "client_verified",
+     "call": {
+      "name": "get_client_payment_status",
+      "args": {
+       "client_id": "cl-101"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 592,
+     "error": null
+    },
+    {
+     "task": "t6",
+     "intent": "client_reviews",
+     "call": {
+      "name": "get_client_reviews",
+      "args": {
+       "client_id": "cl-101"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 852,
+     "error": null
+    },
+    {
+     "task": "t7",
+     "intent": "job_desc",
+     "call": {
+      "name": "get_job_description",
+      "args": {
+       "job_id": "dev-fu-0010"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 601,
+     "error": null
+    },
+    {
+     "task": "t8",
+     "intent": "job_budget",
+     "call": {
+      "name": "get_job_budget",
+      "args": {
+       "job_id": "dev-da-0020"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 585,
+     "error": null
+    },
+    {
+     "task": "t9",
+     "intent": "client_verified",
+     "call": {
+      "name": "get_client_payment_status",
+      "args": {
+       "client_id": "cl-200"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 592,
+     "error": null
+    },
+    {
+     "task": "t10",
+     "intent": "client_reviews",
+     "call": {
+      "name": "get_client_reviews",
+      "args": {
+       "client_id": "cl-200"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 596,
+     "error": null
+    },
+    {
+     "task": "t11",
+     "intent": "job_desc",
+     "call": {
+      "name": "get_job_description",
+      "args": {
+       "job_id": "dev-da-0020"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 598,
+     "error": null
+    },
+    {
+     "task": "t12",
+     "intent": "job_budget",
+     "call": {
+      "name": "get_job_budget",
+      "args": {
+       "job_id": "dev-ai-0033"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 585,
+     "error": null
+    },
+    {
+     "task": "t13",
+     "intent": "client_verified",
+     "call": {
+      "name": "get_client_payment_status",
+      "args": {
+       "client_id": "cl-045"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 592,
+     "error": null
+    },
+    {
+     "task": "t14",
+     "intent": "client_reviews",
+     "call": {
+      "name": "get_client_reviews",
+      "args": {
+       "client_id": "cl-045"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 596,
+     "error": null
+    },
+    {
+     "task": "t15",
+     "intent": "job_desc",
+     "call": {
+      "name": "get_job_description",
+      "args": {
+       "job_id": "dev-ai-0033"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 854,
+     "error": null
+    },
+    {
+     "task": "t16",
+     "intent": "market_median",
+     "call": {
+      "name": "get_market_median",
+      "args": {
+       "category": "Business Intelligence"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 1147,
+     "error": null
+    },
+    {
+     "task": "t17",
+     "intent": "market_median",
+     "call": {
+      "name": "get_market_median",
+      "args": {
+       "category": "llm_apps"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 605,
+     "error": null
+    },
+    {
+     "task": "t18",
+     "intent": "market_median",
+     "call": {
+      "name": "get_market_median",
+      "args": {
+       "category": "web_app"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 623,
+     "error": null
+    },
+    {
+     "task": "t19",
+     "intent": "market_median",
+     "call": {
+      "name": "get_market_median",
+      "args": {
+       "category": "analytics_eng"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 614,
+     "error": null
+    },
+    {
+     "task": "t20",
+     "intent": "search",
+     "call": {
+      "name": "search_jobs_by_keyword",
+      "args": {
+       "query": "dashboard"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 579,
+     "error": null
+    },
+    {
+     "task": "t21",
+     "intent": "search",
+     "call": {
+      "name": "search_jobs_by_keyword",
+      "args": {
+       "query": "RAG chatbot"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 588,
+     "error": null
+    },
+    {
+     "task": "t22",
+     "intent": "search",
+     "call": {
+      "name": "search_jobs_by_keyword",
+      "args": {
+       "query": "Shopify"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 596,
+     "error": null
+    },
+    {
+     "task": "t23",
+     "intent": "search",
+     "call": {
+      "name": "search_jobs_by_keyword",
+      "args": {
+       "query": "forecasting"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 1094,
+     "error": null
+    },
+    {
+     "task": "t24",
+     "intent": "evidence",
+     "call": {
+      "name": "find_evidence",
+      "args": {
+       "skill": "Celery"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 618,
+     "error": null
+    },
+    {
+     "task": "t25",
+     "intent": "evidence",
+     "call": {
+      "name": "find_evidence",
+      "args": {
+       "skill": "dbt"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 1127,
+     "error": null
+    },
+    {
+     "task": "t26",
+     "intent": "evidence",
+     "call": {
+      "name": "find_evidence",
+      "args": {
+       "skill": "Stripe"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 1108,
+     "error": null
+    },
+    {
+     "task": "t27",
+     "intent": "evidence",
+     "call": {
+      "name": "find_evidence",
+      "args": {
+       "skill": "YOLO"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 601,
+     "error": null
+    },
+    {
+     "task": "t28",
+     "intent": "evidence",
+     "call": {
+      "name": "find_evidence",
+      "args": {
+       "skill": "LangGraph"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 1113,
+     "error": null
+    },
+    {
+     "task": "t29",
+     "intent": "evidence",
+     "call": {
+      "name": "find_evidence",
+      "args": {
+       "skill": "Power BI"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 1106,
+     "error": null
+    },
+    {
+     "task": "t30",
+     "intent": "evidence",
+     "call": {
+      "name": "find_evidence",
+      "args": {
+       "skill": "GraphQL"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 600,
+     "error": null
+    },
+    {
+     "task": "t31",
+     "intent": "evidence",
+     "call": {
+      "name": "find_evidence",
+      "args": {
+       "skill": "pgvector"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 617,
+     "error": null
+    },
+    {
+     "task": "t32",
+     "intent": "balance",
+     "call": {
+      "name": "get_connects_balance",
+      "args": {
+       "freelancer_id": "fl-ai-ml"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 583,
+     "error": null
+    },
+    {
+     "task": "t33",
+     "intent": "balance",
+     "call": {
+      "name": "get_connects_balance",
+      "args": {
+       "freelancer_id": "fl-data"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 582,
+     "error": null
+    },
+    {
+     "task": "t34",
+     "intent": "thread",
+     "call": {
+      "name": "get_thread",
+      "args": {
+       "thread_id": "th-a1b2c3"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 607,
+     "error": null
+    },
+    {
+     "task": "t35",
+     "intent": "thread",
+     "call": {
+      "name": "get_thread",
+      "args": {
+       "thread_id": "th-d4e5f6"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 599,
+     "error": null
+    },
+    {
+     "task": "t36",
+     "intent": "slots",
+     "call": {
+      "name": "get_free_slots",
+      "args": {
+       "days": 7
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 1115,
+     "error": null
+    },
+    {
+     "task": "t37",
+     "intent": "slots",
+     "call": {
+      "name": "get_free_slots",
+      "args": {
+       "days": 7
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 618,
+     "error": null
+    }
+   ]
+  },
+  "coarse": {
+   "n": 38,
+   "tool_selection_accuracy": 0.7895,
+   "argument_accuracy": 0.1316,
+   "tokens_per_task": 345.1316,
+   "n_tools": 3,
+   "rows": [
+    {
+     "task": "t0",
+     "intent": "job_budget",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "job",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 303,
+     "error": null
+    },
+    {
+     "task": "t1",
+     "intent": "client_verified",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "client",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 302,
+     "error": null
+    },
+    {
+     "task": "t2",
+     "intent": "client_reviews",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "client",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 316,
+     "error": null
+    },
+    {
+     "task": "t3",
+     "intent": "job_desc",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "job",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 310,
+     "error": null
+    },
+    {
+     "task": "t4",
+     "intent": "job_budget",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "job",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 304,
+     "error": null
+    },
+    {
+     "task": "t5",
+     "intent": "client_verified",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "client",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 302,
+     "error": null
+    },
+    {
+     "task": "t6",
+     "intent": "client_reviews",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "threads",
+       "params": {}
+      }
+     },
+     "tool_ok": false,
+     "args_ok": false,
+     "tokens": 393,
+     "error": null
+    },
+    {
+     "task": "t7",
+     "intent": "job_desc",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "search",
+       "params": {}
+      }
+     },
+     "tool_ok": false,
+     "args_ok": false,
+     "tokens": 340,
+     "error": null
+    },
+    {
+     "task": "t8",
+     "intent": "job_budget",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "job",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 303,
+     "error": null
+    },
+    {
+     "task": "t9",
+     "intent": "client_verified",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "client",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 311,
+     "error": null
+    },
+    {
+     "task": "t10",
+     "intent": "client_reviews",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "client",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 403,
+     "error": null
+    },
+    {
+     "task": "t11",
+     "intent": "job_desc",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "job",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 329,
+     "error": null
+    },
+    {
+     "task": "t12",
+     "intent": "job_budget",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "job",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 303,
+     "error": null
+    },
+    {
+     "task": "t13",
+     "intent": "client_verified",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "client",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 302,
+     "error": null
+    },
+    {
+     "task": "t14",
+     "intent": "client_reviews",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "client",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 380,
+     "error": null
+    },
+    {
+     "task": "t15",
+     "intent": "job_desc",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "job",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 364,
+     "error": null
+    },
+    {
+     "task": "t16",
+     "intent": "market_median",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "stats",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 481,
+     "error": null
+    },
+    {
+     "task": "t17",
+     "intent": "market_median",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "search",
+       "params": {}
+      }
+     },
+     "tool_ok": false,
+     "args_ok": false,
+     "tokens": 357,
+     "error": null
+    },
+    {
+     "task": "t18",
+     "intent": "market_median",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "stats",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 376,
+     "error": null
+    },
+    {
+     "task": "t19",
+     "intent": "market_median",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "search",
+       "params": {}
+      }
+     },
+     "tool_ok": false,
+     "args_ok": false,
+     "tokens": 349,
+     "error": null
+    },
+    {
+     "task": "t20",
+     "intent": "search",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "search",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 317,
+     "error": null
+    },
+    {
+     "task": "t21",
+     "intent": "search",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "search",
+       "params": {
+        "query": "RAG chatbot"
+       }
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 338,
+     "error": null
+    },
+    {
+     "task": "t22",
+     "intent": "search",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "search",
+       "params": {
+        "keyword": "Shopify"
+       }
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 382,
+     "error": null
+    },
+    {
+     "task": "t23",
+     "intent": "search",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "search",
+       "params": {
+        "query": "forecasting"
+       }
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 343,
+     "error": null
+    },
+    {
+     "task": "t24",
+     "intent": "evidence",
+     "call": {
+      "name": "portfolio",
+      "args": {
+       "action": "search",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 330,
+     "error": null
+    },
+    {
+     "task": "t25",
+     "intent": "evidence",
+     "call": {
+      "name": "portfolio",
+      "args": {
+       "action": "search",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 386,
+     "error": null
+    },
+    {
+     "task": "t26",
+     "intent": "evidence",
+     "call": {
+      "name": "portfolio",
+      "args": {
+       "action": "search",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 340,
+     "error": null
+    },
+    {
+     "task": "t27",
+     "intent": "evidence",
+     "call": {
+      "name": "portfolio",
+      "args": {
+       "action": "search",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 399,
+     "error": null
+    },
+    {
+     "task": "t28",
+     "intent": "evidence",
+     "call": {
+      "name": "portfolio",
+      "args": {
+       "action": "case_study",
+       "params": {}
+      }
+     },
+     "tool_ok": false,
+     "args_ok": false,
+     "tokens": 356,
+     "error": null
+    },
+    {
+     "task": "t29",
+     "intent": "evidence",
+     "call": {
+      "name": "portfolio",
+      "args": {
+       "action": "case_study",
+       "params": {}
+      }
+     },
+     "tool_ok": false,
+     "args_ok": false,
+     "tokens": 361,
+     "error": null
+    },
+    {
+     "task": "t30",
+     "intent": "evidence",
+     "call": {
+      "name": "portfolio",
+      "args": {
+       "action": "search",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 305,
+     "error": null
+    },
+    {
+     "task": "t31",
+     "intent": "evidence",
+     "call": {
+      "name": "portfolio",
+      "args": {
+       "action": "search",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 334,
+     "error": null
+    },
+    {
+     "task": "t32",
+     "intent": "balance",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "stats",
+       "params": {}
+      }
+     },
+     "tool_ok": false,
+     "args_ok": false,
+     "tokens": 329,
+     "error": null
+    },
+    {
+     "task": "t33",
+     "intent": "balance",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "stats",
+       "params": {}
+      }
+     },
+     "tool_ok": false,
+     "args_ok": false,
+     "tokens": 345,
+     "error": null
+    },
+    {
+     "task": "t34",
+     "intent": "thread",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "thread",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 303,
+     "error": null
+    },
+    {
+     "task": "t35",
+     "intent": "thread",
+     "call": {
+      "name": "marketplace",
+      "args": {
+       "action": "thread",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": false,
+     "tokens": 303,
+     "error": null
+    },
+    {
+     "task": "t36",
+     "intent": "slots",
+     "call": {
+      "name": "workspace",
+      "args": {
+       "action": "slots",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 364,
+     "error": null
+    },
+    {
+     "task": "t37",
+     "intent": "slots",
+     "call": {
+      "name": "workspace",
+      "args": {
+       "action": "slots",
+       "params": {}
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 452,
+     "error": null
+    }
+   ]
+  },
+  "best": {
+   "n": 38,
+   "tool_selection_accuracy": 1.0,
+   "argument_accuracy": 1.0,
+   "tokens_per_task": 543.3947,
+   "n_tools": 10,
+   "rows": [
+    {
+     "task": "t0",
+     "intent": "job_budget",
+     "call": {
+      "name": "get_job",
+      "args": {
+       "job_id": "dev-ai-0004"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 530,
+     "error": null
+    },
+    {
+     "task": "t1",
+     "intent": "client_verified",
+     "call": {
+      "name": "get_client_history",
+      "args": {
+       "client_id": "cl-012"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 549,
+     "error": null
+    },
+    {
+     "task": "t2",
+     "intent": "client_reviews",
+     "call": {
+      "name": "get_client_history",
+      "args": {
+       "client_id": "cl-012"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 549,
+     "error": null
+    },
+    {
+     "task": "t3",
+     "intent": "job_desc",
+     "call": {
+      "name": "get_job",
+      "args": {
+       "job_id": "dev-ai-0004"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 535,
+     "error": null
+    },
+    {
+     "task": "t4",
+     "intent": "job_budget",
+     "call": {
+      "name": "get_job",
+      "args": {
+       "job_id": "dev-fu-0010"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 533,
+     "error": null
+    },
+    {
+     "task": "t5",
+     "intent": "client_verified",
+     "call": {
+      "name": "get_client_history",
+      "args": {
+       "client_id": "cl-101"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 528,
+     "error": null
+    },
+    {
+     "task": "t6",
+     "intent": "client_reviews",
+     "call": {
+      "name": "get_client_history",
+      "args": {
+       "client_id": "cl-101"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 548,
+     "error": null
+    },
+    {
+     "task": "t7",
+     "intent": "job_desc",
+     "call": {
+      "name": "get_job",
+      "args": {
+       "job_id": "dev-fu-0010"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 538,
+     "error": null
+    },
+    {
+     "task": "t8",
+     "intent": "job_budget",
+     "call": {
+      "name": "get_job",
+      "args": {
+       "job_id": "dev-da-0020"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 530,
+     "error": null
+    },
+    {
+     "task": "t9",
+     "intent": "client_verified",
+     "call": {
+      "name": "get_client_history",
+      "args": {
+       "client_id": "cl-200"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 536,
+     "error": null
+    },
+    {
+     "task": "t10",
+     "intent": "client_reviews",
+     "call": {
+      "name": "get_client_history",
+      "args": {
+       "client_id": "cl-200"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 578,
+     "error": null
+    },
+    {
+     "task": "t11",
+     "intent": "job_desc",
+     "call": {
+      "name": "get_job",
+      "args": {
+       "job_id": "dev-da-0020"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 535,
+     "error": null
+    },
+    {
+     "task": "t12",
+     "intent": "job_budget",
+     "call": {
+      "name": "get_job",
+      "args": {
+       "job_id": "dev-ai-0033"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 530,
+     "error": null
+    },
+    {
+     "task": "t13",
+     "intent": "client_verified",
+     "call": {
+      "name": "get_client_history",
+      "args": {
+       "client_id": "cl-045"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 528,
+     "error": null
+    },
+    {
+     "task": "t14",
+     "intent": "client_reviews",
+     "call": {
+      "name": "get_client_history",
+      "args": {
+       "client_id": "cl-045"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 549,
+     "error": null
+    },
+    {
+     "task": "t15",
+     "intent": "job_desc",
+     "call": {
+      "name": "get_job",
+      "args": {
+       "job_id": "dev-ai-0033"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 535,
+     "error": null
+    },
+    {
+     "task": "t16",
+     "intent": "market_median",
+     "call": {
+      "name": "get_market_stats",
+      "args": {
+       "category": "bi"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 540,
+     "error": null
+    },
+    {
+     "task": "t17",
+     "intent": "market_median",
+     "call": {
+      "name": "get_market_stats",
+      "args": {
+       "category": "llm_apps"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 537,
+     "error": null
+    },
+    {
+     "task": "t18",
+     "intent": "market_median",
+     "call": {
+      "name": "get_market_stats",
+      "args": {
+       "category": "web_app"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 552,
+     "error": null
+    },
+    {
+     "task": "t19",
+     "intent": "market_median",
+     "call": {
+      "name": "get_market_stats",
+      "args": {
+       "category": "analytics_eng"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 552,
+     "error": null
+    },
+    {
+     "task": "t20",
+     "intent": "search",
+     "call": {
+      "name": "search_jobs",
+      "args": {
+       "posted_within_min": 10080,
+       "query": "dashboard"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 575,
+     "error": null
+    },
+    {
+     "task": "t21",
+     "intent": "search",
+     "call": {
+      "name": "search_jobs",
+      "args": {
+       "posted_within_min": 10080,
+       "query": "RAG chatbot"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 570,
+     "error": null
+    },
+    {
+     "task": "t22",
+     "intent": "search",
+     "call": {
+      "name": "search_jobs",
+      "args": {
+       "posted_within_min": 1440,
+       "query": "Shopify"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 560,
+     "error": null
+    },
+    {
+     "task": "t23",
+     "intent": "search",
+     "call": {
+      "name": "search_jobs",
+      "args": {
+       "posted_within_min": 1440,
+       "query": "forecasting"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 555,
+     "error": null
+    },
+    {
+     "task": "t24",
+     "intent": "evidence",
+     "call": {
+      "name": "search_evidence",
+      "args": {
+       "requirement": "Celery"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 530,
+     "error": null
+    },
+    {
+     "task": "t25",
+     "intent": "evidence",
+     "call": {
+      "name": "search_evidence",
+      "args": {
+       "k": 5,
+       "requirement": "dbt"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 539,
+     "error": null
+    },
+    {
+     "task": "t26",
+     "intent": "evidence",
+     "call": {
+      "name": "search_evidence",
+      "args": {
+       "k": 5,
+       "requirement": "Stripe"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 535,
+     "error": null
+    },
+    {
+     "task": "t27",
+     "intent": "evidence",
+     "call": {
+      "name": "search_evidence",
+      "args": {
+       "requirement": "YOLO"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 530,
+     "error": null
+    },
+    {
+     "task": "t28",
+     "intent": "evidence",
+     "call": {
+      "name": "search_evidence",
+      "args": {
+       "k": 5,
+       "requirement": "LangGraph"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 557,
+     "error": null
+    },
+    {
+     "task": "t29",
+     "intent": "evidence",
+     "call": {
+      "name": "search_evidence",
+      "args": {
+       "k": 5,
+       "requirement": "Power BI"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 537,
+     "error": null
+    },
+    {
+     "task": "t30",
+     "intent": "evidence",
+     "call": {
+      "name": "search_evidence",
+      "args": {
+       "k": 5,
+       "requirement": "GraphQL"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 547,
+     "error": null
+    },
+    {
+     "task": "t31",
+     "intent": "evidence",
+     "call": {
+      "name": "search_evidence",
+      "args": {
+       "k": 5,
+       "requirement": "pgvector"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 539,
+     "error": null
+    },
+    {
+     "task": "t32",
+     "intent": "balance",
+     "call": {
+      "name": "get_connects_balance",
+      "args": {
+       "freelancer_id": "fl-ai-ml"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 530,
+     "error": null
+    },
+    {
+     "task": "t33",
+     "intent": "balance",
+     "call": {
+      "name": "get_connects_balance",
+      "args": {
+       "freelancer_id": "fl-data"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 528,
+     "error": null
+    },
+    {
+     "task": "t34",
+     "intent": "thread",
+     "call": {
+      "name": "get_thread",
+      "args": {
+       "thread_id": "th-a1b2c3"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 539,
+     "error": null
+    },
+    {
+     "task": "t35",
+     "intent": "thread",
+     "call": {
+      "name": "get_thread",
+      "args": {
+       "thread_id": "th-d4e5f6"
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 539,
+     "error": null
+    },
+    {
+     "task": "t36",
+     "intent": "slots",
+     "call": {
+      "name": "free_slots",
+      "args": {
+       "days_ahead": 7
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 576,
+     "error": null
+    },
+    {
+     "task": "t37",
+     "intent": "slots",
+     "call": {
+      "name": "free_slots",
+      "args": {
+       "days_ahead": 7
+      }
+     },
+     "tool_ok": true,
+     "args_ok": true,
+     "tokens": 551,
+     "error": null
+    }
+   ]
+  }
+ }
+}

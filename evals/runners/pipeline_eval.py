@@ -120,7 +120,12 @@ async def main_async(a):
                                "fabricated": res["features"]["fabricated"], "generic": res["features"]["generic_opening"]}
                 r["judge"] = judge(jobs[r["job_id"]], p["cover_letter"]) if a.judge else None
     # ---- metrics
-    out = {"by_persona": {}, "overall": {}}
+    excluded = []
+    if a.require_model:
+        # free-tier daily quotas: a job where any node fell back to rules is not a model result; keep it out
+        excluded = [r["job_id"] for r in rows if "heuristic" in r.get("providers", [])]
+        rows = [r for r in rows if "heuristic" not in r.get("providers", [])]
+    out = {"by_persona": {}, "overall": {}, "excluded_quota_fallback": excluded}
     for scope in PERSONAS + ["overall"]:
         rs = [r for r in rows if scope == "overall" or r["persona"] == scope]
         gs = [golds[(r["persona"], r["job_id"])] for r in rs]
@@ -185,6 +190,7 @@ def main():
     ap.add_argument("--split", default="dev", choices=["dev", "heldout"])
     ap.add_argument("--concurrency", type=int, default=6)
     ap.add_argument("--judge", action="store_true")
+    ap.add_argument("--require-model", action="store_true", help="exclude jobs where any node fell back to rules")
     ap.add_argument("--only-injection", action="store_true", help="only the planted-injection jobs")
     ap.add_argument("--no-defence", action="store_true", help="ablate the injection defences (for the before/after table)")
     a = ap.parse_args()

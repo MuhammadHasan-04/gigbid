@@ -1,0 +1,38 @@
+{"id": "t0", "intent": "job_budget", "value": "dev-ai-0004", "task": "What is the budget of job dev-ai-0004?"}
+{"id": "t1", "intent": "client_verified", "value": "cl-012", "task": "Has client cl-012 verified their payment method?"}
+{"id": "t2", "intent": "client_reviews", "value": "cl-012", "task": "Did other freelancers complain about client cl-012?"}
+{"id": "t3", "intent": "job_desc", "value": "dev-ai-0004", "task": "Read the full post for dev-ai-0004 and tell me what they need."}
+{"id": "t4", "intent": "job_budget", "value": "dev-fu-0010", "task": "What is the budget of job dev-fu-0010?"}
+{"id": "t5", "intent": "client_verified", "value": "cl-101", "task": "Has client cl-101 verified their payment method?"}
+{"id": "t6", "intent": "client_reviews", "value": "cl-101", "task": "Did other freelancers complain about client cl-101?"}
+{"id": "t7", "intent": "job_desc", "value": "dev-fu-0010", "task": "Read the full post for dev-fu-0010 and tell me what they need."}
+{"id": "t8", "intent": "job_budget", "value": "dev-da-0020", "task": "What is the budget of job dev-da-0020?"}
+{"id": "t9", "intent": "client_verified", "value": "cl-200", "task": "Has client cl-200 verified their payment method?"}
+{"id": "t10", "intent": "client_reviews", "value": "cl-200", "task": "Did other freelancers complain about client cl-200?"}
+{"id": "t11", "intent": "job_desc", "value": "dev-da-0020", "task": "Read the full post for dev-da-0020 and tell me what they need."}
+{"id": "t12", "intent": "job_budget", "value": "dev-ai-0033", "task": "What is the budget of job dev-ai-0033?"}
+{"id": "t13", "intent": "client_verified", "value": "cl-045", "task": "Has client cl-045 verified their payment method?"}
+{"id": "t14", "intent": "client_reviews", "value": "cl-045", "task": "Did other freelancers complain about client cl-045?"}
+{"id": "t15", "intent": "job_desc", "value": "dev-ai-0033", "task": "Read the full post for dev-ai-0033 and tell me what they need."}
+{"id": "t16", "intent": "market_median", "value": "bi", "task": "What do bi jobs usually pay?"}
+{"id": "t17", "intent": "market_median", "value": "llm_apps", "task": "What do llm_apps jobs usually pay?"}
+{"id": "t18", "intent": "market_median", "value": "web_app", "task": "What do web_app jobs usually pay?"}
+{"id": "t19", "intent": "market_median", "value": "analytics_eng", "task": "What do analytics_eng jobs usually pay?"}
+{"id": "t20", "intent": "search", "value": "dashboard", "task": "Find me new dashboard jobs."}
+{"id": "t21", "intent": "search", "value": "RAG chatbot", "task": "Find me new RAG chatbot jobs."}
+{"id": "t22", "intent": "search", "value": "Shopify", "task": "Find me new Shopify jobs."}
+{"id": "t23", "intent": "search", "value": "forecasting", "task": "Find me new forecasting jobs."}
+{"id": "t24", "intent": "evidence", "value": "Celery", "task": "Do I have proof that I've worked with Celery?"}
+{"id": "t25", "intent": "evidence", "value": "dbt", "task": "Do I have proof that I've worked with dbt?"}
+{"id": "t26", "intent": "evidence", "value": "Stripe", "task": "Do I have proof that I've worked with Stripe?"}
+{"id": "t27", "intent": "evidence", "value": "YOLO", "task": "Do I have proof that I've worked with YOLO?"}
+{"id": "t28", "intent": "evidence", "value": "LangGraph", "task": "Do I have proof that I've worked with LangGraph?"}
+{"id": "t29", "intent": "evidence", "value": "Power BI", "task": "Do I have proof that I've worked with Power BI?"}
+{"id": "t30", "intent": "evidence", "value": "GraphQL", "task": "Do I have proof that I've worked with GraphQL?"}
+{"id": "t31", "intent": "evidence", "value": "pgvector", "task": "Do I have proof that I've worked with pgvector?"}
+{"id": "t32", "intent": "balance", "value": "fl-ai-ml", "task": "How many Connects does fl-ai-ml have left?"}
+{"id": "t33", "intent": "balance", "value": "fl-data", "task": "How many Connects does fl-data have left?"}
+{"id": "t34", "intent": "thread", "value": "th-a1b2c3", "task": "Show me the conversation th-a1b2c3."}
+{"id": "t35", "intent": "thread", "value": "th-d4e5f6", "task": "Show me the conversation th-d4e5f6."}
+{"id": "t36", "intent": "slots", "value": null, "task": "When am I free for a client call this week?"}
+{"id": "t37", "intent": "slots", "value": null, "task": "Offer the client some interview times."}

@@ -128,11 +128,13 @@ def score(intent: str, value, toolset: str, call: dict | None) -> tuple[bool, bo
 
 def call_model(spec: dict, task: str, tools: list) -> tuple[dict | None, int]:
     base, key_env = llm.BASE_URLS[spec["provider"]]
-    import os
-    r = httpx.post(f"{base}/chat/completions", headers={"Authorization": f"Bearer {os.getenv(key_env, '')}"}, timeout=60, json={
-        "model": spec["model"], "tools": tools, "tool_choice": "required", "temperature": 0,
-        "messages": [{"role": "system", "content": "You are a freelancer's assistant. Call exactly one tool to answer. Freelancer id is fl-ai-ml unless stated."},
-                     {"role": "user", "content": task}]})
+    for _ in range(12):  # wait out tokens-per-minute limits instead of scoring a 429 as a wrong answer
+        r = _post(base, key_env, spec, task, tools)
+        if r.status_code != 429:
+            break
+        if "per day" in r.text:
+            raise RuntimeError("daily token quota exhausted")
+        time.sleep(min(float(r.headers.get("retry-after", 5)) + 0.5, 60))
     r.raise_for_status()
     d = r.json()
     calls = d["choices"][0]["message"].get("tool_calls") or []
@@ -145,6 +147,14 @@ def call_model(spec: dict, task: str, tools: list) -> tuple[dict | None, int]:
     except json.JSONDecodeError:
         args = {}
     return {"name": c["name"], "args": args}, tok
+
+
+def _post(base, key_env, spec, task, tools):
+    import os
+    return httpx.post(f"{base}/chat/completions", headers={"Authorization": f"Bearer {os.getenv(key_env, '')}"}, timeout=60, json={
+        "model": spec["model"], "tools": tools, "tool_choice": "required", "temperature": 0,
+        "messages": [{"role": "system", "content": "You are a freelancer's assistant. Call exactly one tool to answer. Freelancer id is fl-ai-ml unless stated."},
+                     {"role": "user", "content": task}]})
 
 
 def main():
