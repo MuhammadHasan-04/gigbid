@@ -1,0 +1,242 @@
+{
+ "create_email_draft": {
+  "annotations": {
+   "destructiveHint": false,
+   "idempotentHint": true,
+   "openWorldHint": false,
+   "readOnlyHint": false
+  },
+  "input": {
+   "properties": {
+    "body": {
+     "maxLength": 8000,
+     "minLength": 1,
+     "title": "Body",
+     "type": "string"
+    },
+    "idempotency_key": {
+     "maxLength": 80,
+     "minLength": 8,
+     "title": "Idempotency Key",
+     "type": "string"
+    },
+    "subject": {
+     "maxLength": 200,
+     "minLength": 1,
+     "title": "Subject",
+     "type": "string"
+    },
+    "to": {
+     "maxLength": 200,
+     "title": "To",
+     "type": "string"
+    }
+   },
+   "required": [
+    "to",
+    "subject",
+    "body",
+    "idempotency_key"
+   ],
+   "title": "create_email_draftArguments",
+   "type": "object"
+  },
+  "output": {
+   "properties": {
+    "body": {
+     "title": "Body",
+     "type": "string"
+    },
+    "draft_id": {
+     "title": "Draft Id",
+     "type": "string"
+    },
+    "status": {
+     "default": "draft",
+     "title": "Status",
+     "type": "string"
+    },
+    "subject": {
+     "title": "Subject",
+     "type": "string"
+    },
+    "to": {
+     "title": "To",
+     "type": "string"
+    }
+   },
+   "required": [
+    "draft_id",
+    "to",
+    "subject",
+    "body"
+   ],
+   "title": "EmailDraft",
+   "type": "object"
+  }
+ },
+ "create_tentative_hold": {
+  "annotations": {
+   "destructiveHint": false,
+   "idempotentHint": true,
+   "openWorldHint": false,
+   "readOnlyHint": false
+  },
+  "input": {
+   "properties": {
+    "end": {
+     "description": "ISO datetime",
+     "title": "End",
+     "type": "string"
+    },
+    "idempotency_key": {
+     "maxLength": 80,
+     "minLength": 8,
+     "title": "Idempotency Key",
+     "type": "string"
+    },
+    "start": {
+     "description": "ISO datetime",
+     "title": "Start",
+     "type": "string"
+    },
+    "title": {
+     "maxLength": 120,
+     "minLength": 3,
+     "title": "Title",
+     "type": "string"
+    }
+   },
+   "required": [
+    "start",
+    "end",
+    "title",
+    "idempotency_key"
+   ],
+   "title": "create_tentative_holdArguments",
+   "type": "object"
+  },
+  "output": {
+   "properties": {
+    "end": {
+     "title": "End",
+     "type": "string"
+    },
+    "hold_id": {
+     "title": "Hold Id",
+     "type": "string"
+    },
+    "start": {
+     "title": "Start",
+     "type": "string"
+    },
+    "status": {
+     "default": "tentative",
+     "title": "Status",
+     "type": "string"
+    },
+    "title": {
+     "title": "Title",
+     "type": "string"
+    }
+   },
+   "required": [
+    "hold_id",
+    "start",
+    "end",
+    "title"
+   ],
+   "title": "Hold",
+   "type": "object"
+  }
+ },
+ "free_slots": {
+  "annotations": {
+   "destructiveHint": false,
+   "idempotentHint": true,
+   "openWorldHint": false,
+   "readOnlyHint": true
+  },
+  "input": {
+   "properties": {
+    "days_ahead": {
+     "default": 5,
+     "maximum": 14,
+     "minimum": 1,
+     "title": "Days Ahead",
+     "type": "integer"
+    },
+    "duration_minutes": {
+     "default": 30,
+     "maximum": 120,
+     "minimum": 15,
+     "title": "Duration Minutes",
+     "type": "integer"
+    },
+    "max_slots": {
+     "default": 3,
+     "maximum": 10,
+     "minimum": 1,
+     "title": "Max Slots",
+     "type": "integer"
+    },
+    "start_date": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "description": "YYYY-MM-DD; default tomorrow",
+     "title": "Start Date"
+    }
+   },
+   "title": "free_slotsArguments",
+   "type": "object"
+  },
+  "output": {
+   "$defs": {
+    "Slot": {
+     "properties": {
+      "end": {
+       "title": "End",
+       "type": "string"
+      },
+      "start": {
+       "title": "Start",
+       "type": "string"
+      },
+      "timezone": {
+       "title": "Timezone",
+       "type": "string"
+      }
+     },
+     "required": [
+      "start",
+      "end",
+      "timezone"
+     ],
+     "title": "Slot",
+     "type": "object"
+    }
+   },
+   "properties": {
+    "result": {
+     "items": {
+      "$ref": "#/$defs/Slot"
+     },
+     "title": "Result",
+     "type": "array"
+    }
+   },
+   "required": [
+    "result"
+   ],
+   "title": "free_slotsOutput",
+   "type": "object"
+  }
+ }
+}

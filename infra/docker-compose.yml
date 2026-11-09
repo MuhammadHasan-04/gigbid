@@ -1,0 +1,80 @@
+# docker compose -f infra/docker-compose.yml --env-file .env up --build
+# Starts: web, api, worker, three MCP servers, GigSim, Postgres (+pgvector, the vector store), Redis, Ollama.
+name: gigbid
+x-py: &py
+  env_file: [{ path: ../.env, required: false }]
+  environment: &pyenv
+    DATABASE_URL: postgresql://gigbid:gigbid@postgres:5432/gigbid
+    REDIS_URL: redis://redis:6379/0
+    GIGSIM_BASE_URL: http://gigsim:8081
+    OLLAMA_BASE_URL: http://ollama:11434
+    MCP_TRANSPORT: http
+    PORTFOLIO_MCP_URL: http://mcp-portfolio:8101/mcp
+    MARKETPLACE_MCP_URL: http://mcp-marketplace:8102/mcp
+    WORKSPACE_MCP_URL: http://mcp-workspace:8103/mcp
+    RUNTIME_DIR: /runtime
+    TRACE_DIR: /runtime/traces
+  volumes: [runtime:/runtime]
+  restart: unless-stopped
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment: { POSTGRES_USER: gigbid, POSTGRES_PASSWORD: gigbid, POSTGRES_DB: gigbid }
+    volumes: [pg:/var/lib/postgresql/data]
+    healthcheck: { test: ["CMD-SHELL", "pg_isready -U gigbid"], interval: 5s, retries: 20 }
+
+  redis:
+    image: redis:7.4-alpine
+    healthcheck: { test: ["CMD", "redis-cli", "ping"], interval: 5s, retries: 20 }
+
+  ollama:
+    image: ollama/ollama:0.5.4
+    volumes: [ollama:/root/.ollama]
+    # pull models once: docker compose exec ollama ollama pull qwen3:4b && ollama pull nomic-embed-text
+
+  gigsim:
+    build: { context: .., dockerfile: infra/docker/gigsim.Dockerfile }
+    environment: { GIGSIM_API_TOKEN: "${GIGSIM_API_TOKEN:-gigsim-dev-token}", GIGSIM_ADMIN_TOKEN: "${GIGSIM_ADMIN_TOKEN:-gigsim-admin-token}", GIGSIM_STATE_FILE: /runtime/gigsim_state.json, GIGSIM_POLICY_VERSION: "${POLICY_VERSION:-1}" }
+    volumes: [runtime:/runtime]
+    healthcheck: { test: ["CMD", "python", "-c", "import urllib.request;urllib.request.urlopen('http://localhost:8081/health')"], interval: 5s, retries: 20 }
+
+  mcp-portfolio:
+    <<: *py
+    build: { context: .., dockerfile: infra/docker/mcp.Dockerfile }
+    command: python -m mcp_servers.portfolio.server --http --port 8101
+
+  mcp-marketplace:
+    <<: *py
+    build: { context: .., dockerfile: infra/docker/mcp.Dockerfile }
+    command: python -m mcp_servers.marketplace.server --http --port 8102
+    depends_on: { gigsim: { condition: service_healthy } }
+
+  mcp-workspace:
+    <<: *py
+    build: { context: .., dockerfile: infra/docker/mcp.Dockerfile }
+    command: python -m mcp_servers.workspace.server --http --port 8103
+
+  api:
+    <<: *py
+    build: { context: .., dockerfile: infra/docker/api.Dockerfile }
+    ports: ["8000:8000"]
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+      mcp-marketplace: { condition: service_started }
+      mcp-portfolio: { condition: service_started }
+
+  worker:
+    <<: *py
+    build: { context: .., dockerfile: infra/docker/worker.Dockerfile }
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+
+  web:
+    build: { context: .., dockerfile: infra/docker/web.Dockerfile }
+    ports: ["8080:80"]
+    depends_on: [api]
+
+volumes: { pg: {}, runtime: {}, ollama: {} }

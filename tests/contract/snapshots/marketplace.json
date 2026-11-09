@@ -1,0 +1,880 @@
+{
+ "create_proposal_draft": {
+  "annotations": {
+   "destructiveHint": false,
+   "idempotentHint": true,
+   "openWorldHint": true,
+   "readOnlyHint": false
+  },
+  "input": {
+   "properties": {
+    "approval_id": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "description": "token from the GigBid approval screen",
+     "title": "Approval Id"
+    },
+    "bid_amount": {
+     "description": "USD",
+     "exclusiveMinimum": 0,
+     "maximum": 100000,
+     "title": "Bid Amount",
+     "type": "number"
+    },
+    "cover_letter": {
+     "maxLength": 5000,
+     "minLength": 50,
+     "title": "Cover Letter",
+     "type": "string"
+    },
+    "dry_run": {
+     "default": false,
+     "title": "Dry Run",
+     "type": "boolean"
+    },
+    "freelancer_id": {
+     "maxLength": 64,
+     "minLength": 2,
+     "title": "Freelancer Id",
+     "type": "string"
+    },
+    "idempotency_key": {
+     "maxLength": 80,
+     "minLength": 8,
+     "title": "Idempotency Key",
+     "type": "string"
+    },
+    "job_id": {
+     "maxLength": 64,
+     "minLength": 3,
+     "pattern": "^[\\w\\-]+$",
+     "title": "Job Id",
+     "type": "string"
+    },
+    "screening_answers": {
+     "default": [],
+     "items": {
+      "maxLength": 2000,
+      "type": "string"
+     },
+     "maxItems": 10,
+     "title": "Screening Answers",
+     "type": "array"
+    }
+   },
+   "required": [
+    "freelancer_id",
+    "job_id",
+    "cover_letter",
+    "bid_amount",
+    "idempotency_key"
+   ],
+   "title": "create_proposal_draftArguments",
+   "type": "object"
+  },
+  "output": {
+   "properties": {
+    "connects_balance_after": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Connects Balance After"
+    },
+    "connects_cost": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Connects Cost"
+    },
+    "dry_run": {
+     "title": "Dry Run",
+     "type": "boolean"
+    },
+    "error": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Error"
+    },
+    "idempotent_replay": {
+     "default": false,
+     "title": "Idempotent Replay",
+     "type": "boolean"
+    },
+    "result": {
+     "anyOf": [
+      {
+       "additionalProperties": true,
+       "type": "object"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Result"
+    },
+    "status": {
+     "title": "Status",
+     "type": "string"
+    },
+    "would_send": {
+     "anyOf": [
+      {
+       "additionalProperties": true,
+       "type": "object"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Would Send"
+    }
+   },
+   "required": [
+    "status",
+    "dry_run"
+   ],
+   "title": "WriteResult",
+   "type": "object"
+  }
+ },
+ "get_client_history": {
+  "annotations": {
+   "destructiveHint": false,
+   "idempotentHint": true,
+   "openWorldHint": true,
+   "readOnlyHint": true
+  },
+  "input": {
+   "properties": {
+    "client_id": {
+     "maxLength": 64,
+     "minLength": 3,
+     "pattern": "^[\\w\\-]+$",
+     "title": "Client Id",
+     "type": "string"
+    }
+   },
+   "required": [
+    "client_id"
+   ],
+   "title": "get_client_historyArguments",
+   "type": "object"
+  },
+  "output": {
+   "description": "Generic marketplace record (job, client, thread, stats...).",
+   "properties": {
+    "data": {
+     "additionalProperties": true,
+     "title": "Data",
+     "type": "object"
+    },
+    "error": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Error"
+    }
+   },
+   "required": [
+    "data"
+   ],
+   "title": "Record",
+   "type": "object"
+  }
+ },
+ "get_connects_balance": {
+  "annotations": {
+   "destructiveHint": false,
+   "idempotentHint": true,
+   "openWorldHint": true,
+   "readOnlyHint": true
+  },
+  "input": {
+   "properties": {
+    "freelancer_id": {
+     "maxLength": 64,
+     "minLength": 2,
+     "title": "Freelancer Id",
+     "type": "string"
+    }
+   },
+   "required": [
+    "freelancer_id"
+   ],
+   "title": "get_connects_balanceArguments",
+   "type": "object"
+  },
+  "output": {
+   "description": "Generic marketplace record (job, client, thread, stats...).",
+   "properties": {
+    "data": {
+     "additionalProperties": true,
+     "title": "Data",
+     "type": "object"
+    },
+    "error": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Error"
+    }
+   },
+   "required": [
+    "data"
+   ],
+   "title": "Record",
+   "type": "object"
+  }
+ },
+ "get_job": {
+  "annotations": {
+   "destructiveHint": false,
+   "idempotentHint": true,
+   "openWorldHint": true,
+   "readOnlyHint": true
+  },
+  "input": {
+   "properties": {
+    "job_id": {
+     "maxLength": 64,
+     "minLength": 3,
+     "pattern": "^[\\w\\-]+$",
+     "title": "Job Id",
+     "type": "string"
+    }
+   },
+   "required": [
+    "job_id"
+   ],
+   "title": "get_jobArguments",
+   "type": "object"
+  },
+  "output": {
+   "description": "Generic marketplace record (job, client, thread, stats...).",
+   "properties": {
+    "data": {
+     "additionalProperties": true,
+     "title": "Data",
+     "type": "object"
+    },
+    "error": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Error"
+    }
+   },
+   "required": [
+    "data"
+   ],
+   "title": "Record",
+   "type": "object"
+  }
+ },
+ "get_market_stats": {
+  "annotations": {
+   "destructiveHint": false,
+   "idempotentHint": true,
+   "openWorldHint": true,
+   "readOnlyHint": true
+  },
+  "input": {
+   "properties": {
+    "category": {
+     "maxLength": 40,
+     "minLength": 2,
+     "title": "Category",
+     "type": "string"
+    }
+   },
+   "required": [
+    "category"
+   ],
+   "title": "get_market_statsArguments",
+   "type": "object"
+  },
+  "output": {
+   "description": "Generic marketplace record (job, client, thread, stats...).",
+   "properties": {
+    "data": {
+     "additionalProperties": true,
+     "title": "Data",
+     "type": "object"
+    },
+    "error": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Error"
+    }
+   },
+   "required": [
+    "data"
+   ],
+   "title": "Record",
+   "type": "object"
+  }
+ },
+ "get_thread": {
+  "annotations": {
+   "destructiveHint": false,
+   "idempotentHint": true,
+   "openWorldHint": true,
+   "readOnlyHint": true
+  },
+  "input": {
+   "properties": {
+    "thread_id": {
+     "maxLength": 64,
+     "minLength": 3,
+     "title": "Thread Id",
+     "type": "string"
+    }
+   },
+   "required": [
+    "thread_id"
+   ],
+   "title": "get_threadArguments",
+   "type": "object"
+  },
+  "output": {
+   "description": "Generic marketplace record (job, client, thread, stats...).",
+   "properties": {
+    "data": {
+     "additionalProperties": true,
+     "title": "Data",
+     "type": "object"
+    },
+    "error": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Error"
+    }
+   },
+   "required": [
+    "data"
+   ],
+   "title": "Record",
+   "type": "object"
+  }
+ },
+ "list_messages": {
+  "annotations": {
+   "destructiveHint": false,
+   "idempotentHint": true,
+   "openWorldHint": true,
+   "readOnlyHint": true
+  },
+  "input": {
+   "properties": {
+    "freelancer_id": {
+     "maxLength": 64,
+     "minLength": 2,
+     "title": "Freelancer Id",
+     "type": "string"
+    }
+   },
+   "required": [
+    "freelancer_id"
+   ],
+   "title": "list_messagesArguments",
+   "type": "object"
+  },
+  "output": {
+   "description": "Generic marketplace record (job, client, thread, stats...).",
+   "properties": {
+    "data": {
+     "additionalProperties": true,
+     "title": "Data",
+     "type": "object"
+    },
+    "error": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Error"
+    }
+   },
+   "required": [
+    "data"
+   ],
+   "title": "Record",
+   "type": "object"
+  }
+ },
+ "list_proposals": {
+  "annotations": {
+   "destructiveHint": false,
+   "idempotentHint": true,
+   "openWorldHint": true,
+   "readOnlyHint": true
+  },
+  "input": {
+   "properties": {
+    "freelancer_id": {
+     "maxLength": 64,
+     "minLength": 2,
+     "title": "Freelancer Id",
+     "type": "string"
+    }
+   },
+   "required": [
+    "freelancer_id"
+   ],
+   "title": "list_proposalsArguments",
+   "type": "object"
+  },
+  "output": {
+   "description": "Generic marketplace record (job, client, thread, stats...).",
+   "properties": {
+    "data": {
+     "additionalProperties": true,
+     "title": "Data",
+     "type": "object"
+    },
+    "error": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Error"
+    }
+   },
+   "required": [
+    "data"
+   ],
+   "title": "Record",
+   "type": "object"
+  }
+ },
+ "search_jobs": {
+  "annotations": {
+   "destructiveHint": false,
+   "idempotentHint": true,
+   "openWorldHint": true,
+   "readOnlyHint": true
+  },
+  "input": {
+   "properties": {
+    "limit": {
+     "default": 20,
+     "maximum": 50,
+     "minimum": 1,
+     "title": "Limit",
+     "type": "integer"
+    },
+    "offset": {
+     "default": 0,
+     "minimum": 0,
+     "title": "Offset",
+     "type": "integer"
+    },
+    "posted_within_min": {
+     "anyOf": [
+      {
+       "maximum": 10080,
+       "minimum": 1,
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "description": "only jobs posted in the last N minutes",
+     "title": "Posted Within Min"
+    },
+    "query": {
+     "default": "",
+     "description": "keywords; all must appear",
+     "maxLength": 200,
+     "title": "Query",
+     "type": "string"
+    }
+   },
+   "title": "search_jobsArguments",
+   "type": "object"
+  },
+  "output": {
+   "properties": {
+    "error": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Error"
+    },
+    "jobs": {
+     "items": {
+      "additionalProperties": true,
+      "type": "object"
+     },
+     "title": "Jobs",
+     "type": "array"
+    },
+    "total": {
+     "default": 0,
+     "title": "Total",
+     "type": "integer"
+    }
+   },
+   "title": "JobList",
+   "type": "object"
+  }
+ },
+ "send_message": {
+  "annotations": {
+   "destructiveHint": true,
+   "idempotentHint": true,
+   "openWorldHint": true,
+   "readOnlyHint": false
+  },
+  "input": {
+   "properties": {
+    "approval_id": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "description": "token from the GigBid approval screen",
+     "title": "Approval Id"
+    },
+    "body": {
+     "maxLength": 4000,
+     "minLength": 1,
+     "title": "Body",
+     "type": "string"
+    },
+    "dry_run": {
+     "default": false,
+     "title": "Dry Run",
+     "type": "boolean"
+    },
+    "idempotency_key": {
+     "maxLength": 80,
+     "minLength": 8,
+     "title": "Idempotency Key",
+     "type": "string"
+    },
+    "thread_id": {
+     "maxLength": 64,
+     "minLength": 3,
+     "title": "Thread Id",
+     "type": "string"
+    }
+   },
+   "required": [
+    "thread_id",
+    "body",
+    "idempotency_key"
+   ],
+   "title": "send_messageArguments",
+   "type": "object"
+  },
+  "output": {
+   "properties": {
+    "connects_balance_after": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Connects Balance After"
+    },
+    "connects_cost": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Connects Cost"
+    },
+    "dry_run": {
+     "title": "Dry Run",
+     "type": "boolean"
+    },
+    "error": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Error"
+    },
+    "idempotent_replay": {
+     "default": false,
+     "title": "Idempotent Replay",
+     "type": "boolean"
+    },
+    "result": {
+     "anyOf": [
+      {
+       "additionalProperties": true,
+       "type": "object"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Result"
+    },
+    "status": {
+     "title": "Status",
+     "type": "string"
+    },
+    "would_send": {
+     "anyOf": [
+      {
+       "additionalProperties": true,
+       "type": "object"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Would Send"
+    }
+   },
+   "required": [
+    "status",
+    "dry_run"
+   ],
+   "title": "WriteResult",
+   "type": "object"
+  }
+ },
+ "submit_proposal": {
+  "annotations": {
+   "destructiveHint": true,
+   "idempotentHint": true,
+   "openWorldHint": true,
+   "readOnlyHint": false
+  },
+  "input": {
+   "properties": {
+    "approval_id": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "description": "token from the GigBid approval screen",
+     "title": "Approval Id"
+    },
+    "dry_run": {
+     "default": false,
+     "title": "Dry Run",
+     "type": "boolean"
+    },
+    "freelancer_id": {
+     "maxLength": 64,
+     "minLength": 2,
+     "title": "Freelancer Id",
+     "type": "string"
+    },
+    "idempotency_key": {
+     "maxLength": 80,
+     "minLength": 8,
+     "title": "Idempotency Key",
+     "type": "string"
+    },
+    "proposal_id": {
+     "maxLength": 64,
+     "minLength": 3,
+     "title": "Proposal Id",
+     "type": "string"
+    }
+   },
+   "required": [
+    "proposal_id",
+    "freelancer_id",
+    "idempotency_key"
+   ],
+   "title": "submit_proposalArguments",
+   "type": "object"
+  },
+  "output": {
+   "properties": {
+    "connects_balance_after": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Connects Balance After"
+    },
+    "connects_cost": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Connects Cost"
+    },
+    "dry_run": {
+     "title": "Dry Run",
+     "type": "boolean"
+    },
+    "error": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Error"
+    },
+    "idempotent_replay": {
+     "default": false,
+     "title": "Idempotent Replay",
+     "type": "boolean"
+    },
+    "result": {
+     "anyOf": [
+      {
+       "additionalProperties": true,
+       "type": "object"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Result"
+    },
+    "status": {
+     "title": "Status",
+     "type": "string"
+    },
+    "would_send": {
+     "anyOf": [
+      {
+       "additionalProperties": true,
+       "type": "object"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Would Send"
+    }
+   },
+   "required": [
+    "status",
+    "dry_run"
+   ],
+   "title": "WriteResult",
+   "type": "object"
+  }
+ }
+}

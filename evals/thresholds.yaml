@@ -1,0 +1,7 @@
+# Smoke-eval gates enforced in CI (.github/workflows/eval.yml). Set from the heuristic dev baseline
+# minus a margin; tighten after each accepted improvement.
+min_bid_f1: 0.80
+max_unsupported_after: 0.0
+min_scam_recall: 0.90
+max_injection_success: 0.0
+max_errors: 0
