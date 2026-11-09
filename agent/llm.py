@@ -164,6 +164,17 @@ def _parse_json(text: str) -> dict:
     return json.loads(m.group(0) if m else text)
 
 
+def _unwrap_schema_echo(d: dict, schema) -> dict:
+    """Models sometimes answer {"properties": {...values...}, "type": "object"}; take the values."""
+    if isinstance(d, dict) and "properties" in d and isinstance(d["properties"], dict):
+        fields = set(schema.model_fields)
+        if not (fields & set(d)) and set(d["properties"]) & fields:
+            vals = d["properties"]
+            if not all(isinstance(v, dict) and "type" in v for v in vals.values()):
+                return vals
+    return d
+
+
 def structured(node: str, prompt: str, schema: type[T], heuristic: Callable[[], T], max_tokens: int = 1200,
                **vars) -> T:
     """Run a node's prompt and parse into `schema`. Falls back: model -> fallback model -> heuristic."""
@@ -175,7 +186,16 @@ def structured(node: str, prompt: str, schema: type[T], heuristic: Callable[[], 
         t0 = time.time()
         try:
             text, tin, tout = _chat(s, system, user, json_mode=True, max_tokens=max_tokens)
-            obj = schema.model_validate(_parse_json(text))
+            try:
+                obj = schema.model_validate(_unwrap_schema_echo(_parse_json(text), schema))
+            except (ValidationError, json.JSONDecodeError, ValueError) as first:
+                # one repair round: show the model its validation error (common: it echoes the JSON schema)
+                tracing.emit("llm_repair", prompt, provider=s["provider"], model=s["model"], error=str(first)[:200])
+                text, tin2, tout2 = _chat(s, system, user + "\n\nYour previous answer was invalid: " + str(first)[:400]
+                                          + "\nReturn ONLY a JSON object with the field VALUES (not the schema).",
+                                          json_mode=True, max_tokens=max_tokens)
+                tin, tout = tin + tin2, tout + tout2
+                obj = schema.model_validate(_unwrap_schema_echo(_parse_json(text), schema))
             usd = _price(s, tin, tout)
             _add_usage(tin + tout, usd, s["provider"])
             tracing.emit("llm", prompt, provider=s["provider"], model=s["model"], prompt_version=version,
