@@ -1,0 +1,145 @@
+<!doctype html><html><head><meta charset='utf-8'><style>
+@page { size: A4; margin: 16mm 15mm 16mm 15mm; @bottom-center { content: counter(page); font-size: 9px; color: #777; } }
+body { font: 10.2px/1.42 'DejaVu Sans', Arial, sans-serif; color: #1b1f1d; }
+h1 { font-size: 20px; margin: 0 0 2px; color: #0f4c42; } h2 { font-size: 13.5px; color: #0f4c42; border-bottom: 1.5px solid #cfe0db; padding-bottom: 2px; margin: 13px 0 5px; page-break-after: avoid; }
+h3 { font-size: 11px; margin: 8px 0 3px; } p { margin: 3px 0 5px; } ul { margin: 2px 0 6px 16px; padding: 0; } li { margin: 1px 0; }
+table { border-collapse: collapse; width: 100%; margin: 4px 0 6px; font-size: 9px; page-break-inside: avoid; }
+th { background: #e8f2ef; text-align: left; } th, td { border: 1px solid #cfd8d4; padding: 2.5px 4px; vertical-align: top; }
+.src { color: #3a6a99; font-size: 8.5px; } .pending { color: #9a5a00; font-style: italic; } .meta { color: #555; font-size: 9.5px; }
+.box { background: #f4f7f6; border-left: 3px solid #146356; padding: 5px 8px; margin: 6px 0; }
+img { max-width: 100%; } .two { display: flex; gap: 10px; } .two > div { flex: 1; }
+code { font-size: 9px; background: #f0f2f1; padding: 0 2px; }
+</style></head><body>
+<h1>GigBid: a multi-agent freelancer copilot</h1>
+<div class="meta">AI-4016 R&amp;D report · Hasan · FAST-NUCES Islamabad · repository commit <code>f294112</code> · results profile <code>heuristic</code> ·
+providers actually used in the main run: {'heuristic': 600}</div>
+
+<div class="box"><b>Read first: threats to validity.</b> (1) The instructor GigSim, persona corpora and dev set were not available; every
+experiment uses this repository's GigSim stand-in (<code>gigsim/</code>, seeded and reproducible), written by the same author as the system.
+(2) The workspace had no LLM API access while these numbers were produced, so results come from the <code>heuristic</code> profile, the deterministic
+rule-based fallback every node has (ADR 0004). Experiments that only make sense with a model (tool-granularity study, single-agent
+comparison, judge calibration) have committed runners and are marked pending. (3) Simulated-client reply rate is a designed proxy.</div>
+
+<h2>1. Problem and constraints</h2>
+<p>Freelancers spend hours scanning feeds, spend paid Connects on jobs they won't win, send generic proposals, and run into scams that ask for
+free work or off-platform payment. GigBid automates discovery, assessment and drafting. The freelancer makes every decision that leaves the system.</p>
+<ul><li><b>Never automated:</b> submitting a proposal, sending a message, spending Connects, claiming experience the portfolio doesn't prove, contacting
+a client off-platform. Enforced by a LangGraph <code>interrupt()</code> <i>and</i> an HMAC approval token checked inside the Marketplace MCP server (ADR 0002).</li>
+<li><b>Allowed automatically:</b> scouting, analysis, skipping (only with autonomy <code>auto_skip_low_fit</code>), drafting.</li>
+<li><b>Budgets</b> (config, enforced per thread): 40 graph steps, 30k tokens per job, max 2 Critic revisions; latency and cost budgets in §10.</li></ul>
+
+<h2>2. Architecture</h2>
+<div class="two"><div><img src="../images/bid_graph.png" style="max-height:330px"></div><div>
+<p><b>Bid graph</b> (one thread per job): intake → <code>Send</code> to Job Analyst ∥ Risk Assessor ∥ Fit Matcher → decide (bid/watch/skip with reasons)
+→ Pricing (can veto) → Writer → claim Verifier → Critic (≤2 loops) → Compliance → approval interrupt → submit (non-LLM executor, idempotency keys
+derived from the thread). <b>Conversation graph</b> (one thread per client conversation): load → classify intent (+injection) → calendar slots →
+draft → compliance → approval → send + tentative hold.</p>
+<p><b>Marketplace port</b> (<code>agent/marketplace_port.py</code>) has two adapters, GigSim and live Upwork (official MCP over Streamable HTTP, OAuth 2.1).
+The port lives inside our Marketplace MCP server, so the graph cannot tell which marketplace it uses. <b>MCP surface:</b> Portfolio (read,
+publishable), Marketplace (read + write with schemas, annotations, idempotency keys, <code>dry_run</code>, bearer auth, per-user limiter, hash-chained
+audit log), Workspace (calendar, email drafts), plus GitHub MCP for repo ingestion. Each agent gets an allowlist of tools.
+<b>Stores:</b> Postgres (app tables, LangGraph checkpointer, LangGraph store for memory), Redis (Arq queue), in-process vectors + BM25 (ADR 0003).</p>
+<p><b>Why each agent exists:</b> parallel analysts cut wall-clock time and keep the Analyst tool-less (an injected post can't trigger tool calls).
+Fit Matcher makes "no evidence" explicit per requirement. Pricing computes numbers in code and the model only explains them. Verifier, Critic and
+Compliance are separated because each failure needs a different fix (§8). Typed hand-offs: <code>JobSpec, RiskReport, FitReport, BidDecision,
+PriceQuote, ProposalDraft, Critique, ComplianceVerdict</code>. State, execution trace and long-term memory are kept apart (docs/ARCHITECTURE.md).</p></div></div>
+<p><b>Durability (C6)</b> is tested in <code>tests/integration</code>: the graph pauses at approval, the process is replaced, approval resumes from the
+Postgres checkpoint, and replaying the <code>submit</code> node from the previous checkpoint returns <code>idempotent_replay</code> with exactly one GigSim
+submission and one Connects deduction. Public traces: <code>docs/traces/</code> (scam skip, approval, injection, Critic loop, crash-and-resume).</p>
+
+<h2>3. R&amp;D question A: tool granularity</h2>
+<p><b>Hypothesis:</b> a small set of mid-grained tools with rewritten, disambiguating descriptions beats both 17 fine-grained tools (selection errors
+between near-duplicates) and 3 coarse tools with an <code>action</code> enum (argument errors) on tool-selection and argument accuracy, at fewer
+tokens per task than fine-grained. <b>Setup:</b> 40 tasks with known correct calls (<code>evals/datasets/tool_tasks.jsonl</code>), same model, native tool
+calling, <code>tool_choice=required</code>. <b>Results:</b> <span class="pending">pending: needs a model endpoint (runner committed)</span></p>
+<p><b>Shipped design:</b> 10 read tools + 3 write tools; descriptions say what the tool is <i>not</i> for ("never for details of one known job id").
+Contract tests pin schemas and annotations (<code>tests/contract/snapshots</code>).</p>
+
+<h2>4. R&amp;D question B: RAG variants, claim verification, shipped choice</h2>
+<p><b>Hypothesis (stated before running):</b> requirement decomposition plus hybrid retrieval raises evidence Recall@5 by 5+ points over V0 on jobs
+with 4+ requirements. <b>Result: rejected.</b> Alone, V1 and V2 lowered Recall@5. Corpus: 384 dev jobs with gold evidence; retrieval unit = project.</p>
+<table><thead><tr><th>Variant</th><th>Recall@5</th><th>MRR</th><th>nDCG@10</th><th>R@5 (4+ reqs)</th><th>note</th></tr></thead><tbody><tr><td>v0</td><td>0.7583</td><td>0.9445</td><td>0.8333</td><td>0.7317</td><td></td></tr><tr><td>v1</td><td>0.7488</td><td>0.9546</td><td>0.8357</td><td>0.7222</td><td></td></tr><tr><td>v2</td><td>0.7296</td><td>0.9494</td><td>0.8378</td><td>0.6999</td><td></td></tr><tr><td>v3</td><td>–</td><td>–</td><td>–</td><td>–</td><td>ModuleNotFoundError: No module named 'sentenc</td></tr><tr><td>v4</td><td>0.7845</td><td>0.974</td><td>0.8071</td><td>0.7605</td><td></td></tr><tr><td>v5</td><td>0.7809</td><td>0.9754</td><td>0.8427</td><td>0.7489</td><td></td></tr><tr><td>v6</td><td>0.7616</td><td>0.9732</td><td>0.8492</td><td>0.7378</td><td></td></tr><tr><td>v7</td><td>0.7395</td><td>0.892</td><td>0.7936</td><td>0.7181</td><td></td></tr><tr><td>v8</td><td>0.7779</td><td>0.9824</td><td>0.8208</td><td>0.741</td><td></td></tr><tr><td>best</td><td>0.7662</td><td>0.9894</td><td>0.8799</td><td>0.7298</td><td></td></tr><tr><td>best-no_decompose</td><td>0.7684</td><td>0.986</td><td>0.8682</td><td>0.7415</td><td></td></tr><tr><td>best-no_bm25</td><td>0.8041</td><td>0.9912</td><td>0.8774</td><td>0.7711</td><td></td></tr><tr><td>best+multivector</td><td>0.7819</td><td>0.9232</td><td>0.8172</td><td>0.7508</td><td></td></tr><tr><td>best-no_context</td><td>0.7512</td><td>0.9856</td><td>0.8636</td><td>0.7126</td><td></td></tr><tr><td>best-fixed_chunks</td><td>0.7338</td><td>0.9885</td><td>0.8661</td><td>0.6902</td><td></td></tr></tbody></table><span class="src">[rag_heuristic.json]</span>
+<p>A 64-config sweep with nDCG@10 declared as the primary metric before running picked decompose + hybrid + contextual header + structural
+chunks: <table><thead><tr><th>Config (query-retrieval-mv-ctx-chunk-outcome)</th><th>nDCG@10</th><th>R@5</th><th>MRR</th></tr></thead><tbody><tr><td>dec-hyb-mv0-cx1-str-ob0</td><td>0.8799</td><td>0.7662</td><td>0.9894</td></tr><tr><td>dec-den-mv0-cx1-str-ob0</td><td>0.8774</td><td>0.8041</td><td>0.9912</td></tr><tr><td>dec-den-mv1-cx1-str-ob0</td><td>0.8725</td><td>0.8124</td><td>0.989</td></tr><tr><td>who-hyb-mv0-cx1-str-ob0</td><td>0.8682</td><td>0.7684</td><td>0.986</td></tr><tr><td>dec-den-mv1-cx1-fix-ob0</td><td>0.8662</td><td>0.7866</td><td>0.9908</td></tr><tr><td>dec-hyb-mv0-cx1-fix-ob0</td><td>0.8661</td><td>0.7338</td><td>0.9885</td></tr></tbody></table><span class="src">[rag_sweep_heuristic.json]</span></p>
+<p><b>Ablation of the shipped pipeline</b> (one component at a time): no decomposition → nDCG 0.8682; no BM25 →
+0.8774 (R@5 rises to 0.8041); no contextual header → 0.8636;
+fixed chunks → 0.8661; adding multi-vector → 0.8172. Context headers and structural chunks carry
+the gain. Held-out: V0 0.8394 vs shipped 0.8634 nDCG@10. V3 (bge-reranker-v2-m3) could not be run: weights on
+Hugging Face were unreachable from the build workspace.</p>
+<h3>End-to-end (results table required by B5)</h3><table><thead><tr><th>Variant</th><th>Evidence R@5</th><th>nDCG@10</th><th>Unsupported / proposal (before → after)</th><th>Judge</th><th>GigSim reply</th><th>Hire</th><th>p95 s/job</th><th>USD/proposal</th></tr></thead><tbody><tr><td>V0</td><td>0.7583</td><td>0.8333</td><td>0.047 → 0.0</td><td>n/a</td><td>0.8333</td><td>0.3675</td><td>0.528</td><td>0.0</td></tr><tr><td>V5</td><td>0.7809</td><td>0.8427</td><td>0.1562 → 0.0</td><td>n/a</td><td>0.875</td><td>0.4777</td><td>0.59</td><td>0.0</td></tr><tr><td>V8</td><td>0.7779</td><td>0.8208</td><td>0.0591 → 0.0</td><td>n/a</td><td>0.8591</td><td>0.4545</td><td>0.5703</td><td>0.0</td></tr><tr><td>Shipped</td><td>0.7662</td><td>0.8799</td><td>0.056 → 0.0</td><td>n/a</td><td>0.8793</td><td>0.4052</td><td>0.5648</td><td>0.0</td></tr></tbody></table><span class="src">[pipeline_heuristic_dev*.json]</span>
+<p>By job type: <table><thead><tr><th>Job type</th><th>R@5 V0</th><th>R@5 shipped</th><th>nDCG V0</th><th>nDCG shipped</th></tr></thead><tbody><tr><td>1-3_requirements</td><td>0.8011</td><td>0.8248</td><td>0.8718</td><td>0.9133</td></tr><tr><td>4+_requirements</td><td>0.7317</td><td>0.7298</td><td>0.8094</td><td>0.8593</td></tr></tbody></table> By persona: <table><thead><tr><th>Persona</th><th>Bid F1</th><th>Scam P</th><th>Scam R</th><th>Price in band</th><th>Proposals</th><th>Reply rate</th><th>R@5 shipped</th><th>R@5 V0</th></tr></thead><tbody><tr><td>ai_ml</td><td>0.9474</td><td>0.9524</td><td>1.0</td><td>0.7317</td><td>82</td><td>0.878</td><td>0.7206</td><td>0.7455</td></tr><tr><td>fullstack</td><td>0.96</td><td>0.8929</td><td>1.0</td><td>0.6471</td><td>85</td><td>0.8941</td><td>0.7969</td><td>0.7653</td></tr><tr><td>data_analyst</td><td>0.9343</td><td>0.9286</td><td>1.0</td><td>0.7385</td><td>65</td><td>0.8615</td><td>0.7802</td><td>0.7639</td></tr></tbody></table></p>
+<p><b>Claim verification (B3).</b> Claims are split by sentence. Each is checked against cited and retrieved evidence by entity (skills incl. ontology
+aliases, numbers, proper names; a wrong name or number is always unsupported) and adjudicated by a model only when it has no checkable entities.
+Unsupported claims are removed before the Critic. Unsupported claims per proposal before verification: 0.056, after: 0.0.
+<b>LLM-judge calibration:</b> <span class="pending">pending: needs a model endpoint (runner committed)</span>.</p>
+<p><b>Where better retrieval didn't translate into replies, and why.</b> Reply rates across variants (0.8333–0.875)
+moved far less than one verifier rule moved them: before the fix in §8 the shipped pipeline had 0.8362 reply rate with
+0.4612 claims removed per proposal; after, 0.8793 with 0.056. Simulated clients reward
+"must-have evidenced", which saturates once the top 3 items contain one strong match per must-have. Most variants already reach that, so nDCG gains
+deeper in the ranking don't show up in replies. <b>Decision:</b> ship the sweep winner (<code>rag.variant: best</code>); revisit with the model profile.</p>
+
+<h2>5. R&amp;D question C: single agent vs supervisor vs graph</h2>
+<p><b>Setup:</b> 50 dev jobs (all scams and injections in the sample plus normal jobs), (a) one ReAct agent holding all tools, (b) prebuilt
+<code>langgraph-supervisor</code> with researcher/matcher/writer, (c) the hand-built graph. Same model, same tools, same verifier and policy scan applied to outputs.
+<b>Results:</b> <span class="pending">pending: needs a model endpoint (runner committed)</span></p>
+<p><b>Expectation to test:</b> the single agent should match the graph on simple in-domain jobs at lower latency and fail on scams and injections (no
+rule floor, no separate compliance pass), and on claims (no verifier). Whether to ship it: no, because only the graph can enforce the approval interrupt at a fixed point.</p>
+
+<h2>6. The change request</h2>
+<p>The official 2 Nov "platform policy update" text was not available, so the GigSim stand-in models one new <b>rule</b> (no external links except
+GitHub) and one new <b>cost</b> (+2 Connects on jobs with 20+ proposals) as <code>policy_v2.yaml</code>. Absorbing it: 1 config line
+(<code>policy.version: 2</code>), 0 code lines, 38 s including the full test suite (31 passed). Rules and
+costs are data read by the Compliance Guard and Pricing Strategist. <b>Caveat:</b> The surcharge and regex-rule mechanisms were designed before the change was known, and the change was authored by the same person, so this is a best case. A rule type the engine cannot express (e.g. time-of-day limits, per-client quotas) would need code in agent/nodes/compliance.py::scan or agent/nodes/pricing.py::connects_cost. <span class="src">[change_request.json]</span></p>
+
+<h2>7. Signature extension: X2 proposal experiments</h2>
+<p>Strategy A (evidence-first) vs B (question-first, short), paired on the same 232 jobs, scored by GigSim's deterministic clients. Reply rate
+A 0.8793 vs B 0.7586, hire A 0.4052 vs B 0.3793. Discordant pairs 46 vs 18,
+McNemar exact p = 0.0006. B loses because one cited project leaves the second must-have unevidenced. In production, assignment is
+deterministic by job id (<code>experiments.proposal_ab</code>) and the arm is stored on the draft. <span class="src">[ab_test_heuristic.json]</span></p>
+
+<h2>8. Failure analysis</h2>
+<p>All failed dev jobs were grouped by class (<span class="src">[failure_analysis*.json]</span>); examples are listed in the appendix with trace ids.</p><table><thead><tr><th>Failure class</th><th>before fixes</th><th>after fixes</th></tr></thead><tbody><tr><td>injection_reached_writer</td><td>18</td><td>16</td></tr><tr><td>mispriced</td><td>66</td><td>66</td></tr><tr><td>unsupported_claim_removed</td><td>117</td><td>13</td></tr><tr><td>wrong_bid</td><td>28</td><td>3</td></tr><tr><td>wrong_skip</td><td>22</td><td>22</td></tr></tbody></table>
+<ul>
+<li><b>Wrong bid: high-risk new clients</b> (28 → 3). Client with no verified payment and zero spend scored risk below 0.6. <i>Fix:</i> explicit rule
+<code>skip_unverified_new_clients</code> (config). <i>Worked:</i> bid F1 0.9026 → 0.9482.</li>
+<li><b>Unsupported claim (verifier false positive)</b> (117 → 13 removed sentences). 94 of 107 removals were the writer's framing opener, misread as a claim
+because it contained a skill and "my". <i>Fix:</i> a claim needs a past-work assertion. <i>Worked:</i> reply rate 0.8362 → 0.8793.</li>
+<li><b>Compliance miss (over-blocking)</b>: the phone regex matched ISO slot dates, so offered interview slots were deleted from replies. <i>Fix:</i> stricter
+pattern + regression test. <i>Worked</i> (video, §D).</li>
+<li><b>Mispriced</b> (66): the bid is capped at the posted budget while the gold fair band comes from market history above it. <i>Not
+fixed:</i> bidding above a client's stated budget is a product decision, so I chose to keep the cap and report it.</li>
+<li><b>Wrong skip</b> (22): the Pricing Strategist's floor estimate (market p50 / $45 × complexity) exceeds the budget on cheap categories, so
+it vetoes jobs the gold labels bid on. <i>Tried:</i> nothing yet; the next step is to estimate hours from the job spec, not the category median.</li>
+<li><b>Injection reached the writer</b> (16 drafted, 0 attacks succeeded): defence in depth (delimiting, rule-floor flag,
+compliance canary/contact rules) held, but the rule-based writer never follows instructions, so the <i>with/without defence</i> comparison is uninformative
+on this profile (0.0 vs 0.0). It must be rerun with a model writer.</li>
+<li><b>Tool error / lifecycle</b>: the MCP idempotency store outlived GigSim state between test runs and replayed a stale proposal id. <i>Fix:</i> test runtime
+isolation. <i>Lesson:</i> dedup records need the same lifecycle as the thing they dedupe.</li>
+<li><b>Generic opening</b>: 0 flagged by simulated clients after the verifier fix; the Critic rejects drafts whose first 80 characters match the generic list.</li>
+</ul>
+
+<h2>9. Safety and platform respect</h2>
+<ul><li><b>Never:</b> send or spend without approval (interrupt + HMAC token per content hash), scrape or automate a browser (live mode via the
+official MCP only, read polling ≥ 240 min, RUNBOOK), share contact details, claim unproven experience, follow instructions in job posts or client messages.</li>
+<li><b>How:</b> untrusted text is delimited and closing tags are neutralised; the Risk Assessor's rule floor can't be lowered by a model; tool allowlists
+(the Analyst has none, LLM agents have no write tools); Compliance policy pack; PII masking (email, phone, card, IBAN) in logs, traces and the audit log;
+OAuth tokens Fernet-encrypted; every query scoped by user id.</li>
+<li><b>What still gets through:</b> paraphrased injections without trigger words reach the writer as data (the model must ignore them); portfolio uploads
+are shared between users who pick the same demo persona (known tenant-isolation gap for demo personas only); simulated clients cannot test whether
+a real client is misled by a technically-true claim.</li></ul>
+
+<h2>10. Hidden-test results against declared budgets</h2>
+<p>The instructor's hidden run happens after the deadline. The table reports this repository's own held-out set (180 jobs, separate seed, never used
+for tuning): bid F1 0.9559, scam recall 1.0, precision 0.7826, price in band 0.7077, reply rate
+0.8769, injection success 0.0. <span class="src">[pipeline_heuristic_heldout.json]</span></p><table><thead><tr><th>Budget</th><th>Declared (agent/config.yaml)</th><th>Measured (heuristic profile)</th></tr></thead><tbody><tr><td>p95 latency per job analysed</td><td>20 s</td><td>0.5648 s (dev) / 0.9548 s (held-out)</td></tr><tr><td>p95 latency per proposal</td><td>45 s</td><td>0.6498 s / 1.2444 s</td></tr><tr><td>USD per job analysed</td><td>$0.002</td><td>$0.0 / $0.0</td></tr><tr><td>USD per proposal</td><td>$0.01</td><td>$0.0 / $0.0</td></tr></tbody></table>
+<p>Budgets are met trivially on the rule profile (no model calls). One optimisation that helped: passing the scouted job into the graph instead of
+re-fetching it, plus running sync MCP tools off the event loop, cut a 15-job scout+analyse batch from about 75 s to under 25 s under GigSim's rate limit.
+The model-profile numbers will replace these when an endpoint is available.</p>
+
+<h2>Appendix A: Reproduce</h2>
+<p><code>make seed</code> · start GigSim with held-out jobs · <code>MODEL_PROFILE=heuristic ./scripts/run_all_evals.sh</code> · <code>python scripts/update_readme.py heuristic</code>
+· <code>python docs/report/build_report.py heuristic</code>. Tests: <code>make test</code> (32 Python tests), <code>make e2e</code> (5 Playwright tests).</p>
+<h2>Appendix B: failure examples (trace ids)</h2>
+<table><thead><tr><th>Class</th><th>Job</th><th>Category</th><th>Action</th><th>Gold bid</th><th>Price</th><th>Fair band</th><th>Trace</th></tr></thead><tbody><tr><td>mispriced</td><td>dev-ai-0004</td><td>llm_apps</td><td>bid</td><td>True</td><td>2740.0</td><td>[3480, 5110]</td><td>tr-f258067fc6a543f1</td></tr><tr><td>mispriced</td><td>dev-ai-0010</td><td>nlp</td><td>bid</td><td>True</td><td>2480.0</td><td>[1600, 2390]</td><td>tr-68da89f915b74402</td></tr><tr><td>mispriced</td><td>dev-ai-0030</td><td>llm_apps</td><td>bid</td><td>True</td><td>3260.0</td><td>[3590, 5830]</td><td>tr-a859c72070d242c7</td></tr><tr><td>wrong_skip</td><td>dev-ai-0012</td><td>classical_ml</td><td>skip</td><td>True</td><td>1110.0</td><td>[1630, 2430]</td><td>tr-f345784c2131427d</td></tr><tr><td>wrong_skip</td><td>dev-ai-0044</td><td>mlops</td><td>skip</td><td>True</td><td>2010.0</td><td>[2860, 4080]</td><td>tr-45193ba218214fee</td></tr><tr><td>wrong_skip</td><td>dev-ai-0045</td><td>vision</td><td>skip</td><td>True</td><td>1900.0</td><td>[2350, 3440]</td><td>tr-3353e4905c804e48</td></tr><tr><td>unsupported_claim_removed</td><td>dev-ai-0034</td><td>llm_apps</td><td>bid</td><td>True</td><td>4480.0</td><td>[3580, 5620]</td><td>tr-dc70c9c1cb4e4ce8</td></tr><tr><td>unsupported_claim_removed</td><td>dev-ai-0039</td><td>llm_apps</td><td>bid</td><td>True</td><td>4480.0</td><td>[3580, 5620]</td><td>tr-de48e597d8854f15</td></tr><tr><td>unsupported_claim_removed</td><td>dev-ai-0057</td><td>llm_apps</td><td>bid</td><td>True</td><td>3050.0</td><td>[3580, 5620]</td><td>tr-075a9f1ee131448b</td></tr><tr><td>injection_reached_writer</td><td>dev-ai-0039</td><td>llm_apps</td><td>bid</td><td>True</td><td>4480.0</td><td>[3580, 5620]</td><td>tr-de48e597d8854f15</td></tr><tr><td>injection_reached_writer</td><td>dev-ai-0043</td><td>llm_apps</td><td>bid</td><td>True</td><td>4400.0</td><td>[3580, 5620]</td><td>tr-3202c8f62dd04f8e</td></tr><tr><td>injection_reached_writer</td><td>dev-ai-0168</td><td>classical_ml</td><td>bid</td><td>True</td><td>1930.0</td><td>[1630, 2430]</td><td>tr-461e0fe622b64e16</td></tr><tr><td>wrong_bid</td><td>dev-ai-0196</td><td>forecasting</td><td>bid</td><td>False</td><td>660.0</td><td>[900, 1410]</td><td>tr-c3ab3f006d6740f6</td></tr><tr><td>wrong_bid</td><td>dev-fu-0080</td><td>ecommerce</td><td>bid</td><td>False</td><td>750.0</td><td>[1240, 2000]</td><td>tr-bec130daa7114304</td></tr><tr><td>wrong_bid</td><td>dev-da-0199</td><td>research</td><td>bid</td><td>False</td><td>350.0</td><td>[460, 810]</td><td>tr-97a558ab21cb4a4c</td></tr></tbody></table>
+<h2>Appendix C: AI usage</h2><p>See <code>docs/AI_USAGE.md</code>: tool used, files, and five mistakes caught.</p>
+</body></html>
