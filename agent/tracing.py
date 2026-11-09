@@ -25,6 +25,9 @@ CARD = re.compile(r"\b(?:\d[ -]?){13,19}\b")
 IBAN = re.compile(r"\b[A-Z]{2}\d{2}[A-Z0-9]{11,30}\b")
 
 
+SECRET_KEYS = {"token", "access_token", "refresh_token", "api_key", "authorization", "approval_id", "ciphertext"}
+
+
 def mask_pii(text: str) -> str:
     text = EMAIL.sub("[EMAIL]", text)
     text = CARD.sub("[CARD]", text)
@@ -37,7 +40,8 @@ def _mask(obj):
     if isinstance(obj, str):
         return mask_pii(obj)
     if isinstance(obj, dict):
-        return {k: ("[REDACTED]" if "token" in k.lower() or "secret" in k.lower() else _mask(v)) for k, v in obj.items()}
+        return {k: ("[REDACTED]" if k.lower() in SECRET_KEYS or "secret" in k.lower() or "password" in k.lower() else _mask(v))
+                for k, v in obj.items()}
     if isinstance(obj, list):
         return [_mask(x) for x in obj]
     return obj

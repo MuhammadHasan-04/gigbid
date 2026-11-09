@@ -87,7 +87,7 @@ def _unwrap(result) -> Any:
 
 class MCPTools:
     def __init__(self, transport: str | None = None, user: str = "demo", trace_id: str | None = None,
-                 timeout: float = 20.0, retries: int = 2):
+                 timeout: float = 75.0, retries: int = 2):
         self.transport = transport or os.getenv("MCP_TRANSPORT", "inproc")
         self.user, self.trace_id = user, trace_id
         self.timeout, self.retries = timeout, retries
@@ -130,7 +130,10 @@ class MCPTools:
                         out = json.loads(out[0]["text"])
                 else:
                     srv = _inproc_server(server)
-                    out = _unwrap(await asyncio.wait_for(srv.call_tool(tool, args), self.timeout))
+                    # FastMCP runs sync tools on the calling loop; run them in a worker thread so a
+                    # rate-limit backoff inside a tool never blocks the API's event loop.
+                    out = _unwrap(await asyncio.wait_for(
+                        asyncio.to_thread(lambda: asyncio.run(srv.call_tool(tool, args))), self.timeout))
                 if isinstance(out, dict) and out.get("error") == "marketplace_unavailable":
                     raise ToolUnavailable(out.get("detail", "marketplace unavailable"))
                 if isinstance(out, dict) and isinstance(out.get("error"), str) and "marketplace_unavailable" in out["error"]:
