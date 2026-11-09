@@ -27,31 +27,46 @@ mcp = FastMCP("gigbid-portfolio", instructions="Read-only evidence from one free
               "for every experience claim; never claim what search_evidence cannot find.")
 READ = ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True, openWorldHint=False)
 audit = AuditLog("portfolio")
-_state: dict = {"persona": os.getenv("PORTFOLIO_PERSONA", "ai_ml"), "dir": os.getenv("PORTFOLIO_DIR"), "retriever": None}
+_state: dict = {"persona": os.getenv("PORTFOLIO_PERSONA", "ai_ml"), "dir": os.getenv("PORTFOLIO_DIR"), "retrievers": {}}
+_versions: dict[str, int] = {}
 
 
-def _items():
+def _items(persona: str):
     if _state["dir"]:
         from mcp_servers.portfolio.folder_loader import load_folder
         return load_folder(Path(_state["dir"]).expanduser())
     from rag.ingest.loaders import load_persona
-    return load_persona(_state["persona"])
+    return load_persona(persona)
 
 
-def retriever():
-    if _state["retriever"] is None:
+def retriever(portfolio: str | None = None):
+    """One retriever per portfolio (tenant). Re-indexed when the user adds work (bump_version)."""
+    persona = portfolio or _state["persona"]
+    if not _state["dir"] and persona not in available_portfolios():
+        raise ValueError(f"unknown portfolio {persona}")
+    key = (persona, _versions.get(persona, 0))
+    if key not in _state["retrievers"]:
         from rag.pipeline import Retriever
         from rag.variants import get
-        variant = os.getenv("PORTFOLIO_RAG_VARIANT", "best")
-        _state["retriever"] = Retriever(_state["persona"], get(variant), items=_items())
-    return _state["retriever"]
+        variant = os.getenv("PORTFOLIO_RAG_VARIANT") or __import__("agent.settings", fromlist=["get"]).get("rag.variant", "best")
+        _state["retrievers"][key] = Retriever(persona, get(variant), items=_items(persona))
+    return _state["retrievers"][key]
+
+
+def available_portfolios() -> list[str]:
+    from rag.ingest.loaders import PERSONA_DIR
+    return sorted(p.name for p in PERSONA_DIR.iterdir() if p.is_dir()) if PERSONA_DIR.exists() else []
+
+
+def bump_version(portfolio: str):
+    _versions[portfolio] = _versions.get(portfolio, 0) + 1
 
 
 def configure(persona: str | None = None, portfolio_dir: str | None = None):
     if persona:
         _state["persona"] = persona
     _state["dir"] = portfolio_dir
-    _state["retriever"] = None
+    _state["retrievers"] = {}
 
 
 class EvidenceItem(BaseModel):
@@ -97,9 +112,10 @@ class Filters(BaseModel):
 def search_evidence(ctx: Context,
                     requirement: Annotated[str, Field(min_length=2, max_length=300, description="a job requirement, e.g. 'Celery task queues'")],
                     k: Annotated[int, Field(ge=1, le=20)] = 5,
-                    filters: Filters | None = None) -> EvidenceResults:
+                    filters: Filters | None = None,
+                    portfolio: Annotated[str | None, Field(max_length=40, description="portfolio id; default: the server's")] = None) -> EvidenceResults:
     """Find portfolio evidence (case studies, repos, code, CV lines, reviews) that proves a requirement."""
-    r = retriever()
+    r = retriever(portfolio)
     hits = r.retrieve_query(requirement, k=k * 3)
     items = []
     for h in hits:
@@ -125,9 +141,10 @@ def search_evidence(ctx: Context,
 
 
 @mcp.tool(annotations=READ)
-def get_case_study(id: Annotated[str, Field(min_length=2, max_length=80, description="project id or evidence id")]) -> CaseStudy:
+def get_case_study(id: Annotated[str, Field(min_length=2, max_length=80, description="project id or evidence id")],
+                   portfolio: Annotated[str | None, Field(max_length=40)] = None) -> CaseStudy:
     """Full text of one case study / project, plus ids of every other evidence item about the same project."""
-    items = retriever().items
+    items = retriever(portfolio or (id.split(":")[0] if ":" in id else None)).items
     pid = id.split(":")[-1]
     main = next((e for e in items if e.evidence_id == id), None) or next(
         (e for e in items if e.project_id == pid and e.type in ("case_study", "upload")), None) or next(
@@ -139,11 +156,11 @@ def get_case_study(id: Annotated[str, Field(min_length=2, max_length=80, descrip
 
 
 @mcp.tool(annotations=READ)
-def list_skills() -> list[SkillCount]:
+def list_skills(portfolio: Annotated[str | None, Field(max_length=40)] = None) -> list[SkillCount]:
     """Skills evidenced in the portfolio, with the number of projects that show each."""
     cnt: Counter = Counter()
     seen = set()
-    for e in retriever().items:
+    for e in retriever(portfolio).items:
         if e.type == "proposal":
             continue
         for s in e.skills:
@@ -164,7 +181,7 @@ def case_resource(id: str) -> str:
 @mcp.resource("portfolio://proposal/{id}", mime_type="text/plain")
 def proposal_resource(id: str) -> str:
     """A past proposal with its outcome (won / replied / ignored)."""
-    for e in retriever().items:
+    for e in retriever(id.split(":")[0] if ":" in id else None).items:
         if e.type == "proposal" and (e.evidence_id == id or e.evidence_id.endswith(":" + id)):
             return f"Outcome: {e.outcome}\nJob: {e.title}\nDate: {e.date}\n\n{e.text}"
     raise ValueError(f"no proposal {id}")

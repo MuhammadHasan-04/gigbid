@@ -95,6 +95,7 @@ class ComplianceVerdict(BaseModel):
     blocked_reason: str | None = None
     violations: list[dict] = Field(default_factory=list)
     cleaned_text: str = ""
+    cleaned_answers: list[str] = Field(default_factory=list)
     policy_version: int = 1
 
 

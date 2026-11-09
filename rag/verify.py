@@ -52,7 +52,11 @@ def _skills_in(text: str) -> set[str]:
 def entities(claim: str) -> dict[str, set[str]]:
     c = CITE.sub("", claim)
     nums = {n.strip().lower() for n in NUM.findall(c) if re.search(r"\d", n)}
-    caps = {w for w in re.findall(r"\b[A-Z][a-zA-Z]{2,}(?:\s[A-Z][a-zA-Z]+)?\b", c)
+    stripped = c
+    from rag.skills import _patterns
+    for _, pat in _patterns():
+        stripped = pat.sub(" ", stripped)
+    caps = {w for w in re.findall(r"\b[A-Z][a-zA-Z]{2,}(?:\s[A-Z][a-zA-Z]+)?\b", stripped)
             if w.split()[0] not in STOP_CAPS and not tag_skills(w)}
     return {"skills": _skills_in(c), "numbers": nums, "names": caps}
 
@@ -125,6 +129,36 @@ def verify(text: str, retriever, evidence_lookup: dict[str, str] | None = None, 
         ambiguous = [c for c in claims if c.reason == "no checkable entities"]
         if ambiguous:
             ev_text = "\n".join(f"{i}: {by_id.get(i, evidence_lookup.get(i, ''))[:400]}" for c in ambiguous for i in c.evidence_ids)
+            out = llm.structured("verifier", "verifier", _Verdicts, lambda: _Verdicts(verdicts=[]), max_tokens=600,
+                                 claims="\n".join(f"{i}. {c.text}" for i, c in enumerate(ambiguous)), evidence=ev_text)
+            for i, v in enumerate(out.verdicts[: len(ambiguous)]):
+                if v.get("verdict") in ("supported", "partial", "unsupported"):
+                    ambiguous[i].verdict = v["verdict"]
+                    ambiguous[i].reason = "llm: " + str(v.get("reason", ""))[:200]
+    return claims
+
+
+async def verify_async(text: str, search, evidence_lookup: dict[str, str], use_llm: bool = True) -> list[Claim]:
+    """Same as verify() but evidence comes from an async search (the Portfolio MCP tool)."""
+    claims = []
+    for sent in split_sentences(text):
+        if not is_claim(sent):
+            continue
+        ev = {}
+        for cid in CITE.findall(sent):
+            for one in cid.split(","):
+                one = one.strip()
+                if one in evidence_lookup:
+                    ev[one] = evidence_lookup[one]
+        res = await search(CITE.sub("", sent), 4)
+        for i in res.get("items", []):
+            ev.setdefault(i["evidence_id"], i["snippet"])
+        verdict, ids, reason = _check(sent, ev)
+        claims.append(Claim(text=sent, verdict=verdict, evidence_ids=ids, reason=reason))
+    if use_llm:
+        ambiguous = [c for c in claims if c.reason == "no checkable entities"]
+        if ambiguous:
+            ev_text = "\n".join(f"{i}: {evidence_lookup.get(i, '')[:400]}" for c in ambiguous for i in c.evidence_ids)
             out = llm.structured("verifier", "verifier", _Verdicts, lambda: _Verdicts(verdicts=[]), max_tokens=600,
                                  claims="\n".join(f"{i}. {c.text}" for i, c in enumerate(ambiguous)), evidence=ev_text)
             for i, v in enumerate(out.verdicts[: len(ambiguous)]):
