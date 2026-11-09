@@ -1,0 +1,331 @@
+[
+ {
+  "name": "skipped-scam",
+  "job_id": "dev-ai-0003",
+  "trace_id": "tr-public-skipped-scam",
+  "status": "skipped",
+  "decision": "skip",
+  "summary": {
+   "trace_id": "tr-public-skipped-scam",
+   "spans": 18,
+   "by_node": {
+    "analyst": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 1,
+     "latency_s": 0.0046
+    },
+    "risk_assessor": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 1,
+     "latency_s": 0.0
+    },
+    "fit_matcher": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 1,
+     "latency_s": 0.0
+    }
+   },
+   "tokens": 0,
+   "usd": 0.0
+  },
+  "log": [
+   "scout: loaded dev-ai-0003",
+   "analyst: 4 requirements, needs=['timezone']",
+   "risk_assessor: risk=1.0 scam=True flags=['low_budget', 'off_platform_payment', 'unpaid_work', 'unverified_payment']",
+   "fit_matcher: fit=0.0 unsupported=['Node.js', 'NestJS', 'REST API', 'PostgreSQL']",
+   "decide: skip: scam signals: off_platform_payment, unpaid_work; fit 0.00 below 0.55"
+  ]
+ },
+ {
+  "name": "approved-proposal",
+  "job_id": "dev-ai-0004",
+  "trace_id": "tr-public-approved-proposal",
+  "status": "submitted",
+  "decision": "bid",
+  "summary": {
+   "trace_id": "tr-public-approved-proposal",
+   "spans": 46,
+   "by_node": {
+    "analyst": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 1,
+     "latency_s": 0.0006
+    },
+    "risk_assessor": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 1,
+     "latency_s": 0.0
+    },
+    "fit_matcher": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 1,
+     "latency_s": 0.0
+    },
+    "pricing": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 1,
+     "latency_s": 0.0
+    },
+    "writer": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 1,
+     "latency_s": 0.0001
+    },
+    "critic": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 1,
+     "latency_s": 0.0
+    }
+   },
+   "tokens": 0,
+   "usd": 0.0
+  },
+  "log": [
+   "scout: loaded dev-ai-0004",
+   "analyst: 3 requirements, needs=['timezone']",
+   "risk_assessor: risk=0.183 scam=False flags=[]",
+   "fit_matcher: fit=1.0 unsupported=[]",
+   "decide: bid: fit 1.00, risk 0.18",
+   "pricing: Market p50 for llm_apps is 4150; budget 1826-2740; floor 2410 from your rate. Bid 2740. 6 Connects (~$0.90) vs expected value $35.96.",
+   "writer: draft r0, 118 words",
+   "verifier: 4 claims, 0 unsupported removed",
+   "critic: passed=True issues=[]",
+   "compliance: allowed=True violations=[]",
+   "approval: approved",
+   "submit: submitted prop-2950339b7a; replay=False; connects=4"
+  ]
+ },
+ {
+  "name": "injection-ignored",
+  "job_id": "dev-ai-0039",
+  "trace_id": "tr-public-injection-ignored",
+  "status": "awaiting_approval",
+  "decision": "bid",
+  "summary": {
+   "trace_id": "tr-public-injection-ignored",
+   "spans": 41,
+   "by_node": {
+    "analyst": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 1,
+     "latency_s": 0.0009
+    },
+    "risk_assessor": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 1,
+     "latency_s": 0.0
+    },
+    "fit_matcher": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 1,
+     "latency_s": 0.0
+    },
+    "pricing": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 1,
+     "latency_s": 0.0
+    },
+    "writer": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 1,
+     "latency_s": 0.0
+    },
+    "critic": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 1,
+     "latency_s": 0.0
+    }
+   },
+   "tokens": 0,
+   "usd": 0.0
+  },
+  "log": [
+   "scout: loaded dev-ai-0039",
+   "analyst: 5 requirements, needs=['legacy_code']",
+   "risk_assessor: risk=0.15 scam=False flags=['prompt_injection']",
+   "fit_matcher: fit=0.778 unsupported=['Pinecone']",
+   "decide: bid: fit 0.78, risk 0.15; job post contains instructions aimed at AI tools; they were ignored",
+   "pricing: Market p50 for llm_apps is 4150; budget 2565-4690; floor 2900 from your rate. Bid 4482. 4 Connects (~$0.60) vs expected value $50.12.",
+   "writer: draft r0, 137 words",
+   "verifier: 5 claims, 1 unsupported removed",
+   "critic: passed=True issues=[]",
+   "compliance: allowed=True violations=[]"
+  ]
+ },
+ {
+  "name": "crash-and-resume",
+  "job_id": "dev-ai-0005",
+  "trace_id": "tr-public-crash-and-resume",
+  "status": "submitted",
+  "decision": "bid",
+  "summary": {
+   "trace_id": "tr-public-crash-and-resume",
+   "spans": 55,
+   "by_node": {
+    "analyst": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 1,
+     "latency_s": 0.0008
+    },
+    "risk_assessor": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 1,
+     "latency_s": 0.0
+    },
+    "fit_matcher": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 1,
+     "latency_s": 0.0
+    },
+    "pricing": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 1,
+     "latency_s": 0.0
+    },
+    "writer": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 1,
+     "latency_s": 0.0
+    },
+    "critic": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 1,
+     "latency_s": 0.0
+    }
+   },
+   "tokens": 0,
+   "usd": 0.0
+  },
+  "log": [
+   "scout: loaded dev-ai-0005",
+   "analyst: 7 requirements, needs=['deadline']",
+   "risk_assessor: risk=0.163 scam=False flags=[]",
+   "fit_matcher: fit=1.0 unsupported=[]",
+   "decide: bid: fit 1.00, risk 0.16",
+   "pricing: Market p50 for llm_apps is 4150; budget 2845-4310; floor 3400 from your rate. Bid 4310. 12 Connects (~$1.80) vs expected value $56.57.",
+   "writer: draft r0, 121 words",
+   "verifier: 3 claims, 1 unsupported removed",
+   "critic: passed=True issues=[]",
+   "compliance: allowed=True violations=[]",
+   "approval: approved",
+   "submit: submitted prop-c73966bcac; replay=True; connects=10"
+  ]
+ },
+ {
+  "name": "critic-loop",
+  "job_id": "dev-ai-0010",
+  "trace_id": "tr-public-critic-loop",
+  "status": "awaiting_approval",
+  "decision": "bid",
+  "summary": {
+   "trace_id": "tr-public-critic-loop",
+   "spans": 130,
+   "by_node": {
+    "analyst": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 3,
+     "latency_s": 0.002
+    },
+    "risk_assessor": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 3,
+     "latency_s": 0.0
+    },
+    "fit_matcher": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 3,
+     "latency_s": 0.0
+    },
+    "pricing": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 3,
+     "latency_s": 0.0
+    },
+    "writer": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 5,
+     "latency_s": 0.0002
+    },
+    "critic": {
+     "tokens_in": 0,
+     "tokens_out": 0,
+     "usd": 0.0,
+     "calls": 5,
+     "latency_s": 0.0
+    }
+   },
+   "tokens": 0,
+   "usd": 0.0
+  },
+  "log": [
+   "scout: loaded dev-ai-0010",
+   "analyst: 2 requirements, needs=['legacy_code']",
+   "risk_assessor: risk=0.168 scam=False flags=[]",
+   "fit_matcher: fit=1.0 unsupported=[]",
+   "decide: bid: fit 1.00, risk 0.17",
+   "pricing: Market p50 for nlp is 2290; budget 1627-2780; floor 1190 from your rate. Bid 2480. 10 Connects (~$1.50) vs expected value $32.55.",
+   "writer: draft r0, 105 words",
+   "verifier: 3 claims, 1 unsupported removed",
+   "critic: passed=False issues=[]",
+   "writer: draft r1, 105 words",
+   "verifier: 3 claims, 1 unsupported removed",
+   "critic: passed=False issues=[]",
+   "writer: draft r2, 105 words",
+   "verifier: 3 claims, 1 unsupported removed",
+   "critic: passed=False issues=[]",
+   "compliance: allowed=True violations=[]"
+  ]
+ }
+]
