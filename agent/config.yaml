@@ -38,11 +38,10 @@ models:
         client_liaison: {provider: ollama, model: "qwen3:8b"}
       fallback: {provider: heuristic, model: rules-v1}
     paid:
-      default: {provider: openrouter, model: openai/gpt-oss-20b}
-      nodes:
-        writer: {provider: openrouter, model: anthropic/claude-haiku-4.5}
-        critic: {provider: openrouter, model: anthropic/claude-haiku-4.5}
-      fallback: {provider: groq, model: openai/gpt-oss-20b}
+      # Google Gemini Flash-Lite (proprietary API model, optional per the assignment; cost reported per job/proposal)
+      default: {provider: gemini, model: gemini-3.5-flash-lite}
+      nodes: {}
+      fallback: {provider: heuristic, model: rules-v1}
     heuristic:
       # deterministic rules only: runs offline, used by CI and as the last-resort fallback
       default: {provider: heuristic, model: rules-v1}
@@ -54,6 +53,7 @@ models:
     "groq:openai/gpt-oss-120b": [0.15, 0.60]
     "groq:qwen/qwen3-32b": [0.29, 0.59]
     "openrouter:anthropic/claude-haiku-4.5": [1.0, 5.0]
+    "gemini:gemini-3.5-flash-lite": [0.10, 0.40]   # USD per 1M tokens: verify against Google's current price list
     "openrouter:openai/gpt-oss-20b": [0.04, 0.16]
   timeout_seconds: 45
   max_retries: 2

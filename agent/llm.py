@@ -27,6 +27,8 @@ BASE_URLS = {
     "groq": ("https://api.groq.com/openai/v1", "GROQ_API_KEY"),
     "openrouter": ("https://openrouter.ai/api/v1", "OPENROUTER_API_KEY"),
     "together": ("https://api.together.xyz/v1", "TOGETHER_API_KEY"),
+    # Google Gemini through its OpenAI-compatible endpoint (paid/proprietary profile; cost is reported)
+    "gemini": ("https://generativelanguage.googleapis.com/v1beta/openai", "GEMINI_API_KEY"),
     "ollama": (os.getenv("OLLAMA_BASE_URL", "http://localhost:11434") + "/v1", ""),
     "openai_compat": (os.getenv("OPENAI_COMPAT_BASE_URL", "http://localhost:8000/v1"), "OPENAI_COMPAT_API_KEY"),
 }
@@ -117,6 +119,8 @@ def _chat(spec: dict, system: str, user: str, json_mode: bool, max_tokens: int) 
             "temperature": spec.get("temperature", 0.2), "max_tokens": max_tokens}
     if json_mode:
         body["response_format"] = {"type": "json_object"}
+    if spec["provider"] == "gemini":
+        body.setdefault("reasoning_effort", spec.get("reasoning_effort", "low"))
     if spec["provider"] == "groq" and "gpt-oss" in spec["model"]:
         body["reasoning_effort"] = spec.get("reasoning_effort", "low")
     timeout = settings.get("models.timeout_seconds", 45)

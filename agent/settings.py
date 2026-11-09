@@ -9,6 +9,23 @@ from typing import Any
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def _load_dotenv(path: Path = ROOT / ".env") -> None:
+    """Minimal .env loader (no extra dependency). Real environment variables win."""
+    if not path.exists():
+        return
+    for line in path.read_text().splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        k, v = line.split("=", 1)
+        v = v.split(" #", 1)[0].strip().strip('"').strip("'")
+        if v:
+            os.environ.setdefault(k.strip(), v)
+
+
+_load_dotenv()
 CONFIG_PATH = Path(os.getenv("GIGBID_CONFIG", ROOT / "agent" / "config.yaml"))
 
 
