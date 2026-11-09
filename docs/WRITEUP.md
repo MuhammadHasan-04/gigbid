@@ -1,3 +1,6 @@
+---
+title: "The guardrail that cost more replies than our retrieval ever won"
+---
 # The guardrail that cost more replies than our retrieval ever won
 
 *What building GigBid, a multi-agent freelance proposal copilot, taught me about measuring safety layers.*
