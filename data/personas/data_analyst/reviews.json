@@ -1,0 +1,68 @@
+[
+ {
+  "review_id": "rev-data_analyst-p01",
+  "project_id": "data_analyst-p01",
+  "rating": 5.0,
+  "text": "Understood our messy data quickly and documented everything."
+ },
+ {
+  "review_id": "rev-data_analyst-p04",
+  "project_id": "data_analyst-p04",
+  "rating": 5.0,
+  "text": "Solid engineer, a few delays but the end result was excellent."
+ },
+ {
+  "review_id": "rev-data_analyst-p06",
+  "project_id": "data_analyst-p06",
+  "rating": 5.0,
+  "text": "Understood our messy data quickly and documented everything."
+ },
+ {
+  "review_id": "rev-data_analyst-p07",
+  "project_id": "data_analyst-p07",
+  "rating": 5.0,
+  "text": "Went beyond the brief and explained trade-offs honestly."
+ },
+ {
+  "review_id": "rev-data_analyst-p12",
+  "project_id": "data_analyst-p12",
+  "rating": 4.5,
+  "text": "Great work on the Google Sheets part; very professional."
+ },
+ {
+  "review_id": "rev-data_analyst-p14",
+  "project_id": "data_analyst-p14",
+  "rating": 5.0,
+  "text": "Solid engineer, a few delays but the end result was excellent."
+ },
+ {
+  "review_id": "rev-data_analyst-p15",
+  "project_id": "data_analyst-p15",
+  "rating": 4.5,
+  "text": "Went beyond the brief and explained trade-offs honestly."
+ },
+ {
+  "review_id": "rev-data_analyst-p16",
+  "project_id": "data_analyst-p16",
+  "rating": 5.0,
+  "text": "Clear communication and delivered ahead of schedule. Would hire again."
+ },
+ {
+  "review_id": "rev-data_analyst-p18",
+  "project_id": "data_analyst-p18",
+  "rating": 5.0,
+  "text": "Great work on the statistics part; very professional."
+ },
+ {
+  "review_id": "rev-data_analyst-p19",
+  "project_id": "data_analyst-p19",
+  "rating": 5.0,
+  "text": "Understood our messy data quickly and documented everything."
+ },
+ {
+  "review_id": "rev-data_analyst-p20",
+  "project_id": "data_analyst-p20",
+  "rating": 4.5,
+  "text": "Clear communication and delivered ahead of schedule. Would hire again."
+ }
+]

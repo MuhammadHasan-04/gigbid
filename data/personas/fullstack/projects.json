@@ -1,0 +1,415 @@
+[
+ {
+  "project_id": "fullstack-p01",
+  "persona": "fullstack",
+  "category": "web_app",
+  "title": "SaaS dashboard for a SaaS startup",
+  "industry": "SaaS",
+  "client": "Pixelpress",
+  "year": 2023,
+  "skills": [
+   "React",
+   "TypeScript",
+   "Node.js",
+   "Stripe",
+   "Tailwind CSS"
+  ],
+  "outcome": "brought latency down to 120 ms p95",
+  "has_repo": false,
+  "hours": 71
+ },
+ {
+  "project_id": "fullstack-p02",
+  "persona": "fullstack",
+  "category": "web_app",
+  "title": "Marketing site and CMS for a e-commerce brand",
+  "industry": "e-commerce",
+  "client": "Shieldline",
+  "year": 2021,
+  "skills": [
+   "Next.js",
+   "React",
+   "Vercel",
+   "Tailwind CSS"
+  ],
+  "outcome": "reduced cloud cost by 41%",
+  "has_repo": true,
+  "hours": 32
+ },
+ {
+  "project_id": "fullstack-p03",
+  "persona": "fullstack",
+  "category": "backend",
+  "title": "REST API backend for media mobile app",
+  "industry": "media",
+  "client": "Shieldline",
+  "year": 2025,
+  "skills": [
+   "Node.js",
+   "REST API",
+   "PostgreSQL",
+   "AWS",
+   "NestJS",
+   "Docker"
+  ],
+  "outcome": "served 29k users in the first month",
+  "has_repo": true,
+  "hours": 51
+ },
+ {
+  "project_id": "fullstack-p04",
+  "persona": "fullstack",
+  "category": "backend",
+  "title": "Django platform for e-commerce bookings",
+  "industry": "e-commerce",
+  "client": "Greenroots NGO",
+  "year": 2023,
+  "skills": [
+   "Django",
+   "PostgreSQL",
+   "Python",
+   "Stripe",
+   "Redis",
+   "Celery"
+  ],
+  "outcome": "saved the team 18 hours per week",
+  "has_repo": true,
+  "hours": 66
+ },
+ {
+  "project_id": "fullstack-p05",
+  "persona": "fullstack",
+  "category": "realtime",
+  "title": "Real-time collaboration feature for fintech",
+  "industry": "fintech",
+  "client": "Harbor Supply",
+  "year": 2023,
+  "skills": [
+   "WebSockets",
+   "Node.js",
+   "React",
+   "Redis"
+  ],
+  "outcome": "shipped in 9 weeks",
+  "has_repo": true,
+  "hours": 36
+ },
+ {
+  "project_id": "fullstack-p06",
+  "persona": "fullstack",
+  "category": "ecommerce",
+  "title": "Shopify store customisation for healthcare",
+  "industry": "healthcare",
+  "client": "Harbor Supply",
+  "year": 2021,
+  "skills": [
+   "Shopify",
+   "JavaScript",
+   "React"
+  ],
+  "outcome": "improved accuracy from 73% to 85%",
+  "has_repo": false,
+  "hours": 27
+ },
+ {
+  "project_id": "fullstack-p07",
+  "persona": "fullstack",
+  "category": "ecommerce",
+  "title": "Checkout and subscriptions for a real estate site",
+  "industry": "real estate",
+  "client": "Harbor Supply",
+  "year": 2022,
+  "skills": [
+   "Stripe",
+   "React",
+   "Node.js",
+   "OAuth",
+   "PostgreSQL"
+  ],
+  "outcome": "saved the team 5 hours per week",
+  "has_repo": true,
+  "hours": 32
+ },
+ {
+  "project_id": "fullstack-p08",
+  "persona": "fullstack",
+  "category": "api",
+  "title": "GraphQL API for a SaaS product",
+  "industry": "SaaS",
+  "client": "Quill Learning",
+  "year": 2026,
+  "skills": [
+   "GraphQL",
+   "Node.js",
+   "TypeScript",
+   "MongoDB",
+   "Jest",
+   "PostgreSQL"
+  ],
+  "outcome": "improved accuracy from 74% to 80%",
+  "has_repo": false,
+  "hours": 50
+ },
+ {
+  "project_id": "fullstack-p09",
+  "persona": "fullstack",
+  "category": "testing",
+  "title": "End-to-end test suite for a SaaS web app",
+  "industry": "SaaS",
+  "client": "Harbor Supply",
+  "year": 2023,
+  "skills": [
+   "Playwright",
+   "TypeScript",
+   "Jest",
+   "Docker",
+   "React"
+  ],
+  "outcome": "reduced cloud cost by 15%",
+  "has_repo": true,
+  "hours": 24
+ },
+ {
+  "project_id": "fullstack-p10",
+  "persona": "fullstack",
+  "category": "mobile",
+  "title": "Cross-platform mobile app for non-profit",
+  "industry": "non-profit",
+  "client": "Tidal Pay",
+  "year": 2022,
+  "skills": [
+   "React Native",
+   "TypeScript",
+   "Node.js"
+  ],
+  "outcome": "shipped in 5 weeks",
+  "has_repo": true,
+  "hours": 79
+ },
+ {
+  "project_id": "fullstack-p11",
+  "persona": "fullstack",
+  "category": "backend",
+  "title": "Django platform for logistics bookings",
+  "industry": "logistics",
+  "client": "Greenroots NGO",
+  "year": 2022,
+  "skills": [
+   "Django",
+   "PostgreSQL",
+   "Python",
+   "Redis",
+   "Docker"
+  ],
+  "outcome": "served 8k users in the first month",
+  "has_repo": true,
+  "hours": 65
+ },
+ {
+  "project_id": "fullstack-p12",
+  "persona": "fullstack",
+  "category": "web_app",
+  "title": "Marketing site and CMS for a SaaS brand",
+  "industry": "SaaS",
+  "client": "Cedar Health",
+  "year": 2025,
+  "skills": [
+   "Next.js",
+   "React",
+   "TypeScript",
+   "Tailwind CSS",
+   "Vercel"
+  ],
+  "outcome": "shipped in 6 weeks",
+  "has_repo": true,
+  "hours": 34
+ },
+ {
+  "project_id": "fullstack-p13",
+  "persona": "fullstack",
+  "category": "web_app",
+  "title": "SaaS dashboard for a healthcare startup",
+  "industry": "healthcare",
+  "client": "Shieldline",
+  "year": 2021,
+  "skills": [
+   "React",
+   "TypeScript",
+   "Node.js",
+   "Tailwind CSS",
+   "OAuth"
+  ],
+  "outcome": "improved accuracy from 75% to 80%",
+  "has_repo": true,
+  "hours": 72
+ },
+ {
+  "project_id": "fullstack-p14",
+  "persona": "fullstack",
+  "category": "testing",
+  "title": "End-to-end test suite for a insurance web app",
+  "industry": "insurance",
+  "client": "Wayfarer Trips",
+  "year": 2026,
+  "skills": [
+   "Playwright",
+   "TypeScript",
+   "React",
+   "Docker"
+  ],
+  "outcome": "brought latency down to 250 ms p95",
+  "has_repo": true,
+  "hours": 23
+ },
+ {
+  "project_id": "fullstack-p15",
+  "persona": "fullstack",
+  "category": "api",
+  "title": "GraphQL API for a non-profit product",
+  "industry": "non-profit",
+  "client": "Greenroots NGO",
+  "year": 2020,
+  "skills": [
+   "GraphQL",
+   "Node.js",
+   "TypeScript",
+   "MongoDB",
+   "Jest",
+   "PostgreSQL"
+  ],
+  "outcome": "improved accuracy from 70% to 81%",
+  "has_repo": false,
+  "hours": 43
+ },
+ {
+  "project_id": "fullstack-p16",
+  "persona": "fullstack",
+  "category": "backend",
+  "title": "REST API backend for insurance mobile app",
+  "industry": "insurance",
+  "client": "Forge Metals",
+  "year": 2021,
+  "skills": [
+   "Node.js",
+   "REST API",
+   "PostgreSQL",
+   "Express",
+   "Docker"
+  ],
+  "outcome": "raised conversion by 41%",
+  "has_repo": true,
+  "hours": 66
+ },
+ {
+  "project_id": "fullstack-p17",
+  "persona": "fullstack",
+  "category": "backend",
+  "title": "Django platform for edtech bookings",
+  "industry": "edtech",
+  "client": "Harbor Supply",
+  "year": 2026,
+  "skills": [
+   "Django",
+   "PostgreSQL",
+   "Python",
+   "Celery"
+  ],
+  "outcome": "reduced cloud cost by 39%",
+  "has_repo": true,
+  "hours": 72
+ },
+ {
+  "project_id": "fullstack-p18",
+  "persona": "fullstack",
+  "category": "web_app",
+  "title": "SaaS dashboard for a e-commerce startup",
+  "industry": "e-commerce",
+  "client": "Shieldline",
+  "year": 2020,
+  "skills": [
+   "React",
+   "TypeScript",
+   "Node.js",
+   "OAuth",
+   "Tailwind CSS"
+  ],
+  "outcome": "cut manual review time by 33%",
+  "has_repo": false,
+  "hours": 93
+ },
+ {
+  "project_id": "fullstack-p19",
+  "persona": "fullstack",
+  "category": "web_app",
+  "title": "Marketing site and CMS for a edtech brand",
+  "industry": "edtech",
+  "client": "Orbit Freight",
+  "year": 2022,
+  "skills": [
+   "Next.js",
+   "React",
+   "TypeScript",
+   "Vercel"
+  ],
+  "outcome": "saved the team 12 hours per week",
+  "has_repo": false,
+  "hours": 32
+ },
+ {
+  "project_id": "fullstack-p20",
+  "persona": "fullstack",
+  "category": "backend",
+  "title": "REST API backend for media mobile app",
+  "industry": "media",
+  "client": "Stackwise",
+  "year": 2024,
+  "skills": [
+   "Node.js",
+   "REST API",
+   "PostgreSQL",
+   "NestJS",
+   "Express",
+   "Docker"
+  ],
+  "outcome": "brought latency down to 120 ms p95",
+  "has_repo": false,
+  "hours": 55
+ },
+ {
+  "project_id": "fullstack-p21",
+  "persona": "fullstack",
+  "category": "web_app",
+  "title": "SaaS dashboard for a e-commerce startup",
+  "industry": "e-commerce",
+  "client": "Kitebook",
+  "year": 2020,
+  "skills": [
+   "React",
+   "TypeScript",
+   "Node.js",
+   "OAuth"
+  ],
+  "outcome": "shipped in 10 weeks",
+  "has_repo": true,
+  "hours": 73
+ },
+ {
+  "project_id": "fullstack-p22",
+  "persona": "fullstack",
+  "category": "web_app",
+  "title": "Marketing site and CMS for a insurance brand",
+  "industry": "insurance",
+  "client": "Northwind",
+  "year": 2021,
+  "skills": [
+   "Next.js",
+   "React",
+   "Tailwind CSS",
+   "Vercel",
+   "TypeScript"
+  ],
+  "outcome": "reduced cloud cost by 15%",
+  "has_repo": false,
+  "hours": 38
+ }
+]

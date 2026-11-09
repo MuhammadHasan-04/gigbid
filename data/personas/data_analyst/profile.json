@@ -1,0 +1,32 @@
+{
+ "freelancer_id": "fl-data",
+ "name": "Sana Malik",
+ "title": "Data Analyst - BI dashboards, SQL and experimentation",
+ "hourly_floor": 30,
+ "years": 5,
+ "location": "Karachi, Pakistan",
+ "persona": "data_analyst",
+ "skills": [
+  "A/B testing",
+  "BigQuery",
+  "ETL",
+  "Excel",
+  "Fivetran",
+  "Google Analytics 4",
+  "Google Sheets",
+  "Looker",
+  "Metabase",
+  "Power BI",
+  "Python",
+  "R",
+  "SQL",
+  "Snowflake",
+  "Tableau",
+  "cohort analysis",
+  "dashboard design",
+  "data cleaning",
+  "dbt",
+  "pandas",
+  "statistics"
+ ]
+}

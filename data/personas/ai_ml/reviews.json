@@ -1,0 +1,74 @@
+[
+ {
+  "review_id": "rev-ai_ml-p01",
+  "project_id": "ai_ml-p01",
+  "rating": 4.8,
+  "text": "Great work on the RAG part; very professional."
+ },
+ {
+  "review_id": "rev-ai_ml-p02",
+  "project_id": "ai_ml-p02",
+  "rating": 4.8,
+  "text": "Great work on the Python part; very professional."
+ },
+ {
+  "review_id": "rev-ai_ml-p04",
+  "project_id": "ai_ml-p04",
+  "rating": 5.0,
+  "text": "Understood our messy data quickly and documented everything."
+ },
+ {
+  "review_id": "rev-ai_ml-p06",
+  "project_id": "ai_ml-p06",
+  "rating": 4.8,
+  "text": "Clear communication and delivered ahead of schedule. Would hire again."
+ },
+ {
+  "review_id": "rev-ai_ml-p08",
+  "project_id": "ai_ml-p08",
+  "rating": 4.8,
+  "text": "Understood our messy data quickly and documented everything."
+ },
+ {
+  "review_id": "rev-ai_ml-p09",
+  "project_id": "ai_ml-p09",
+  "rating": 5.0,
+  "text": "Understood our messy data quickly and documented everything."
+ },
+ {
+  "review_id": "rev-ai_ml-p13",
+  "project_id": "ai_ml-p13",
+  "rating": 4.8,
+  "text": "Clear communication and delivered ahead of schedule. Would hire again."
+ },
+ {
+  "review_id": "rev-ai_ml-p14",
+  "project_id": "ai_ml-p14",
+  "rating": 5.0,
+  "text": "Clear communication and delivered ahead of schedule. Would hire again."
+ },
+ {
+  "review_id": "rev-ai_ml-p15",
+  "project_id": "ai_ml-p15",
+  "rating": 5.0,
+  "text": "Went beyond the brief and explained trade-offs honestly."
+ },
+ {
+  "review_id": "rev-ai_ml-p16",
+  "project_id": "ai_ml-p16",
+  "rating": 4.5,
+  "text": "Understood our messy data quickly and documented everything."
+ },
+ {
+  "review_id": "rev-ai_ml-p17",
+  "project_id": "ai_ml-p17",
+  "rating": 5.0,
+  "text": "Clear communication and delivered ahead of schedule. Would hire again."
+ },
+ {
+  "review_id": "rev-ai_ml-p22",
+  "project_id": "ai_ml-p22",
+  "rating": 5.0,
+  "text": "Understood our messy data quickly and documented everything."
+ }
+]

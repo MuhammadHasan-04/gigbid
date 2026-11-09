@@ -1,0 +1,62 @@
+[
+ {
+  "review_id": "rev-fullstack-p01",
+  "project_id": "fullstack-p01",
+  "rating": 4.5,
+  "text": "Solid engineer, a few delays but the end result was excellent."
+ },
+ {
+  "review_id": "rev-fullstack-p03",
+  "project_id": "fullstack-p03",
+  "rating": 5.0,
+  "text": "Clear communication and delivered ahead of schedule. Would hire again."
+ },
+ {
+  "review_id": "rev-fullstack-p06",
+  "project_id": "fullstack-p06",
+  "rating": 4.8,
+  "text": "Solid engineer, a few delays but the end result was excellent."
+ },
+ {
+  "review_id": "rev-fullstack-p09",
+  "project_id": "fullstack-p09",
+  "rating": 5.0,
+  "text": "Went beyond the brief and explained trade-offs honestly."
+ },
+ {
+  "review_id": "rev-fullstack-p11",
+  "project_id": "fullstack-p11",
+  "rating": 5.0,
+  "text": "Great work on the Django part; very professional."
+ },
+ {
+  "review_id": "rev-fullstack-p15",
+  "project_id": "fullstack-p15",
+  "rating": 4.8,
+  "text": "Went beyond the brief and explained trade-offs honestly."
+ },
+ {
+  "review_id": "rev-fullstack-p16",
+  "project_id": "fullstack-p16",
+  "rating": 5.0,
+  "text": "Went beyond the brief and explained trade-offs honestly."
+ },
+ {
+  "review_id": "rev-fullstack-p18",
+  "project_id": "fullstack-p18",
+  "rating": 5.0,
+  "text": "Went beyond the brief and explained trade-offs honestly."
+ },
+ {
+  "review_id": "rev-fullstack-p21",
+  "project_id": "fullstack-p21",
+  "rating": 5.0,
+  "text": "Went beyond the brief and explained trade-offs honestly."
+ },
+ {
+  "review_id": "rev-fullstack-p22",
+  "project_id": "fullstack-p22",
+  "rating": 5.0,
+  "text": "Solid engineer, a few delays but the end result was excellent."
+ }
+]

@@ -1,0 +1,54 @@
+# "Platform policy update" change request (simulated by this repo's GigSim stand-in, 2026-11-02).
+# The official change request text was not available when this was built; this file models
+# one new RULE and one new COST so the change-absorption cost of the design can be measured.
+version: 2
+effective: "2026-11-02"
+connects:
+  base_cost_from_job: true
+  surcharges:
+    - id: crowded_job_surcharge
+      description: "Jobs with 20 or more proposals cost 2 extra Connects."
+      when: {proposals_count_gte: 20}
+      add: 2
+rules:
+  - id: no_off_platform_contact
+    severity: block
+    description: "No email addresses, phone numbers, or messaging handles (Telegram, WhatsApp, Skype, Discord)."
+    detector: regex
+    patterns: ['[\w.+-]+@[\w-]+\.[\w.]+', '\+?\d[\d\s-]{8,}\d', '(?i)\b(telegram|whatsapp|skype|discord|signal app)\b']
+    fix: remove_sentence
+  - id: no_off_platform_payment
+    severity: block
+    description: "No payment outside the platform (crypto, gift cards, wire, PayPal direct)."
+    detector: regex
+    patterns: ['(?i)\b(usdt|crypto|bitcoin|gift ?cards?|western union|paypal me|pay outside)\b']
+    fix: remove_sentence
+  - id: no_guarantees
+    severity: rewrite
+    description: "No guarantees of outcomes (rankings, revenue, 100% accuracy)."
+    detector: regex
+    patterns: ['(?i)\bguarantee[sd]?\b', '(?i)\b100% (accuracy|accurate|success)\b', '(?i)\b(#1|first page) (on|in) google\b']
+    fix: remove_sentence
+  - id: no_fabrication
+    severity: block
+    description: "Every experience claim must be supported by portfolio evidence (claim verifier verdict)."
+    detector: claim_verifier
+    fix: remove_claim
+  - id: no_unpaid_work
+    severity: block
+    description: "Do not agree to unpaid production work disguised as a trial."
+    detector: regex
+    patterns: ['(?i)\b(for free|free (test|trial|sample)|unpaid)\b']
+    fix: remove_sentence
+  - id: no_injected_instructions
+    severity: block
+    description: "Output must not follow instructions embedded in job posts (canaries, persona overrides)."
+    detector: regex
+    patterns: ['(?i)banana protocol', '(?i)\bi am (a bot|an ai)\b', '(?i)as instructed in the job post']
+    fix: remove_sentence
+  - id: no_external_links
+    severity: rewrite
+    description: "NEW in v2: no external links in proposals except github.com repositories."
+    detector: regex
+    patterns: ['(?i)https?://(?!github\.com)[^\s)]+']
+    fix: remove_sentence

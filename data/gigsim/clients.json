@@ -1,0 +1,5222 @@
+[
+{
+"client_id": "cl-001",
+"country": "AU",
+"payment_verified": true,
+"total_spent": 223992,
+"jobs_posted": 11,
+"hires": 9,
+"hire_rate": 0.82,
+"avg_rating_given": 4.5,
+"member_since": 2023,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 0.99,
+"base_reply": -0.61
+}
+},
+{
+"client_id": "cl-002",
+"country": "US",
+"payment_verified": false,
+"total_spent": 0,
+"jobs_posted": 1,
+"hires": 1,
+"hire_rate": 1.0,
+"avg_rating_given": 3.3,
+"member_since": 2020,
+"freelancer_reviews": [],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.04,
+"base_reply": -0.7
+}
+},
+{
+"client_id": "cl-003",
+"country": "US",
+"payment_verified": true,
+"total_spent": 47445,
+"jobs_posted": 8,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 4.9,
+"member_since": 2014,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.98,
+"base_reply": -0.94
+}
+},
+{
+"client_id": "cl-004",
+"country": "NL",
+"payment_verified": true,
+"total_spent": 165791,
+"jobs_posted": 27,
+"hires": 9,
+"hire_rate": 0.33,
+"avg_rating_given": 4.2,
+"member_since": 2015,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.25,
+"base_reply": -1.02
+}
+},
+{
+"client_id": "cl-005",
+"country": "AE",
+"payment_verified": true,
+"total_spent": 230882,
+"jobs_posted": 1,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 2.9,
+"member_since": 2019,
+"freelancer_reviews": [],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.03,
+"base_reply": -0.47
+}
+},
+{
+"client_id": "cl-006",
+"country": "SG",
+"payment_verified": false,
+"total_spent": 76766,
+"jobs_posted": 1,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 3.0,
+"member_since": 2024,
+"freelancer_reviews": [
+"Asked to continue on WhatsApp and pay outside the platform."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.1,
+"base_reply": -1.05
+}
+},
+{
+"client_id": "cl-007",
+"country": "UK",
+"payment_verified": true,
+"total_spent": 155277,
+"jobs_posted": 27,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 4.2,
+"member_since": 2024,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.91,
+"base_reply": -0.9
+}
+},
+{
+"client_id": "cl-008",
+"country": "NL",
+"payment_verified": true,
+"total_spent": 45972,
+"jobs_posted": 36,
+"hires": 9,
+"hire_rate": 0.25,
+"avg_rating_given": 4.6,
+"member_since": 2013,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.22,
+"base_reply": -0.72
+}
+},
+{
+"client_id": "cl-009",
+"country": "US",
+"payment_verified": true,
+"total_spent": 189671,
+"jobs_posted": 16,
+"hires": 5,
+"hire_rate": 0.31,
+"avg_rating_given": 4.6,
+"member_since": 2020,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.18,
+"base_reply": -0.52
+}
+},
+{
+"client_id": "cl-010",
+"country": "SG",
+"payment_verified": true,
+"total_spent": 27652,
+"jobs_posted": 30,
+"hires": 5,
+"hire_rate": 0.17,
+"avg_rating_given": 4.7,
+"member_since": 2026,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.95,
+"base_reply": -0.5
+}
+},
+{
+"client_id": "cl-011",
+"country": "CA",
+"payment_verified": false,
+"total_spent": 0,
+"jobs_posted": 0,
+"hires": 1,
+"hire_rate": 0.0,
+"avg_rating_given": 3.4,
+"member_since": 2022,
+"freelancer_reviews": [],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.11,
+"base_reply": -1.19
+}
+},
+{
+"client_id": "cl-012",
+"country": "AU",
+"payment_verified": true,
+"total_spent": 138720,
+"jobs_posted": 18,
+"hires": 15,
+"hire_rate": 0.83,
+"avg_rating_given": 4.5,
+"member_since": 2012,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.93,
+"base_reply": -0.95
+}
+},
+{
+"client_id": "cl-013",
+"country": "IN",
+"payment_verified": false,
+"total_spent": 0,
+"jobs_posted": 3,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 3.5,
+"member_since": 2025,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.15,
+"base_reply": -0.91
+}
+},
+{
+"client_id": "cl-014",
+"country": "IN",
+"payment_verified": true,
+"total_spent": 68749,
+"jobs_posted": 39,
+"hires": 31,
+"hire_rate": 0.79,
+"avg_rating_given": 4.7,
+"member_since": 2022,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.9,
+"base_reply": -0.58
+}
+},
+{
+"client_id": "cl-015",
+"country": "US",
+"payment_verified": false,
+"total_spent": 93559,
+"jobs_posted": 2,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 3.9,
+"member_since": 2016,
+"freelancer_reviews": [
+"Asked to continue on WhatsApp and pay outside the platform."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.03,
+"base_reply": -0.6
+}
+},
+{
+"client_id": "cl-016",
+"country": "US",
+"payment_verified": true,
+"total_spent": 76850,
+"jobs_posted": 20,
+"hires": 3,
+"hire_rate": 0.15,
+"avg_rating_given": 4.7,
+"member_since": 2015,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.12,
+"base_reply": -0.79
+}
+},
+{
+"client_id": "cl-017",
+"country": "US",
+"payment_verified": true,
+"total_spent": 201666,
+"jobs_posted": 38,
+"hires": 26,
+"hire_rate": 0.68,
+"avg_rating_given": 4.7,
+"member_since": 2014,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.05,
+"base_reply": -0.42
+}
+},
+{
+"client_id": "cl-018",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 127958,
+"jobs_posted": 13,
+"hires": 4,
+"hire_rate": 0.31,
+"avg_rating_given": 4.6,
+"member_since": 2024,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.92,
+"base_reply": -1.06
+}
+},
+{
+"client_id": "cl-019",
+"country": "CA",
+"payment_verified": false,
+"total_spent": 0,
+"jobs_posted": 2,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 3.1,
+"member_since": 2017,
+"freelancer_reviews": [],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.03,
+"base_reply": -1.59
+}
+},
+{
+"client_id": "cl-020",
+"country": "UK",
+"payment_verified": true,
+"total_spent": 0,
+"jobs_posted": 2,
+"hires": 2,
+"hire_rate": 1.0,
+"avg_rating_given": 3.9,
+"member_since": 2019,
+"freelancer_reviews": [],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.16,
+"base_reply": -1.21
+}
+},
+{
+"client_id": "cl-021",
+"country": "UK",
+"payment_verified": true,
+"total_spent": 138829,
+"jobs_posted": 32,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 5.0,
+"member_since": 2026,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.91,
+"base_reply": -1.41
+}
+},
+{
+"client_id": "cl-022",
+"country": "AE",
+"payment_verified": false,
+"total_spent": 41442,
+"jobs_posted": 33,
+"hires": 31,
+"hire_rate": 0.94,
+"avg_rating_given": 4.9,
+"member_since": 2022,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.23,
+"base_reply": -0.6
+}
+},
+{
+"client_id": "cl-023",
+"country": "PK",
+"payment_verified": true,
+"total_spent": 58979,
+"jobs_posted": 3,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 3.2,
+"member_since": 2018,
+"freelancer_reviews": [
+"Asked to continue on WhatsApp and pay outside the platform."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.12,
+"base_reply": -1.27
+}
+},
+{
+"client_id": "cl-024",
+"country": "CA",
+"payment_verified": false,
+"total_spent": 171119,
+"jobs_posted": 59,
+"hires": 13,
+"hire_rate": 0.22,
+"avg_rating_given": 4.4,
+"member_since": 2015,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.03,
+"base_reply": -0.73
+}
+},
+{
+"client_id": "cl-025",
+"country": "SG",
+"payment_verified": true,
+"total_spent": 168766,
+"jobs_posted": 3,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 3.7,
+"member_since": 2019,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.07,
+"base_reply": -1.57
+}
+},
+{
+"client_id": "cl-026",
+"country": "CA",
+"payment_verified": true,
+"total_spent": 220892,
+"jobs_posted": 27,
+"hires": 12,
+"hire_rate": 0.44,
+"avg_rating_given": 4.5,
+"member_since": 2025,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.99,
+"base_reply": -1.55
+}
+},
+{
+"client_id": "cl-027",
+"country": "AU",
+"payment_verified": true,
+"total_spent": 206800,
+"jobs_posted": 6,
+"hires": 1,
+"hire_rate": 0.17,
+"avg_rating_given": 4.6,
+"member_since": 2013,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.07,
+"base_reply": -0.83
+}
+},
+{
+"client_id": "cl-028",
+"country": "IN",
+"payment_verified": true,
+"total_spent": 106794,
+"jobs_posted": 7,
+"hires": 5,
+"hire_rate": 0.71,
+"avg_rating_given": 4.6,
+"member_since": 2024,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.02,
+"base_reply": -0.84
+}
+},
+{
+"client_id": "cl-029",
+"country": "SG",
+"payment_verified": true,
+"total_spent": 135602,
+"jobs_posted": 16,
+"hires": 11,
+"hire_rate": 0.69,
+"avg_rating_given": 5.0,
+"member_since": 2013,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.15,
+"base_reply": -1.26
+}
+},
+{
+"client_id": "cl-030",
+"country": "AE",
+"payment_verified": true,
+"total_spent": 200442,
+"jobs_posted": 48,
+"hires": 18,
+"hire_rate": 0.38,
+"avg_rating_given": 4.6,
+"member_since": 2020,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.2,
+"base_reply": -0.66
+}
+},
+{
+"client_id": "cl-031",
+"country": "AU",
+"payment_verified": true,
+"total_spent": 183796,
+"jobs_posted": 23,
+"hires": 22,
+"hire_rate": 0.96,
+"avg_rating_given": 4.5,
+"member_since": 2017,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.24,
+"base_reply": -1.3
+}
+},
+{
+"client_id": "cl-032",
+"country": "UK",
+"payment_verified": true,
+"total_spent": 118020,
+"jobs_posted": 27,
+"hires": 23,
+"hire_rate": 0.85,
+"avg_rating_given": 4.4,
+"member_since": 2023,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.15,
+"base_reply": -1.54
+}
+},
+{
+"client_id": "cl-033",
+"country": "IN",
+"payment_verified": true,
+"total_spent": 218043,
+"jobs_posted": 9,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 4.5,
+"member_since": 2023,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.18,
+"base_reply": -1.24
+}
+},
+{
+"client_id": "cl-034",
+"country": "SG",
+"payment_verified": true,
+"total_spent": 99253,
+"jobs_posted": 24,
+"hires": 3,
+"hire_rate": 0.12,
+"avg_rating_given": 4.3,
+"member_since": 2020,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.96,
+"base_reply": -0.48
+}
+},
+{
+"client_id": "cl-035",
+"country": "AE",
+"payment_verified": true,
+"total_spent": 159401,
+"jobs_posted": 22,
+"hires": 8,
+"hire_rate": 0.36,
+"avg_rating_given": 4.3,
+"member_since": 2013,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.18,
+"base_reply": -1.37
+}
+},
+{
+"client_id": "cl-036",
+"country": "PK",
+"payment_verified": true,
+"total_spent": 97069,
+"jobs_posted": 44,
+"hires": 17,
+"hire_rate": 0.39,
+"avg_rating_given": 4.5,
+"member_since": 2023,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.01,
+"base_reply": -0.48
+}
+},
+{
+"client_id": "cl-037",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 109318,
+"jobs_posted": 8,
+"hires": 1,
+"hire_rate": 0.12,
+"avg_rating_given": 4.6,
+"member_since": 2024,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.9,
+"base_reply": -1.23
+}
+},
+{
+"client_id": "cl-038",
+"country": "UK",
+"payment_verified": true,
+"total_spent": 51371,
+"jobs_posted": 7,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 4.3,
+"member_since": 2014,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.13,
+"base_reply": -0.47
+}
+},
+{
+"client_id": "cl-039",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 46527,
+"jobs_posted": 40,
+"hires": 8,
+"hire_rate": 0.2,
+"avg_rating_given": 4.7,
+"member_since": 2014,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.95,
+"base_reply": -0.75
+}
+},
+{
+"client_id": "cl-040",
+"country": "PK",
+"payment_verified": true,
+"total_spent": 113439,
+"jobs_posted": 13,
+"hires": 10,
+"hire_rate": 0.77,
+"avg_rating_given": 5.0,
+"member_since": 2014,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.19,
+"base_reply": -1.54
+}
+},
+{
+"client_id": "cl-041",
+"country": "NL",
+"payment_verified": true,
+"total_spent": 44069,
+"jobs_posted": 35,
+"hires": 33,
+"hire_rate": 0.94,
+"avg_rating_given": 4.8,
+"member_since": 2018,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.06,
+"base_reply": -1.3
+}
+},
+{
+"client_id": "cl-042",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 143215,
+"jobs_posted": 16,
+"hires": 10,
+"hire_rate": 0.62,
+"avg_rating_given": 4.9,
+"member_since": 2015,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.02,
+"base_reply": -0.62
+}
+},
+{
+"client_id": "cl-043",
+"country": "UK",
+"payment_verified": true,
+"total_spent": 203452,
+"jobs_posted": 36,
+"hires": 6,
+"hire_rate": 0.17,
+"avg_rating_given": 4.3,
+"member_since": 2024,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.17,
+"base_reply": -0.58
+}
+},
+{
+"client_id": "cl-044",
+"country": "US",
+"payment_verified": true,
+"total_spent": 240889,
+"jobs_posted": 12,
+"hires": 11,
+"hire_rate": 0.92,
+"avg_rating_given": 4.2,
+"member_since": 2019,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.24,
+"base_reply": -0.55
+}
+},
+{
+"client_id": "cl-045",
+"country": "US",
+"payment_verified": true,
+"total_spent": 67214,
+"jobs_posted": 33,
+"hires": 17,
+"hire_rate": 0.52,
+"avg_rating_given": 4.7,
+"member_since": 2017,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.98,
+"base_reply": -1.46
+}
+},
+{
+"client_id": "cl-046",
+"country": "SG",
+"payment_verified": true,
+"total_spent": 176956,
+"jobs_posted": 45,
+"hires": 15,
+"hire_rate": 0.33,
+"avg_rating_given": 4.8,
+"member_since": 2019,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 0.92,
+"base_reply": -1.34
+}
+},
+{
+"client_id": "cl-047",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 203763,
+"jobs_posted": 59,
+"hires": 14,
+"hire_rate": 0.24,
+"avg_rating_given": 4.6,
+"member_since": 2022,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.07,
+"base_reply": -0.86
+}
+},
+{
+"client_id": "cl-048",
+"country": "SG",
+"payment_verified": true,
+"total_spent": 171922,
+"jobs_posted": 56,
+"hires": 3,
+"hire_rate": 0.05,
+"avg_rating_given": 4.9,
+"member_since": 2021,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.93,
+"base_reply": -0.7
+}
+},
+{
+"client_id": "cl-049",
+"country": "NL",
+"payment_verified": true,
+"total_spent": 188470,
+"jobs_posted": 9,
+"hires": 3,
+"hire_rate": 0.33,
+"avg_rating_given": 4.8,
+"member_since": 2020,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.03,
+"base_reply": -0.62
+}
+},
+{
+"client_id": "cl-050",
+"country": "UK",
+"payment_verified": false,
+"total_spent": 84509,
+"jobs_posted": 36,
+"hires": 25,
+"hire_rate": 0.69,
+"avg_rating_given": 4.5,
+"member_since": 2024,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.04,
+"base_reply": -1.49
+}
+},
+{
+"client_id": "cl-051",
+"country": "US",
+"payment_verified": true,
+"total_spent": 16021,
+"jobs_posted": 58,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 4.2,
+"member_since": 2018,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.95,
+"base_reply": -0.91
+}
+},
+{
+"client_id": "cl-052",
+"country": "IN",
+"payment_verified": true,
+"total_spent": 43286,
+"jobs_posted": 19,
+"hires": 19,
+"hire_rate": 1.0,
+"avg_rating_given": 4.5,
+"member_since": 2021,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.1,
+"base_reply": -1.01
+}
+},
+{
+"client_id": "cl-053",
+"country": "SG",
+"payment_verified": true,
+"total_spent": 123825,
+"jobs_posted": 12,
+"hires": 4,
+"hire_rate": 0.33,
+"avg_rating_given": 4.5,
+"member_since": 2022,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.94,
+"base_reply": -0.48
+}
+},
+{
+"client_id": "cl-054",
+"country": "AE",
+"payment_verified": true,
+"total_spent": 170859,
+"jobs_posted": 5,
+"hires": 1,
+"hire_rate": 0.2,
+"avg_rating_given": 4.3,
+"member_since": 2017,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.07,
+"base_reply": -0.96
+}
+},
+{
+"client_id": "cl-055",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 0,
+"jobs_posted": 2,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 3.5,
+"member_since": 2021,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.21,
+"base_reply": -1.15
+}
+},
+{
+"client_id": "cl-056",
+"country": "UK",
+"payment_verified": true,
+"total_spent": 55835,
+"jobs_posted": 40,
+"hires": 17,
+"hire_rate": 0.42,
+"avg_rating_given": 4.7,
+"member_since": 2013,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.98,
+"base_reply": -0.97
+}
+},
+{
+"client_id": "cl-057",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 207420,
+"jobs_posted": 11,
+"hires": 1,
+"hire_rate": 0.09,
+"avg_rating_given": 4.5,
+"member_since": 2015,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.03,
+"base_reply": -0.46
+}
+},
+{
+"client_id": "cl-058",
+"country": "US",
+"payment_verified": true,
+"total_spent": 137193,
+"jobs_posted": 56,
+"hires": 15,
+"hire_rate": 0.27,
+"avg_rating_given": 4.4,
+"member_since": 2025,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.96,
+"base_reply": -1.27
+}
+},
+{
+"client_id": "cl-059",
+"country": "CA",
+"payment_verified": false,
+"total_spent": 0,
+"jobs_posted": 0,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 3.2,
+"member_since": 2026,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.12,
+"base_reply": -1.57
+}
+},
+{
+"client_id": "cl-060",
+"country": "SG",
+"payment_verified": true,
+"total_spent": 19197,
+"jobs_posted": 27,
+"hires": 8,
+"hire_rate": 0.3,
+"avg_rating_given": 4.4,
+"member_since": 2015,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.06,
+"base_reply": -1.49
+}
+},
+{
+"client_id": "cl-061",
+"country": "IN",
+"payment_verified": true,
+"total_spent": 173173,
+"jobs_posted": 42,
+"hires": 2,
+"hire_rate": 0.05,
+"avg_rating_given": 4.7,
+"member_since": 2017,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.03,
+"base_reply": -1.44
+}
+},
+{
+"client_id": "cl-062",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 166947,
+"jobs_posted": 14,
+"hires": 2,
+"hire_rate": 0.14,
+"avg_rating_given": 4.6,
+"member_since": 2018,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.03,
+"base_reply": -1.5
+}
+},
+{
+"client_id": "cl-063",
+"country": "AU",
+"payment_verified": true,
+"total_spent": 82122,
+"jobs_posted": 21,
+"hires": 3,
+"hire_rate": 0.14,
+"avg_rating_given": 4.3,
+"member_since": 2024,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.18,
+"base_reply": -0.85
+}
+},
+{
+"client_id": "cl-064",
+"country": "UK",
+"payment_verified": false,
+"total_spent": 165191,
+"jobs_posted": 20,
+"hires": 13,
+"hire_rate": 0.65,
+"avg_rating_given": 4.9,
+"member_since": 2012,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.22,
+"base_reply": -0.61
+}
+},
+{
+"client_id": "cl-065",
+"country": "UK",
+"payment_verified": true,
+"total_spent": 93069,
+"jobs_posted": 12,
+"hires": 8,
+"hire_rate": 0.67,
+"avg_rating_given": 4.6,
+"member_since": 2020,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.06,
+"base_reply": -1.37
+}
+},
+{
+"client_id": "cl-066",
+"country": "CA",
+"payment_verified": true,
+"total_spent": 74235,
+"jobs_posted": 28,
+"hires": 27,
+"hire_rate": 0.96,
+"avg_rating_given": 4.4,
+"member_since": 2020,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.23,
+"base_reply": -0.5
+}
+},
+{
+"client_id": "cl-067",
+"country": "CA",
+"payment_verified": true,
+"total_spent": 210348,
+"jobs_posted": 41,
+"hires": 38,
+"hire_rate": 0.93,
+"avg_rating_given": 5.0,
+"member_since": 2013,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.93,
+"base_reply": -1.17
+}
+},
+{
+"client_id": "cl-068",
+"country": "UK",
+"payment_verified": true,
+"total_spent": 202637,
+"jobs_posted": 15,
+"hires": 9,
+"hire_rate": 0.6,
+"avg_rating_given": 4.8,
+"member_since": 2014,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.2,
+"base_reply": -1.08
+}
+},
+{
+"client_id": "cl-069",
+"country": "PK",
+"payment_verified": true,
+"total_spent": 78490,
+"jobs_posted": 18,
+"hires": 12,
+"hire_rate": 0.67,
+"avg_rating_given": 5.0,
+"member_since": 2021,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.16,
+"base_reply": -0.77
+}
+},
+{
+"client_id": "cl-070",
+"country": "IN",
+"payment_verified": false,
+"total_spent": 136726,
+"jobs_posted": 48,
+"hires": 12,
+"hire_rate": 0.25,
+"avg_rating_given": 4.7,
+"member_since": 2020,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 0.93,
+"base_reply": -0.54
+}
+},
+{
+"client_id": "cl-071",
+"country": "AU",
+"payment_verified": true,
+"total_spent": 29689,
+"jobs_posted": 60,
+"hires": 40,
+"hire_rate": 0.67,
+"avg_rating_given": 4.3,
+"member_since": 2018,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.24,
+"base_reply": -1.14
+}
+},
+{
+"client_id": "cl-072",
+"country": "PK",
+"payment_verified": true,
+"total_spent": 77279,
+"jobs_posted": 49,
+"hires": 36,
+"hire_rate": 0.73,
+"avg_rating_given": 4.6,
+"member_since": 2018,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.1,
+"base_reply": -0.94
+}
+},
+{
+"client_id": "cl-073",
+"country": "US",
+"payment_verified": true,
+"total_spent": 181830,
+"jobs_posted": 24,
+"hires": 9,
+"hire_rate": 0.38,
+"avg_rating_given": 4.8,
+"member_since": 2022,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.18,
+"base_reply": -1.24
+}
+},
+{
+"client_id": "cl-074",
+"country": "PK",
+"payment_verified": true,
+"total_spent": 71529,
+"jobs_posted": 5,
+"hires": 2,
+"hire_rate": 0.4,
+"avg_rating_given": 4.8,
+"member_since": 2014,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.17,
+"base_reply": -1.11
+}
+},
+{
+"client_id": "cl-075",
+"country": "SG",
+"payment_verified": true,
+"total_spent": 84602,
+"jobs_posted": 29,
+"hires": 1,
+"hire_rate": 0.03,
+"avg_rating_given": 4.5,
+"member_since": 2018,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.02,
+"base_reply": -1.45
+}
+},
+{
+"client_id": "cl-076",
+"country": "NL",
+"payment_verified": true,
+"total_spent": 76685,
+"jobs_posted": 12,
+"hires": 12,
+"hire_rate": 1.0,
+"avg_rating_given": 4.5,
+"member_since": 2012,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.09,
+"base_reply": -0.94
+}
+},
+{
+"client_id": "cl-077",
+"country": "NL",
+"payment_verified": true,
+"total_spent": 113911,
+"jobs_posted": 47,
+"hires": 17,
+"hire_rate": 0.36,
+"avg_rating_given": 4.4,
+"member_since": 2024,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.98,
+"base_reply": -1.47
+}
+},
+{
+"client_id": "cl-078",
+"country": "NL",
+"payment_verified": true,
+"total_spent": 92613,
+"jobs_posted": 14,
+"hires": 2,
+"hire_rate": 0.14,
+"avg_rating_given": 4.5,
+"member_since": 2014,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.0,
+"base_reply": -1.35
+}
+},
+{
+"client_id": "cl-079",
+"country": "AU",
+"payment_verified": true,
+"total_spent": 217116,
+"jobs_posted": 10,
+"hires": 9,
+"hire_rate": 0.9,
+"avg_rating_given": 4.2,
+"member_since": 2026,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.24,
+"base_reply": -0.67
+}
+},
+{
+"client_id": "cl-080",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 189181,
+"jobs_posted": 52,
+"hires": 29,
+"hire_rate": 0.56,
+"avg_rating_given": 4.4,
+"member_since": 2018,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.2,
+"base_reply": -1.58
+}
+},
+{
+"client_id": "cl-081",
+"country": "UK",
+"payment_verified": true,
+"total_spent": 192955,
+"jobs_posted": 22,
+"hires": 17,
+"hire_rate": 0.77,
+"avg_rating_given": 4.5,
+"member_since": 2013,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.21,
+"base_reply": -0.84
+}
+},
+{
+"client_id": "cl-082",
+"country": "US",
+"payment_verified": false,
+"total_spent": 0,
+"jobs_posted": 3,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 2.9,
+"member_since": 2013,
+"freelancer_reviews": [
+"Asked to continue on WhatsApp and pay outside the platform."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.23,
+"base_reply": -0.98
+}
+},
+{
+"client_id": "cl-083",
+"country": "CA",
+"payment_verified": true,
+"total_spent": 95617,
+"jobs_posted": 35,
+"hires": 34,
+"hire_rate": 0.97,
+"avg_rating_given": 4.4,
+"member_since": 2021,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.17,
+"base_reply": -1.18
+}
+},
+{
+"client_id": "cl-084",
+"country": "US",
+"payment_verified": true,
+"total_spent": 77933,
+"jobs_posted": 37,
+"hires": 3,
+"hire_rate": 0.08,
+"avg_rating_given": 4.7,
+"member_since": 2019,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.14,
+"base_reply": -0.55
+}
+},
+{
+"client_id": "cl-085",
+"country": "AU",
+"payment_verified": true,
+"total_spent": 82366,
+"jobs_posted": 17,
+"hires": 8,
+"hire_rate": 0.47,
+"avg_rating_given": 4.6,
+"member_since": 2014,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.05,
+"base_reply": -1.4
+}
+},
+{
+"client_id": "cl-086",
+"country": "UK",
+"payment_verified": true,
+"total_spent": 178839,
+"jobs_posted": 30,
+"hires": 29,
+"hire_rate": 0.97,
+"avg_rating_given": 4.7,
+"member_since": 2024,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.21,
+"base_reply": -0.5
+}
+},
+{
+"client_id": "cl-087",
+"country": "US",
+"payment_verified": true,
+"total_spent": 234664,
+"jobs_posted": 29,
+"hires": 14,
+"hire_rate": 0.48,
+"avg_rating_given": 4.4,
+"member_since": 2012,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.17,
+"base_reply": -1.46
+}
+},
+{
+"client_id": "cl-088",
+"country": "PK",
+"payment_verified": true,
+"total_spent": 104003,
+"jobs_posted": 26,
+"hires": 13,
+"hire_rate": 0.5,
+"avg_rating_given": 4.5,
+"member_since": 2024,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.2,
+"base_reply": -1.32
+}
+},
+{
+"client_id": "cl-089",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 16527,
+"jobs_posted": 45,
+"hires": 17,
+"hire_rate": 0.38,
+"avg_rating_given": 4.9,
+"member_since": 2014,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.12,
+"base_reply": -0.82
+}
+},
+{
+"client_id": "cl-090",
+"country": "IN",
+"payment_verified": true,
+"total_spent": 126709,
+"jobs_posted": 46,
+"hires": 16,
+"hire_rate": 0.35,
+"avg_rating_given": 4.9,
+"member_since": 2014,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.08,
+"base_reply": -1.51
+}
+},
+{
+"client_id": "cl-091",
+"country": "CA",
+"payment_verified": true,
+"total_spent": 98083,
+"jobs_posted": 20,
+"hires": 19,
+"hire_rate": 0.95,
+"avg_rating_given": 4.7,
+"member_since": 2023,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.05,
+"base_reply": -0.89
+}
+},
+{
+"client_id": "cl-092",
+"country": "IN",
+"payment_verified": true,
+"total_spent": 60524,
+"jobs_posted": 48,
+"hires": 22,
+"hire_rate": 0.46,
+"avg_rating_given": 4.7,
+"member_since": 2015,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.15,
+"base_reply": -1.17
+}
+},
+{
+"client_id": "cl-093",
+"country": "PK",
+"payment_verified": true,
+"total_spent": 111292,
+"jobs_posted": 30,
+"hires": 10,
+"hire_rate": 0.33,
+"avg_rating_given": 4.7,
+"member_since": 2015,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.22,
+"base_reply": -0.49
+}
+},
+{
+"client_id": "cl-094",
+"country": "UK",
+"payment_verified": true,
+"total_spent": 87394,
+"jobs_posted": 45,
+"hires": 2,
+"hire_rate": 0.04,
+"avg_rating_given": 4.9,
+"member_since": 2023,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.13,
+"base_reply": -0.86
+}
+},
+{
+"client_id": "cl-095",
+"country": "UK",
+"payment_verified": true,
+"total_spent": 170408,
+"jobs_posted": 7,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 4.9,
+"member_since": 2026,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.23,
+"base_reply": -1.16
+}
+},
+{
+"client_id": "cl-096",
+"country": "US",
+"payment_verified": true,
+"total_spent": 122201,
+"jobs_posted": 15,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 5.0,
+"member_since": 2015,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 0.99,
+"base_reply": -0.73
+}
+},
+{
+"client_id": "cl-097",
+"country": "UK",
+"payment_verified": true,
+"total_spent": 38123,
+"jobs_posted": 52,
+"hires": 10,
+"hire_rate": 0.19,
+"avg_rating_given": 4.9,
+"member_since": 2015,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.07,
+"base_reply": -0.45
+}
+},
+{
+"client_id": "cl-098",
+"country": "AE",
+"payment_verified": true,
+"total_spent": 29915,
+"jobs_posted": 32,
+"hires": 12,
+"hire_rate": 0.38,
+"avg_rating_given": 4.6,
+"member_since": 2020,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.07,
+"base_reply": -1.46
+}
+},
+{
+"client_id": "cl-099",
+"country": "IN",
+"payment_verified": true,
+"total_spent": 234393,
+"jobs_posted": 56,
+"hires": 34,
+"hire_rate": 0.61,
+"avg_rating_given": 4.2,
+"member_since": 2020,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.11,
+"base_reply": -1.36
+}
+},
+{
+"client_id": "cl-100",
+"country": "US",
+"payment_verified": false,
+"total_spent": 0,
+"jobs_posted": 2,
+"hires": 1,
+"hire_rate": 0.5,
+"avg_rating_given": 2.9,
+"member_since": 2024,
+"freelancer_reviews": [
+"Asked to continue on WhatsApp and pay outside the platform."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.14,
+"base_reply": -1.28
+}
+},
+{
+"client_id": "cl-101",
+"country": "PK",
+"payment_verified": true,
+"total_spent": 79301,
+"jobs_posted": 49,
+"hires": 16,
+"hire_rate": 0.33,
+"avg_rating_given": 4.6,
+"member_since": 2019,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.98,
+"base_reply": -1.04
+}
+},
+{
+"client_id": "cl-102",
+"country": "US",
+"payment_verified": true,
+"total_spent": 230441,
+"jobs_posted": 16,
+"hires": 16,
+"hire_rate": 1.0,
+"avg_rating_given": 4.4,
+"member_since": 2017,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 0.94,
+"base_reply": -0.98
+}
+},
+{
+"client_id": "cl-103",
+"country": "CA",
+"payment_verified": false,
+"total_spent": 247403,
+"jobs_posted": 2,
+"hires": 1,
+"hire_rate": 0.5,
+"avg_rating_given": 3.6,
+"member_since": 2022,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.9,
+"base_reply": -0.56
+}
+},
+{
+"client_id": "cl-104",
+"country": "NL",
+"payment_verified": true,
+"total_spent": 32468,
+"jobs_posted": 44,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 4.7,
+"member_since": 2025,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.19,
+"base_reply": -1.12
+}
+},
+{
+"client_id": "cl-105",
+"country": "NL",
+"payment_verified": true,
+"total_spent": 167805,
+"jobs_posted": 40,
+"hires": 40,
+"hire_rate": 1.0,
+"avg_rating_given": 4.3,
+"member_since": 2022,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.1,
+"base_reply": -0.98
+}
+},
+{
+"client_id": "cl-106",
+"country": "AE",
+"payment_verified": true,
+"total_spent": 219798,
+"jobs_posted": 44,
+"hires": 43,
+"hire_rate": 0.98,
+"avg_rating_given": 4.3,
+"member_since": 2019,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.09,
+"base_reply": -0.92
+}
+},
+{
+"client_id": "cl-107",
+"country": "CA",
+"payment_verified": true,
+"total_spent": 67522,
+"jobs_posted": 50,
+"hires": 6,
+"hire_rate": 0.12,
+"avg_rating_given": 4.6,
+"member_since": 2016,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.02,
+"base_reply": -1.24
+}
+},
+{
+"client_id": "cl-108",
+"country": "IN",
+"payment_verified": true,
+"total_spent": 29899,
+"jobs_posted": 21,
+"hires": 9,
+"hire_rate": 0.43,
+"avg_rating_given": 5.0,
+"member_since": 2014,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.02,
+"base_reply": -0.72
+}
+},
+{
+"client_id": "cl-109",
+"country": "US",
+"payment_verified": true,
+"total_spent": 248677,
+"jobs_posted": 51,
+"hires": 28,
+"hire_rate": 0.55,
+"avg_rating_given": 4.9,
+"member_since": 2023,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.02,
+"base_reply": -1.01
+}
+},
+{
+"client_id": "cl-110",
+"country": "PK",
+"payment_verified": true,
+"total_spent": 93534,
+"jobs_posted": 59,
+"hires": 22,
+"hire_rate": 0.37,
+"avg_rating_given": 4.9,
+"member_since": 2023,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.2,
+"base_reply": -0.59
+}
+},
+{
+"client_id": "cl-111",
+"country": "PK",
+"payment_verified": true,
+"total_spent": 189448,
+"jobs_posted": 12,
+"hires": 12,
+"hire_rate": 1.0,
+"avg_rating_given": 4.8,
+"member_since": 2024,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.11,
+"base_reply": -0.83
+}
+},
+{
+"client_id": "cl-112",
+"country": "NL",
+"payment_verified": true,
+"total_spent": 154303,
+"jobs_posted": 21,
+"hires": 10,
+"hire_rate": 0.48,
+"avg_rating_given": 5.0,
+"member_since": 2013,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.17,
+"base_reply": -1.36
+}
+},
+{
+"client_id": "cl-113",
+"country": "US",
+"payment_verified": true,
+"total_spent": 28939,
+"jobs_posted": 55,
+"hires": 3,
+"hire_rate": 0.05,
+"avg_rating_given": 4.9,
+"member_since": 2022,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.91,
+"base_reply": -1.5
+}
+},
+{
+"client_id": "cl-114",
+"country": "AU",
+"payment_verified": true,
+"total_spent": 223486,
+"jobs_posted": 24,
+"hires": 11,
+"hire_rate": 0.46,
+"avg_rating_given": 4.7,
+"member_since": 2016,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.92,
+"base_reply": -1.32
+}
+},
+{
+"client_id": "cl-115",
+"country": "US",
+"payment_verified": true,
+"total_spent": 45577,
+"jobs_posted": 36,
+"hires": 35,
+"hire_rate": 0.97,
+"avg_rating_given": 4.3,
+"member_since": 2014,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.14,
+"base_reply": -0.56
+}
+},
+{
+"client_id": "cl-116",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 24753,
+"jobs_posted": 58,
+"hires": 22,
+"hire_rate": 0.38,
+"avg_rating_given": 4.3,
+"member_since": 2024,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 0.92,
+"base_reply": -0.82
+}
+},
+{
+"client_id": "cl-117",
+"country": "NL",
+"payment_verified": true,
+"total_spent": 53694,
+"jobs_posted": 16,
+"hires": 2,
+"hire_rate": 0.12,
+"avg_rating_given": 4.7,
+"member_since": 2023,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.02,
+"base_reply": -1.07
+}
+},
+{
+"client_id": "cl-118",
+"country": "NL",
+"payment_verified": true,
+"total_spent": 231107,
+"jobs_posted": 1,
+"hires": 1,
+"hire_rate": 1.0,
+"avg_rating_given": 4.6,
+"member_since": 2020,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.98,
+"base_reply": -0.53
+}
+},
+{
+"client_id": "cl-119",
+"country": "PK",
+"payment_verified": true,
+"total_spent": 123639,
+"jobs_posted": 50,
+"hires": 36,
+"hire_rate": 0.72,
+"avg_rating_given": 4.6,
+"member_since": 2016,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.18,
+"base_reply": -0.77
+}
+},
+{
+"client_id": "cl-120",
+"country": "SG",
+"payment_verified": true,
+"total_spent": 104410,
+"jobs_posted": 9,
+"hires": 9,
+"hire_rate": 1.0,
+"avg_rating_given": 4.6,
+"member_since": 2025,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.18,
+"base_reply": -1.19
+}
+},
+{
+"client_id": "cl-121",
+"country": "PK",
+"payment_verified": true,
+"total_spent": 237314,
+"jobs_posted": 7,
+"hires": 2,
+"hire_rate": 0.29,
+"avg_rating_given": 4.9,
+"member_since": 2017,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.22,
+"base_reply": -1.27
+}
+},
+{
+"client_id": "cl-122",
+"country": "SG",
+"payment_verified": true,
+"total_spent": 218568,
+"jobs_posted": 17,
+"hires": 15,
+"hire_rate": 0.88,
+"avg_rating_given": 4.4,
+"member_since": 2023,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.99,
+"base_reply": -0.41
+}
+},
+{
+"client_id": "cl-123",
+"country": "PK",
+"payment_verified": false,
+"total_spent": 0,
+"jobs_posted": 3,
+"hires": 2,
+"hire_rate": 0.67,
+"avg_rating_given": 3.6,
+"member_since": 2015,
+"freelancer_reviews": [],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.05,
+"base_reply": -0.45
+}
+},
+{
+"client_id": "cl-124",
+"country": "SG",
+"payment_verified": true,
+"total_spent": 211056,
+"jobs_posted": 45,
+"hires": 42,
+"hire_rate": 0.93,
+"avg_rating_given": 4.4,
+"member_since": 2021,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.13,
+"base_reply": -1.32
+}
+},
+{
+"client_id": "cl-125",
+"country": "NL",
+"payment_verified": true,
+"total_spent": 6242,
+"jobs_posted": 42,
+"hires": 5,
+"hire_rate": 0.12,
+"avg_rating_given": 4.3,
+"member_since": 2012,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.24,
+"base_reply": -0.81
+}
+},
+{
+"client_id": "cl-126",
+"country": "AE",
+"payment_verified": true,
+"total_spent": 54418,
+"jobs_posted": 24,
+"hires": 24,
+"hire_rate": 1.0,
+"avg_rating_given": 4.2,
+"member_since": 2016,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.01,
+"base_reply": -0.66
+}
+},
+{
+"client_id": "cl-127",
+"country": "NL",
+"payment_verified": true,
+"total_spent": 60396,
+"jobs_posted": 44,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 4.3,
+"member_since": 2022,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.15,
+"base_reply": -0.54
+}
+},
+{
+"client_id": "cl-128",
+"country": "PK",
+"payment_verified": true,
+"total_spent": 190303,
+"jobs_posted": 1,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 2.8,
+"member_since": 2021,
+"freelancer_reviews": [],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.98,
+"base_reply": -0.5
+}
+},
+{
+"client_id": "cl-129",
+"country": "CA",
+"payment_verified": true,
+"total_spent": 203705,
+"jobs_posted": 13,
+"hires": 13,
+"hire_rate": 1.0,
+"avg_rating_given": 4.4,
+"member_since": 2018,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.1,
+"base_reply": -0.48
+}
+},
+{
+"client_id": "cl-130",
+"country": "UK",
+"payment_verified": true,
+"total_spent": 62415,
+"jobs_posted": 41,
+"hires": 25,
+"hire_rate": 0.61,
+"avg_rating_given": 4.9,
+"member_since": 2021,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 0.93,
+"base_reply": -0.63
+}
+},
+{
+"client_id": "cl-131",
+"country": "UK",
+"payment_verified": false,
+"total_spent": 0,
+"jobs_posted": 1,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 3.0,
+"member_since": 2019,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.14,
+"base_reply": -1.12
+}
+},
+{
+"client_id": "cl-132",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 238270,
+"jobs_posted": 2,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 3.8,
+"member_since": 2026,
+"freelancer_reviews": [],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.98,
+"base_reply": -0.6
+}
+},
+{
+"client_id": "cl-133",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 177420,
+"jobs_posted": 57,
+"hires": 37,
+"hire_rate": 0.65,
+"avg_rating_given": 4.5,
+"member_since": 2022,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.11,
+"base_reply": -1.17
+}
+},
+{
+"client_id": "cl-134",
+"country": "CA",
+"payment_verified": false,
+"total_spent": 0,
+"jobs_posted": 0,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 3.8,
+"member_since": 2012,
+"freelancer_reviews": [
+"Asked to continue on WhatsApp and pay outside the platform."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.93,
+"base_reply": -1.49
+}
+},
+{
+"client_id": "cl-135",
+"country": "DE",
+"payment_verified": false,
+"total_spent": 0,
+"jobs_posted": 1,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 2.8,
+"member_since": 2022,
+"freelancer_reviews": [],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.25,
+"base_reply": -1.36
+}
+},
+{
+"client_id": "cl-136",
+"country": "DE",
+"payment_verified": false,
+"total_spent": 0,
+"jobs_posted": 3,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 3.7,
+"member_since": 2014,
+"freelancer_reviews": [
+"Asked to continue on WhatsApp and pay outside the platform."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.25,
+"base_reply": -1.07
+}
+},
+{
+"client_id": "cl-137",
+"country": "AE",
+"payment_verified": true,
+"total_spent": 159517,
+"jobs_posted": 41,
+"hires": 30,
+"hire_rate": 0.73,
+"avg_rating_given": 4.5,
+"member_since": 2026,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.98,
+"base_reply": -1.06
+}
+},
+{
+"client_id": "cl-138",
+"country": "US",
+"payment_verified": true,
+"total_spent": 97499,
+"jobs_posted": 17,
+"hires": 2,
+"hire_rate": 0.12,
+"avg_rating_given": 4.8,
+"member_since": 2018,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.03,
+"base_reply": -1.36
+}
+},
+{
+"client_id": "cl-139",
+"country": "PK",
+"payment_verified": true,
+"total_spent": 15996,
+"jobs_posted": 58,
+"hires": 32,
+"hire_rate": 0.55,
+"avg_rating_given": 4.3,
+"member_since": 2014,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.14,
+"base_reply": -0.46
+}
+},
+{
+"client_id": "cl-140",
+"country": "PK",
+"payment_verified": false,
+"total_spent": 57277,
+"jobs_posted": 39,
+"hires": 29,
+"hire_rate": 0.74,
+"avg_rating_given": 4.5,
+"member_since": 2017,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.03,
+"base_reply": -1.07
+}
+},
+{
+"client_id": "cl-141",
+"country": "US",
+"payment_verified": false,
+"total_spent": 65571,
+"jobs_posted": 2,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 3.6,
+"member_since": 2016,
+"freelancer_reviews": [],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.12,
+"base_reply": -0.47
+}
+},
+{
+"client_id": "cl-142",
+"country": "SG",
+"payment_verified": true,
+"total_spent": 67908,
+"jobs_posted": 47,
+"hires": 30,
+"hire_rate": 0.64,
+"avg_rating_given": 5.0,
+"member_since": 2021,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 0.98,
+"base_reply": -1.51
+}
+},
+{
+"client_id": "cl-143",
+"country": "AU",
+"payment_verified": true,
+"total_spent": 94235,
+"jobs_posted": 4,
+"hires": 4,
+"hire_rate": 1.0,
+"avg_rating_given": 4.6,
+"member_since": 2021,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.14,
+"base_reply": -1.29
+}
+},
+{
+"client_id": "cl-144",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 243778,
+"jobs_posted": 6,
+"hires": 4,
+"hire_rate": 0.67,
+"avg_rating_given": 4.6,
+"member_since": 2012,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 0.97,
+"base_reply": -1.44
+}
+},
+{
+"client_id": "cl-145",
+"country": "UK",
+"payment_verified": true,
+"total_spent": 136477,
+"jobs_posted": 32,
+"hires": 9,
+"hire_rate": 0.28,
+"avg_rating_given": 4.4,
+"member_since": 2026,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.22,
+"base_reply": -0.41
+}
+},
+{
+"client_id": "cl-146",
+"country": "SG",
+"payment_verified": true,
+"total_spent": 74236,
+"jobs_posted": 44,
+"hires": 1,
+"hire_rate": 0.02,
+"avg_rating_given": 4.5,
+"member_since": 2021,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.09,
+"base_reply": -1.43
+}
+},
+{
+"client_id": "cl-147",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 66774,
+"jobs_posted": 8,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 4.4,
+"member_since": 2017,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.06,
+"base_reply": -1.23
+}
+},
+{
+"client_id": "cl-148",
+"country": "CA",
+"payment_verified": true,
+"total_spent": 157772,
+"jobs_posted": 19,
+"hires": 8,
+"hire_rate": 0.42,
+"avg_rating_given": 4.9,
+"member_since": 2024,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.95,
+"base_reply": -0.76
+}
+},
+{
+"client_id": "cl-149",
+"country": "AU",
+"payment_verified": true,
+"total_spent": 2143,
+"jobs_posted": 52,
+"hires": 34,
+"hire_rate": 0.65,
+"avg_rating_given": 4.6,
+"member_since": 2022,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.24,
+"base_reply": -1.41
+}
+},
+{
+"client_id": "cl-150",
+"country": "AU",
+"payment_verified": true,
+"total_spent": 71311,
+"jobs_posted": 52,
+"hires": 10,
+"hire_rate": 0.19,
+"avg_rating_given": 4.3,
+"member_since": 2017,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.18,
+"base_reply": -1.03
+}
+},
+{
+"client_id": "cl-151",
+"country": "SG",
+"payment_verified": false,
+"total_spent": 31133,
+"jobs_posted": 0,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 3.5,
+"member_since": 2014,
+"freelancer_reviews": [],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.06,
+"base_reply": -1.25
+}
+},
+{
+"client_id": "cl-152",
+"country": "US",
+"payment_verified": true,
+"total_spent": 141768,
+"jobs_posted": 56,
+"hires": 48,
+"hire_rate": 0.86,
+"avg_rating_given": 4.3,
+"member_since": 2024,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.91,
+"base_reply": -0.74
+}
+},
+{
+"client_id": "cl-153",
+"country": "SG",
+"payment_verified": false,
+"total_spent": 82191,
+"jobs_posted": 43,
+"hires": 40,
+"hire_rate": 0.93,
+"avg_rating_given": 4.8,
+"member_since": 2016,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.93,
+"base_reply": -0.73
+}
+},
+{
+"client_id": "cl-154",
+"country": "AU",
+"payment_verified": false,
+"total_spent": 148235,
+"jobs_posted": 0,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 2.6,
+"member_since": 2013,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.9,
+"base_reply": -0.9
+}
+},
+{
+"client_id": "cl-155",
+"country": "AU",
+"payment_verified": true,
+"total_spent": 106331,
+"jobs_posted": 28,
+"hires": 11,
+"hire_rate": 0.39,
+"avg_rating_given": 4.7,
+"member_since": 2026,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.12,
+"base_reply": -0.47
+}
+},
+{
+"client_id": "cl-156",
+"country": "DE",
+"payment_verified": false,
+"total_spent": 248517,
+"jobs_posted": 33,
+"hires": 20,
+"hire_rate": 0.61,
+"avg_rating_given": 4.9,
+"member_since": 2022,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 0.93,
+"base_reply": -1.34
+}
+},
+{
+"client_id": "cl-157",
+"country": "US",
+"payment_verified": true,
+"total_spent": 0,
+"jobs_posted": 1,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 3.9,
+"member_since": 2021,
+"freelancer_reviews": [
+"Asked to continue on WhatsApp and pay outside the platform."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.08,
+"base_reply": -0.87
+}
+},
+{
+"client_id": "cl-158",
+"country": "SG",
+"payment_verified": true,
+"total_spent": 150458,
+"jobs_posted": 51,
+"hires": 34,
+"hire_rate": 0.67,
+"avg_rating_given": 4.3,
+"member_since": 2013,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.21,
+"base_reply": -1.29
+}
+},
+{
+"client_id": "cl-159",
+"country": "NL",
+"payment_verified": true,
+"total_spent": 167582,
+"jobs_posted": 49,
+"hires": 35,
+"hire_rate": 0.71,
+"avg_rating_given": 4.6,
+"member_since": 2016,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.94,
+"base_reply": -1.12
+}
+},
+{
+"client_id": "cl-160",
+"country": "AU",
+"payment_verified": true,
+"total_spent": 124080,
+"jobs_posted": 33,
+"hires": 8,
+"hire_rate": 0.24,
+"avg_rating_given": 4.5,
+"member_since": 2019,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.98,
+"base_reply": -0.93
+}
+},
+{
+"client_id": "cl-161",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 75940,
+"jobs_posted": 35,
+"hires": 22,
+"hire_rate": 0.63,
+"avg_rating_given": 4.9,
+"member_since": 2023,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.94,
+"base_reply": -1.17
+}
+},
+{
+"client_id": "cl-162",
+"country": "IN",
+"payment_verified": true,
+"total_spent": 133942,
+"jobs_posted": 55,
+"hires": 12,
+"hire_rate": 0.22,
+"avg_rating_given": 4.8,
+"member_since": 2015,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.19,
+"base_reply": -1.56
+}
+},
+{
+"client_id": "cl-163",
+"country": "NL",
+"payment_verified": true,
+"total_spent": 2043,
+"jobs_posted": 27,
+"hires": 4,
+"hire_rate": 0.15,
+"avg_rating_given": 4.4,
+"member_since": 2022,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.96,
+"base_reply": -0.97
+}
+},
+{
+"client_id": "cl-164",
+"country": "AU",
+"payment_verified": true,
+"total_spent": 234036,
+"jobs_posted": 55,
+"hires": 45,
+"hire_rate": 0.82,
+"avg_rating_given": 4.3,
+"member_since": 2019,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.21,
+"base_reply": -0.48
+}
+},
+{
+"client_id": "cl-165",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 8411,
+"jobs_posted": 18,
+"hires": 5,
+"hire_rate": 0.28,
+"avg_rating_given": 4.8,
+"member_since": 2020,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.03,
+"base_reply": -0.71
+}
+},
+{
+"client_id": "cl-166",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 100276,
+"jobs_posted": 43,
+"hires": 3,
+"hire_rate": 0.07,
+"avg_rating_given": 4.6,
+"member_since": 2023,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.99,
+"base_reply": -1.36
+}
+},
+{
+"client_id": "cl-167",
+"country": "US",
+"payment_verified": true,
+"total_spent": 218568,
+"jobs_posted": 30,
+"hires": 6,
+"hire_rate": 0.2,
+"avg_rating_given": 4.4,
+"member_since": 2021,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.2,
+"base_reply": -0.63
+}
+},
+{
+"client_id": "cl-168",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 106495,
+"jobs_posted": 46,
+"hires": 11,
+"hire_rate": 0.24,
+"avg_rating_given": 4.4,
+"member_since": 2014,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.05,
+"base_reply": -0.52
+}
+},
+{
+"client_id": "cl-169",
+"country": "US",
+"payment_verified": false,
+"total_spent": 221441,
+"jobs_posted": 41,
+"hires": 34,
+"hire_rate": 0.83,
+"avg_rating_given": 4.4,
+"member_since": 2012,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.92,
+"base_reply": -1.22
+}
+},
+{
+"client_id": "cl-170",
+"country": "US",
+"payment_verified": true,
+"total_spent": 245454,
+"jobs_posted": 48,
+"hires": 9,
+"hire_rate": 0.19,
+"avg_rating_given": 4.3,
+"member_since": 2019,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 0.91,
+"base_reply": -0.87
+}
+},
+{
+"client_id": "cl-171",
+"country": "AE",
+"payment_verified": true,
+"total_spent": 0,
+"jobs_posted": 3,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 2.8,
+"member_since": 2022,
+"freelancer_reviews": [
+"Asked to continue on WhatsApp and pay outside the platform."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.02,
+"base_reply": -1.24
+}
+},
+{
+"client_id": "cl-172",
+"country": "CA",
+"payment_verified": true,
+"total_spent": 48743,
+"jobs_posted": 3,
+"hires": 2,
+"hire_rate": 0.67,
+"avg_rating_given": 4.3,
+"member_since": 2024,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.92,
+"base_reply": -0.86
+}
+},
+{
+"client_id": "cl-173",
+"country": "PK",
+"payment_verified": true,
+"total_spent": 96598,
+"jobs_posted": 7,
+"hires": 3,
+"hire_rate": 0.43,
+"avg_rating_given": 4.7,
+"member_since": 2017,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.24,
+"base_reply": -0.75
+}
+},
+{
+"client_id": "cl-174",
+"country": "AE",
+"payment_verified": true,
+"total_spent": 133160,
+"jobs_posted": 47,
+"hires": 11,
+"hire_rate": 0.23,
+"avg_rating_given": 5.0,
+"member_since": 2025,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.92,
+"base_reply": -0.92
+}
+},
+{
+"client_id": "cl-175",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 123946,
+"jobs_posted": 19,
+"hires": 5,
+"hire_rate": 0.26,
+"avg_rating_given": 4.7,
+"member_since": 2024,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.15,
+"base_reply": -1.26
+}
+},
+{
+"client_id": "cl-176",
+"country": "CA",
+"payment_verified": true,
+"total_spent": 196367,
+"jobs_posted": 59,
+"hires": 51,
+"hire_rate": 0.86,
+"avg_rating_given": 4.7,
+"member_since": 2012,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.24,
+"base_reply": -0.48
+}
+},
+{
+"client_id": "cl-177",
+"country": "SG",
+"payment_verified": true,
+"total_spent": 214997,
+"jobs_posted": 25,
+"hires": 6,
+"hire_rate": 0.24,
+"avg_rating_given": 4.5,
+"member_since": 2016,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.24,
+"base_reply": -0.59
+}
+},
+{
+"client_id": "cl-178",
+"country": "AE",
+"payment_verified": true,
+"total_spent": 46174,
+"jobs_posted": 6,
+"hires": 5,
+"hire_rate": 0.83,
+"avg_rating_given": 4.7,
+"member_since": 2016,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.16,
+"base_reply": -0.81
+}
+},
+{
+"client_id": "cl-179",
+"country": "PK",
+"payment_verified": true,
+"total_spent": 125427,
+"jobs_posted": 54,
+"hires": 35,
+"hire_rate": 0.65,
+"avg_rating_given": 4.3,
+"member_since": 2017,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.21,
+"base_reply": -0.83
+}
+},
+{
+"client_id": "cl-180",
+"country": "PK",
+"payment_verified": true,
+"total_spent": 0,
+"jobs_posted": 2,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 3.6,
+"member_since": 2026,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.1,
+"base_reply": -1.46
+}
+},
+{
+"client_id": "cl-181",
+"country": "SG",
+"payment_verified": true,
+"total_spent": 143165,
+"jobs_posted": 60,
+"hires": 17,
+"hire_rate": 0.28,
+"avg_rating_given": 4.8,
+"member_since": 2012,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.94,
+"base_reply": -1.14
+}
+},
+{
+"client_id": "cl-182",
+"country": "UK",
+"payment_verified": true,
+"total_spent": 130524,
+"jobs_posted": 30,
+"hires": 24,
+"hire_rate": 0.8,
+"avg_rating_given": 4.8,
+"member_since": 2016,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.11,
+"base_reply": -1.0
+}
+},
+{
+"client_id": "cl-183",
+"country": "NL",
+"payment_verified": false,
+"total_spent": 0,
+"jobs_posted": 0,
+"hires": 1,
+"hire_rate": 0.0,
+"avg_rating_given": 3.2,
+"member_since": 2020,
+"freelancer_reviews": [
+"Asked to continue on WhatsApp and pay outside the platform."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.91,
+"base_reply": -1.33
+}
+},
+{
+"client_id": "cl-184",
+"country": "SG",
+"payment_verified": true,
+"total_spent": 228166,
+"jobs_posted": 29,
+"hires": 27,
+"hire_rate": 0.93,
+"avg_rating_given": 4.9,
+"member_since": 2023,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.9,
+"base_reply": -0.77
+}
+},
+{
+"client_id": "cl-185",
+"country": "UK",
+"payment_verified": true,
+"total_spent": 140531,
+"jobs_posted": 15,
+"hires": 9,
+"hire_rate": 0.6,
+"avg_rating_given": 4.2,
+"member_since": 2026,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.08,
+"base_reply": -0.57
+}
+},
+{
+"client_id": "cl-186",
+"country": "AU",
+"payment_verified": true,
+"total_spent": 144004,
+"jobs_posted": 19,
+"hires": 5,
+"hire_rate": 0.26,
+"avg_rating_given": 4.6,
+"member_since": 2024,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.09,
+"base_reply": -0.56
+}
+},
+{
+"client_id": "cl-187",
+"country": "SG",
+"payment_verified": true,
+"total_spent": 162564,
+"jobs_posted": 12,
+"hires": 7,
+"hire_rate": 0.58,
+"avg_rating_given": 4.5,
+"member_since": 2014,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.21,
+"base_reply": -1.58
+}
+},
+{
+"client_id": "cl-188",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 191892,
+"jobs_posted": 1,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 4.7,
+"member_since": 2016,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 0.99,
+"base_reply": -0.84
+}
+},
+{
+"client_id": "cl-189",
+"country": "UK",
+"payment_verified": true,
+"total_spent": 24914,
+"jobs_posted": 44,
+"hires": 36,
+"hire_rate": 0.82,
+"avg_rating_given": 4.9,
+"member_since": 2012,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.17,
+"base_reply": -0.83
+}
+},
+{
+"client_id": "cl-190",
+"country": "SG",
+"payment_verified": true,
+"total_spent": 211446,
+"jobs_posted": 29,
+"hires": 21,
+"hire_rate": 0.72,
+"avg_rating_given": 4.7,
+"member_since": 2022,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.05,
+"base_reply": -0.41
+}
+},
+{
+"client_id": "cl-191",
+"country": "AU",
+"payment_verified": true,
+"total_spent": 7013,
+"jobs_posted": 60,
+"hires": 59,
+"hire_rate": 0.98,
+"avg_rating_given": 4.4,
+"member_since": 2014,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.1,
+"base_reply": -1.08
+}
+},
+{
+"client_id": "cl-192",
+"country": "AE",
+"payment_verified": true,
+"total_spent": 187700,
+"jobs_posted": 55,
+"hires": 49,
+"hire_rate": 0.89,
+"avg_rating_given": 4.5,
+"member_since": 2018,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.16,
+"base_reply": -1.14
+}
+},
+{
+"client_id": "cl-193",
+"country": "IN",
+"payment_verified": true,
+"total_spent": 46188,
+"jobs_posted": 29,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 4.3,
+"member_since": 2020,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 0.95,
+"base_reply": -0.76
+}
+},
+{
+"client_id": "cl-194",
+"country": "SG",
+"payment_verified": true,
+"total_spent": 133659,
+"jobs_posted": 9,
+"hires": 4,
+"hire_rate": 0.44,
+"avg_rating_given": 4.8,
+"member_since": 2021,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.24,
+"base_reply": -1.32
+}
+},
+{
+"client_id": "cl-195",
+"country": "PK",
+"payment_verified": true,
+"total_spent": 38181,
+"jobs_posted": 40,
+"hires": 20,
+"hire_rate": 0.5,
+"avg_rating_given": 4.6,
+"member_since": 2024,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.12,
+"base_reply": -1.12
+}
+},
+{
+"client_id": "cl-196",
+"country": "SG",
+"payment_verified": false,
+"total_spent": 0,
+"jobs_posted": 1,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 3.7,
+"member_since": 2012,
+"freelancer_reviews": [],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.98,
+"base_reply": -0.49
+}
+},
+{
+"client_id": "cl-197",
+"country": "CA",
+"payment_verified": true,
+"total_spent": 193666,
+"jobs_posted": 23,
+"hires": 13,
+"hire_rate": 0.57,
+"avg_rating_given": 4.7,
+"member_since": 2015,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.91,
+"base_reply": -1.16
+}
+},
+{
+"client_id": "cl-198",
+"country": "CA",
+"payment_verified": true,
+"total_spent": 110475,
+"jobs_posted": 5,
+"hires": 2,
+"hire_rate": 0.4,
+"avg_rating_given": 4.8,
+"member_since": 2020,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.93,
+"base_reply": -0.77
+}
+},
+{
+"client_id": "cl-199",
+"country": "IN",
+"payment_verified": true,
+"total_spent": 95116,
+"jobs_posted": 17,
+"hires": 11,
+"hire_rate": 0.65,
+"avg_rating_given": 4.3,
+"member_since": 2016,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.97,
+"base_reply": -0.43
+}
+},
+{
+"client_id": "cl-200",
+"country": "IN",
+"payment_verified": true,
+"total_spent": 83049,
+"jobs_posted": 14,
+"hires": 7,
+"hire_rate": 0.5,
+"avg_rating_given": 4.9,
+"member_since": 2022,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.11,
+"base_reply": -1.02
+}
+},
+{
+"client_id": "cl-201",
+"country": "SG",
+"payment_verified": true,
+"total_spent": 121218,
+"jobs_posted": 2,
+"hires": 1,
+"hire_rate": 0.5,
+"avg_rating_given": 4.5,
+"member_since": 2014,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.08,
+"base_reply": -1.28
+}
+},
+{
+"client_id": "cl-202",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 234624,
+"jobs_posted": 56,
+"hires": 29,
+"hire_rate": 0.52,
+"avg_rating_given": 4.7,
+"member_since": 2022,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.97,
+"base_reply": -0.49
+}
+},
+{
+"client_id": "cl-203",
+"country": "AE",
+"payment_verified": true,
+"total_spent": 36586,
+"jobs_posted": 40,
+"hires": 19,
+"hire_rate": 0.47,
+"avg_rating_given": 4.2,
+"member_since": 2019,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.01,
+"base_reply": -1.43
+}
+},
+{
+"client_id": "cl-204",
+"country": "UK",
+"payment_verified": true,
+"total_spent": 149008,
+"jobs_posted": 41,
+"hires": 10,
+"hire_rate": 0.24,
+"avg_rating_given": 4.6,
+"member_since": 2019,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.01,
+"base_reply": -0.67
+}
+},
+{
+"client_id": "cl-205",
+"country": "PK",
+"payment_verified": true,
+"total_spent": 172743,
+"jobs_posted": 40,
+"hires": 26,
+"hire_rate": 0.65,
+"avg_rating_given": 4.6,
+"member_since": 2015,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.91,
+"base_reply": -1.13
+}
+},
+{
+"client_id": "cl-206",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 126805,
+"jobs_posted": 45,
+"hires": 35,
+"hire_rate": 0.78,
+"avg_rating_given": 4.7,
+"member_since": 2020,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.18,
+"base_reply": -0.48
+}
+},
+{
+"client_id": "cl-207",
+"country": "CA",
+"payment_verified": true,
+"total_spent": 14375,
+"jobs_posted": 15,
+"hires": 13,
+"hire_rate": 0.87,
+"avg_rating_given": 4.2,
+"member_since": 2015,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.05,
+"base_reply": -1.43
+}
+},
+{
+"client_id": "cl-208",
+"country": "CA",
+"payment_verified": true,
+"total_spent": 82620,
+"jobs_posted": 9,
+"hires": 9,
+"hire_rate": 1.0,
+"avg_rating_given": 4.6,
+"member_since": 2025,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.03,
+"base_reply": -1.42
+}
+},
+{
+"client_id": "cl-209",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 128234,
+"jobs_posted": 18,
+"hires": 16,
+"hire_rate": 0.89,
+"avg_rating_given": 4.4,
+"member_since": 2016,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.02,
+"base_reply": -0.48
+}
+},
+{
+"client_id": "cl-210",
+"country": "IN",
+"payment_verified": true,
+"total_spent": 8331,
+"jobs_posted": 32,
+"hires": 16,
+"hire_rate": 0.5,
+"avg_rating_given": 4.5,
+"member_since": 2019,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.05,
+"base_reply": -0.79
+}
+},
+{
+"client_id": "cl-211",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 95033,
+"jobs_posted": 45,
+"hires": 18,
+"hire_rate": 0.4,
+"avg_rating_given": 5.0,
+"member_since": 2023,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.02,
+"base_reply": -0.51
+}
+},
+{
+"client_id": "cl-212",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 134023,
+"jobs_posted": 17,
+"hires": 1,
+"hire_rate": 0.06,
+"avg_rating_given": 4.5,
+"member_since": 2017,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.92,
+"base_reply": -0.48
+}
+},
+{
+"client_id": "cl-213",
+"country": "PK",
+"payment_verified": true,
+"total_spent": 0,
+"jobs_posted": 3,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 3.4,
+"member_since": 2021,
+"freelancer_reviews": [
+"Asked to continue on WhatsApp and pay outside the platform."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.06,
+"base_reply": -0.96
+}
+},
+{
+"client_id": "cl-214",
+"country": "US",
+"payment_verified": true,
+"total_spent": 228745,
+"jobs_posted": 32,
+"hires": 1,
+"hire_rate": 0.03,
+"avg_rating_given": 4.8,
+"member_since": 2022,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.06,
+"base_reply": -0.6
+}
+},
+{
+"client_id": "cl-215",
+"country": "US",
+"payment_verified": true,
+"total_spent": 87562,
+"jobs_posted": 36,
+"hires": 12,
+"hire_rate": 0.33,
+"avg_rating_given": 4.7,
+"member_since": 2013,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.14,
+"base_reply": -0.42
+}
+},
+{
+"client_id": "cl-216",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 149612,
+"jobs_posted": 24,
+"hires": 7,
+"hire_rate": 0.29,
+"avg_rating_given": 4.5,
+"member_since": 2023,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.17,
+"base_reply": -1.15
+}
+},
+{
+"client_id": "cl-217",
+"country": "CA",
+"payment_verified": true,
+"total_spent": 67480,
+"jobs_posted": 20,
+"hires": 1,
+"hire_rate": 0.05,
+"avg_rating_given": 4.6,
+"member_since": 2023,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.24,
+"base_reply": -0.58
+}
+},
+{
+"client_id": "cl-218",
+"country": "CA",
+"payment_verified": true,
+"total_spent": 58384,
+"jobs_posted": 42,
+"hires": 30,
+"hire_rate": 0.71,
+"avg_rating_given": 5.0,
+"member_since": 2015,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.02,
+"base_reply": -0.95
+}
+},
+{
+"client_id": "cl-219",
+"country": "IN",
+"payment_verified": false,
+"total_spent": 195831,
+"jobs_posted": 3,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 3.7,
+"member_since": 2016,
+"freelancer_reviews": [
+"Asked to continue on WhatsApp and pay outside the platform."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.08,
+"base_reply": -1.36
+}
+},
+{
+"client_id": "cl-220",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 186941,
+"jobs_posted": 48,
+"hires": 35,
+"hire_rate": 0.73,
+"avg_rating_given": 4.9,
+"member_since": 2020,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.16,
+"base_reply": -1.38
+}
+},
+{
+"client_id": "cl-221",
+"country": "UK",
+"payment_verified": false,
+"total_spent": 116157,
+"jobs_posted": 1,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 3.4,
+"member_since": 2017,
+"freelancer_reviews": [],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.13,
+"base_reply": -0.46
+}
+},
+{
+"client_id": "cl-222",
+"country": "AE",
+"payment_verified": true,
+"total_spent": 98176,
+"jobs_posted": 56,
+"hires": 54,
+"hire_rate": 0.96,
+"avg_rating_given": 4.5,
+"member_since": 2020,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.06,
+"base_reply": -0.72
+}
+},
+{
+"client_id": "cl-223",
+"country": "NL",
+"payment_verified": false,
+"total_spent": 173783,
+"jobs_posted": 28,
+"hires": 1,
+"hire_rate": 0.04,
+"avg_rating_given": 4.5,
+"member_since": 2014,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.92,
+"base_reply": -1.17
+}
+},
+{
+"client_id": "cl-224",
+"country": "CA",
+"payment_verified": false,
+"total_spent": 0,
+"jobs_posted": 2,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 2.5,
+"member_since": 2023,
+"freelancer_reviews": [
+"Asked to continue on WhatsApp and pay outside the platform."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 0.92,
+"base_reply": -0.64
+}
+},
+{
+"client_id": "cl-225",
+"country": "SG",
+"payment_verified": false,
+"total_spent": 0,
+"jobs_posted": 1,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 3.7,
+"member_since": 2021,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 0.97,
+"base_reply": -0.88
+}
+},
+{
+"client_id": "cl-226",
+"country": "NL",
+"payment_verified": true,
+"total_spent": 207331,
+"jobs_posted": 21,
+"hires": 13,
+"hire_rate": 0.62,
+"avg_rating_given": 4.7,
+"member_since": 2026,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.13,
+"base_reply": -0.53
+}
+},
+{
+"client_id": "cl-227",
+"country": "AE",
+"payment_verified": true,
+"total_spent": 0,
+"jobs_posted": 3,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 2.6,
+"member_since": 2012,
+"freelancer_reviews": [],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.97,
+"base_reply": -0.58
+}
+},
+{
+"client_id": "cl-228",
+"country": "IN",
+"payment_verified": true,
+"total_spent": 109243,
+"jobs_posted": 21,
+"hires": 1,
+"hire_rate": 0.05,
+"avg_rating_given": 4.3,
+"member_since": 2022,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.08,
+"base_reply": -0.49
+}
+},
+{
+"client_id": "cl-229",
+"country": "US",
+"payment_verified": false,
+"total_spent": 105149,
+"jobs_posted": 7,
+"hires": 6,
+"hire_rate": 0.86,
+"avg_rating_given": 4.3,
+"member_since": 2025,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 1.05,
+"base_reply": -0.49
+}
+},
+{
+"client_id": "cl-230",
+"country": "DE",
+"payment_verified": false,
+"total_spent": 194558,
+"jobs_posted": 50,
+"hires": 40,
+"hire_rate": 0.8,
+"avg_rating_given": 4.4,
+"member_since": 2021,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 0.93,
+"base_reply": -1.51
+}
+},
+{
+"client_id": "cl-231",
+"country": "AE",
+"payment_verified": false,
+"total_spent": 167004,
+"jobs_posted": 16,
+"hires": 6,
+"hire_rate": 0.38,
+"avg_rating_given": 4.3,
+"member_since": 2016,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.25,
+"base_reply": -0.97
+}
+},
+{
+"client_id": "cl-232",
+"country": "SG",
+"payment_verified": true,
+"total_spent": 5326,
+"jobs_posted": 36,
+"hires": 9,
+"hire_rate": 0.25,
+"avg_rating_given": 4.6,
+"member_since": 2013,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.94,
+"base_reply": -1.1
+}
+},
+{
+"client_id": "cl-233",
+"country": "AU",
+"payment_verified": true,
+"total_spent": 55568,
+"jobs_posted": 13,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 4.6,
+"member_since": 2025,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.11,
+"base_reply": -1.17
+}
+},
+{
+"client_id": "cl-234",
+"country": "PK",
+"payment_verified": true,
+"total_spent": 32346,
+"jobs_posted": 3,
+"hires": 1,
+"hire_rate": 0.33,
+"avg_rating_given": 3.8,
+"member_since": 2021,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 0.98,
+"base_reply": -1.12
+}
+},
+{
+"client_id": "cl-235",
+"country": "PK",
+"payment_verified": true,
+"total_spent": 4101,
+"jobs_posted": 37,
+"hires": 33,
+"hire_rate": 0.89,
+"avg_rating_given": 4.7,
+"member_since": 2020,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.11,
+"base_reply": -1.45
+}
+},
+{
+"client_id": "cl-236",
+"country": "NL",
+"payment_verified": true,
+"total_spent": 67006,
+"jobs_posted": 27,
+"hires": 12,
+"hire_rate": 0.44,
+"avg_rating_given": 5.0,
+"member_since": 2023,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.16,
+"base_reply": -0.56
+}
+},
+{
+"client_id": "cl-237",
+"country": "UK",
+"payment_verified": false,
+"total_spent": 20002,
+"jobs_posted": 35,
+"hires": 17,
+"hire_rate": 0.49,
+"avg_rating_given": 4.3,
+"member_since": 2025,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.14,
+"base_reply": -1.05
+}
+},
+{
+"client_id": "cl-238",
+"country": "NL",
+"payment_verified": true,
+"total_spent": 0,
+"jobs_posted": 0,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 3.1,
+"member_since": 2021,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.23,
+"base_reply": -0.51
+}
+},
+{
+"client_id": "cl-239",
+"country": "SG",
+"payment_verified": true,
+"total_spent": 11346,
+"jobs_posted": 16,
+"hires": 3,
+"hire_rate": 0.19,
+"avg_rating_given": 4.9,
+"member_since": 2021,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.1,
+"base_reply": -1.59
+}
+},
+{
+"client_id": "cl-240",
+"country": "AU",
+"payment_verified": true,
+"total_spent": 2327,
+"jobs_posted": 21,
+"hires": 1,
+"hire_rate": 0.05,
+"avg_rating_given": 4.5,
+"member_since": 2024,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.25,
+"base_reply": -0.49
+}
+},
+{
+"client_id": "cl-241",
+"country": "CA",
+"payment_verified": false,
+"total_spent": 54605,
+"jobs_posted": 26,
+"hires": 10,
+"hire_rate": 0.38,
+"avg_rating_given": 4.5,
+"member_since": 2019,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": false,
+"budget_flex": 0.98,
+"base_reply": -1.42
+}
+},
+{
+"client_id": "cl-242",
+"country": "PK",
+"payment_verified": true,
+"total_spent": 132612,
+"jobs_posted": 44,
+"hires": 20,
+"hire_rate": 0.45,
+"avg_rating_given": 4.2,
+"member_since": 2013,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.13,
+"base_reply": -1.12
+}
+},
+{
+"client_id": "cl-243",
+"country": "UK",
+"payment_verified": true,
+"total_spent": 125694,
+"jobs_posted": 7,
+"hires": 2,
+"hire_rate": 0.29,
+"avg_rating_given": 4.9,
+"member_since": 2020,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.11,
+"base_reply": -1.06
+}
+},
+{
+"client_id": "cl-244",
+"country": "SG",
+"payment_verified": false,
+"total_spent": 166367,
+"jobs_posted": 12,
+"hires": 8,
+"hire_rate": 0.67,
+"avg_rating_given": 4.6,
+"member_since": 2016,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.13,
+"base_reply": -0.69
+}
+},
+{
+"client_id": "cl-245",
+"country": "SG",
+"payment_verified": false,
+"total_spent": 0,
+"jobs_posted": 2,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 2.7,
+"member_since": 2021,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.24,
+"base_reply": -0.69
+}
+},
+{
+"client_id": "cl-246",
+"country": "US",
+"payment_verified": true,
+"total_spent": 31454,
+"jobs_posted": 41,
+"hires": 32,
+"hire_rate": 0.78,
+"avg_rating_given": 4.5,
+"member_since": 2023,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.23,
+"base_reply": -0.75
+}
+},
+{
+"client_id": "cl-247",
+"country": "US",
+"payment_verified": false,
+"total_spent": 143927,
+"jobs_posted": 0,
+"hires": 1,
+"hire_rate": 0.0,
+"avg_rating_given": 2.7,
+"member_since": 2026,
+"freelancer_reviews": [
+"Asked to continue on WhatsApp and pay outside the platform."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.24,
+"base_reply": -1.53
+}
+},
+{
+"client_id": "cl-248",
+"country": "AU",
+"payment_verified": false,
+"total_spent": 0,
+"jobs_posted": 2,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 3.1,
+"member_since": 2015,
+"freelancer_reviews": [
+"Asked to continue on WhatsApp and pay outside the platform."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.12,
+"base_reply": -1.54
+}
+},
+{
+"client_id": "cl-249",
+"country": "CA",
+"payment_verified": true,
+"total_spent": 132114,
+"jobs_posted": 43,
+"hires": 17,
+"hire_rate": 0.4,
+"avg_rating_given": 4.5,
+"member_since": 2026,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.97,
+"base_reply": -1.46
+}
+},
+{
+"client_id": "cl-250",
+"country": "IN",
+"payment_verified": true,
+"total_spent": 93180,
+"jobs_posted": 34,
+"hires": 19,
+"hire_rate": 0.56,
+"avg_rating_given": 4.3,
+"member_since": 2013,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": false,
+"budget_flex": 1.05,
+"base_reply": -0.68
+}
+},
+{
+"client_id": "cl-251",
+"country": "DE",
+"payment_verified": false,
+"total_spent": 142095,
+"jobs_posted": 58,
+"hires": 51,
+"hire_rate": 0.88,
+"avg_rating_given": 4.5,
+"member_since": 2015,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.04,
+"base_reply": -0.83
+}
+},
+{
+"client_id": "cl-252",
+"country": "NL",
+"payment_verified": true,
+"total_spent": 161181,
+"jobs_posted": 35,
+"hires": 2,
+"hire_rate": 0.06,
+"avg_rating_given": 4.7,
+"member_since": 2023,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.1,
+"base_reply": -0.88
+}
+},
+{
+"client_id": "cl-253",
+"country": "AE",
+"payment_verified": true,
+"total_spent": 198321,
+"jobs_posted": 38,
+"hires": 21,
+"hire_rate": 0.55,
+"avg_rating_given": 4.5,
+"member_since": 2013,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 1.23,
+"base_reply": -1.53
+}
+},
+{
+"client_id": "cl-254",
+"country": "DE",
+"payment_verified": true,
+"total_spent": 148200,
+"jobs_posted": 41,
+"hires": 34,
+"hire_rate": 0.83,
+"avg_rating_given": 4.2,
+"member_since": 2023,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.13,
+"base_reply": -1.4
+}
+},
+{
+"client_id": "cl-255",
+"country": "NL",
+"payment_verified": true,
+"total_spent": 154346,
+"jobs_posted": 1,
+"hires": 1,
+"hire_rate": 1.0,
+"avg_rating_given": 3.9,
+"member_since": 2026,
+"freelancer_reviews": [
+"Asked to continue on WhatsApp and pay outside the platform."
+],
+"_risky": true,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.15,
+"base_reply": -1.29
+}
+},
+{
+"client_id": "cl-256",
+"country": "PK",
+"payment_verified": true,
+"total_spent": 75080,
+"jobs_posted": 4,
+"hires": 4,
+"hire_rate": 1.0,
+"avg_rating_given": 4.7,
+"member_since": 2023,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 0.99,
+"base_reply": -1.43
+}
+},
+{
+"client_id": "cl-257",
+"country": "IN",
+"payment_verified": true,
+"total_spent": 33913,
+"jobs_posted": 29,
+"hires": 0,
+"hire_rate": 0.0,
+"avg_rating_given": 4.9,
+"member_since": 2026,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.16,
+"base_reply": -0.72
+}
+},
+{
+"client_id": "cl-258",
+"country": "AE",
+"payment_verified": true,
+"total_spent": 95802,
+"jobs_posted": 56,
+"hires": 26,
+"hire_rate": 0.46,
+"avg_rating_given": 4.6,
+"member_since": 2022,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.03,
+"base_reply": -0.58
+}
+},
+{
+"client_id": "cl-259",
+"country": "CA",
+"payment_verified": true,
+"total_spent": 225840,
+"jobs_posted": 26,
+"hires": 4,
+"hire_rate": 0.15,
+"avg_rating_given": 4.3,
+"member_since": 2019,
+"freelancer_reviews": [],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": false,
+"prefers_concise": true,
+"budget_flex": 0.97,
+"base_reply": -0.91
+}
+},
+{
+"client_id": "cl-260",
+"country": "IN",
+"payment_verified": true,
+"total_spent": 32841,
+"jobs_posted": 32,
+"hires": 30,
+"hire_rate": 0.94,
+"avg_rating_given": 4.9,
+"member_since": 2022,
+"freelancer_reviews": [
+"Clear requirements and quick payment."
+],
+"_risky": false,
+"_hidden": {
+"dislikes_generic_opening": true,
+"prefers_concise": true,
+"budget_flex": 1.14,
+"base_reply": -0.56
+}
+}
+]

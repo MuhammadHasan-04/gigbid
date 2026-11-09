@@ -1,0 +1,403 @@
+[
+ {
+  "project_id": "data_analyst-p01",
+  "persona": "data_analyst",
+  "category": "bi",
+  "title": "Executive KPI dashboard in Power BI for logistics",
+  "industry": "logistics",
+  "client": "Lumen Realty",
+  "year": 2026,
+  "skills": [
+   "Power BI",
+   "SQL",
+   "dashboard design",
+   "Excel"
+  ],
+  "outcome": "served 7k users in the first month",
+  "has_repo": false,
+  "hours": 32
+ },
+ {
+  "project_id": "data_analyst-p02",
+  "persona": "data_analyst",
+  "category": "bi",
+  "title": "Tableau sales dashboards for a healthcare company",
+  "industry": "healthcare",
+  "client": "Orbit Freight",
+  "year": 2021,
+  "skills": [
+   "Tableau",
+   "SQL",
+   "dashboard design",
+   "data cleaning",
+   "Snowflake"
+  ],
+  "outcome": "shipped in 4 weeks",
+  "has_repo": true,
+  "hours": 26
+ },
+ {
+  "project_id": "data_analyst-p03",
+  "persona": "data_analyst",
+  "category": "analytics_eng",
+  "title": "dbt models on Snowflake for real estate",
+  "industry": "real estate",
+  "client": "Stackwise",
+  "year": 2023,
+  "skills": [
+   "dbt",
+   "SQL",
+   "Snowflake",
+   "ETL",
+   "Looker",
+   "Fivetran"
+  ],
+  "outcome": "shipped in 5 weeks",
+  "has_repo": false,
+  "hours": 37
+ },
+ {
+  "project_id": "data_analyst-p04",
+  "persona": "data_analyst",
+  "category": "analytics_eng",
+  "title": "BigQuery warehouse and reporting for travel",
+  "industry": "travel",
+  "client": "Pixelpress",
+  "year": 2023,
+  "skills": [
+   "BigQuery",
+   "SQL",
+   "ETL",
+   "Google Analytics 4",
+   "Looker",
+   "dbt"
+  ],
+  "outcome": "brought latency down to 120 ms p95",
+  "has_repo": true,
+  "hours": 45
+ },
+ {
+  "project_id": "data_analyst-p05",
+  "persona": "data_analyst",
+  "category": "product_analytics",
+  "title": "Retention and cohort analysis for a non-profit app",
+  "industry": "non-profit",
+  "client": "Northwind",
+  "year": 2020,
+  "skills": [
+   "cohort analysis",
+   "SQL",
+   "Python",
+   "statistics",
+   "pandas",
+   "Metabase"
+  ],
+  "outcome": "brought latency down to 80 ms p95",
+  "has_repo": false,
+  "hours": 17
+ },
+ {
+  "project_id": "data_analyst-p06",
+  "persona": "data_analyst",
+  "category": "product_analytics",
+  "title": "A/B test analysis for healthcare growth team",
+  "industry": "healthcare",
+  "client": "Stackwise",
+  "year": 2021,
+  "skills": [
+   "A/B testing",
+   "statistics",
+   "Python"
+  ],
+  "outcome": "raised conversion by 57%",
+  "has_repo": true,
+  "hours": 26
+ },
+ {
+  "project_id": "data_analyst-p07",
+  "persona": "data_analyst",
+  "category": "web_analytics",
+  "title": "GA4 tracking audit for a insurance website",
+  "industry": "insurance",
+  "client": "Lumen Realty",
+  "year": 2022,
+  "skills": [
+   "Google Analytics 4",
+   "BigQuery",
+   "dashboard design"
+  ],
+  "outcome": "saved the team 7 hours per week",
+  "has_repo": true,
+  "hours": 19
+ },
+ {
+  "project_id": "data_analyst-p08",
+  "persona": "data_analyst",
+  "category": "spreadsheet",
+  "title": "Excel financial model clean-up for media",
+  "industry": "media",
+  "client": "Orbit Freight",
+  "year": 2020,
+  "skills": [
+   "Excel",
+   "data cleaning",
+   "Google Sheets",
+   "Power BI"
+  ],
+  "outcome": "shipped in 8 weeks",
+  "has_repo": true,
+  "hours": 20
+ },
+ {
+  "project_id": "data_analyst-p09",
+  "persona": "data_analyst",
+  "category": "forecasting",
+  "title": "Sales forecasting in Python for insurance",
+  "industry": "insurance",
+  "client": "Quill Learning",
+  "year": 2025,
+  "skills": [
+   "Python",
+   "pandas",
+   "statistics",
+   "R",
+   "Excel"
+  ],
+  "outcome": "reduced cloud cost by 57%",
+  "has_repo": true,
+  "hours": 25
+ },
+ {
+  "project_id": "data_analyst-p10",
+  "persona": "data_analyst",
+  "category": "research",
+  "title": "Survey data analysis in R for a insurance study",
+  "industry": "insurance",
+  "client": "Bluefin Labs",
+  "year": 2025,
+  "skills": [
+   "R",
+   "statistics",
+   "data cleaning",
+   "Excel"
+  ],
+  "outcome": "cut manual review time by 42%",
+  "has_repo": true,
+  "hours": 19
+ },
+ {
+  "project_id": "data_analyst-p11",
+  "persona": "data_analyst",
+  "category": "analytics_eng",
+  "title": "BigQuery warehouse and reporting for real estate",
+  "industry": "real estate",
+  "client": "Kitebook",
+  "year": 2025,
+  "skills": [
+   "BigQuery",
+   "SQL",
+   "ETL",
+   "Google Analytics 4"
+  ],
+  "outcome": "reduced cloud cost by 38%",
+  "has_repo": true,
+  "hours": 36
+ },
+ {
+  "project_id": "data_analyst-p12",
+  "persona": "data_analyst",
+  "category": "web_analytics",
+  "title": "GA4 tracking audit for a logistics website",
+  "industry": "logistics",
+  "client": "Orbit Freight",
+  "year": 2026,
+  "skills": [
+   "Google Analytics 4",
+   "Google Sheets",
+   "BigQuery"
+  ],
+  "outcome": "raised conversion by 46%",
+  "has_repo": true,
+  "hours": 12
+ },
+ {
+  "project_id": "data_analyst-p13",
+  "persona": "data_analyst",
+  "category": "product_analytics",
+  "title": "A/B test analysis for fintech growth team",
+  "industry": "fintech",
+  "client": "Quill Learning",
+  "year": 2020,
+  "skills": [
+   "A/B testing",
+   "statistics",
+   "Python",
+   "R",
+   "SQL"
+  ],
+  "outcome": "improved accuracy from 74% to 84%",
+  "has_repo": false,
+  "hours": 26
+ },
+ {
+  "project_id": "data_analyst-p14",
+  "persona": "data_analyst",
+  "category": "spreadsheet",
+  "title": "Excel financial model clean-up for healthcare",
+  "industry": "healthcare",
+  "client": "Forge Metals",
+  "year": 2021,
+  "skills": [
+   "Excel",
+   "data cleaning",
+   "Power BI"
+  ],
+  "outcome": "improved accuracy from 78% to 82%",
+  "has_repo": true,
+  "hours": 13
+ },
+ {
+  "project_id": "data_analyst-p15",
+  "persona": "data_analyst",
+  "category": "bi",
+  "title": "Executive KPI dashboard in Power BI for healthcare",
+  "industry": "healthcare",
+  "client": "Greenroots NGO",
+  "year": 2024,
+  "skills": [
+   "Power BI",
+   "SQL",
+   "dashboard design",
+   "Excel"
+  ],
+  "outcome": "improved accuracy from 76% to 81%",
+  "has_repo": false,
+  "hours": 38
+ },
+ {
+  "project_id": "data_analyst-p16",
+  "persona": "data_analyst",
+  "category": "research",
+  "title": "Survey data analysis in R for a non-profit study",
+  "industry": "non-profit",
+  "client": "Lumen Realty",
+  "year": 2026,
+  "skills": [
+   "R",
+   "statistics",
+   "Excel"
+  ],
+  "outcome": "cut manual review time by 17%",
+  "has_repo": true,
+  "hours": 22
+ },
+ {
+  "project_id": "data_analyst-p17",
+  "persona": "data_analyst",
+  "category": "bi",
+  "title": "Executive KPI dashboard in Power BI for logistics",
+  "industry": "logistics",
+  "client": "Cedar Health",
+  "year": 2020,
+  "skills": [
+   "Power BI",
+   "SQL",
+   "dashboard design",
+   "Excel"
+  ],
+  "outcome": "saved the team 20 hours per week",
+  "has_repo": true,
+  "hours": 33
+ },
+ {
+  "project_id": "data_analyst-p18",
+  "persona": "data_analyst",
+  "category": "product_analytics",
+  "title": "A/B test analysis for fintech growth team",
+  "industry": "fintech",
+  "client": "Stackwise",
+  "year": 2024,
+  "skills": [
+   "A/B testing",
+   "statistics",
+   "R",
+   "SQL"
+  ],
+  "outcome": "saved the team 15 hours per week",
+  "has_repo": false,
+  "hours": 14
+ },
+ {
+  "project_id": "data_analyst-p19",
+  "persona": "data_analyst",
+  "category": "web_analytics",
+  "title": "GA4 tracking audit for a logistics website",
+  "industry": "logistics",
+  "client": "Orbit Freight",
+  "year": 2021,
+  "skills": [
+   "Google Analytics 4",
+   "BigQuery"
+  ],
+  "outcome": "cut manual review time by 54%",
+  "has_repo": false,
+  "hours": 12
+ },
+ {
+  "project_id": "data_analyst-p20",
+  "persona": "data_analyst",
+  "category": "analytics_eng",
+  "title": "BigQuery warehouse and reporting for manufacturing",
+  "industry": "manufacturing",
+  "client": "Shieldline",
+  "year": 2023,
+  "skills": [
+   "BigQuery",
+   "SQL",
+   "ETL",
+   "Google Analytics 4",
+   "Looker"
+  ],
+  "outcome": "reduced cloud cost by 48%",
+  "has_repo": true,
+  "hours": 55
+ },
+ {
+  "project_id": "data_analyst-p21",
+  "persona": "data_analyst",
+  "category": "analytics_eng",
+  "title": "BigQuery warehouse and reporting for fintech",
+  "industry": "fintech",
+  "client": "Lumen Realty",
+  "year": 2025,
+  "skills": [
+   "BigQuery",
+   "SQL",
+   "ETL",
+   "Looker",
+   "dbt"
+  ],
+  "outcome": "reduced cloud cost by 59%",
+  "has_repo": true,
+  "hours": 53
+ },
+ {
+  "project_id": "data_analyst-p22",
+  "persona": "data_analyst",
+  "category": "product_analytics",
+  "title": "A/B test analysis for travel growth team",
+  "industry": "travel",
+  "client": "Northwind",
+  "year": 2023,
+  "skills": [
+   "A/B testing",
+   "statistics",
+   "SQL",
+   "Python",
+   "R"
+  ],
+  "outcome": "brought latency down to 120 ms p95",
+  "has_repo": false,
+  "hours": 19
+ }
+]

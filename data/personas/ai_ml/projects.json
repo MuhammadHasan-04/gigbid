@@ -1,0 +1,420 @@
+[
+ {
+  "project_id": "ai_ml-p01",
+  "persona": "ai_ml",
+  "category": "llm_apps",
+  "title": "RAG chatbot over logistics documents",
+  "industry": "logistics",
+  "client": "Stackwise",
+  "year": 2020,
+  "skills": [
+   "Python",
+   "RAG",
+   "LangChain",
+   "FAISS",
+   "pgvector"
+  ],
+  "outcome": "served 38k users in the first month",
+  "has_repo": false,
+  "hours": 73
+ },
+ {
+  "project_id": "ai_ml-p02",
+  "persona": "ai_ml",
+  "category": "llm_apps",
+  "title": "Multi-agent workflow for real estate operations",
+  "industry": "real estate",
+  "client": "Cedar Health",
+  "year": 2021,
+  "skills": [
+   "Python",
+   "LangGraph",
+   "OpenAI API",
+   "prompt engineering"
+  ],
+  "outcome": "reduced cloud cost by 30%",
+  "has_repo": true,
+  "hours": 66
+ },
+ {
+  "project_id": "ai_ml-p03",
+  "persona": "ai_ml",
+  "category": "llm_apps",
+  "title": "Fine-tune an open LLM for real estate support tickets",
+  "industry": "real estate",
+  "client": "Orbit Freight",
+  "year": 2023,
+  "skills": [
+   "Python",
+   "LLM fine-tuning",
+   "Hugging Face Transformers",
+   "PyTorch",
+   "AWS SageMaker"
+  ],
+  "outcome": "raised conversion by 50%",
+  "has_repo": true,
+  "hours": 68
+ },
+ {
+  "project_id": "ai_ml-p04",
+  "persona": "ai_ml",
+  "category": "classical_ml",
+  "title": "Churn / risk prediction model for a insurance company",
+  "industry": "insurance",
+  "client": "Tidal Pay",
+  "year": 2024,
+  "skills": [
+   "Python",
+   "scikit-learn",
+   "XGBoost",
+   "Docker"
+  ],
+  "outcome": "cut manual review time by 47%",
+  "has_repo": false,
+  "hours": 37
+ },
+ {
+  "project_id": "ai_ml-p05",
+  "persona": "ai_ml",
+  "category": "classical_ml",
+  "title": "Demand forecasting for logistics",
+  "industry": "logistics",
+  "client": "Stackwise",
+  "year": 2025,
+  "skills": [
+   "Python",
+   "time series forecasting",
+   "XGBoost",
+   "pandas",
+   "MLflow"
+  ],
+  "outcome": "raised conversion by 19%",
+  "has_repo": false,
+  "hours": 48
+ },
+ {
+  "project_id": "ai_ml-p06",
+  "persona": "ai_ml",
+  "category": "vision",
+  "title": "Defect detection with computer vision for healthcare",
+  "industry": "healthcare",
+  "client": "Bluefin Labs",
+  "year": 2026,
+  "skills": [
+   "Python",
+   "computer vision",
+   "YOLO",
+   "OpenCV",
+   "ONNX",
+   "PyTorch"
+  ],
+  "outcome": "raised conversion by 43%",
+  "has_repo": true,
+  "hours": 75
+ },
+ {
+  "project_id": "ai_ml-p07",
+  "persona": "ai_ml",
+  "category": "vision",
+  "title": "Document image classification for e-commerce",
+  "industry": "e-commerce",
+  "client": "Greenroots NGO",
+  "year": 2025,
+  "skills": [
+   "Python",
+   "computer vision",
+   "PyTorch",
+   "FastAPI"
+  ],
+  "outcome": "brought latency down to 80 ms p95",
+  "has_repo": true,
+  "hours": 32
+ },
+ {
+  "project_id": "ai_ml-p08",
+  "persona": "ai_ml",
+  "category": "nlp",
+  "title": "Entity extraction from logistics contracts",
+  "industry": "logistics",
+  "client": "Pixelpress",
+  "year": 2020,
+  "skills": [
+   "Python",
+   "NLP",
+   "spaCy",
+   "FastAPI",
+   "Hugging Face Transformers",
+   "Docker"
+  ],
+  "outcome": "saved the team 17 hours per week",
+  "has_repo": false,
+  "hours": 52
+ },
+ {
+  "project_id": "ai_ml-p09",
+  "persona": "ai_ml",
+  "category": "mlops",
+  "title": "Productionise ML models for a e-commerce team",
+  "industry": "e-commerce",
+  "client": "Tidal Pay",
+  "year": 2020,
+  "skills": [
+   "MLOps",
+   "Docker",
+   "MLflow",
+   "AWS SageMaker"
+  ],
+  "outcome": "improved accuracy from 83% to 89%",
+  "has_repo": true,
+  "hours": 36
+ },
+ {
+  "project_id": "ai_ml-p10",
+  "persona": "ai_ml",
+  "category": "recsys",
+  "title": "Recommendation engine for a manufacturing platform",
+  "industry": "manufacturing",
+  "client": "Bluefin Labs",
+  "year": 2020,
+  "skills": [
+   "Python",
+   "recommendation systems",
+   "FAISS",
+   "FastAPI"
+  ],
+  "outcome": "brought latency down to 80 ms p95",
+  "has_repo": true,
+  "hours": 67
+ },
+ {
+  "project_id": "ai_ml-p11",
+  "persona": "ai_ml",
+  "category": "mlops",
+  "title": "Productionise ML models for a media team",
+  "industry": "media",
+  "client": "Wayfarer Trips",
+  "year": 2020,
+  "skills": [
+   "MLOps",
+   "Docker",
+   "MLflow",
+   "FastAPI",
+   "AWS SageMaker",
+   "Celery"
+  ],
+  "outcome": "served 40k users in the first month",
+  "has_repo": true,
+  "hours": 59
+ },
+ {
+  "project_id": "ai_ml-p12",
+  "persona": "ai_ml",
+  "category": "nlp",
+  "title": "Entity extraction from healthcare contracts",
+  "industry": "healthcare",
+  "client": "Forge Metals",
+  "year": 2023,
+  "skills": [
+   "Python",
+   "NLP",
+   "spaCy",
+   "Hugging Face Transformers",
+   "FastAPI",
+   "Docker"
+  ],
+  "outcome": "shipped in 10 weeks",
+  "has_repo": false,
+  "hours": 40
+ },
+ {
+  "project_id": "ai_ml-p13",
+  "persona": "ai_ml",
+  "category": "mlops",
+  "title": "Productionise ML models for a fintech team",
+  "industry": "fintech",
+  "client": "Stackwise",
+  "year": 2026,
+  "skills": [
+   "MLOps",
+   "Docker",
+   "MLflow",
+   "Airflow",
+   "Celery"
+  ],
+  "outcome": "brought latency down to 250 ms p95",
+  "has_repo": false,
+  "hours": 51
+ },
+ {
+  "project_id": "ai_ml-p14",
+  "persona": "ai_ml",
+  "category": "vision",
+  "title": "Defect detection with computer vision for real estate",
+  "industry": "real estate",
+  "client": "Forge Metals",
+  "year": 2023,
+  "skills": [
+   "Python",
+   "computer vision",
+   "YOLO",
+   "OpenCV"
+  ],
+  "outcome": "improved accuracy from 72% to 79%",
+  "has_repo": true,
+  "hours": 64
+ },
+ {
+  "project_id": "ai_ml-p15",
+  "persona": "ai_ml",
+  "category": "llm_apps",
+  "title": "Multi-agent workflow for fintech operations",
+  "industry": "fintech",
+  "client": "Wayfarer Trips",
+  "year": 2024,
+  "skills": [
+   "Python",
+   "LangGraph",
+   "OpenAI API",
+   "prompt engineering",
+   "Docker",
+   "FastAPI"
+  ],
+  "outcome": "raised conversion by 35%",
+  "has_repo": false,
+  "hours": 97
+ },
+ {
+  "project_id": "ai_ml-p16",
+  "persona": "ai_ml",
+  "category": "llm_apps",
+  "title": "Multi-agent workflow for travel operations",
+  "industry": "travel",
+  "client": "Pixelpress",
+  "year": 2026,
+  "skills": [
+   "Python",
+   "LangGraph",
+   "OpenAI API",
+   "prompt engineering",
+   "Celery",
+   "Docker"
+  ],
+  "outcome": "raised conversion by 54%",
+  "has_repo": true,
+  "hours": 68
+ },
+ {
+  "project_id": "ai_ml-p17",
+  "persona": "ai_ml",
+  "category": "classical_ml",
+  "title": "Churn / risk prediction model for a e-commerce company",
+  "industry": "e-commerce",
+  "client": "Quill Learning",
+  "year": 2024,
+  "skills": [
+   "Python",
+   "scikit-learn",
+   "XGBoost",
+   "MLflow",
+   "FastAPI"
+  ],
+  "outcome": "cut manual review time by 46%",
+  "has_repo": false,
+  "hours": 31
+ },
+ {
+  "project_id": "ai_ml-p18",
+  "persona": "ai_ml",
+  "category": "classical_ml",
+  "title": "Demand forecasting for insurance",
+  "industry": "insurance",
+  "client": "Northwind",
+  "year": 2023,
+  "skills": [
+   "Python",
+   "time series forecasting",
+   "XGBoost",
+   "pandas"
+  ],
+  "outcome": "saved the team 20 hours per week",
+  "has_repo": false,
+  "hours": 53
+ },
+ {
+  "project_id": "ai_ml-p19",
+  "persona": "ai_ml",
+  "category": "llm_apps",
+  "title": "Multi-agent workflow for insurance operations",
+  "industry": "insurance",
+  "client": "Harbor Supply",
+  "year": 2023,
+  "skills": [
+   "Python",
+   "LangGraph",
+   "OpenAI API",
+   "Docker",
+   "FastAPI",
+   "Celery"
+  ],
+  "outcome": "brought latency down to 80 ms p95",
+  "has_repo": false,
+  "hours": 64
+ },
+ {
+  "project_id": "ai_ml-p20",
+  "persona": "ai_ml",
+  "category": "classical_ml",
+  "title": "Churn / risk prediction model for a media company",
+  "industry": "media",
+  "client": "Stackwise",
+  "year": 2021,
+  "skills": [
+   "Python",
+   "scikit-learn",
+   "XGBoost",
+   "MLflow",
+   "Docker",
+   "pandas"
+  ],
+  "outcome": "brought latency down to 180 ms p95",
+  "has_repo": true,
+  "hours": 38
+ },
+ {
+  "project_id": "ai_ml-p21",
+  "persona": "ai_ml",
+  "category": "vision",
+  "title": "Defect detection with computer vision for manufacturing",
+  "industry": "manufacturing",
+  "client": "Cedar Health",
+  "year": 2020,
+  "skills": [
+   "Python",
+   "computer vision",
+   "YOLO",
+   "ONNX",
+   "OpenCV"
+  ],
+  "outcome": "raised conversion by 22%",
+  "has_repo": false,
+  "hours": 44
+ },
+ {
+  "project_id": "ai_ml-p22",
+  "persona": "ai_ml",
+  "category": "vision",
+  "title": "Defect detection with computer vision for media",
+  "industry": "media",
+  "client": "Lumen Realty",
+  "year": 2020,
+  "skills": [
+   "Python",
+   "computer vision",
+   "YOLO",
+   "PyTorch"
+  ],
+  "outcome": "improved accuracy from 79% to 86%",
+  "has_repo": false,
+  "hours": 64
+ }
+]
