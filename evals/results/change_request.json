@@ -1,0 +1,26 @@
+{
+ "meta": {
+  "commit": "c3cbcad",
+  "time": "2026-11-09T14:36:02",
+  "python": "3.12.3",
+  "machine": "x86_64",
+  "cpus": 2
+ },
+ "change": "GigSim policy v2 (stand-in for the 2 Nov 2026 platform policy update): new rule no_external_links + crowded-job surcharge (+2 Connects when proposals_count >= 20)",
+ "official_change_request_available": false,
+ "files_changed_to_absorb": [
+  [
+   "1",
+   "1",
+   "agent/config.yaml"
+  ]
+ ],
+ "code_lines_changed": 0,
+ "config_lines_changed": 1,
+ "data_files_added_earlier": [
+  "data/policy_pack/policy_v2.yaml (66 lines, committed with the GigSim stand-in)"
+ ],
+ "time_to_absorb_seconds": 38,
+ "tests_after_change": "31 passed",
+ "caveat": "The surcharge and regex-rule mechanisms were designed before the change was known, and the change was authored by the same person, so this is a best case. A rule type the engine cannot express (e.g. time-of-day limits, per-client quotas) would need code in agent/nodes/compliance.py::scan or agent/nodes/pricing.py::connects_cost."
+}

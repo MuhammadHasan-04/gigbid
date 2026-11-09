@@ -7,7 +7,7 @@ marketplace:
   live_poll_interval_minutes: 240  # Upwork live mode: saved searches at most every 4 hours (RUNBOOK.md)
 
 policy:
-  version: 1                   # 1 = policy_v1.yaml, 2 = the 2 Nov "platform policy update"
+  version: 2                   # 1 = policy_v1.yaml, 2 = the 2 Nov "platform policy update"
   dir: data/policy_pack
 
 models:
