@@ -55,6 +55,14 @@ Held-out (`rag_heuristic_heldout.json`): V0 nDCG@10 0.8394 vs shipped 0.8634.
 
 **Multi-agent comparison** (R&D C): single ReAct agent vs `langgraph-supervisor` vs this graph needs a model endpoint. Runner: `evals/runners/agents_compare.py`. Pending.
 
+**Tool granularity** (R&D A, `tool_study.json`, openai/gpt-oss-120b on Groq, 38 tasks)
+
+| Tool set | # tools | Tool-selection accuracy | Argument accuracy | Tokens / task |
+|---|---|---|---|---|
+| Fine-grained | 17 | 1.0 | 0.9737 | 719.6316 |
+| Coarse (action enum) | 3 | 0.7895 | 0.1316 | 345.1316 |
+| Shipped, rewritten descriptions | 10 | 1.0 | 1.0 | 543.3947 |
+
 **Signature extension X2** (`ab_test_heuristic.json`): evidence-first (A) 0.8793 vs question-first (B) 0.7586 reply rate on 232 paired jobs, McNemar exact p = 0.0006.
 <!-- results:end -->
 

@@ -42,6 +42,7 @@ def row(name, key, p):
 
 
 ab = load(f"ab_test_{P}.json")
+ts = load("tool_study.json")
 ac = load("agents_compare.json")
 lines = [
     f"**RAG variants** (dev set, {rag['v0']['n']} jobs with gold evidence, `evals/results/rag_{P}.json`; unsupported claims, reply rate and latency from `pipeline_{P}_dev*.json`)",
@@ -68,6 +69,14 @@ if ac:
     lines.append("")
 else:
     lines += ["**Multi-agent comparison** (R&D C): single ReAct agent vs `langgraph-supervisor` vs this graph needs a model endpoint. Runner: `evals/runners/agents_compare.py`. Pending.", ""]
+if ts:
+    m = ts["model"]["model"]
+    lines += [f"**Tool granularity** (R&D A, `tool_study.json`, {m} on Groq, {ts['toolsets']['best']['n']} tasks)", "",
+              "| Tool set | # tools | Tool-selection accuracy | Argument accuracy | Tokens / task |", "|---|---|---|---|---|"]
+    for k, label in (("fine", "Fine-grained"), ("coarse", "Coarse (action enum)"), ("best", "Shipped, rewritten descriptions")):
+        x = ts["toolsets"][k]
+        lines.append(f"| {label} | {x['n_tools']} | {x['tool_selection_accuracy']} | {x['argument_accuracy']} | {x['tokens_per_task']} |")
+    lines.append("")
 if ab:
     lines.append(f"**Signature extension X2** (`ab_test_{P}.json`): evidence-first (A) {ab['reply_rate_A']} vs question-first (B) {ab['reply_rate_B']} reply rate on "
                  f"{ab['n_paired']} paired jobs, McNemar exact p = {ab['mcnemar_exact_p']}.")

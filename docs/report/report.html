@@ -11,7 +11,7 @@ img { max-width: 100%; } .two { display: flex; gap: 10px; } .two > div { flex: 1
 code { font-size: 9px; background: #f0f2f1; padding: 0 2px; }
 </style></head><body>
 <h1>GigBid: a multi-agent freelancer copilot</h1>
-<div class="meta">AI-4016 R&amp;D report · Hasan · FAST-NUCES Islamabad · repository commit <code>f294112</code> · results profile <code>heuristic</code> ·
+<div class="meta">AI-4016 R&amp;D report · Hasan · FAST-NUCES Islamabad · repository commit <code>2baacf0</code> · results profile <code>heuristic</code> ·
 providers actually used in the main run: {'heuristic': 600}</div>
 
 <div class="box"><b>Read first: threats to validity.</b> (1) The instructor GigSim, persona corpora and dev set were not available; every
@@ -51,7 +51,7 @@ submission and one Connects deduction. Public traces: <code>docs/traces/</code> 
 <p><b>Hypothesis:</b> a small set of mid-grained tools with rewritten, disambiguating descriptions beats both 17 fine-grained tools (selection errors
 between near-duplicates) and 3 coarse tools with an <code>action</code> enum (argument errors) on tool-selection and argument accuracy, at fewer
 tokens per task than fine-grained. <b>Setup:</b> 40 tasks with known correct calls (<code>evals/datasets/tool_tasks.jsonl</code>), same model, native tool
-calling, <code>tool_choice=required</code>. <b>Results:</b> <span class="pending">pending: needs a model endpoint (runner committed)</span></p>
+calling, <code>tool_choice=required</code>. <b>Results:</b> <table><thead><tr><th>Tool set</th><th># tools</th><th>Tool selection acc.</th><th>Argument acc.</th><th>Tokens / task</th></tr></thead><tbody><tr><td>fine</td><td>17</td><td>1.0</td><td>0.9737</td><td>719.6316</td></tr><tr><td>coarse</td><td>3</td><td>0.7895</td><td>0.1316</td><td>345.1316</td></tr><tr><td>best</td><td>10</td><td>1.0</td><td>1.0</td><td>543.3947</td></tr></tbody></table><span class="src">[tool_study.json]</span></p>
 <p><b>Shipped design:</b> 10 read tools + 3 write tools; descriptions say what the tool is <i>not</i> for ("never for details of one known job id").
 Contract tests pin schemas and annotations (<code>tests/contract/snapshots</code>).</p>
 
