@@ -6,6 +6,7 @@ import re
 
 from agent import llm
 from agent.handoffs import ProposalDraft
+from rag.skills import GENERIC
 
 NEED_LINES = {
     "documentation": "I will leave written runbooks and a recorded walkthrough so your team can maintain it without me.",
@@ -24,13 +25,13 @@ def _short(text: str, n: int = 140) -> str:
 
 def heuristic_draft(job: dict, spec: dict, fit: dict, price: dict, evidence: dict[str, str], persona: dict,
                     style_rules: list[str], feedback: list[str]) -> ProposalDraft:
-    from rag.skills import GENERIC
     strong = [m for m in fit.get("matches", []) if m["strength"] == "strong" and m["evidence_ids"]]
     strong.sort(key=lambda m: m["requirement"] in GENERIC)
     partial = [m for m in fit.get("matches", []) if m["strength"] == "partial" and m["evidence_ids"]]
     title = job["title"].rstrip(".")
     industry = job.get("industry") or "your"
-    sents = [f"For your {title.lower()}, the hard part is getting {', '.join((spec.get('requirements') or ['the stack'])[:2])} working reliably for a {industry} team, and that is work I have shipped before."]
+    focus = [r for r in (spec.get('requirements') or []) if r not in GENERIC][:2] or (spec.get('requirements') or ['the stack'])[:2]
+    sents = [f"For your {title.lower()}, the core of the work is getting {' and '.join(focus)} right for a {industry} team, so here is the closest work I have done."]
     used_projects = set()
     for m in (strong + partial)[:3]:
         eid = m["evidence_ids"][0]

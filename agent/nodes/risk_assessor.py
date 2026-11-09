@@ -23,7 +23,8 @@ def rule_signals(text: str) -> dict[str, list[str]]:
     low = text.lower()
     found = {k: [p for p in pats if re.search(p, low)] for k, pats in SIGNALS.items()}
     found = {k: v for k, v in found.items() if v}
-    inj = [p for p in INJECTION if re.search(p, low)]
+    from agent.llm import defence_disabled
+    inj = [] if defence_disabled() else [p for p in INJECTION if re.search(p, low)]
     if inj:
         found["prompt_injection"] = inj
     return found

@@ -10,7 +10,10 @@ from rag.verify import split_sentences
 
 def scan(text: str, policy: dict, claims: list[dict] | None = None) -> list[dict]:
     out = []
+    from agent.llm import defence_disabled
     for rule in policy["rules"]:
+        if defence_disabled() and rule["id"] == "no_injected_instructions":
+            continue
         if rule["detector"] == "regex":
             for s in split_sentences(text):
                 if any(re.search(p, s) for p in rule["patterns"]):

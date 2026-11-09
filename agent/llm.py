@@ -67,14 +67,23 @@ def load_prompt(name: str) -> tuple[str, str]:
 def render(name: str, **vars) -> tuple[str, str, str]:
     version, both = load_prompt(name)
     system, user = both.split("\x00")
+    if defence_disabled():
+        system = "\n".join(l for l in system.splitlines() if "security rule" not in l.lower())
     for k, v in vars.items():
         user = user.replace("{{" + k + "}}", v if isinstance(v, str) else json.dumps(v, default=str))
         system = system.replace("{{" + k + "}}", v if isinstance(v, str) else json.dumps(v, default=str))
     return version, system.strip(), user
 
 
+def defence_disabled() -> bool:
+    """Only for the injection-defence ablation (evals/runners/pipeline_eval.py --no-defence)."""
+    return os.getenv("GIGBID_DISABLE_DEFENCE") == "1"
+
+
 def untrusted(label: str, text: str) -> str:
     """Delimit untrusted marketplace text. Closing tags inside the text are neutralised."""
+    if defence_disabled():
+        return text
     clean = re.sub(r"</?\s*(untrusted|job_post|client_message|system)[^>]*>", "[tag removed]", text, flags=re.I)
     return f"<untrusted_{label}>\n{clean}\n</untrusted_{label}>"
 

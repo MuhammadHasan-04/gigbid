@@ -7,7 +7,7 @@ from agent.mcp_client import MCPTools, ToolUnavailable
 from agent.runtime import get_runtime
 from apps.api import db
 from apps.api.auth.security import User
-from apps.api.queue import enqueue
+from apps.api.jobqueue import enqueue
 from apps.api.schemas.models import Accepted, Conversation, PipelineCard
 
 router = APIRouter(prefix="/api", tags=["messages"])

@@ -156,6 +156,14 @@ async def pricing_node(state: BidState, config) -> dict:
     stats = await outcome_stats(state["user_id"], job.get("category"))
     q = price_fn(job, state["job_spec"], state.get("client") or {}, market if "error" not in market else {}, floor,
                  state["fit"]["fit_score"], settings.policy(), stats.get("reply_rate") or 0.25)
+    b = job.get("budget", {}).get("max") or 0
+    if q.floor and b and q.floor > b:
+        # the Pricing Strategist can veto: the posted budget cannot cover the user's floor
+        d = dict(state["decision"], action="skip", reasons=state["decision"]["reasons"] + [f"budget {b:.0f} below your floor {q.floor:.0f} for this scope"])
+        return {"price": q.model_dump(), "decision": d, "status": "skipped", "_log": f"veto: floor {q.floor:.0f} > budget {b:.0f}"}
+    if not q.connects_worth_it:
+        d = dict(state["decision"], action="watch", reasons=state["decision"]["reasons"] + [f"{q.connects_cost} Connects not worth the expected value ${q.expected_value_usd}"])
+        return {"price": q.model_dump(), "decision": d, "status": "watch", "_log": "watch: Connects cost not worth it"}
     return {"price": q.model_dump(), "_log": q.rationale}
 
 
@@ -316,7 +324,7 @@ def build(checkpointer=None, store=None):
     g.add_edge("risk_assessor", "decide")
     g.add_edge("fit_matcher", "decide")
     g.add_conditional_edges("decide", route_decision, ["pricing", END])
-    g.add_edge("pricing", "writer")
+    g.add_conditional_edges("pricing", lambda s: "writer" if s.get("status") == "drafting" else END, ["writer", END])
     g.add_edge("writer", "verifier")
     g.add_edge("verifier", "critic")
     g.add_conditional_edges("critic", route_critic, ["writer", "compliance", END])
