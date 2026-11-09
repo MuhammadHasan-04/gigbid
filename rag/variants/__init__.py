@@ -9,8 +9,10 @@ VARIANTS: dict[str, RetrievalConfig] = {
     "v8": v8_corrective.CONFIG,
 }
 # Updated after each evaluation run; the decision paragraph lives in docs/DATA_CARD.md.
+# Chosen by evals/runners/rag_sweep.py (64-config grid, primary metric nDCG@10 on dev, heuristic profile):
+# winner dec-hyb-mv0-cx1-str -> evals/results/rag_sweep_heuristic.json
 VARIANTS["best"] = RetrievalConfig(name="best", chunking="structural", query="decompose", retrieval="hybrid",
-                                   multi_vector=True, contextual=True, outcome_boost=0.0)
+                                   multi_vector=False, contextual=True, outcome_boost=0.0)
 
 
 def get(name: str) -> RetrievalConfig:

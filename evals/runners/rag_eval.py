@@ -25,6 +25,8 @@ def ablations(best):
         out["best-no_decompose"] = replace(best, name="best-no_decompose", query="whole")
     if best.retrieval == "hybrid":
         out["best-no_bm25"] = replace(best, name="best-no_bm25", retrieval="dense")
+    if not best.multi_vector:
+        out["best+multivector"] = replace(best, name="best+multivector", multi_vector=True)
     if best.multi_vector:
         out["best-no_multivector"] = replace(best, name="best-no_multivector", multi_vector=False)
     if best.contextual:
@@ -40,12 +42,12 @@ def job_type(g: dict) -> str:
     return "4+_requirements" if len(g["requirements"]) >= 4 else "1-3_requirements"
 
 
-def run(variants: dict, limit: int | None = None) -> dict:
+def run(variants: dict, limit: int | None = None, split: str = "dev") -> dict:
     jobs = load_jobs()
     specs = {}
     results = {}
     for pkey in PERSONAS:
-        dev = [g for g in load_dev(pkey) if g["relevant_projects"]][:limit]
+        dev = [g for g in load_dev(pkey, split) if g["relevant_projects"]][:limit]
         for g in dev:
             if g["job_id"] not in specs:
                 specs[g["job_id"]] = analyze(public(jobs[g["job_id"]]))
@@ -98,11 +100,12 @@ def main():
     ap.add_argument("--ablate", action="store_true")
     ap.add_argument("--limit", type=int)
     ap.add_argument("--tag", default=None)
+    ap.add_argument("--split", default="dev", choices=["dev", "heldout"])
     a = ap.parse_args()
     vs = {v: VARIANTS[v] for v in a.variants.split(",")}
     if a.ablate:
         vs.update(ablations(VARIANTS["best"]))
-    out = run(vs, a.limit)
+    out = run(vs, a.limit, a.split)
     tag = a.tag or settings.get("models.profile")
     out["config"] = {"profile": settings.get("models.profile"), "embeddings": settings.get("rag.embeddings"),
                      "variants": {k: v.__dict__ for k, v in vs.items()}}

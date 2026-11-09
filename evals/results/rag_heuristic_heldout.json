@@ -1,0 +1,2123 @@
+{
+ "meta": {
+  "commit": "b09018b",
+  "time": "2026-11-09T14:37:48",
+  "python": "3.12.3",
+  "machine": "x86_64",
+  "cpus": 2
+ },
+ "summary": {
+  "v0": {
+   "n": 100,
+   "recall5": 0.7822,
+   "mrr": 0.95,
+   "ndcg10": 0.8394,
+   "p50_latency_s": 0.0003,
+   "p95_latency_s": 0.0004,
+   "by_persona": {
+    "ai_ml": {
+     "n": 31,
+     "recall5": 0.828,
+     "ndcg10": 0.9198
+    },
+    "fullstack": {
+     "n": 36,
+     "recall5": 0.7583,
+     "ndcg10": 0.7577
+    },
+    "data_analyst": {
+     "n": 33,
+     "recall5": 0.7652,
+     "ndcg10": 0.853
+    }
+   },
+   "by_type": {
+    "1-3_requirements": {
+     "n": 30,
+     "recall5": 0.835,
+     "ndcg10": 0.8723
+    },
+    "4+_requirements": {
+     "n": 70,
+     "recall5": 0.7595,
+     "ndcg10": 0.8252
+    }
+   }
+  },
+  "best": {
+   "n": 100,
+   "recall5": 0.7927,
+   "mrr": 1.0,
+   "ndcg10": 0.8634,
+   "p50_latency_s": 0.0011,
+   "p95_latency_s": 0.0033,
+   "by_persona": {
+    "ai_ml": {
+     "n": 31,
+     "recall5": 0.8118,
+     "ndcg10": 0.927
+    },
+    "fullstack": {
+     "n": 36,
+     "recall5": 0.8083,
+     "ndcg10": 0.806
+    },
+    "data_analyst": {
+     "n": 33,
+     "recall5": 0.7576,
+     "ndcg10": 0.8663
+    }
+   },
+   "by_type": {
+    "1-3_requirements": {
+     "n": 30,
+     "recall5": 0.845,
+     "ndcg10": 0.9007
+    },
+    "4+_requirements": {
+     "n": 70,
+     "recall5": 0.7702,
+     "ndcg10": 0.8474
+    }
+   }
+  }
+ },
+ "rows": {
+  "v0": [
+   {
+    "job_id": "ho-ai-0001",
+    "persona": "ai_ml",
+    "type": "1-3_requirements",
+    "category": "mlops",
+    "recall5": 0.6,
+    "mrr": 0.5,
+    "ndcg10": 0.7411918268378416,
+    "latency_s": 0.0006594657897949219
+   },
+   {
+    "job_id": "ho-ai-0002",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "vision",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.938197500723157,
+    "latency_s": 0.00041675567626953125
+   },
+   {
+    "job_id": "ho-ai-0005",
+    "persona": "ai_ml",
+    "type": "1-3_requirements",
+    "category": "recsys",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 1.0,
+    "latency_s": 0.00026702880859375
+   },
+   {
+    "job_id": "ho-ai-0006",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "llm_apps",
+    "recall5": 0.6,
+    "mrr": 1.0,
+    "ndcg10": 0.855303530480584,
+    "latency_s": 0.00041866302490234375
+   },
+   {
+    "job_id": "ho-ai-0008",
+    "persona": "ai_ml",
+    "type": "1-3_requirements",
+    "category": "nlp",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 1.0,
+    "latency_s": 0.00033354759216308594
+   },
+   {
+    "job_id": "ho-ai-0009",
+    "persona": "ai_ml",
+    "type": "1-3_requirements",
+    "category": "recsys",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 1.0,
+    "latency_s": 0.00033283233642578125
+   },
+   {
+    "job_id": "ho-ai-0013",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "llm_apps",
+    "recall5": 0.4,
+    "mrr": 1.0,
+    "ndcg10": 0.8585295204707536,
+    "latency_s": 0.0003814697265625
+   },
+   {
+    "job_id": "ho-ai-0014",
+    "persona": "ai_ml",
+    "type": "1-3_requirements",
+    "category": "classical_ml",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 1.0,
+    "latency_s": 0.00027179718017578125
+   },
+   {
+    "job_id": "ho-ai-0015",
+    "persona": "ai_ml",
+    "type": "1-3_requirements",
+    "category": "vision",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.861396990081706,
+    "latency_s": 0.0001990795135498047
+   },
+   {
+    "job_id": "ho-ai-0017",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "llm_apps",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8195960505764618,
+    "latency_s": 0.00023293495178222656
+   },
+   {
+    "job_id": "ho-ai-0019",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "mlops",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8512145597368791,
+    "latency_s": 0.00024819374084472656
+   },
+   {
+    "job_id": "ho-ai-0020",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "nlp",
+    "recall5": 0.6666666666666666,
+    "mrr": 1.0,
+    "ndcg10": 0.9845143292854158,
+    "latency_s": 0.00028443336486816406
+   },
+   {
+    "job_id": "ho-ai-0021",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "llm_apps",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 0.9680147827042069,
+    "latency_s": 0.00024962425231933594
+   },
+   {
+    "job_id": "ho-ai-0022",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "llm_apps",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9840370593650299,
+    "latency_s": 0.0002880096435546875
+   },
+   {
+    "job_id": "ho-ai-0023",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "vision",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9933694684805374,
+    "latency_s": 0.0002620220184326172
+   },
+   {
+    "job_id": "ho-ai-0025",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "mlops",
+    "recall5": 0.8,
+    "mrr": 0.5,
+    "ndcg10": 0.6493207764716388,
+    "latency_s": 0.00026869773864746094
+   },
+   {
+    "job_id": "ho-ai-0026",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "classical_ml",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.7987873540759117,
+    "latency_s": 0.00037026405334472656
+   },
+   {
+    "job_id": "ho-ai-0033",
+    "persona": "ai_ml",
+    "type": "1-3_requirements",
+    "category": "recsys",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 1.0,
+    "latency_s": 0.0002601146697998047
+   },
+   {
+    "job_id": "ho-ai-0034",
+    "persona": "ai_ml",
+    "type": "1-3_requirements",
+    "category": "llm_apps",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 1.0,
+    "latency_s": 0.00020694732666015625
+   },
+   {
+    "job_id": "ho-ai-0035",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "vision",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.981036248748174,
+    "latency_s": 0.0002384185791015625
+   },
+   {
+    "job_id": "ho-ai-0038",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "mlops",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8830337972488999,
+    "latency_s": 0.00030994415283203125
+   },
+   {
+    "job_id": "ho-ai-0039",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "nlp",
+    "recall5": 0.6,
+    "mrr": 1.0,
+    "ndcg10": 0.8688582058169497,
+    "latency_s": 0.00029921531677246094
+   },
+   {
+    "job_id": "ho-ai-0040",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "llm_apps",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.7884599439835404,
+    "latency_s": 0.0002562999725341797
+   },
+   {
+    "job_id": "ho-ai-0041",
+    "persona": "ai_ml",
+    "type": "1-3_requirements",
+    "category": "llm_apps",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 1.0,
+    "latency_s": 0.00021648406982421875
+   },
+   {
+    "job_id": "ho-ai-0042",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "mlops",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9479771341984828,
+    "latency_s": 0.0002474784851074219
+   },
+   {
+    "job_id": "ho-ai-0045",
+    "persona": "ai_ml",
+    "type": "1-3_requirements",
+    "category": "classical_ml",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 1.0,
+    "latency_s": 0.0002465248107910156
+   },
+   {
+    "job_id": "ho-ai-0046",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "llm_apps",
+    "recall5": 0.6,
+    "mrr": 1.0,
+    "ndcg10": 0.8423490002894505,
+    "latency_s": 0.0002739429473876953
+   },
+   {
+    "job_id": "ho-ai-0053",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "llm_apps",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 1.0,
+    "latency_s": 0.0002193450927734375
+   },
+   {
+    "job_id": "ho-ai-0056",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "forecasting",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 0.9674679834891693,
+    "latency_s": 0.0002429485321044922
+   },
+   {
+    "job_id": "ho-ai-0057",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "nlp",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9439974177356552,
+    "latency_s": 0.000370025634765625
+   },
+   {
+    "job_id": "ho-ai-0058",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "llm_apps",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9859982500804781,
+    "latency_s": 0.0002810955047607422
+   },
+   {
+    "job_id": "ho-fu-0002",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "web_app",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.7472316406043988,
+    "latency_s": 0.0005464553833007812
+   },
+   {
+    "job_id": "ho-fu-0003",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "ecommerce",
+    "recall5": 0.4,
+    "mrr": 1.0,
+    "ndcg10": 0.6343934338558362,
+    "latency_s": 0.0003962516784667969
+   },
+   {
+    "job_id": "ho-fu-0005",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "ecommerce",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.42410216234757386,
+    "latency_s": 0.0002903938293457031
+   },
+   {
+    "job_id": "ho-fu-0006",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "backend",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.737095220434053,
+    "latency_s": 0.0003368854522705078
+   },
+   {
+    "job_id": "ho-fu-0007",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "web_app",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.7288808002314214,
+    "latency_s": 0.00036907196044921875
+   },
+   {
+    "job_id": "ho-fu-0008",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "backend",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8770399365506045,
+    "latency_s": 0.00025534629821777344
+   },
+   {
+    "job_id": "ho-fu-0010",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "web_app",
+    "recall5": 0.6,
+    "mrr": 1.0,
+    "ndcg10": 0.8673122253638385,
+    "latency_s": 0.00027489662170410156
+   },
+   {
+    "job_id": "ho-fu-0014",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "web_app",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.38840820219317945,
+    "latency_s": 0.0004048347473144531
+   },
+   {
+    "job_id": "ho-fu-0015",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "testing",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 1.0,
+    "latency_s": 0.00022649765014648438
+   },
+   {
+    "job_id": "ho-fu-0016",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "ecommerce",
+    "recall5": 0.8,
+    "mrr": 0.5,
+    "ndcg10": 0.634313179976635,
+    "latency_s": 0.00037479400634765625
+   },
+   {
+    "job_id": "ho-fu-0017",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "backend",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8183714568601195,
+    "latency_s": 0.00031876564025878906
+   },
+   {
+    "job_id": "ho-fu-0019",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "ecommerce",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.756758277636695,
+    "latency_s": 0.0002543926239013672
+   },
+   {
+    "job_id": "ho-fu-0022",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "ecommerce",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.7631716205846952,
+    "latency_s": 0.00025534629821777344
+   },
+   {
+    "job_id": "ho-fu-0029",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "web_app",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8319742469056866,
+    "latency_s": 0.00018262863159179688
+   },
+   {
+    "job_id": "ho-fu-0030",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "ecommerce",
+    "recall5": 0.5,
+    "mrr": 1.0,
+    "ndcg10": 0.7246262544989281,
+    "latency_s": 0.00028252601623535156
+   },
+   {
+    "job_id": "ho-fu-0031",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "testing",
+    "recall5": 0.6,
+    "mrr": 0.5,
+    "ndcg10": 0.5933226180005464,
+    "latency_s": 0.0002410411834716797
+   },
+   {
+    "job_id": "ho-fu-0033",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "out_of_domain",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.7375728492866022,
+    "latency_s": 0.00033545494079589844
+   },
+   {
+    "job_id": "ho-fu-0034",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "testing",
+    "recall5": 0.5,
+    "mrr": 1.0,
+    "ndcg10": 0.7033167525461552,
+    "latency_s": 0.00032520294189453125
+   },
+   {
+    "job_id": "ho-fu-0037",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "testing",
+    "recall5": 0.5,
+    "mrr": 0.5,
+    "ndcg10": 0.5245497084231204,
+    "latency_s": 0.0002524852752685547
+   },
+   {
+    "job_id": "ho-fu-0039",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "out_of_domain",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 0.8446905084406405,
+    "latency_s": 0.00020241737365722656
+   },
+   {
+    "job_id": "ho-fu-0040",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "web_app",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.5365292881189059,
+    "latency_s": 0.000263214111328125
+   },
+   {
+    "job_id": "ho-fu-0041",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "ecommerce",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.7355077278667942,
+    "latency_s": 0.0002930164337158203
+   },
+   {
+    "job_id": "ho-fu-0042",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "web_app",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8541077956295889,
+    "latency_s": 0.00021958351135253906
+   },
+   {
+    "job_id": "ho-fu-0044",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "backend",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.934336777986761,
+    "latency_s": 0.0003333091735839844
+   },
+   {
+    "job_id": "ho-fu-0047",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "mobile",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.7997602077323663,
+    "latency_s": 0.0002827644348144531
+   },
+   {
+    "job_id": "ho-fu-0048",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "realtime",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.810092050390846,
+    "latency_s": 0.0002837181091308594
+   },
+   {
+    "job_id": "ho-fu-0049",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "ecommerce",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.7991269467351402,
+    "latency_s": 0.00021600723266601562
+   },
+   {
+    "job_id": "ho-fu-0050",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "backend",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8912241922285673,
+    "latency_s": 0.000179290771484375
+   },
+   {
+    "job_id": "ho-fu-0051",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "api",
+    "recall5": 0.8,
+    "mrr": 0.5,
+    "ndcg10": 0.6778246592565556,
+    "latency_s": 0.00029587745666503906
+   },
+   {
+    "job_id": "ho-fu-0052",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "backend",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9147337895315228,
+    "latency_s": 0.000247955322265625
+   },
+   {
+    "job_id": "ho-fu-0053",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "ecommerce",
+    "recall5": 0.6,
+    "mrr": 1.0,
+    "ndcg10": 0.5400529475460735,
+    "latency_s": 0.00022101402282714844
+   },
+   {
+    "job_id": "ho-fu-0054",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "web_app",
+    "recall5": 0.6,
+    "mrr": 1.0,
+    "ndcg10": 0.8329053044996549,
+    "latency_s": 0.00025153160095214844
+   },
+   {
+    "job_id": "ho-fu-0055",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "web_app",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8508562166461993,
+    "latency_s": 0.0002703666687011719
+   },
+   {
+    "job_id": "ho-fu-0057",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "web_app",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8999858591975909,
+    "latency_s": 0.0002827644348144531
+   },
+   {
+    "job_id": "ho-fu-0059",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "ecommerce",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 1.0,
+    "latency_s": 0.00017452239990234375
+   },
+   {
+    "job_id": "ho-fu-0060",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "backend",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8619091959119849,
+    "latency_s": 0.00021648406982421875
+   },
+   {
+    "job_id": "ho-da-0002",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "analytics_eng",
+    "recall5": 0.5,
+    "mrr": 1.0,
+    "ndcg10": 0.944672465241111,
+    "latency_s": 0.0005619525909423828
+   },
+   {
+    "job_id": "ho-da-0003",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "analytics_eng",
+    "recall5": 0.6,
+    "mrr": 1.0,
+    "ndcg10": 0.9377715274817873,
+    "latency_s": 0.0003693103790283203
+   },
+   {
+    "job_id": "ho-da-0005",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "analytics_eng",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9498243460648594,
+    "latency_s": 0.00024271011352539062
+   },
+   {
+    "job_id": "ho-da-0007",
+    "persona": "data_analyst",
+    "type": "1-3_requirements",
+    "category": "product_analytics",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 0.9603672821808549,
+    "latency_s": 0.0003037452697753906
+   },
+   {
+    "job_id": "ho-da-0008",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "spreadsheet",
+    "recall5": 0.8,
+    "mrr": 0.5,
+    "ndcg10": 0.6433451238940586,
+    "latency_s": 0.00035071372985839844
+   },
+   {
+    "job_id": "ho-da-0009",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "research",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8445679624097151,
+    "latency_s": 0.0002810955047607422
+   },
+   {
+    "job_id": "ho-da-0011",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "product_analytics",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 1.0,
+    "latency_s": 0.000232696533203125
+   },
+   {
+    "job_id": "ho-da-0012",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "product_analytics",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 0.9327783893101107,
+    "latency_s": 0.0002942085266113281
+   },
+   {
+    "job_id": "ho-da-0013",
+    "persona": "data_analyst",
+    "type": "1-3_requirements",
+    "category": "product_analytics",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9905446882980935,
+    "latency_s": 0.0002465248107910156
+   },
+   {
+    "job_id": "ho-da-0014",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "product_analytics",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9527864250044166,
+    "latency_s": 0.0003466606140136719
+   },
+   {
+    "job_id": "ho-da-0015",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "bi",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9316647949239661,
+    "latency_s": 0.0004096031188964844
+   },
+   {
+    "job_id": "ho-da-0019",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "analytics_eng",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9314985521095996,
+    "latency_s": 0.0002639293670654297
+   },
+   {
+    "job_id": "ho-da-0021",
+    "persona": "data_analyst",
+    "type": "1-3_requirements",
+    "category": "product_analytics",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9544709091933312,
+    "latency_s": 0.0002181529998779297
+   },
+   {
+    "job_id": "ho-da-0024",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "analytics_eng",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 0.7935961708149847,
+    "latency_s": 0.0002856254577636719
+   },
+   {
+    "job_id": "ho-da-0025",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "bi",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9654370186386352,
+    "latency_s": 0.0002110004425048828
+   },
+   {
+    "job_id": "ho-da-0026",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "research",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8343931301575594,
+    "latency_s": 0.00017881393432617188
+   },
+   {
+    "job_id": "ho-da-0027",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "product_analytics",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9483623092708032,
+    "latency_s": 0.00034332275390625
+   },
+   {
+    "job_id": "ho-da-0028",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "product_analytics",
+    "recall5": 0.6,
+    "mrr": 1.0,
+    "ndcg10": 0.900381036355074,
+    "latency_s": 0.0003147125244140625
+   },
+   {
+    "job_id": "ho-da-0029",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "web_analytics",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9149863327010614,
+    "latency_s": 0.0002472400665283203
+   },
+   {
+    "job_id": "ho-da-0032",
+    "persona": "data_analyst",
+    "type": "1-3_requirements",
+    "category": "bi",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9813268798567059,
+    "latency_s": 0.0001933574676513672
+   },
+   {
+    "job_id": "ho-da-0034",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "analytics_eng",
+    "recall5": 0.6,
+    "mrr": 1.0,
+    "ndcg10": 0.7601270957472347,
+    "latency_s": 0.000202178955078125
+   },
+   {
+    "job_id": "ho-da-0035",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "bi",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9481555279579529,
+    "latency_s": 0.0002963542938232422
+   },
+   {
+    "job_id": "ho-da-0039",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "product_analytics",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9743893201887822,
+    "latency_s": 0.0002148151397705078
+   },
+   {
+    "job_id": "ho-da-0040",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "forecasting",
+    "recall5": 0.4,
+    "mrr": 1.0,
+    "ndcg10": 0.6223657456873333,
+    "latency_s": 0.00026488304138183594
+   },
+   {
+    "job_id": "ho-da-0042",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "forecasting",
+    "recall5": 0.4,
+    "mrr": 0.5,
+    "ndcg10": 0.5174934469735474,
+    "latency_s": 0.00027108192443847656
+   },
+   {
+    "job_id": "ho-da-0043",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "classical_ml",
+    "recall5": 0.5,
+    "mrr": 0.5,
+    "ndcg10": 0.38685280723454163,
+    "latency_s": 0.0003333091735839844
+   },
+   {
+    "job_id": "ho-da-0044",
+    "persona": "data_analyst",
+    "type": "1-3_requirements",
+    "category": "spreadsheet",
+    "recall5": 0.75,
+    "mrr": 1.0,
+    "ndcg10": 0.787702056960637,
+    "latency_s": 0.00032901763916015625
+   },
+   {
+    "job_id": "ho-da-0048",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "research",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 0.879365983398409,
+    "latency_s": 0.00029730796813964844
+   },
+   {
+    "job_id": "ho-da-0054",
+    "persona": "data_analyst",
+    "type": "1-3_requirements",
+    "category": "forecasting",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.734012040900983,
+    "latency_s": 0.0003540515899658203
+   },
+   {
+    "job_id": "ho-da-0055",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "forecasting",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8112263935938302,
+    "latency_s": 0.00043487548828125
+   },
+   {
+    "job_id": "ho-da-0058",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "classical_ml",
+    "recall5": 1.0,
+    "mrr": 0.5,
+    "ndcg10": 0.6240505200038379,
+    "latency_s": 0.00035071372985839844
+   },
+   {
+    "job_id": "ho-da-0059",
+    "persona": "data_analyst",
+    "type": "1-3_requirements",
+    "category": "spreadsheet",
+    "recall5": 0.5,
+    "mrr": 1.0,
+    "ndcg10": 0.8988898126139723,
+    "latency_s": 0.00018930435180664062
+   },
+   {
+    "job_id": "ho-da-0060",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "bi",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8900623623417456,
+    "latency_s": 0.00026297569274902344
+   }
+  ],
+  "best": [
+   {
+    "job_id": "ho-ai-0001",
+    "persona": "ai_ml",
+    "type": "1-3_requirements",
+    "category": "mlops",
+    "recall5": 0.6,
+    "mrr": 1.0,
+    "ndcg10": 0.9699420118370052,
+    "latency_s": 0.0028734207153320312
+   },
+   {
+    "job_id": "ho-ai-0002",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "vision",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 0.9455533579827792,
+    "latency_s": 0.0033752918243408203
+   },
+   {
+    "job_id": "ho-ai-0005",
+    "persona": "ai_ml",
+    "type": "1-3_requirements",
+    "category": "recsys",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 1.0,
+    "latency_s": 0.0018770694732666016
+   },
+   {
+    "job_id": "ho-ai-0006",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "llm_apps",
+    "recall5": 0.6,
+    "mrr": 1.0,
+    "ndcg10": 0.8612071521772092,
+    "latency_s": 0.0033168792724609375
+   },
+   {
+    "job_id": "ho-ai-0008",
+    "persona": "ai_ml",
+    "type": "1-3_requirements",
+    "category": "nlp",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 1.0,
+    "latency_s": 0.0017435550689697266
+   },
+   {
+    "job_id": "ho-ai-0009",
+    "persona": "ai_ml",
+    "type": "1-3_requirements",
+    "category": "recsys",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 1.0,
+    "latency_s": 0.002107381820678711
+   },
+   {
+    "job_id": "ho-ai-0013",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "llm_apps",
+    "recall5": 0.6,
+    "mrr": 1.0,
+    "ndcg10": 0.762243522655085,
+    "latency_s": 0.0016913414001464844
+   },
+   {
+    "job_id": "ho-ai-0014",
+    "persona": "ai_ml",
+    "type": "1-3_requirements",
+    "category": "classical_ml",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 1.0,
+    "latency_s": 0.0012471675872802734
+   },
+   {
+    "job_id": "ho-ai-0015",
+    "persona": "ai_ml",
+    "type": "1-3_requirements",
+    "category": "vision",
+    "recall5": 0.6,
+    "mrr": 1.0,
+    "ndcg10": 0.924484770876315,
+    "latency_s": 0.0018715858459472656
+   },
+   {
+    "job_id": "ho-ai-0017",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "llm_apps",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8068348041862963,
+    "latency_s": 0.0036797523498535156
+   },
+   {
+    "job_id": "ho-ai-0019",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "mlops",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.7152498874116786,
+    "latency_s": 0.003986835479736328
+   },
+   {
+    "job_id": "ho-ai-0020",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "nlp",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 0.9905050044732624,
+    "latency_s": 0.001966238021850586
+   },
+   {
+    "job_id": "ho-ai-0021",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "llm_apps",
+    "recall5": 0.5,
+    "mrr": 1.0,
+    "ndcg10": 0.9173194127129571,
+    "latency_s": 0.0015485286712646484
+   },
+   {
+    "job_id": "ho-ai-0022",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "llm_apps",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9718254345412015,
+    "latency_s": 0.0027704238891601562
+   },
+   {
+    "job_id": "ho-ai-0023",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "vision",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 1.0,
+    "latency_s": 0.0019164085388183594
+   },
+   {
+    "job_id": "ho-ai-0025",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "mlops",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8284188015529202,
+    "latency_s": 0.0028264522552490234
+   },
+   {
+    "job_id": "ho-ai-0026",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "classical_ml",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.7784896266120893,
+    "latency_s": 0.0031244754791259766
+   },
+   {
+    "job_id": "ho-ai-0033",
+    "persona": "ai_ml",
+    "type": "1-3_requirements",
+    "category": "recsys",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 1.0,
+    "latency_s": 0.0008552074432373047
+   },
+   {
+    "job_id": "ho-ai-0034",
+    "persona": "ai_ml",
+    "type": "1-3_requirements",
+    "category": "llm_apps",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 1.0,
+    "latency_s": 0.0017881393432617188
+   },
+   {
+    "job_id": "ho-ai-0035",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "vision",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 0.9455533579827792,
+    "latency_s": 0.002608060836791992
+   },
+   {
+    "job_id": "ho-ai-0038",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "mlops",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.988186782029207,
+    "latency_s": 0.0036296844482421875
+   },
+   {
+    "job_id": "ho-ai-0039",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "nlp",
+    "recall5": 0.4,
+    "mrr": 1.0,
+    "ndcg10": 0.9509185420682533,
+    "latency_s": 0.0025010108947753906
+   },
+   {
+    "job_id": "ho-ai-0040",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "llm_apps",
+    "recall5": 0.6,
+    "mrr": 1.0,
+    "ndcg10": 0.7813993643558572,
+    "latency_s": 0.0024721622467041016
+   },
+   {
+    "job_id": "ho-ai-0041",
+    "persona": "ai_ml",
+    "type": "1-3_requirements",
+    "category": "llm_apps",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 1.0,
+    "latency_s": 0.0006670951843261719
+   },
+   {
+    "job_id": "ho-ai-0042",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "mlops",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9010308601108683,
+    "latency_s": 0.001476287841796875
+   },
+   {
+    "job_id": "ho-ai-0045",
+    "persona": "ai_ml",
+    "type": "1-3_requirements",
+    "category": "classical_ml",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 1.0,
+    "latency_s": 0.00040602684020996094
+   },
+   {
+    "job_id": "ho-ai-0046",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "llm_apps",
+    "recall5": 0.6,
+    "mrr": 1.0,
+    "ndcg10": 0.8411075425395167,
+    "latency_s": 0.0018277168273925781
+   },
+   {
+    "job_id": "ho-ai-0053",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "llm_apps",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 1.0,
+    "latency_s": 0.0003485679626464844
+   },
+   {
+    "job_id": "ho-ai-0056",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "forecasting",
+    "recall5": 0.6666666666666666,
+    "mrr": 1.0,
+    "ndcg10": 0.9217868789962071,
+    "latency_s": 0.0010068416595458984
+   },
+   {
+    "job_id": "ho-ai-0057",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "nlp",
+    "recall5": 0.6,
+    "mrr": 1.0,
+    "ndcg10": 0.9397441040581845,
+    "latency_s": 0.0012655258178710938
+   },
+   {
+    "job_id": "ho-ai-0058",
+    "persona": "ai_ml",
+    "type": "4+_requirements",
+    "category": "llm_apps",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9943362253618575,
+    "latency_s": 0.0012400150299072266
+   },
+   {
+    "job_id": "ho-fu-0002",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "web_app",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 0.759965729982756,
+    "latency_s": 0.0015854835510253906
+   },
+   {
+    "job_id": "ho-fu-0003",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "ecommerce",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8014164712242202,
+    "latency_s": 0.0007829666137695312
+   },
+   {
+    "job_id": "ho-fu-0005",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "ecommerce",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.715265441472487,
+    "latency_s": 0.0007627010345458984
+   },
+   {
+    "job_id": "ho-fu-0006",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "backend",
+    "recall5": 0.6,
+    "mrr": 1.0,
+    "ndcg10": 0.7537174596930015,
+    "latency_s": 0.0009524822235107422
+   },
+   {
+    "job_id": "ho-fu-0007",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "web_app",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 0.7137478265946895,
+    "latency_s": 0.0011179447174072266
+   },
+   {
+    "job_id": "ho-fu-0008",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "backend",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.910982258074102,
+    "latency_s": 0.0006155967712402344
+   },
+   {
+    "job_id": "ho-fu-0010",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "web_app",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9322214676660081,
+    "latency_s": 0.0015718936920166016
+   },
+   {
+    "job_id": "ho-fu-0014",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "web_app",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.5894923647515282,
+    "latency_s": 0.0009262561798095703
+   },
+   {
+    "job_id": "ho-fu-0015",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "testing",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 1.0,
+    "latency_s": 0.00042319297790527344
+   },
+   {
+    "job_id": "ho-fu-0016",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "ecommerce",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8346825819390269,
+    "latency_s": 0.0010783672332763672
+   },
+   {
+    "job_id": "ho-fu-0017",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "backend",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.7981624816147661,
+    "latency_s": 0.0006587505340576172
+   },
+   {
+    "job_id": "ho-fu-0019",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "ecommerce",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8439356803433224,
+    "latency_s": 0.0006756782531738281
+   },
+   {
+    "job_id": "ho-fu-0022",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "ecommerce",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8113867471546997,
+    "latency_s": 0.0013606548309326172
+   },
+   {
+    "job_id": "ho-fu-0029",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "web_app",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 0.8827503213453102,
+    "latency_s": 0.0004603862762451172
+   },
+   {
+    "job_id": "ho-fu-0030",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "ecommerce",
+    "recall5": 0.5,
+    "mrr": 1.0,
+    "ndcg10": 0.7087212693585175,
+    "latency_s": 0.0006251335144042969
+   },
+   {
+    "job_id": "ho-fu-0031",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "testing",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.7372370378622618,
+    "latency_s": 0.0004210472106933594
+   },
+   {
+    "job_id": "ho-fu-0033",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "out_of_domain",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.6592243328151071,
+    "latency_s": 0.0003535747528076172
+   },
+   {
+    "job_id": "ho-fu-0034",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "testing",
+    "recall5": 0.5,
+    "mrr": 1.0,
+    "ndcg10": 0.634160219686138,
+    "latency_s": 0.0006496906280517578
+   },
+   {
+    "job_id": "ho-fu-0037",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "testing",
+    "recall5": 0.5,
+    "mrr": 1.0,
+    "ndcg10": 0.634160219686138,
+    "latency_s": 0.0005676746368408203
+   },
+   {
+    "job_id": "ho-fu-0039",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "out_of_domain",
+    "recall5": 0.6,
+    "mrr": 1.0,
+    "ndcg10": 0.8016381468019372,
+    "latency_s": 0.0006847381591796875
+   },
+   {
+    "job_id": "ho-fu-0040",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "web_app",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 0.5645793007094088,
+    "latency_s": 0.0013499259948730469
+   },
+   {
+    "job_id": "ho-fu-0041",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "ecommerce",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.812939711432992,
+    "latency_s": 0.0011510848999023438
+   },
+   {
+    "job_id": "ho-fu-0042",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "web_app",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8541077956295889,
+    "latency_s": 0.0006380081176757812
+   },
+   {
+    "job_id": "ho-fu-0044",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "backend",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 0.9663942118551663,
+    "latency_s": 0.0011470317840576172
+   },
+   {
+    "job_id": "ho-fu-0047",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "mobile",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8382340838621426,
+    "latency_s": 0.0009932518005371094
+   },
+   {
+    "job_id": "ho-fu-0048",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "realtime",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9059868000154989,
+    "latency_s": 0.001287221908569336
+   },
+   {
+    "job_id": "ho-fu-0049",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "ecommerce",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.750855774729392,
+    "latency_s": 0.0009315013885498047
+   },
+   {
+    "job_id": "ho-fu-0050",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "backend",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8081656155063863,
+    "latency_s": 0.0008580684661865234
+   },
+   {
+    "job_id": "ho-fu-0051",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "api",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9430904437670606,
+    "latency_s": 0.0010342597961425781
+   },
+   {
+    "job_id": "ho-fu-0052",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "backend",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 0.9563615960797854,
+    "latency_s": 0.0008549690246582031
+   },
+   {
+    "job_id": "ho-fu-0053",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "ecommerce",
+    "recall5": 0.4,
+    "mrr": 1.0,
+    "ndcg10": 0.631438751160649,
+    "latency_s": 0.0006654262542724609
+   },
+   {
+    "job_id": "ho-fu-0054",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "web_app",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8587472468111131,
+    "latency_s": 0.0009987354278564453
+   },
+   {
+    "job_id": "ho-fu-0055",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "web_app",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 0.8979015615268405,
+    "latency_s": 0.0008349418640136719
+   },
+   {
+    "job_id": "ho-fu-0057",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "web_app",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 0.8892788062078931,
+    "latency_s": 0.0009708404541015625
+   },
+   {
+    "job_id": "ho-fu-0059",
+    "persona": "fullstack",
+    "type": "1-3_requirements",
+    "category": "ecommerce",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 1.0,
+    "latency_s": 0.0003120899200439453
+   },
+   {
+    "job_id": "ho-fu-0060",
+    "persona": "fullstack",
+    "type": "4+_requirements",
+    "category": "backend",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8135721391438042,
+    "latency_s": 0.0009999275207519531
+   },
+   {
+    "job_id": "ho-da-0002",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "analytics_eng",
+    "recall5": 0.75,
+    "mrr": 1.0,
+    "ndcg10": 0.9546966135663886,
+    "latency_s": 0.001720428466796875
+   },
+   {
+    "job_id": "ho-da-0003",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "analytics_eng",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9557420724780971,
+    "latency_s": 0.0007481575012207031
+   },
+   {
+    "job_id": "ho-da-0005",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "analytics_eng",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 0.9945018576867984,
+    "latency_s": 0.0013799667358398438
+   },
+   {
+    "job_id": "ho-da-0007",
+    "persona": "data_analyst",
+    "type": "1-3_requirements",
+    "category": "product_analytics",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 0.9910124332220868,
+    "latency_s": 0.0007145404815673828
+   },
+   {
+    "job_id": "ho-da-0008",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "spreadsheet",
+    "recall5": 0.6,
+    "mrr": 1.0,
+    "ndcg10": 0.7522992325112468,
+    "latency_s": 0.0012209415435791016
+   },
+   {
+    "job_id": "ho-da-0009",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "research",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.7797454386233275,
+    "latency_s": 0.0011246204376220703
+   },
+   {
+    "job_id": "ho-da-0011",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "product_analytics",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 1.0,
+    "latency_s": 0.0007624626159667969
+   },
+   {
+    "job_id": "ho-da-0012",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "product_analytics",
+    "recall5": 0.5,
+    "mrr": 1.0,
+    "ndcg10": 0.8262346571285599,
+    "latency_s": 0.00036025047302246094
+   },
+   {
+    "job_id": "ho-da-0013",
+    "persona": "data_analyst",
+    "type": "1-3_requirements",
+    "category": "product_analytics",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 0.9939209921652328,
+    "latency_s": 0.0007004737854003906
+   },
+   {
+    "job_id": "ho-da-0014",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "product_analytics",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9466262041420794,
+    "latency_s": 0.0013172626495361328
+   },
+   {
+    "job_id": "ho-da-0015",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "bi",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9639907966985637,
+    "latency_s": 0.0016438961029052734
+   },
+   {
+    "job_id": "ho-da-0019",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "analytics_eng",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9400837215523217,
+    "latency_s": 0.0012898445129394531
+   },
+   {
+    "job_id": "ho-da-0021",
+    "persona": "data_analyst",
+    "type": "1-3_requirements",
+    "category": "product_analytics",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9513004603017102,
+    "latency_s": 0.0006999969482421875
+   },
+   {
+    "job_id": "ho-da-0024",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "analytics_eng",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 0.7683203182945858,
+    "latency_s": 0.0009958744049072266
+   },
+   {
+    "job_id": "ho-da-0025",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "bi",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9465212112216301,
+    "latency_s": 0.0012738704681396484
+   },
+   {
+    "job_id": "ho-da-0026",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "research",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.770304358129296,
+    "latency_s": 0.0008051395416259766
+   },
+   {
+    "job_id": "ho-da-0027",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "product_analytics",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9526888066934993,
+    "latency_s": 0.0014557838439941406
+   },
+   {
+    "job_id": "ho-da-0028",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "product_analytics",
+    "recall5": 0.6,
+    "mrr": 1.0,
+    "ndcg10": 0.8850281921813994,
+    "latency_s": 0.0011794567108154297
+   },
+   {
+    "job_id": "ho-da-0029",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "web_analytics",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9646220076453131,
+    "latency_s": 0.001936197280883789
+   },
+   {
+    "job_id": "ho-da-0032",
+    "persona": "data_analyst",
+    "type": "1-3_requirements",
+    "category": "bi",
+    "recall5": 0.6,
+    "mrr": 1.0,
+    "ndcg10": 0.9730375367135924,
+    "latency_s": 0.0008723735809326172
+   },
+   {
+    "job_id": "ho-da-0034",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "analytics_eng",
+    "recall5": 0.6,
+    "mrr": 1.0,
+    "ndcg10": 0.8411497229343593,
+    "latency_s": 0.001020193099975586
+   },
+   {
+    "job_id": "ho-da-0035",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "bi",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9465212112216301,
+    "latency_s": 0.0009462833404541016
+   },
+   {
+    "job_id": "ho-da-0039",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "product_analytics",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 0.8625545259360743,
+    "latency_s": 0.0011513233184814453
+   },
+   {
+    "job_id": "ho-da-0040",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "forecasting",
+    "recall5": 0.4,
+    "mrr": 1.0,
+    "ndcg10": 0.5710370130625437,
+    "latency_s": 0.00034546852111816406
+   },
+   {
+    "job_id": "ho-da-0042",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "forecasting",
+    "recall5": 0.4,
+    "mrr": 1.0,
+    "ndcg10": 0.6174275150931243,
+    "latency_s": 0.0003840923309326172
+   },
+   {
+    "job_id": "ho-da-0043",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "classical_ml",
+    "recall5": 0.5,
+    "mrr": 1.0,
+    "ndcg10": 0.6131471927654584,
+    "latency_s": 0.0011355876922607422
+   },
+   {
+    "job_id": "ho-da-0044",
+    "persona": "data_analyst",
+    "type": "1-3_requirements",
+    "category": "spreadsheet",
+    "recall5": 0.75,
+    "mrr": 1.0,
+    "ndcg10": 0.787702056960637,
+    "latency_s": 0.0003685951232910156
+   },
+   {
+    "job_id": "ho-da-0048",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "research",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8178797989038471,
+    "latency_s": 0.0006463527679443359
+   },
+   {
+    "job_id": "ho-da-0054",
+    "persona": "data_analyst",
+    "type": "1-3_requirements",
+    "category": "forecasting",
+    "recall5": 0.6,
+    "mrr": 1.0,
+    "ndcg10": 0.6779201367151082,
+    "latency_s": 0.0003848075866699219
+   },
+   {
+    "job_id": "ho-da-0055",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "forecasting",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.8502707069611981,
+    "latency_s": 0.0005831718444824219
+   },
+   {
+    "job_id": "ho-da-0058",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "classical_ml",
+    "recall5": 0.5,
+    "mrr": 1.0,
+    "ndcg10": 0.7903864795495061,
+    "latency_s": 0.0014979839324951172
+   },
+   {
+    "job_id": "ho-da-0059",
+    "persona": "data_analyst",
+    "type": "1-3_requirements",
+    "category": "spreadsheet",
+    "recall5": 1.0,
+    "mrr": 1.0,
+    "ndcg10": 0.9828920819566879,
+    "latency_s": 0.00043320655822753906
+   },
+   {
+    "job_id": "ho-da-0060",
+    "persona": "data_analyst",
+    "type": "4+_requirements",
+    "category": "bi",
+    "recall5": 0.8,
+    "mrr": 1.0,
+    "ndcg10": 0.9169369695891075,
+    "latency_s": 0.0015015602111816406
+   }
+  ]
+ },
+ "config": {
+  "profile": "heuristic",
+  "embeddings": "wordllama",
+  "variants": {
+   "v0": {
+    "name": "v0",
+    "chunking": "fixed",
+    "chunk_chars": 500,
+    "query": "whole",
+    "retrieval": "dense",
+    "rerank": "none",
+    "outcome_boost": 0.0,
+    "multi_vector": false,
+    "contextual": false,
+    "corrective": false,
+    "candidates": 40
+   },
+   "best": {
+    "name": "best",
+    "chunking": "structural",
+    "chunk_chars": 500,
+    "query": "decompose",
+    "retrieval": "hybrid",
+    "rerank": "none",
+    "outcome_boost": 0.0,
+    "multi_vector": false,
+    "contextual": true,
+    "corrective": false,
+    "candidates": 40
+   }
+  }
+ }
+}
