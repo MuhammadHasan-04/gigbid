@@ -1,0 +1,28 @@
+# Render Blueprint: single free web service built from deploy/hf-space/Dockerfile
+# (GigSim + API + inline worker + built web app; embedded Postgres unless DATABASE_URL is set).
+services:
+  - type: web
+    name: gigbid
+    runtime: docker
+    plan: free
+    dockerfilePath: deploy/hf-space/Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: MODEL_PROFILE
+        value: open
+      - key: GROQ_API_KEY
+        sync: false
+      - key: APP_SECRET_KEY
+        generateValue: true
+      - key: APPROVAL_SECRET
+        generateValue: true
+      - key: TOKEN_ENC_KEY
+        sync: false
+      - key: REVIEWER_EMAIL
+        sync: false
+      - key: REVIEWER_PASSWORD
+        sync: false
+      - key: REVIEWER_PERSONA
+        value: ai_ml

@@ -9,4 +9,4 @@ if [ -z "$DATABASE_URL" ]; then
 fi
 uvicorn gigsim.server:app --host 127.0.0.1 --port 8081 --log-level warning &
 sleep 2
-exec uvicorn apps.api.main:app --host 0.0.0.0 --port 7860
+exec uvicorn apps.api.main:app --host 0.0.0.0 --port ${PORT:-7860}
