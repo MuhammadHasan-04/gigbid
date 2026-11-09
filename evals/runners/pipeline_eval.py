@@ -97,7 +97,9 @@ async def main_async(a):
     rows, golds = [], {}
     for p in PERSONAS:
         dev = load_dev(p, a.split)
-        if a.limit_per_persona:
+        if a.only_injection:
+            dev = [g for g in dev if g["injection"]][: a.limit_per_persona or None]
+        if a.limit_per_persona and not a.only_injection:
             # stratified: keep every scam / injection job in the sample, then fill with the rest in order
             special = [g for g in dev if g["scam"] or g["injection"]]
             rest = [g for g in dev if not (g["scam"] or g["injection"])]
@@ -183,6 +185,7 @@ def main():
     ap.add_argument("--split", default="dev", choices=["dev", "heldout"])
     ap.add_argument("--concurrency", type=int, default=6)
     ap.add_argument("--judge", action="store_true")
+    ap.add_argument("--only-injection", action="store_true", help="only the planted-injection jobs")
     ap.add_argument("--no-defence", action="store_true", help="ablate the injection defences (for the before/after table)")
     a = ap.parse_args()
     if a.no_defence:

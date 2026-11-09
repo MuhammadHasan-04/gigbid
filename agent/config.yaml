@@ -29,6 +29,11 @@ models:
         client_liaison: {provider: groq, model: openai/gpt-oss-120b}
         judge:          {provider: groq, model: openai/gpt-oss-120b}
       fallback: {provider: heuristic, model: rules-v1}
+    open_qwen:
+      # second open-weight configuration for the model comparison (one model for every node)
+      default: {provider: groq, model: qwen/qwen3.8-27b}
+      nodes: {}
+      fallback: {provider: heuristic, model: rules-v1}
     open_local:
       # same roles on a laptop with Ollama (CPU / <=8 GB VRAM)
       default: {provider: ollama, model: "qwen3:4b"}
@@ -54,9 +59,11 @@ models:
     "groq:openai/gpt-oss-20b": [0.075, 0.30]
     "groq:openai/gpt-oss-120b": [0.15, 0.60]
     "groq:qwen/qwen3-32b": [0.29, 0.59]
+    "groq:qwen/qwen3.8-27b": [0.29, 0.59]   # assumed equal to qwen3-32b list price; check Groq pricing page
     "openrouter:anthropic/claude-haiku-4.5": [1.0, 5.0]
     "openrouter:openai/gpt-oss-20b": [0.04, 0.16]
-  timeout_seconds: 45
+  timeout_seconds: 60
+  max_rate_limit_waits: 10
   max_retries: 2
 
 rag:

@@ -27,7 +27,7 @@ def heuristic_critique(draft: dict, spec: dict, job: dict) -> Critique:
         w in low for w in job["title"].lower().split() if len(w) > 4)
     if generic:
         pers -= 0.3
-    length_ok = 60 <= words <= 230
+    length_ok = 60 <= words <= 230  # prompt asks 90-230; the rule floor is looser
     if words > 230:
         issues.append("too long: cut to under 200 words")
     if words < 60:

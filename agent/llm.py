@@ -121,16 +121,29 @@ def _chat(spec: dict, system: str, user: str, json_mode: bool, max_tokens: int) 
         body["response_format"] = {"type": "json_object"}
     if spec["provider"] == "gemini":
         body.setdefault("reasoning_effort", spec.get("reasoning_effort", "low"))
+    if spec["provider"] == "groq" and "qwen" in spec["model"]:
+        body["reasoning_format"] = "hidden"
     if spec["provider"] == "groq" and "gpt-oss" in spec["model"]:
         body["reasoning_effort"] = spec.get("reasoning_effort", "low")
     timeout = settings.get("models.timeout_seconds", 45)
     last = None
-    for attempt in range(settings.get("models.max_retries", 2) + 1):
+    attempts = settings.get("models.max_retries", 2) + 1
+    rate_limited = 0
+    attempt = 0
+    while attempt < attempts:
         try:
             r = httpx.post(f"{base}/chat/completions", json=body, headers=headers, timeout=timeout)
+            if r.status_code == 429 and rate_limited < settings.get("models.max_rate_limit_waits", 8):
+                # free-tier token-per-minute limits: wait as told instead of falling back to rules
+                rate_limited += 1
+                wait = float(r.headers.get("retry-after", 5))
+                tracing.emit("rate_limited", spec["model"], wait_s=wait)
+                time.sleep(min(max(wait, 1.0), 60))
+                last = RuntimeError(f"429: {r.text[:200]}")
+                continue
             if r.status_code == 429 or r.status_code >= 500:
-                wait = float(r.headers.get("retry-after", 2 ** attempt))
-                time.sleep(min(wait, 20))
+                attempt += 1
+                time.sleep(min(float(r.headers.get("retry-after", 2 ** attempt)), 20))
                 last = RuntimeError(f"{r.status_code}: {r.text[:200]}")
                 continue
             r.raise_for_status()
@@ -139,6 +152,7 @@ def _chat(spec: dict, system: str, user: str, json_mode: bool, max_tokens: int) 
             return d["choices"][0]["message"]["content"] or "", u.get("prompt_tokens", 0), u.get("completion_tokens", 0)
         except (httpx.HTTPError, KeyError) as e:
             last = e
+            attempt += 1
             time.sleep(min(2 ** attempt, 8))
     raise RuntimeError(f"model call failed: {last}")
 
