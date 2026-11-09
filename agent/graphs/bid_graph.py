@@ -126,6 +126,10 @@ async def decide(state: BidState, config) -> dict:
         action = "skip"
         reasons.append("scam signals: " + ", ".join(f for f in risk["flags"] if f in
                                                      ("unpaid_work", "off_platform_contact", "off_platform_payment", "upfront_fee")))
+    elif th.get("skip_unverified_new_clients") and state.get("client") and not state["client"].get("payment_verified") \
+            and not state["client"].get("total_spent"):
+        action = "skip"
+        reasons.append("client has no verified payment method and has never spent on the platform")
     elif risk["risk_score"] > th["maximum_risk_score"]:
         action = "skip"
         reasons.append(f"client risk {risk['risk_score']:.2f} above {th['maximum_risk_score']}")

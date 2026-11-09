@@ -31,7 +31,7 @@ def heuristic_draft(job: dict, spec: dict, fit: dict, price: dict, evidence: dic
     title = job["title"].rstrip(".")
     industry = job.get("industry") or "your"
     focus = [r for r in (spec.get('requirements') or []) if r not in GENERIC][:2] or (spec.get('requirements') or ['the stack'])[:2]
-    sents = [f"For your {title.lower()}, the core of the work is getting {' and '.join(focus)} right for a {industry} team, so here is the closest work I have done."]
+    sents = [f"For your {title.lower()}, the core of the work is getting {' and '.join(focus)} right for a {industry} team, so here is the closest match from my portfolio."]
     used_projects = set()
     for m in (strong + partial)[:3]:
         eid = m["evidence_ids"][0]

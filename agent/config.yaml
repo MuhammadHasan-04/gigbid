@@ -80,7 +80,8 @@ budgets:
 thresholds:
   minimum_fit_score: 0.55
   maximum_risk_score: 0.60
-  watch_band: 0.10             # fit within this band below the minimum -> "watch"
+  watch_band: 0.10
+  skip_unverified_new_clients: true   # added after failure analysis (docs/report section 8)             # fit within this band below the minimum -> "watch"
   connects_value_per_unit_usd: 0.15   # what a Connect costs the freelancer
 
 autonomy:

@@ -45,5 +45,4 @@ and structural chunks carry most of the gain. Multi-vector aggregation *hurts* w
 V3 (cross-encoder bge-reranker-v2-m3) could not run: the weights are on Hugging Face, which this workspace could not
 reach. The code path exists (`rerank: bge`), and an LLM pointwise reranker (`rerank: llm`) is the alternative.
 
-Better retrieval did not mean more simulated replies: V0's proposals got a 0.861 reply rate vs 0.8366 for the shipped
-design. See `docs/WRITEUP.md`.
+Better retrieval did not clearly mean more simulated replies: V0 0.8248, shipped 0.8362, V5 0.8661, all within about ±0.025 (one binomial SE at n≈230). See `docs/WRITEUP.md`.

@@ -1,0 +1,2 @@
+[console_scripts]
+gigbid-portfolio-mcp = mcp_servers.portfolio.server:main

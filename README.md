@@ -44,23 +44,21 @@ commands; its results will be added under `evals/results/*_open*.json` when keys
 
 | Variant | Evidence Recall@5 | MRR | nDCG@10 | Unsupported claims / proposal (before → after verification) | Judge score | GigSim reply rate | p95 latency per job (s) | Cost per proposal (USD) |
 |---|---|---|---|---|---|---|---|---|
-| V0 naive dense | 0.7583 | 0.9445 | 0.8333 | 0.1544 → 0 | n/a (no model) | 0.861 | 0.5892 | 0 (rules) |
-| V5 multi-vector | 0.7809 | 0.9754 | 0.8427 | 0.5223 → 0 | n/a | 0.8623 | 0.663 | 0 |
-| V8 corrective loop | 0.7779 | 0.9824 | 0.8208 | 0.4813 → 0 | n/a | 0.8714 | 0.6484 | 0 |
-| **Shipped (best)**: decompose + hybrid + contextual + structural | 0.7662 | 0.9894 | 0.8799 | 0.4864 → 0 | n/a | 0.8366 | 0.6684 | 0 |
+| V0 naive dense | 0.7583 | 0.9445 | 0.8333 | 0.1538 → 0 | n/a | 0.8248 | 0.5976 | 0 (rules) |
+| V5 multi-vector | 0.7809 | 0.9754 | 0.8427 | 0.5536 → 0 | n/a | 0.8661 | 0.6549 | 0 (rules) |
+| V8 corrective loop | 0.7779 | 0.9824 | 0.8208 | 0.4682 → 0 | n/a | 0.8364 | 0.6845 | 0 (rules) |
+| **Shipped (best)**: decompose + hybrid + contextual + structural | 0.7662 | 0.9894 | 0.8799 | 0.4612 → 0 | n/a | 0.8362 | 0.7024 | 0 (rules) |
 
 Held-out (`rag_heuristic_heldout.json`): V0 nDCG@10 0.8394 vs shipped 0.8634.
 
-**Decisions and safety** (dev, 600 jobs, `pipeline_heuristic_dev.json`): bid-or-skip F1 0.9016, scam precision 0.9221, recall 1.0,
-price inside the fair band 0.7043, injection attack success 0.0 on the 18 drafted injected jobs (43 injected jobs in total).
+**Decisions and safety** (dev, 600 jobs, `pipeline_heuristic_dev.json`): bid-or-skip F1 0.9482, scam precision 0.9221, recall 1.0, price inside the fair band 0.7026, injection attack success 0.0 on the 16 drafted injected jobs (43 injected jobs in total). Held-out (`pipeline_heuristic_heldout.json`): F1 0.9559.
 
 **Multi-agent comparison** (R&D C): single ReAct agent vs `langgraph-supervisor` vs this graph needs a model endpoint. Runner: `evals/runners/agents_compare.py`. Pending.
 
-**Signature extension X2** (`ab_test_heuristic.json`): evidence-first (A) 0.8366 vs question-first (B) 0.7626 reply rate on 257 paired jobs, McNemar exact p = 0.0395.
+**Signature extension X2** (`ab_test_heuristic.json`): evidence-first (A) 0.8362 vs question-first (B) 0.7586 reply rate on 232 paired jobs, McNemar exact p = 0.0444.
 <!-- results:end -->
 
-The most surprising result is that **better retrieval did not mean more replies**. V0 has the lowest nDCG, but its proposals got
-*more* simulated replies than the shipped design (0.861 vs 0.8366), with fewer claims removed by the verifier. The write-up digs into why.
+The most surprising result is that **retrieval quality barely moved the simulated reply rate**. Across variants, nDCG@10 ranged from 0.8333 to 0.8799, but reply rates (0.8248–0.8661) sit within about one binomial standard error of each other. The variant with the best reply rate (V5) is not the best retriever. The writer, the verifier and the client model decide more than retrieval does. See the write-up.
 
 ## Run it
 
@@ -94,4 +92,4 @@ fastapi 0.162.2 · Postgres 16 (pgvector image) · Redis 7.4 · React 18.3 · Vi
 
 Built GigBid, a LangGraph multi-agent freelancer copilot with three MCP servers and human-approved sends. Chose the
 retrieval design from a 64-configuration sweep (nDCG@10 0.8333 → 0.8799 over naive RAG on 384 dev jobs), reached bid-or-skip
-F1 0.9016 and scam recall 1.0 on 600 simulated jobs, and removed every unsupported claim before approval.
+F1 0.9482 and scam recall 1.0 on 600 simulated jobs, and removed every unsupported claim before approval.
