@@ -194,8 +194,6 @@ def create_proposal_draft(
         approval_id: Annotated[str | None, Field(description="token from the GigBid approval screen")] = None,
         dry_run: bool = False) -> WriteResult:
     """Create a proposal DRAFT on the marketplace (no Connects spent). Needs a human approval token unless dry_run."""
-    job = port().get_job(job_id)
-    cost = job.get("connects_cost") if isinstance(job, dict) else None
     preview = {"freelancer_id": freelancer_id, "job_id": job_id, "cover_letter": cover_letter, "bid_amount": bid_amount,
                "screening_answers": screening_answers}
     if dry_run:

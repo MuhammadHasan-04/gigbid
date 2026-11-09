@@ -8,7 +8,6 @@ simulated clients, then reports reply rates, McNemar's exact test (paired) and a
 from __future__ import annotations
 
 import argparse
-import asyncio
 import json
 import math
 import os

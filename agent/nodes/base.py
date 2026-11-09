@@ -4,7 +4,7 @@ from __future__ import annotations
 import asyncio
 import functools
 import time
-from typing import Any, Awaitable, Callable
+from typing import Awaitable, Callable
 
 from langgraph.errors import GraphInterrupt
 from langgraph.types import RetryPolicy

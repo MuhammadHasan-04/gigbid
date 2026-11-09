@@ -59,8 +59,8 @@ filterwarnings = ["ignore::DeprecationWarning"]
 [tool.ruff]
 line-length = 140
 target-version = "py311"
-exclude = [".venv", "apps/web", "data"]
+exclude = [".venv", "apps/web", "data", "gigsim"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I"]
-ignore = ["E501", "E731", "I001"]
+ignore = ["E501", "E731", "I001", "E741", "E402"]

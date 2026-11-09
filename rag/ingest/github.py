@@ -13,7 +13,6 @@ import argparse
 import asyncio
 import json
 import os
-from pathlib import Path
 
 from rag.ingest.loaders import UPLOAD_DIR
 

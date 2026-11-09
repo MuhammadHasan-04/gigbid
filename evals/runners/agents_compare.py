@@ -22,7 +22,7 @@ from agent import llm, settings
 from agent.graphs.bid_graph import persona_profile
 from agent.mcp_client import MCPTools
 from agent.nodes.compliance import scan
-from evals.runners.common import PERSONAS, RESULTS, load_dev, load_jobs, mean, pct, public, write
+from evals.runners.common import PERSONAS, RESULTS, load_dev, load_jobs, mean, pct, write
 from evals.runners.pipeline_eval import ADMIN, FREELANCER, GIGSIM
 
 

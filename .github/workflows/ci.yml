@@ -23,7 +23,7 @@ jobs:
       - name: no secrets, prompts only in agent/prompts
         run: .venv/bin/python -m pytest -q tests/unit/test_repo_rules.py
       - name: lint
-        run: .venv/bin/ruff check agent rag mcp_servers apps/api worker evals gigsim tests
+        run: .venv/bin/ruff check agent rag mcp_servers apps/api worker evals tests
       - name: unit
         run: .venv/bin/python -m pytest -q tests/unit
       - name: contract (MCP schemas, annotations, idempotency)

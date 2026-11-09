@@ -12,7 +12,7 @@ import numpy as np
 
 from agent import llm
 from rag.index.embed import Embedder, default_embedder
-from rag.index.stores import BM25Index, Chunk, DenseIndex, rrf, tokenize
+from rag.index.stores import BM25Index, Chunk, DenseIndex, rrf
 from rag.ingest.loaders import Evidence, load_persona
 from rag.skills import GENERIC, tag_skills
 

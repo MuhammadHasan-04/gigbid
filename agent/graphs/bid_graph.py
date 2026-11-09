@@ -17,7 +17,7 @@ from langgraph.graph import END, START, StateGraph
 from langgraph.types import Send, interrupt
 
 from agent import settings
-from agent.handoffs import BidDecision, JobSpec
+from agent.handoffs import BidDecision
 from agent.memory import promotion_rules
 from agent.memory.store import exemplars, outcome_stats, style_rules
 from agent.nodes import analyst, client_liaison  # noqa: F401

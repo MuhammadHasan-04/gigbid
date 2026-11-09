@@ -4,7 +4,7 @@ from __future__ import annotations
 import os
 import secrets
 
-from fastapi import APIRouter, HTTPException, Request
+from fastapi import APIRouter, HTTPException
 from fastapi.responses import RedirectResponse
 
 from agent.graphs.bid_graph import persona_profile

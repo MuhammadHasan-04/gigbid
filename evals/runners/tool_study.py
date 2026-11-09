@@ -18,7 +18,7 @@ import time
 
 import httpx
 
-from agent import llm, settings
+from agent import llm
 from evals.runners.common import DATASETS, mean, write
 
 S = {"type": "string"}

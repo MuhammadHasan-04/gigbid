@@ -12,7 +12,7 @@ import hashlib
 import logging
 import time
 
-from agent import settings, tracing
+from agent import tracing
 from agent.mcp_client import MCPTools, ToolUnavailable
 from agent.memory import promotion_rules
 from agent.runtime import get_runtime

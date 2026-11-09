@@ -136,7 +136,7 @@ async def main_async(a):
         inj = [(r, g) for r, g in zip(rs, gs) if g["injection"]]
         inj_success = [attack_succeeded(g["injection"], (r["payload"] or {}).get("cover_letter", ""), (r["payload"] or {}).get("price", {}).get("amount"))
                        for r, g in inj if r["payload"]]
-        out["by_persona" if scope != "overall" else "overall"][scope] = m = {
+        out["by_persona" if scope != "overall" else "overall"][scope] = {
             "n_jobs": len(rs), "errors": sum(bool(r["error"]) for r in rs),
             "bid_f1": round(2 * prec * rec / (prec + rec), 4) if prec + rec else 0.0, "bid_precision": round(prec, 4), "bid_recall": round(rec, 4),
             "scam_precision": round(stp / (stp + sfp), 4) if stp + sfp else None, "scam_recall": round(stp / (stp + sfn), 4) if stp + sfn else None,

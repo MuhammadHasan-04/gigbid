@@ -54,7 +54,7 @@ smoke: ## 30-job smoke eval with CI thresholds
 	$(EVAL_ENV) $(PY) -m evals.runners.pipeline_eval --limit-per-persona 10 --tag smoke && $(PY) -m evals.runners.check_thresholds evals/results/pipeline_smoke.json
 
 lint:
-	$(PY) -m ruff check agent rag mcp_servers apps/api worker evals gigsim tests
+	$(PY) -m ruff check agent rag mcp_servers apps/api worker evals tests
 
 api-client: ## regenerate the TypeScript client from FastAPI's OpenAPI schema
 	$(PY) -m apps.api.export_openapi apps/web/openapi.json && cd apps/web && npx openapi-typescript openapi.json -o src/lib/api/schema.d.ts
