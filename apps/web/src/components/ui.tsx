@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { errorText } from "../lib/api/client";
 
 export function Badge({ tone = "neutral", children, title }: { tone?: "good" | "warn" | "bad" | "neutral" | "info"; children: ReactNode; title?: string }) {
   return <span className={`badge badge-${tone}`} title={title}>{children}</span>;
@@ -13,7 +14,7 @@ export function Empty({ title, children }: { title: string; children?: ReactNode
 }
 
 export function ErrorBox({ error, onRetry }: { error: unknown; onRetry?: () => void }) {
-  const msg = typeof error === "string" ? error : (error as { detail?: string })?.detail ?? "Request failed";
+  const msg = errorText(error);
   return (
     <div className="state error" role="alert">
       <strong>Couldn’t load this.</strong> <span>{String(msg)}</span>

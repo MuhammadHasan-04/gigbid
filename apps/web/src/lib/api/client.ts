@@ -33,7 +33,15 @@ api.use(auth);
 
 export function errorText(e: unknown): string {
   if (!e) return "Something went wrong";
-  if (typeof e === "string") return e;
+  if (typeof e === "string") {
+    // a proxy error page (e.g. the host's 502 while the server restarts) arrives as raw HTML
+    if (/^\s*</.test(e) || /<html/i.test(e)) {
+      return /502|503|504|Bad Gateway/i.test(e)
+        ? "The server is restarting or waking up (free hosting sleeps when idle). Wait about a minute, then try again."
+        : "The server returned an unexpected page. Try again in a minute.";
+    }
+    return e.length > 300 ? e.slice(0, 300) + "…" : e;
+  }
   const d = (e as { detail?: unknown }).detail;
   if (typeof d === "string") return d;
   if (Array.isArray(d)) return d.map((x: { msg?: string }) => x.msg).join("; ");
