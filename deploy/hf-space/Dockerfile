@@ -14,7 +14,7 @@ RUN useradd -m -u 1000 user
 ENV PYTHONUNBUFFERED=1 PYTHONPATH=/app HOME=/home/user
 WORKDIR /app
 COPY pyproject.toml README.md ./
-RUN pip install --no-cache-dir uv && uv pip install --system -r pyproject.toml
+RUN pip install --no-cache-dir uv && UV_NO_CACHE=1 uv pip install --system -r pyproject.toml
 COPY --chown=user agent agent
 COPY --chown=user rag rag
 COPY --chown=user mcp_servers mcp_servers
@@ -26,7 +26,8 @@ COPY --chown=user evals evals
 COPY --chown=user data data
 COPY --chown=user deploy/hf-space/start.sh /app/start.sh
 COPY --from=web --chown=user /web/dist apps/web/dist
-RUN chmod +x /app/start.sh && mkdir -p /app/data/runtime && chown -R user /app/data
+RUN chmod +x /app/start.sh && mkdir -p /app/data/runtime /app/data/processed && chown -R user /app/data \
+    && rm -rf /home/user/.cache && chown -R user:user /home/user
 USER user
 RUN python -c "from rag.index.embed import _ensure_wordllama_tokenizer; _ensure_wordllama_tokenizer()"
 ENV RUN_INLINE=1 MCP_TRANSPORT=inproc GIGSIM_BASE_URL=http://127.0.0.1:8081 GIGSIM_RPM=600 GIGSIM_POLICY_VERSION=2 POLICY_VERSION=2
