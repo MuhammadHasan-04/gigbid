@@ -111,6 +111,14 @@ async def main_async(a):
         rest = [g for g in dev if not (g["scam"] or g["injection"])][: a.n // 3 - len(special)]
         picked += [(p, g) for g in special + rest]
     picked = picked[: a.n]
+    gf = RESULTS / f"pipeline_{GRAPH_TAG}.json"
+    if gf.exists():
+        # compare on exactly the jobs the hand-built graph was evaluated on (round-robin across personas)
+        gold = {g["job_id"]: (p, g) for p in PERSONAS for g in load_dev(p)}
+        ids = [r["job_id"] for r in json.loads(gf.read_text())["rows"] if r["job_id"] in gold]
+        by_p = {p: [i for i in ids if gold[i][0] == p] for p in PERSONAS}
+        order = [x for trio in zip(*by_p.values()) for x in trio]
+        picked = [gold[i] for i in order[: a.n]]
     res = {}
     policy = settings.policy()
     async with httpx.AsyncClient(base_url=GIGSIM, headers={"Authorization": f"Bearer {ADMIN}"}, timeout=30) as c:
@@ -140,8 +148,11 @@ async def main_async(a):
         print(k, {x: y for x, y in v.items() if x != "rows"})
 
 
+GRAPH_TAG = "open_dev"
+
+
 def graph_rows(picked):
-    f = RESULTS / "pipeline_open_dev.json"
+    f = RESULTS / f"pipeline_{GRAPH_TAG}.json"
     if not f.exists():
         return []
     by = {r["job_id"]: r for r in json.loads(f.read_text())["rows"]}
@@ -170,4 +181,7 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--n", type=int, default=50)
     ap.add_argument("--kinds", default="react,supervisor")
-    asyncio.run(main_async(ap.parse_args()))
+    ap.add_argument("--graph-tag", default="open_dev", help="pipeline_<tag>.json with the graph's results on the same jobs")
+    args = ap.parse_args()
+    GRAPH_TAG = args.graph_tag
+    asyncio.run(main_async(args))

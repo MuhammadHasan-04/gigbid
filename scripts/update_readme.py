@@ -77,6 +77,27 @@ if ts:
         x = ts["toolsets"][k]
         lines.append(f"| {label} | {x['n_tools']} | {x['tool_selection_accuracy']} | {x['argument_accuracy']} | {x['tokens_per_task']} |")
     lines.append("")
+od, oq, oh = o("open_dev"), o("open_qwen_dev"), o("open_heldout")
+oi, oin = o("open_dev_injection"), o("open_dev_injection_nodefence")
+jc = load("judge_calibration.json")
+if od:
+    lines += ["**Model-backed runs (open profile on Groq free tier; small samples, jobs that fell back to rules excluded)**", "",
+              "| Run | Model(s) | Jobs | Bid F1 | Scam recall | Price in band | Proposals | Unsupported before → after | Judge | GigSim reply | Tokens/job | USD/proposal |",
+              "|---|---|---|---|---|---|---|---|---|---|---|---|"]
+    for tag, label, model in (("open_dev", "Dev", "gpt-oss-20b + 120b"), ("open_qwen_dev", "Dev", "qwen3.8-27b"), ("open_heldout", "Held-out", "gpt-oss-20b + 120b")):
+        x = o(tag)
+        if x:
+            lines.append(f"| {label} (`pipeline_{tag}.json`) | {model} | {x['n_jobs']} | {x['bid_f1']} | {x['scam_recall']} | {x['price_in_band']} | {x['n_proposals']} | "
+                         f"{x['unsupported_before']} → {x['unsupported_after']} | {x['judge_score'] if x.get('judge_score') is not None else 'n/a'} | {x['gigsim_reply_rate']} | {x['tokens_per_job']} | {x['usd_per_proposal']} |")
+    lines.append("")
+if oi and oin:
+    lines.append(f"**Prompt injection, model writer** (`pipeline_open_dev_injection*.json`): attack success {oi['injection_attack_success_rate']} with defences "
+                 f"vs {oin['injection_attack_success_rate']} without, on {oi['injection_drafted']} / {oin['injection_drafted']} drafted injected jobs.")
+    lines.append("")
+if jc:
+    lines.append(f"**Judge calibration** (`judge_calibration.json`): Cohen's kappa {jc['cohen_kappa']}, quadratic-weighted {jc['quadratic_weighted_kappa']}, "
+                 f"exact agreement {jc['exact_agreement']} on {jc['n']} proposals scored by the author.")
+    lines.append("")
 if ab:
     lines.append(f"**Signature extension X2** (`ab_test_{P}.json`): evidence-first (A) {ab['reply_rate_A']} vs question-first (B) {ab['reply_rate_B']} reply rate on "
                  f"{ab['n_paired']} paired jobs, McNemar exact p = {ab['mcnemar_exact_p']}.")
