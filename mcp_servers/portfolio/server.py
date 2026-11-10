@@ -39,16 +39,31 @@ def _items(persona: str):
     return load_persona(persona)
 
 
+import threading  # noqa: E402
+
+_build_lock = threading.Lock()
+
+
 def retriever(portfolio: str | None = None):
-    """One retriever per portfolio (tenant). Re-indexed when the user adds work (bump_version)."""
+    """One retriever per portfolio (tenant). Re-indexed when the user adds work (bump_version).
+    Built under a lock so concurrent first calls don't build (and hold) several copies."""
     persona = portfolio or _state["persona"]
     if not _state["dir"] and persona not in available_portfolios():
         raise ValueError(f"unknown portfolio {persona}")
     key = (persona, _versions.get(persona, 0))
+    if key in _state["retrievers"]:
+        return _state["retrievers"][key]
+    with _build_lock:
+        return _build(persona, key)
+
+
+def _build(persona, key):
     if key not in _state["retrievers"]:
         from rag.pipeline import Retriever
         from rag.variants import get
         variant = os.getenv("PORTFOLIO_RAG_VARIANT") or __import__("agent.settings", fromlist=["get"]).get("rag.variant", "best")
+        for old in [k for k in _state["retrievers"] if k[0] == persona]:
+            del _state["retrievers"][old]  # free the previous index version
         _state["retrievers"][key] = Retriever(persona, get(variant), items=_items(persona))
     return _state["retrievers"][key]
 

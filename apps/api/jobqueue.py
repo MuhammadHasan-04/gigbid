@@ -9,6 +9,15 @@ log = logging.getLogger("gigbid.queue")
 _arq = None
 _inline_tasks: set[asyncio.Task] = set()
 INLINE = os.getenv("RUN_INLINE", "0") == "1"
+# single-container deploys have little memory: run at most N background graph runs at once
+_inline_sem: asyncio.Semaphore | None = None
+
+
+def _sem() -> asyncio.Semaphore:
+    global _inline_sem
+    if _inline_sem is None:
+        _inline_sem = asyncio.Semaphore(int(os.getenv("INLINE_CONCURRENCY", "2")))
+    return _inline_sem
 
 
 async def _pool():
@@ -28,11 +37,12 @@ async def enqueue(fn: str, *args, job_id: str | None = None):
             pass
 
         async def run():
-            try:
-                ctx = _Ctx(redis=_InlineRedis())
-                await getattr(wm, fn)(ctx, *args)
-            except Exception:
-                log.exception("inline task %s failed", fn)
+            async with _sem():
+                try:
+                    ctx = _Ctx(redis=_InlineRedis())
+                    await getattr(wm, fn)(ctx, *args)
+                except Exception:
+                    log.exception("inline task %s failed", fn)
         t = asyncio.create_task(run())
         _inline_tasks.add(t)
         t.add_done_callback(_inline_tasks.discard)

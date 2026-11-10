@@ -45,7 +45,9 @@ class Embedder:
 
     def _embed_batch(self, texts: list[str]) -> np.ndarray:
         if self.spec == "wordllama":
-            return np.asarray(self._load().embed(texts, norm=True), dtype=np.float32)
+            # small batches: wordllama pads each batch to its longest text, and large padded batches
+            # cost ~100 MB of RSS that the allocator never returns (the free hosting tier has 512 MB)
+            return np.asarray(self._load().embed(texts, norm=True, batch_size=8), dtype=np.float32)
         if self.spec.startswith("ollama:"):
             import httpx
             base = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
