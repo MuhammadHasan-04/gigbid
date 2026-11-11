@@ -1,0 +1,2030 @@
+{
+ "meta": {
+  "commit": "a1de0db",
+  "time": "2026-11-11T17:33:49",
+  "python": "3.12.3",
+  "machine": "x86_64",
+  "cpus": 2
+ },
+ "config": {
+  "profile": "heuristic",
+  "per_persona_in_domain": 15,
+  "per_persona_out_of_domain": 5,
+  "providers_actually_used": {
+   "heuristic": 60
+  },
+  "labels": "none: real posts carry no gold bid/scam/price labels; out-of-domain posts are a weak 'should not bid' label"
+ },
+ "overall": {
+  "n_jobs": 60,
+  "errors": 0,
+  "actions": {
+   "watch": 7,
+   "skip": 40,
+   "bid": 13
+  },
+  "bid_rate_in_domain": 0.2889,
+  "bid_rate_out_of_domain": 0.0,
+  "scam_flag_rate": 0.0,
+  "n_proposals": 13,
+  "price_inside_real_p10_p90": 1.0,
+  "n_priced": 13,
+  "price_within_posted_budget": 1.0,
+  "hourly_bids": 10,
+  "unsupported_before": 0.0,
+  "unsupported_after": 0.0,
+  "gigsim_simulated_reply_rate": 1.0,
+  "p95_latency_s_job": 0.5761,
+  "tokens_per_job": 0.0,
+  "skip_reasons_in_domain": {
+   "client has no verified payment method and has never spent on the platform": 12,
+   "fit # just under threshold": 6,
+   "hourly range tops out at #h, below your floor #h": 5,
+   "budget # below your floor for this scope": 4,
+   "fit # below #": 4,
+   "fit #, risk #": 1,
+   "# Connects not worth the expected value #": 1
+  }
+ },
+ "by_persona": {
+  "ai_ml": {
+   "n_jobs": 20,
+   "errors": 0,
+   "actions": {
+    "watch": 2,
+    "skip": 13,
+    "bid": 5
+   },
+   "bid_rate_in_domain": 0.3333,
+   "bid_rate_out_of_domain": 0.0,
+   "scam_flag_rate": 0.0,
+   "n_proposals": 5,
+   "price_inside_real_p10_p90": 1.0,
+   "n_priced": 5,
+   "price_within_posted_budget": 1.0,
+   "hourly_bids": 4,
+   "unsupported_before": 0.0,
+   "unsupported_after": 0.0,
+   "gigsim_simulated_reply_rate": 1.0,
+   "p95_latency_s_job": 0.6453,
+   "tokens_per_job": 0.0
+  },
+  "fullstack": {
+   "n_jobs": 20,
+   "errors": 0,
+   "actions": {
+    "skip": 15,
+    "bid": 4,
+    "watch": 1
+   },
+   "bid_rate_in_domain": 0.2667,
+   "bid_rate_out_of_domain": 0.0,
+   "scam_flag_rate": 0.0,
+   "n_proposals": 4,
+   "price_inside_real_p10_p90": 1.0,
+   "n_priced": 4,
+   "price_within_posted_budget": 1.0,
+   "hourly_bids": 2,
+   "unsupported_before": 0.0,
+   "unsupported_after": 0.0,
+   "gigsim_simulated_reply_rate": 1.0,
+   "p95_latency_s_job": 0.2929,
+   "tokens_per_job": 0.0
+  },
+  "data_analyst": {
+   "n_jobs": 20,
+   "errors": 0,
+   "actions": {
+    "skip": 12,
+    "bid": 4,
+    "watch": 4
+   },
+   "bid_rate_in_domain": 0.2667,
+   "bid_rate_out_of_domain": 0.0,
+   "scam_flag_rate": 0.0,
+   "n_proposals": 4,
+   "price_inside_real_p10_p90": 1.0,
+   "n_priced": 4,
+   "price_within_posted_budget": 1.0,
+   "hourly_bids": 4,
+   "unsupported_before": 0.0,
+   "unsupported_after": 0.0,
+   "gigsim_simulated_reply_rate": 1.0,
+   "p95_latency_s_job": 0.3311,
+   "tokens_per_job": 0.0
+  }
+ },
+ "rows": [
+  {
+   "job_id": "real-220a375a56",
+   "persona": "ai_ml",
+   "title": "Developer experienced with OpenAI embeddings API and creating NLP search needed.",
+   "category": "llm_apps",
+   "in_domain": true,
+   "action": "watch",
+   "reasons": [
+    "fit 0.50 just under threshold"
+   ],
+   "fit": 0.5,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 0,
+    "max": 0,
+    "currency": "USD"
+   },
+   "status": "watch",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.5860590934753418,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-f9a5e012f5",
+   "persona": "ai_ml",
+   "title": "Urgent Auto Dialer Project with AI",
+   "category": "classical_ml",
+   "in_domain": true,
+   "action": "skip",
+   "reasons": [
+    "budget 150.0 below your floor for this scope"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "fixed",
+    "min": 150.0,
+    "max": 150.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.5430879592895508,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-48e8254b64",
+   "persona": "ai_ml",
+   "title": "Image binarization for OCR",
+   "category": "vision",
+   "in_domain": true,
+   "action": "skip",
+   "reasons": [
+    "budget 25.0 below your floor for this scope"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "fixed",
+    "min": 25.0,
+    "max": 25.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.5760841369628906,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-5fc329c92a",
+   "persona": "ai_ml",
+   "title": "AI Programmer and Project Leader",
+   "category": "nlp",
+   "in_domain": true,
+   "action": "bid",
+   "reasons": [
+    "fit 1.00, risk 0.15"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {
+    "amount": 50.0,
+    "currency": "USD",
+    "unit": "hour",
+    "market_source": "real",
+    "market_p25": 25.0,
+    "market_p50": 40.0,
+    "market_p75": 60.0,
+    "floor": 45.0,
+    "connects_cost": 8,
+    "connects_worth_it": true,
+    "expected_value_usd": 13.12,
+    "rationale": "Real nlp contracts pay $25.0-$60.0/h (median $40.0, n=371); posted range $20-$100/h; your floor $45/h. Bid $50/h. 8 Connects (~$1.20) vs expected value $13.12."
+   },
+   "budget": {
+    "type": "hourly",
+    "min": 20.0,
+    "max": 100.0,
+    "currency": "USD"
+   },
+   "status": "awaiting_approval",
+   "error": null,
+   "cover_letter": "For your ai programmer and project leader, the core of the work is getting NLP right for a your team, so here is the closest match from my portfolio. I used NLP on \"Entity extraction from logistics contracts\" [E:ai_ml:case:ai_ml-p08]. I would start with a short scoping call, then deliver NLP as the first milestone so you can review real output early. My fixed price for this scope is 50 USD. Which part of this is the most urgent for you?",
+   "gigsim": {
+    "replied": true,
+    "p_reply": 0.954,
+    "fabricated": []
+   },
+   "latency_s": 0.6453278064727783,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-53c4a72ee7",
+   "persona": "ai_ml",
+   "title": "AWS machine learning engineer to  create automated MLOPs CI/CD pipelines/workflow",
+   "category": "mlops",
+   "in_domain": true,
+   "action": "skip",
+   "reasons": [
+    "client has no verified payment method and has never spent on the platform"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 0,
+    "max": 0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.07055163383483887,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-785cd6d22f",
+   "persona": "ai_ml",
+   "title": "Recommendation Algorithm design",
+   "category": "recsys",
+   "in_domain": true,
+   "action": "bid",
+   "reasons": [
+    "fit 1.00, risk 0.15"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {
+    "amount": 59.0,
+    "currency": "USD",
+    "unit": "hour",
+    "market_source": "real",
+    "market_p25": 25.0,
+    "market_p50": 40.0,
+    "market_p75": 70.0,
+    "floor": 45.0,
+    "connects_cost": 8,
+    "connects_worth_it": true,
+    "expected_value_usd": 15.59,
+    "rationale": "Real recsys contracts pay $25.0-$70.0/h (median $40.0, n=40); posted range $35-$70/h; your floor $45/h. Bid $59/h. 8 Connects (~$1.20) vs expected value $15.59."
+   },
+   "budget": {
+    "type": "hourly",
+    "min": 35.0,
+    "max": 70.0,
+    "currency": "USD"
+   },
+   "status": "awaiting_approval",
+   "error": null,
+   "cover_letter": "For your recommendation algorithm design, the core of the work is getting scikit-learn right for a your team, so here is the closest match from my portfolio. I used scikit-learn on \"Churn / risk prediction model for a media company\" [E:ai_ml:readme:ai_ml-p20]. I used Python on \"Recommendation engine for a manufacturing platform\" [E:ai_ml:readme:ai_ml-p10]. I would start with a short scoping call, then deliver scikit-learn as the first milestone so you can review real output early. My fixed price for this scope is 59 USD. Which part of this is the most urgent for you?",
+   "gigsim": {
+    "replied": true,
+    "p_reply": 0.98,
+    "fabricated": []
+   },
+   "latency_s": 0.1813359260559082,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-8ccbcd583c",
+   "persona": "ai_ml",
+   "title": "ChatGPT Q&A system for an Organization\u2019s Knowledge Database",
+   "category": "llm_apps",
+   "in_domain": true,
+   "action": "skip",
+   "reasons": [
+    "hourly range tops out at $40/h, below your floor $45/h"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 5.0,
+    "max": 40.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.04958677291870117,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-d9d804428d",
+   "persona": "ai_ml",
+   "title": "Expert Python Engineer  - NO AGENCIES",
+   "category": "classical_ml",
+   "in_domain": true,
+   "action": "watch",
+   "reasons": [
+    "fit 0.69, risk 0.15",
+    "10 Connects not worth the expected value $1.46"
+   ],
+   "fit": 0.692,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 0,
+    "max": 0,
+    "currency": "USD"
+   },
+   "status": "watch",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.15357208251953125,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-a74dcc6760",
+   "persona": "ai_ml",
+   "title": "Matlab Weld Image processing",
+   "category": "vision",
+   "in_domain": true,
+   "action": "skip",
+   "reasons": [
+    "client has no verified payment method and has never spent on the platform"
+   ],
+   "fit": 0.667,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "fixed",
+    "min": 200.0,
+    "max": 200.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.05782198905944824,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-3f78195a03",
+   "persona": "ai_ml",
+   "title": "AI Code Prompt Developer",
+   "category": "nlp",
+   "in_domain": true,
+   "action": "bid",
+   "reasons": [
+    "fit 1.00, risk 0.15"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {
+    "amount": 50.0,
+    "currency": "USD",
+    "unit": "hour",
+    "market_source": "real",
+    "market_p25": 25.0,
+    "market_p50": 40.0,
+    "market_p75": 60.0,
+    "floor": 45.0,
+    "connects_cost": 6,
+    "connects_worth_it": true,
+    "expected_value_usd": 13.12,
+    "rationale": "Real nlp contracts pay $25.0-$60.0/h (median $40.0, n=371); posted range $35-$70/h; your floor $45/h. Bid $50/h. 6 Connects (~$0.90) vs expected value $13.12."
+   },
+   "budget": {
+    "type": "hourly",
+    "min": 35.0,
+    "max": 70.0,
+    "currency": "USD"
+   },
+   "status": "awaiting_approval",
+   "error": null,
+   "cover_letter": "For your ai code prompt developer, the core of the work is getting scikit-learn and NLP right for a your team, so here is the closest match from my portfolio. I used scikit-learn on \"Churn / risk prediction model for a media company\" [E:ai_ml:readme:ai_ml-p20]. I used NLP on \"Entity extraction from logistics contracts\" [E:ai_ml:case:ai_ml-p08]. I would start with a short scoping call, then deliver scikit-learn as the first milestone so you can review real output early. My fixed price for this scope is 50 USD. Which part of this is the most urgent for you?",
+   "gigsim": {
+    "replied": true,
+    "p_reply": 0.954,
+    "fabricated": []
+   },
+   "latency_s": 0.18220829963684082,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-447b4ae2c3",
+   "persona": "ai_ml",
+   "title": "Machine Learning Ops (MLOps) and Infraestructure implementation",
+   "category": "mlops",
+   "in_domain": true,
+   "action": "bid",
+   "reasons": [
+    "fit 1.00, risk 0.20"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {
+    "amount": 50.0,
+    "currency": "USD",
+    "unit": "hour",
+    "market_source": "real",
+    "market_p25": 30.0,
+    "market_p50": 45.0,
+    "market_p75": 55.0,
+    "floor": 45.0,
+    "connects_cost": 6,
+    "connects_worth_it": true,
+    "expected_value_usd": 13.12,
+    "rationale": "Real mlops contracts pay $30.0-$55.0/h (median $45.0, n=61); posted range $50-$200/h; your floor $45/h. Bid $50/h. 6 Connects (~$0.90) vs expected value $13.12."
+   },
+   "budget": {
+    "type": "hourly",
+    "min": 50.0,
+    "max": 200.0,
+    "currency": "USD"
+   },
+   "status": "awaiting_approval",
+   "error": null,
+   "cover_letter": "For your machine learning ops (mlops) and infraestructure implementation, the core of the work is getting MLOps and MLflow right for a your team, so here is the closest match from my portfolio. I used MLOps on \"Productionise ML models for a e-commerce team\" [E:ai_ml:readme:ai_ml-p09]. I used scikit-learn on \"Churn / risk prediction model for a e-commerce company\" [E:ai_ml:case:ai_ml-p17]. I can keep a daily overlap window with your team for check-ins. I would start with a short scoping call, then deliver MLOps as the first milestone so you can review real output early. My fixed price for this scope is 50 USD. Which part of this is the most urgent for you?",
+   "gigsim": {
+    "replied": true,
+    "p_reply": 0.939,
+    "fabricated": []
+   },
+   "latency_s": 0.22860097885131836,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-db626f89a5",
+   "persona": "ai_ml",
+   "title": "Recommendation Engine for Site Selection using GIS",
+   "category": "recsys",
+   "in_domain": true,
+   "action": "skip",
+   "reasons": [
+    "client has no verified payment method and has never spent on the platform"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 16.0,
+    "max": 45.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.058411598205566406,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-84e96caf8b",
+   "persona": "ai_ml",
+   "title": "Web developer to build OpenAI ChatGPT tool on website",
+   "category": "llm_apps",
+   "in_domain": true,
+   "action": "skip",
+   "reasons": [
+    "fit 0.00 below 0.55"
+   ],
+   "fit": 0.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 10.0,
+    "max": 20.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.09505534172058105,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-b6828d8f79",
+   "persona": "ai_ml",
+   "title": "AI ML engineer to design data model",
+   "category": "classical_ml",
+   "in_domain": true,
+   "action": "skip",
+   "reasons": [
+    "client has no verified payment method and has never spent on the platform"
+   ],
+   "fit": 0.5,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 20.0,
+    "max": 50.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.0669410228729248,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-cb6fff85fb",
+   "persona": "ai_ml",
+   "title": "Create ML APIs",
+   "category": "vision",
+   "in_domain": true,
+   "action": "bid",
+   "reasons": [
+    "fit 0.69, risk 0.27"
+   ],
+   "fit": 0.692,
+   "is_scam_pred": false,
+   "price": {
+    "amount": 310.0,
+    "currency": "USD",
+    "unit": "fixed",
+    "market_source": "real",
+    "market_p25": 70.0,
+    "market_p50": 249.99,
+    "market_p75": 600.0,
+    "floor": 310.0,
+    "connects_cost": 4,
+    "connects_worth_it": true,
+    "expected_value_usd": 3.23,
+    "rationale": "Real completed fixed-price vision contracts: p25/p50/p75 $70.0/$249.99/$600.0 (n=579); posted budget not stated; floor 310 from your rate. Bid 310. 4 Connects (~$0.60) vs expected value $3.23."
+   },
+   "budget": {
+    "type": "hourly",
+    "min": 0,
+    "max": 0,
+    "currency": "USD"
+   },
+   "status": "awaiting_approval",
+   "error": null,
+   "cover_letter": "For your create ml apis, the core of the work is getting NLP and scikit-learn right for a your team, so here is the closest match from my portfolio. I used scikit-learn on \"Churn / risk prediction model for a media company\" [E:ai_ml:readme:ai_ml-p20]. I used computer vision on \"Defect detection with computer vision for real estate\" [E:ai_ml:readme:ai_ml-p14]. I used OpenCV on \"Defect detection with computer vision for manufacturing\", which raised conversion by 22% [E:ai_ml:case:ai_ml-p21]. I have not used NLP, TensorFlow on client work yet, so I would budget time to ramp up and say so up front. I would start with a short scoping call, then deliver NLP as the first milestone so you can review real output early. My fixed price for this scope is 310 USD. Which part of this is the most urgent for you?",
+   "gigsim": {
+    "replied": true,
+    "p_reply": 0.884,
+    "fabricated": [
+     "TensorFlow"
+    ]
+   },
+   "latency_s": 0.20441651344299316,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-cf6c03a124",
+   "persona": "ai_ml",
+   "title": "Webpage",
+   "category": "out_of_domain",
+   "in_domain": false,
+   "action": "skip",
+   "reasons": [
+    "client has no verified payment method and has never spent on the platform",
+    "fit 0.00 below 0.55"
+   ],
+   "fit": 0.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 0,
+    "max": 0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.03933382034301758,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-d7be3ba288",
+   "persona": "ai_ml",
+   "title": "Set up Pipedrive CRM for a sales team of 9 closers (High Ticket)",
+   "category": "out_of_domain",
+   "in_domain": false,
+   "action": "skip",
+   "reasons": [
+    "client has no verified payment method and has never spent on the platform",
+    "fit 0.00 below 0.55"
+   ],
+   "fit": 0.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 10.0,
+    "max": 50.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.05740714073181152,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-00c5fa16bb",
+   "persona": "ai_ml",
+   "title": "Azure Cloud Architect",
+   "category": "out_of_domain",
+   "in_domain": false,
+   "action": "skip",
+   "reasons": [
+    "fit 0.00 below 0.55"
+   ],
+   "fit": 0.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 45.0,
+    "max": 60.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.043321847915649414,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-5ff690ac01",
+   "persona": "ai_ml",
+   "title": "Media buyer [ Social media advertising specialists, with astonishing return on investment .]",
+   "category": "out_of_domain",
+   "in_domain": false,
+   "action": "skip",
+   "reasons": [
+    "client has no verified payment method and has never spent on the platform",
+    "fit 0.00 below 0.55"
+   ],
+   "fit": 0.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 8.0,
+    "max": 35.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.08723950386047363,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-b49c32e1ad",
+   "persona": "ai_ml",
+   "title": "EDI Set Up Help Needed",
+   "category": "out_of_domain",
+   "in_domain": false,
+   "action": "skip",
+   "reasons": [
+    "client has no verified payment method and has never spent on the platform",
+    "fit 0.00 below 0.55"
+   ],
+   "fit": 0.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 30.0,
+    "max": 100.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.0680232048034668,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-32a940f2fe",
+   "persona": "fullstack",
+   "title": "Dynamic image changes in angular as per the given url",
+   "category": "web_app",
+   "in_domain": true,
+   "action": "skip",
+   "reasons": [
+    "client has no verified payment method and has never spent on the platform"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 10.0,
+    "max": 15.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.15778350830078125,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-8d14ea23b4",
+   "persona": "fullstack",
+   "title": "Enhancing React AND Angular project",
+   "category": "backend",
+   "in_domain": true,
+   "action": "skip",
+   "reasons": [
+    "hourly range tops out at $15/h, below your floor $35/h"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 10.0,
+    "max": 15.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.16077160835266113,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-548135fc81",
+   "persona": "fullstack",
+   "title": "Mern Stack Dveloper",
+   "category": "realtime",
+   "in_domain": true,
+   "action": "skip",
+   "reasons": [
+    "client has no verified payment method and has never spent on the platform"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 0,
+    "max": 0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.21819424629211426,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-5f8c78dd67",
+   "persona": "fullstack",
+   "title": "Design a Shopify store",
+   "category": "ecommerce",
+   "in_domain": true,
+   "action": "skip",
+   "reasons": [
+    "client has no verified payment method and has never spent on the platform"
+   ],
+   "fit": 0.5,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "fixed",
+    "min": 200.0,
+    "max": 200.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.15802979469299316,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-d502ec5c05",
+   "persona": "fullstack",
+   "title": "Create me inventory software",
+   "category": "api",
+   "in_domain": true,
+   "action": "skip",
+   "reasons": [
+    "client has no verified payment method and has never spent on the platform"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "fixed",
+    "min": 100.0,
+    "max": 100.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.0743863582611084,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-e244582525",
+   "persona": "fullstack",
+   "title": "QA Engineer | Manual + Automation",
+   "category": "testing",
+   "in_domain": true,
+   "action": "skip",
+   "reasons": [
+    "client has no verified payment method and has never spent on the platform"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 3.0,
+    "max": 20.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.05267524719238281,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-76d1210a18",
+   "persona": "fullstack",
+   "title": "Full Stack Developer or Team for Mobile Application",
+   "category": "mobile",
+   "in_domain": true,
+   "action": "skip",
+   "reasons": [
+    "hourly range tops out at $20/h, below your floor $35/h"
+   ],
+   "fit": 0.75,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 20.0,
+    "max": 20.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.10406851768493652,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-bd8f352b28",
+   "persona": "fullstack",
+   "title": "Angular Developer",
+   "category": "web_app",
+   "in_domain": true,
+   "action": "bid",
+   "reasons": [
+    "fit 1.00, risk 0.18"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {
+    "amount": 40.0,
+    "currency": "USD",
+    "unit": "hour",
+    "market_source": "real",
+    "market_p25": 15.0,
+    "market_p50": 25.0,
+    "market_p75": 39.0,
+    "floor": 35.0,
+    "connects_cost": 8,
+    "connects_worth_it": true,
+    "expected_value_usd": 10.5,
+    "rationale": "Real web_app contracts pay $15.0-$39.0/h (median $25.0, n=13304); posted range $40-$70/h; your floor $35/h. Bid $40/h. 8 Connects (~$1.20) vs expected value $10.50."
+   },
+   "budget": {
+    "type": "hourly",
+    "min": 40.0,
+    "max": 70.0,
+    "currency": "USD"
+   },
+   "status": "awaiting_approval",
+   "error": null,
+   "cover_letter": "For your angular developer, the core of the work is getting TypeScript and JavaScript right for a your team, so here is the closest match from my portfolio. I used TypeScript on \"SaaS dashboard for a e-commerce startup\" [E:fullstack:readme:fullstack-p21]. I used JavaScript on \"Shopify store customisation for healthcare\", which improved accuracy from 73% to 85% [E:fullstack:case:fullstack-p06]. I would start with a short scoping call, then deliver TypeScript as the first milestone so you can review real output early. My fixed price for this scope is 40 USD. Which part of this is the most urgent for you?",
+   "gigsim": {
+    "replied": true,
+    "p_reply": 0.979,
+    "fabricated": []
+   },
+   "latency_s": 0.29287266731262207,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-885a8067b7",
+   "persona": "fullstack",
+   "title": "Springboot with angular experiance",
+   "category": "backend",
+   "in_domain": true,
+   "action": "skip",
+   "reasons": [
+    "hourly range tops out at $18/h, below your floor $35/h"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 14.0,
+    "max": 18.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.0503847599029541,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-337feb3675",
+   "persona": "fullstack",
+   "title": "Front-End Developer",
+   "category": "realtime",
+   "in_domain": true,
+   "action": "skip",
+   "reasons": [
+    "hourly range tops out at $30/h, below your floor $35/h"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 25.0,
+    "max": 30.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.07306075096130371,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-504c31fb3c",
+   "persona": "fullstack",
+   "title": "Website developer",
+   "category": "ecommerce",
+   "in_domain": true,
+   "action": "watch",
+   "reasons": [
+    "fit 0.50 just under threshold"
+   ],
+   "fit": 0.5,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 60.0,
+    "max": 85.0,
+    "currency": "USD"
+   },
+   "status": "watch",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.05540585517883301,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-0f593807fb",
+   "persona": "fullstack",
+   "title": "Fullstack Engineer needed to Complete Backend Work (React, Supabase)",
+   "category": "api",
+   "in_domain": true,
+   "action": "bid",
+   "reasons": [
+    "fit 1.00, risk 0.17"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {
+    "amount": 330.0,
+    "currency": "USD",
+    "unit": "fixed",
+    "market_source": "real",
+    "market_p25": 60.0,
+    "market_p50": 160.0,
+    "market_p75": 495.0,
+    "floor": 120.0,
+    "connects_cost": 8,
+    "connects_worth_it": true,
+    "expected_value_usd": 4.3,
+    "rationale": "Real completed fixed-price api contracts: p25/p50/p75 $60.0/$160.0/$495.0 (n=2788); posted budget $750; floor 120 from your rate. Bid 328. 8 Connects (~$1.20) vs expected value $4.30."
+   },
+   "budget": {
+    "type": "fixed",
+    "min": 750.0,
+    "max": 750.0,
+    "currency": "USD"
+   },
+   "status": "awaiting_approval",
+   "error": null,
+   "cover_letter": "For your fullstack engineer needed to complete backend work (react, supabase), the core of the work is getting React and Vercel right for a your team, so here is the closest match from my portfolio. I used React on \"SaaS dashboard for a e-commerce startup\" [E:fullstack:case:fullstack-p21]. I used Vercel on \"Marketing site and CMS for a e-commerce brand\" [E:fullstack:readme:fullstack-p02]. I used REST API on \"REST API backend for media mobile app\" [E:fullstack:case:fullstack-p20]. I can keep a daily overlap window with your team for check-ins. I would start with a short scoping call, then deliver React as the first milestone so you can review real output early. My fixed price for this scope is 330 USD. Which part of this is the most urgent for you?",
+   "gigsim": {
+    "replied": true,
+    "p_reply": 0.964,
+    "fabricated": []
+   },
+   "latency_s": 0.24150347709655762,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-8776c14816",
+   "persona": "fullstack",
+   "title": "Software & Design",
+   "category": "testing",
+   "in_domain": true,
+   "action": "skip",
+   "reasons": [
+    "client has no verified payment method and has never spent on the platform"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 18.0,
+    "max": 36.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.04538369178771973,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-17cfd8ac5d",
+   "persona": "fullstack",
+   "title": "React Native Firebase Engineer",
+   "category": "mobile",
+   "in_domain": true,
+   "action": "bid",
+   "reasons": [
+    "fit 1.00, risk 0.27"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {
+    "amount": 35.0,
+    "currency": "USD",
+    "unit": "hour",
+    "market_source": "real",
+    "market_p25": 15.0,
+    "market_p50": 23.0,
+    "market_p75": 35.0,
+    "floor": 35.0,
+    "connects_cost": 10,
+    "connects_worth_it": true,
+    "expected_value_usd": 9.19,
+    "rationale": "Real mobile contracts pay $15.0-$35.0/h (median $23.0, n=2514); posted range $20-$40/h; your floor $35/h. Bid $35/h. 10 Connects (~$1.50) vs expected value $9.19."
+   },
+   "budget": {
+    "type": "hourly",
+    "min": 20.0,
+    "max": 40.0,
+    "currency": "USD"
+   },
+   "status": "awaiting_approval",
+   "error": null,
+   "cover_letter": "For your react native firebase engineer, the core of the work is getting React and React Native right for a your team, so here is the closest match from my portfolio. I used React on \"Cross-platform mobile app for non-profit\" [E:fullstack:readme:fullstack-p10]. I used JavaScript on \"End-to-end test suite for a insurance web app\", which brought latency down to 250 ms p95 [E:fullstack:case:fullstack-p14]. I would start with a short scoping call, then deliver React as the first milestone so you can review real output early. My fixed price for this scope is 35 USD. Which part of this is the most urgent for you?",
+   "gigsim": {
+    "replied": true,
+    "p_reply": 0.984,
+    "fabricated": []
+   },
+   "latency_s": 0.22524428367614746,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-c56010044d",
+   "persona": "fullstack",
+   "title": "React.js Developer",
+   "category": "web_app",
+   "in_domain": true,
+   "action": "bid",
+   "reasons": [
+    "fit 1.00, risk 0.28"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {
+    "amount": 420.0,
+    "currency": "USD",
+    "unit": "fixed",
+    "market_source": "real",
+    "market_p25": 50.0,
+    "market_p50": 200.0,
+    "market_p75": 650.0,
+    "floor": 160.0,
+    "connects_cost": 6,
+    "connects_worth_it": true,
+    "expected_value_usd": 5.58,
+    "rationale": "Real completed fixed-price web_app contracts: p25/p50/p75 $50.0/$200.0/$650.0 (n=7800); posted budget $850; floor 160 from your rate. Bid 425. 6 Connects (~$0.90) vs expected value $5.58."
+   },
+   "budget": {
+    "type": "fixed",
+    "min": 850.0,
+    "max": 850.0,
+    "currency": "USD"
+   },
+   "status": "awaiting_approval",
+   "error": null,
+   "cover_letter": "For your react.js developer, the core of the work is getting React right for a your team, so here is the closest match from my portfolio. I used React on \"Cross-platform mobile app for non-profit\" [E:fullstack:readme:fullstack-p10]. I used JavaScript on \"End-to-end test suite for a insurance web app\", which brought latency down to 250 ms p95 [E:fullstack:case:fullstack-p14]. I used TypeScript on \"SaaS dashboard for a e-commerce startup\" [E:fullstack:readme:fullstack-p21]. I would start with a short scoping call, then deliver React as the first milestone so you can review real output early. My fixed price for this scope is 420 USD. Which part of this is the most urgent for you?",
+   "gigsim": {
+    "replied": true,
+    "p_reply": 0.974,
+    "fabricated": []
+   },
+   "latency_s": 0.2584235668182373,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-07bf5a6140",
+   "persona": "fullstack",
+   "title": "Community Event Website Design",
+   "category": "out_of_domain",
+   "in_domain": false,
+   "action": "skip",
+   "reasons": [
+    "fit 0.00 below 0.55"
+   ],
+   "fit": 0.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 0,
+    "max": 0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.05665183067321777,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-4acf2b1a2e",
+   "persona": "fullstack",
+   "title": "Create a lead generation funnel for car sales",
+   "category": "out_of_domain",
+   "in_domain": false,
+   "action": "skip",
+   "reasons": [
+    "client has no verified payment method and has never spent on the platform",
+    "fit 0.00 below 0.55"
+   ],
+   "fit": 0.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 50.0,
+    "max": 100.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.04325127601623535,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-b9164e8a28",
+   "persona": "fullstack",
+   "title": "AdWords expert (SEM) for an Italian B2B software company",
+   "category": "out_of_domain",
+   "in_domain": false,
+   "action": "skip",
+   "reasons": [
+    "fit 0.00 below 0.55"
+   ],
+   "fit": 0.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 0,
+    "max": 0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.05940723419189453,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-7f3175f1ee",
+   "persona": "fullstack",
+   "title": "Interior designer to design, conceptualize and drafting the residential projects",
+   "category": "out_of_domain",
+   "in_domain": false,
+   "action": "skip",
+   "reasons": [
+    "client has no verified payment method and has never spent on the platform",
+    "fit 0.00 below 0.55"
+   ],
+   "fit": 0.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "unknown",
+    "min": 0,
+    "max": 0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.048581838607788086,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-b818760855",
+   "persona": "fullstack",
+   "title": "Top 200 Tech Companies in Germany",
+   "category": "out_of_domain",
+   "in_domain": false,
+   "action": "skip",
+   "reasons": [
+    "client has no verified payment method and has never spent on the platform",
+    "fit 0.00 below 0.55"
+   ],
+   "fit": 0.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 5.0,
+    "max": 45.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.04606008529663086,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-27d167db8b",
+   "persona": "data_analyst",
+   "title": "Tableau RTB Template Designs",
+   "category": "bi",
+   "in_domain": true,
+   "action": "skip",
+   "reasons": [
+    "client has no verified payment method and has never spent on the platform"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 25.0,
+    "max": 40.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.19437551498413086,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-adaf5548cb",
+   "persona": "data_analyst",
+   "title": "AWS RedShift with Datawarehouse experience",
+   "category": "analytics_eng",
+   "in_domain": true,
+   "action": "skip",
+   "reasons": [
+    "fit 0.00 below 0.55"
+   ],
+   "fit": 0.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 10.0,
+    "max": 15.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.1534574031829834,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-baaaa169ac",
+   "persona": "data_analyst",
+   "title": "Senior Product Management Contractor",
+   "category": "product_analytics",
+   "in_domain": true,
+   "action": "bid",
+   "reasons": [
+    "fit 1.00, risk 0.15"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {
+    "amount": 75.0,
+    "currency": "USD",
+    "unit": "hour",
+    "market_source": "real",
+    "market_p25": 20.0,
+    "market_p50": 35.0,
+    "market_p75": 60.0,
+    "floor": 30.0,
+    "connects_cost": 6,
+    "connects_worth_it": true,
+    "expected_value_usd": 19.69,
+    "rationale": "Real product_analytics contracts pay $20.0-$60.0/h (median $35.0, n=1113); posted range $75-$150/h; your floor $30/h. Bid $75/h. 6 Connects (~$0.90) vs expected value $19.69."
+   },
+   "budget": {
+    "type": "hourly",
+    "min": 75.0,
+    "max": 150.0,
+    "currency": "USD"
+   },
+   "status": "awaiting_approval",
+   "error": null,
+   "cover_letter": "For your senior product management contractor, the core of the work is getting Looker right for a your team, so here is the closest match from my portfolio. I used Looker on \"BigQuery warehouse and reporting for manufacturing\", which reduced cloud cost by 48% [E:data_analyst:case:data_analyst-p20]. I can keep a daily overlap window with your team for check-ins. I would start with a short scoping call, then deliver Looker as the first milestone so you can review real output early. My fixed price for this scope is 75 USD. Which part of this is the most urgent for you?",
+   "gigsim": {
+    "replied": true,
+    "p_reply": 0.606,
+    "fabricated": []
+   },
+   "latency_s": 0.3311429023742676,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-4ca751a3be",
+   "persona": "data_analyst",
+   "title": "Setting Up Conversion Tracking for ga4 older website",
+   "category": "web_analytics",
+   "in_domain": true,
+   "action": "bid",
+   "reasons": [
+    "fit 1.00, risk 0.15"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {
+    "amount": 30.0,
+    "currency": "USD",
+    "unit": "hour",
+    "market_source": "real",
+    "market_p25": 28.0,
+    "market_p50": 46.8,
+    "market_p75": 75.0,
+    "floor": 30.0,
+    "connects_cost": 2,
+    "connects_worth_it": true,
+    "expected_value_usd": 7.87,
+    "rationale": "Real web_analytics contracts pay $28.0-$75.0/h (median $46.8, n=3361); posted range $10-$30/h; your floor $30/h. Bid $30/h. 2 Connects (~$0.30) vs expected value $7.87."
+   },
+   "budget": {
+    "type": "hourly",
+    "min": 10.0,
+    "max": 30.0,
+    "currency": "USD"
+   },
+   "status": "awaiting_approval",
+   "error": null,
+   "cover_letter": "For your setting up conversion tracking for ga4 older website, the core of the work is getting Google Analytics 4 right for a your team, so here is the closest match from my portfolio. I used Google Analytics 4 on \"GA4 tracking audit for a logistics website\" [E:data_analyst:readme:data_analyst-p12]. I would start with a short scoping call, then deliver Google Analytics 4 as the first milestone so you can review real output early. My fixed price for this scope is 30 USD. Which part of this is the most urgent for you?",
+   "gigsim": {
+    "replied": true,
+    "p_reply": 0.901,
+    "fabricated": []
+   },
+   "latency_s": 0.2596123218536377,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-82f42df980",
+   "persona": "data_analyst",
+   "title": "Create a desktop software which can automate the construction estimation process",
+   "category": "spreadsheet",
+   "in_domain": true,
+   "action": "watch",
+   "reasons": [
+    "fit 0.50 just under threshold"
+   ],
+   "fit": 0.5,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 20.0,
+    "max": 40.0,
+    "currency": "USD"
+   },
+   "status": "watch",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.06788015365600586,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-0d0e760161",
+   "persona": "data_analyst",
+   "title": "Time series expert to set up an IoT rules engine",
+   "category": "forecasting",
+   "in_domain": true,
+   "action": "skip",
+   "reasons": [
+    "fit 0.00 below 0.55"
+   ],
+   "fit": 0.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 30.0,
+    "max": 50.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.07999873161315918,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-8858726290",
+   "persona": "data_analyst",
+   "title": "Looking for a skilled coder to create a customizable map printing code in STATA - $100 reward",
+   "category": "research",
+   "in_domain": true,
+   "action": "skip",
+   "reasons": [
+    "budget 100.0 below your floor for this scope"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "fixed",
+    "min": 100.0,
+    "max": 100.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.06690335273742676,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-7198830168",
+   "persona": "data_analyst",
+   "title": "Plotly Dash Developer",
+   "category": "bi",
+   "in_domain": true,
+   "action": "watch",
+   "reasons": [
+    "fit 0.50 just under threshold"
+   ],
+   "fit": 0.5,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 0,
+    "max": 0,
+    "currency": "USD"
+   },
+   "status": "watch",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.07525777816772461,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-989d6d62f0",
+   "persona": "data_analyst",
+   "title": "Consultancy on choosing between getDBT and BigQuery Scheduled queries",
+   "category": "analytics_eng",
+   "in_domain": true,
+   "action": "skip",
+   "reasons": [
+    "budget 70.0 below your floor for this scope"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "fixed",
+    "min": 70.0,
+    "max": 70.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.0786752700805664,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-ed5c13b679",
+   "persona": "data_analyst",
+   "title": "EDI Project",
+   "category": "product_analytics",
+   "in_domain": true,
+   "action": "skip",
+   "reasons": [
+    "fit 0.00 below 0.55"
+   ],
+   "fit": 0.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "fixed",
+    "min": 350.0,
+    "max": 350.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.044083595275878906,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-4991f711cc",
+   "persona": "data_analyst",
+   "title": "Google Analytics 4 (GA4) WooCommerce Tracking Setup",
+   "category": "web_analytics",
+   "in_domain": true,
+   "action": "watch",
+   "reasons": [
+    "fit 0.50 just under threshold"
+   ],
+   "fit": 0.5,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "fixed",
+    "min": 50.0,
+    "max": 50.0,
+    "currency": "USD"
+   },
+   "status": "watch",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.07896661758422852,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-f8d047c832",
+   "persona": "data_analyst",
+   "title": "Create a program integrating spreadsheets and organizing data",
+   "category": "spreadsheet",
+   "in_domain": true,
+   "action": "skip",
+   "reasons": [
+    "client has no verified payment method and has never spent on the platform"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 8.0,
+    "max": 30.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.07168197631835938,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-2c5ccc4c1a",
+   "persona": "data_analyst",
+   "title": "SPSS and EViews project",
+   "category": "forecasting",
+   "in_domain": true,
+   "action": "watch",
+   "reasons": [
+    "fit 0.50 just under threshold"
+   ],
+   "fit": 0.5,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "fixed",
+    "min": 100.0,
+    "max": 100.0,
+    "currency": "USD"
+   },
+   "status": "watch",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.07421135902404785,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-cd4002b697",
+   "persona": "data_analyst",
+   "title": "Looking for Statistical Programmer - 40 hours/week, 1 year+, REMOTE",
+   "category": "research",
+   "in_domain": true,
+   "action": "bid",
+   "reasons": [
+    "fit 1.00, risk 0.28"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {
+    "amount": 50.0,
+    "currency": "USD",
+    "unit": "hour",
+    "market_source": "real",
+    "market_p25": 20.0,
+    "market_p50": 40.0,
+    "market_p75": 63.0,
+    "floor": 30.0,
+    "connects_cost": 6,
+    "connects_worth_it": true,
+    "expected_value_usd": 13.12,
+    "rationale": "Real research contracts pay $20.0-$63.0/h (median $40.0, n=318); posted range $45-$50/h; your floor $30/h. Bid $50/h. 6 Connects (~$0.90) vs expected value $13.12."
+   },
+   "budget": {
+    "type": "hourly",
+    "min": 45.0,
+    "max": 50.0,
+    "currency": "USD"
+   },
+   "status": "awaiting_approval",
+   "error": null,
+   "cover_letter": "For your looking for statistical programmer - 40 hours/week, 1 year+, remote, the core of the work is getting statistics right for a your team, so here is the closest match from my portfolio. I used statistics on \"Survey data analysis in R for a non-profit study\" [E:data_analyst:readme:data_analyst-p16]. I would start with a short scoping call, then deliver statistics as the first milestone so you can review real output early. My fixed price for this scope is 50 USD. Which part of this is the most urgent for you?",
+   "gigsim": {
+    "replied": true,
+    "p_reply": 0.935,
+    "fabricated": []
+   },
+   "latency_s": 0.1532609462738037,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-29c8fe5ed4",
+   "persona": "data_analyst",
+   "title": "Tableau lessons needed",
+   "category": "bi",
+   "in_domain": true,
+   "action": "bid",
+   "reasons": [
+    "fit 1.00, risk 0.24"
+   ],
+   "fit": 1.0,
+   "is_scam_pred": false,
+   "price": {
+    "amount": 30.0,
+    "currency": "USD",
+    "unit": "hour",
+    "market_source": "real",
+    "market_p25": 25.0,
+    "market_p50": 40.0,
+    "market_p75": 60.0,
+    "floor": 30.0,
+    "connects_cost": 4,
+    "connects_worth_it": true,
+    "expected_value_usd": 7.87,
+    "rationale": "Real bi contracts pay $25.0-$60.0/h (median $40.0, n=3640); posted range $10-$30/h; your floor $30/h. Bid $30/h. 4 Connects (~$0.60) vs expected value $7.87."
+   },
+   "budget": {
+    "type": "hourly",
+    "min": 10.0,
+    "max": 30.0,
+    "currency": "USD"
+   },
+   "status": "awaiting_approval",
+   "error": null,
+   "cover_letter": "For your tableau lessons needed, the core of the work is getting Tableau and dashboard design right for a your team, so here is the closest match from my portfolio. I used Tableau on \"Tableau sales dashboards for a healthcare company\" [E:data_analyst:readme:data_analyst-p02]. I would start with a short scoping call, then deliver Tableau as the first milestone so you can review real output early. My fixed price for this scope is 30 USD. Which part of this is the most urgent for you?",
+   "gigsim": {
+    "replied": true,
+    "p_reply": 0.941,
+    "fabricated": []
+   },
+   "latency_s": 0.1524794101715088,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-2791f77fe9",
+   "persona": "data_analyst",
+   "title": "Email Expert to Generate Leads on LinkedIn",
+   "category": "out_of_domain",
+   "in_domain": false,
+   "action": "skip",
+   "reasons": [
+    "fit 0.00 below 0.55"
+   ],
+   "fit": 0.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 0,
+    "max": 0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.053403377532958984,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-6d3dbff635",
+   "persona": "data_analyst",
+   "title": "Social Media Executive",
+   "category": "out_of_domain",
+   "in_domain": false,
+   "action": "skip",
+   "reasons": [
+    "fit 0.00 below 0.55"
+   ],
+   "fit": 0.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 0,
+    "max": 0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.06265902519226074,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-b31ca68fd5",
+   "persona": "data_analyst",
+   "title": "Swift App Developer needed to implement several features in new app",
+   "category": "out_of_domain",
+   "in_domain": false,
+   "action": "skip",
+   "reasons": [
+    "fit 0.00 below 0.55"
+   ],
+   "fit": 0.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 25.0,
+    "max": 80.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.08320903778076172,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-270a2c10f7",
+   "persona": "data_analyst",
+   "title": "TikTok posting - Must be from Czech Republic",
+   "category": "out_of_domain",
+   "in_domain": false,
+   "action": "skip",
+   "reasons": [
+    "fit 0.00 below 0.55"
+   ],
+   "fit": 0.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "hourly",
+    "min": 6.0,
+    "max": 15.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.0717475414276123,
+   "providers": [
+    "heuristic"
+   ]
+  },
+  {
+   "job_id": "real-a574888311",
+   "persona": "data_analyst",
+   "title": "WordPress and Keyword Researcher",
+   "category": "out_of_domain",
+   "in_domain": false,
+   "action": "skip",
+   "reasons": [
+    "fit 0.00 below 0.55"
+   ],
+   "fit": 0.0,
+   "is_scam_pred": false,
+   "price": {},
+   "budget": {
+    "type": "fixed",
+    "min": 25.0,
+    "max": 25.0,
+    "currency": "USD"
+   },
+   "status": "skipped",
+   "error": null,
+   "cover_letter": null,
+   "gigsim": null,
+   "latency_s": 0.04088640213012695,
+   "providers": [
+    "heuristic"
+   ]
+  }
+ ]
+}

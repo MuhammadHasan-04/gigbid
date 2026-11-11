@@ -9,7 +9,7 @@ message and Connects spend before anything leaves the system.
 
 | | |
 |---|---|
-| **Live app** | _set after deployment (see `docs/RUNBOOK.md`)_. Reviewer login is in the Classroom private comment |
+| **Live app** | https://gigbid-1.onrender.com (free tier: the first visit after 15 idle minutes takes about a minute). Reviewer login is in the Classroom private comment |
 | **Demo video (3 min)** | [`docs/demo/gigbid_demo.mp4`](docs/demo/gigbid_demo.mp4) (captioned walkthrough; heuristic profile) |
 | **Portfolio MCP server** | [`mcp_servers/portfolio`](mcp_servers/portfolio/README.md): `uvx --from git+https://github.com/MuhammadHasan-04/gigbid gigbid-portfolio-mcp --portfolio-dir ~/my-portfolio` |
 | **Technical write-up** | https://muhammadhasan-04.github.io/gigbid/WRITEUP.html (source: [`docs/WRITEUP.md`](docs/WRITEUP.md)) |
@@ -34,24 +34,27 @@ The conversation graph (Client Liaison) follows the same pattern for client repl
 ## Results
 
 All numbers below come from files in `evals/results/`, and CI checks that they do (`scripts/check_readme_numbers.py`).
-**Read this first:** the instructor GigSim was not available, so these runs use this repo's GigSim stand-in.
-The model profile is `heuristic`, a deterministic rule-based fallback that every node has, because this workspace had no
-LLM API access when the numbers were produced. The `open` profile (gpt-oss-20b/120b on Groq) runs from the same
-commands; its results will be added under `evals/results/*_open*.json` when keys are available.
+**Read this first:** the instructor GigSim was not available, so the labelled runs use this repo's GigSim stand-in
+(synthetic jobs with gold labels). Real data from six Kaggle datasets is used for a real job board, real market prices,
+and checks of where the synthetic world and the rules are wrong; real posts have no gold labels
+([`docs/DATA_CARD.md`](docs/DATA_CARD.md) covers selection, preprocessing, licences and limits).
+The model profile below is `heuristic`, a deterministic rule-based fallback that every node has. The `open` profile
+(gpt-oss-20b/120b on Groq) runs from the same commands (`scripts/laptop_run.sh`); its results appear under
+`evals/results/*_open*.json`.
 
 <!-- results:start -->
 **RAG variants** (dev set, 384 jobs with gold evidence, `evals/results/rag_heuristic.json`; unsupported claims, reply rate and latency from `pipeline_heuristic_dev*.json`)
 
 | Variant | Evidence Recall@5 | MRR | nDCG@10 | Unsupported claims / proposal (before → after verification) | Judge score | GigSim reply rate | p95 latency per job (s) | Cost per proposal (USD) |
 |---|---|---|---|---|---|---|---|---|
-| V0 naive dense | 0.7583 | 0.9445 | 0.8333 | 0.047 → 0.0 | n/a | 0.8333 | 0.528 | 0 (rules) |
-| V5 multi-vector | 0.7809 | 0.9754 | 0.8427 | 0.1562 → 0.0 | n/a | 0.875 | 0.59 | 0 (rules) |
-| V8 corrective loop | 0.7779 | 0.9824 | 0.8208 | 0.0591 → 0.0 | n/a | 0.8591 | 0.5703 | 0 (rules) |
-| **Shipped (best)**: decompose + hybrid + contextual + structural | 0.7662 | 0.9894 | 0.8799 | 0.056 → 0.0 | n/a | 0.8793 | 0.5648 | 0 (rules) |
+| V0 naive dense | 0.7583 | 0.9445 | 0.8333 | 0.0466 → 0.0 | n/a | 0.8347 | 0.3935 | 0 (rules) |
+| V5 multi-vector | 0.7809 | 0.9754 | 0.8427 | 0.1549 → 0.0 | n/a | 0.8761 | 0.4915 | 0 (rules) |
+| V8 corrective loop | 0.7779 | 0.9824 | 0.8208 | 0.0586 → 0.0 | n/a | 0.8604 | 0.4068 | 0 (rules) |
+| **Shipped (best)**: decompose + hybrid + contextual + structural | 0.7662 | 0.9894 | 0.8799 | 0.0556 → 0.0 | n/a | 0.8803 | 0.4347 | 0 (rules) |
 
 Held-out (`rag_heuristic_heldout.json`): V0 nDCG@10 0.8394 vs shipped 0.8634.
 
-**Decisions and safety** (dev, 600 jobs, `pipeline_heuristic_dev.json`): bid-or-skip F1 0.9482, scam precision 0.9221, recall 1.0, price inside the fair band 0.7026, injection attack success 0.0 on the 16 drafted injected jobs (43 injected jobs in total). Held-out (`pipeline_heuristic_heldout.json`): F1 0.9559, GigSim reply rate 0.8769.
+**Decisions and safety** (dev, 600 jobs, `pipeline_heuristic_dev.json`): bid-or-skip F1 0.9526, scam precision 1.0, recall 1.0, price inside the fair band 0.7009, injection attack success 0.0 on the 18 drafted injected jobs (43 injected jobs in total). Held-out (`pipeline_heuristic_heldout.json`): F1 0.9559, GigSim reply rate 0.8769.
 
 **Multi-agent comparison** (R&D C): single ReAct agent vs `langgraph-supervisor` vs this graph needs a model endpoint. Runner: `evals/runners/agents_compare.py`. Pending.
 
@@ -63,10 +66,17 @@ Held-out (`rag_heuristic_heldout.json`): V0 nDCG@10 0.8394 vs shipped 0.8634.
 | Coarse (action enum) | 3 | 0.7895 | 0.1316 | 345.1316 |
 | Shipped, rewritten descriptions | 10 | 1.0 | 1.0 | 543.3947 |
 
-**Signature extension X2** (`ab_test_heuristic.json`): evidence-first (A) 0.8793 vs question-first (B) 0.7586 reply rate on 232 paired jobs, McNemar exact p = 0.0006.
+**Real data (Kaggle, see `docs/DATA_CARD.md`)**
+
+* Real Upwork posts in the pipeline (`pipeline_heuristic_real.json`, 60 posts, no gold labels): bid rate 0.2889 on posts in the persona's market vs 0.0 outside it; share of bids priced inside the real contracts' p10–p90 1.0, within the posted budget 1.0. Most in-market skips are real-market facts the synthetic world under-represents: unverified clients with no spend, and budgets below the persona's floor.
+* Category mapping of real posts, checked by hand on 60 posts (`real_category_audit.json`): 0.7667 category, 0.85 persona-level.
+* Scam rules v1 → v2 (`real_scam_external.json`): false-alarm rate on 3,000 held-out real 2024 posts 0.023 → 0.0017; synthetic scam precision of the text rules 0.89 → 1.0 at recall 1.0.
+* Outside scam test (Fake-Job-Posting-Detection, non-templated test half, 17105 ads): the freelance-scam rules catch 0.003 of fakes; a TF-IDF classifier trained on that dataset gets F1 0.9199 there but recall 0.0 on freelance scams. Neither transfers, so the classifier is not shipped.
+
+**Signature extension X2** (`ab_test_heuristic.json`): evidence-first (A) 0.8803 vs question-first (B) 0.7607 reply rate on 234 paired jobs, McNemar exact p = 0.0006.
 <!-- results:end -->
 
-The most surprising result is that **the safety layer, not retrieval, moved the reply rate most**. The first claim verifier treated framing sentences ("the core of the work is getting X right…") as experience claims and deleted them, which removed the personalised opening from most drafts. Fixing that one rule raised the simulated reply rate from 0.8362 (`pipeline_heuristic_dev_before_verifier_fix.json`) to 0.8793, more than any retrieval variant changed it. See [`docs/WRITEUP.md`](docs/WRITEUP.md).
+The most surprising result is that **the safety layer, not retrieval, moved the reply rate most**. The first claim verifier treated framing sentences ("the core of the work is getting X right…") as experience claims and deleted them, which removed the personalised opening from most drafts. Fixing that one rule raised the simulated reply rate from 0.8362 (`pipeline_heuristic_dev_before_verifier_fix.json`) to 0.8793 (`pipeline_heuristic_dev_rules_v1.json`, same commit), more than any retrieval variant changed it. See [`docs/WRITEUP.md`](docs/WRITEUP.md). The second surprise came from real data: the original scam rules flagged 2.3% of real 2024 Upwork posts, nearly all false alarms (a "Telegram bot" is a product, not an off-platform request). The rewritten rules flag 0.17% and still catch every synthetic scam.
 
 ## Run it
 
@@ -87,7 +97,8 @@ Without Docker: `make setup && make seed && make dev`. Tests: `make test`, `make
 | `mcp_servers/` | Portfolio (read-only, publishable), Marketplace (read+write: schemas, annotations, idempotency, dry_run, bearer auth, rate limit, audit log), Workspace (calendar + email drafts) |
 | `apps/api`, `apps/web` | FastAPI + SSE; React/Vite/TypeScript with a client generated from OpenAPI |
 | `worker/` | Arq jobs: scouting schedules, analysis, approval resumes, marketplace sync |
-| `gigsim/` | GigSim stand-in (see `gigsim/README.md`) |
+| `gigsim/` | GigSim stand-in (see `gigsim/README.md`); `GIGSIM_REAL_JOBS=1` adds the real Upwork posts |
+| `data/real/`, `scripts/ingest_kaggle.py` | real data derived from the Kaggle datasets (posts, clients, market percentiles, demand), with `MANIFEST.json` |
 | `evals/` | dev datasets, runners, committed results |
 | `docs/` | architecture, ADRs, tools, data card, runbook, extension, AI usage, write-up |
 
@@ -100,4 +111,5 @@ fastapi 0.162.2 · Postgres 16 (pgvector image) · Redis 7.4 · React 18.3 · Vi
 
 Built GigBid, a LangGraph multi-agent freelancer copilot with three MCP servers and human-approved sends. Chose the
 retrieval design from a 64-configuration sweep (nDCG@10 0.8333 → 0.8799 over naive RAG on 384 dev jobs), reached bid-or-skip
-F1 0.9482 and scam recall 1.0 on 600 simulated jobs, and removed every unsupported claim before approval.
+F1 0.9526 and scam recall 1.0 on 600 simulated jobs, cut scam false alarms on real Upwork posts from 2.3% to 0.17%, and
+removed every unsupported claim before approval.

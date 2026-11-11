@@ -8,9 +8,15 @@ Behaviour that matters to GigBid:
   * a simulated clock: stream jobs become visible as simulated minutes pass
   * simulated clients decide view / reply / interview / hire (gigsim.client_model)
 State is persisted to data/runtime/gigsim_state.json so a restart keeps proposals and threads.
+
+Real data (GIGSIM_REAL_JOBS=1): ~1.3k real Upwork posts and their clients' public stats from Kaggle
+(data/real/, built by scripts/ingest_kaggle.py) are added to the job board next to the synthetic jobs.
+Every job and client carries `source` = "real" | "synthetic"; /v1/market/stats adds a `real` block with
+awarded-contract and 2024-posting percentiles. Simulated client preferences stay synthetic for all clients.
 """
 from __future__ import annotations
 
+import gzip
 import hashlib
 import json
 import os
@@ -56,7 +62,24 @@ if os.getenv("GIGSIM_INCLUDE_HELDOUT") == "1" and HELDOUT_DIR.exists():
         for j in json.loads(f.read_text()):
             JOBS[j["job_id"]] = j
 CLIENTS: dict[str, dict] = {c["client_id"]: c for c in _load("clients.json")}
+for _j in JOBS.values():
+    _j.setdefault("source", "synthetic")
+for _c in CLIENTS.values():
+    _c.setdefault("source", "synthetic")
 HISTORY: list[dict] = _load("history.json")
+REAL = ROOT / "data" / "real"
+REAL_MARKET: dict = json.loads((REAL / "market_real.json").read_text())["by_category"] if (REAL / "market_real.json").exists() else {}
+N_REAL = 0
+if os.getenv("GIGSIM_REAL_JOBS", "0") == "1" and (REAL / "jobs_real.json.gz").exists():
+    _real = json.loads(gzip.decompress((REAL / "jobs_real.json.gz").read_bytes()))
+    _real.sort(key=lambda j: hashlib.sha1(j["job_id"].encode()).hexdigest())
+    for _i, _j in enumerate(_real):
+        # spread real posts over the simulated clock like the synthetic stream (a few already visible)
+        _j["posted_offset_min"] = -600 + _i * 3
+        JOBS[_j["job_id"]] = _j
+    for _c in json.loads((REAL / "clients_real.json").read_text()):
+        CLIENTS[_c["client_id"]] = _c
+    N_REAL = len(_real)
 FREELANCERS: dict[str, dict] = {f["freelancer_id"]: f for f in _load("freelancers.json")}
 
 
@@ -127,7 +150,7 @@ def visible(j: dict) -> bool:
 # ------------------------------------------------------------------ read endpoints
 @app.get("/health")
 def health():
-    return {"ok": True, "jobs": len(JOBS), "clock_min": STATE["clock_min"], "policy_version": POLICY_VERSION}
+    return {"ok": True, "jobs": len(JOBS), "real_jobs": N_REAL, "clock_min": STATE["clock_min"], "policy_version": POLICY_VERSION}
 
 
 @app.get("/v1/jobs")
@@ -150,6 +173,8 @@ def search_jobs(q: str = "", category: str | None = None, ids_prefix: str | None
         if terms and not all(t in hay for t in terms):
             continue
         res.append(public_job(j))
+    # newest first (like a real job feed); the fixed dev/held-out sets have no post time and come last
+    res.sort(key=lambda j: j["posted_minutes_ago"])
     return {"total": len(res), "jobs": res[offset: offset + limit]}
 
 
@@ -175,8 +200,12 @@ def market_stats(category: str):
     if not xs:
         raise HTTPException(404, "unknown category")
     pick = lambda q: xs[int(q * (len(xs) - 1))]
-    return {"category": category, "n": len(xs), "p25": pick(0.25), "p50": pick(0.5), "p75": pick(0.75),
-            "p90": pick(0.9), "avg_proposals": round(sum(h["proposals_count"] for h in HISTORY if h["category"] == category) / len(xs), 1)}
+    out = {"category": category, "n": len(xs), "p25": pick(0.25), "p50": pick(0.5), "p75": pick(0.75), "source": "synthetic",
+           "p90": pick(0.9), "avg_proposals": round(sum(h["proposals_count"] for h in HISTORY if h["category"] == category) / len(xs), 1)}
+    if category in REAL_MARKET:
+        # real percentiles (Kaggle: awarded contracts + 2024 postings); the synthetic numbers above stay unchanged
+        out["real"] = {"source": "real", **REAL_MARKET[category]}
+    return out
 
 
 @app.get("/v1/freelancers/{fid}/connects")

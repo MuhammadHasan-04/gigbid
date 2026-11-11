@@ -64,7 +64,7 @@ async def run_job(graph, job: dict, persona: str, sem: asyncio.Semaphore) -> dic
         summ = tracing.summarize(tid)
         providers = sorted({sp.get("provider") for sp in tracing.read_trace(tid) if sp["kind"] == "llm"})
         return {"providers": providers, "job_id": job["job_id"], "persona": persona, "status": out.get("status"), "error": err,
-                "action": (out.get("decision") or {}).get("action"), "risk": out.get("risk"), "fit": (out.get("fit") or {}).get("fit_score"),
+                "action": (out.get("decision") or {}).get("action"), "reasons": (out.get("decision") or {}).get("reasons"), "risk": out.get("risk"), "fit": (out.get("fit") or {}).get("fit_score"),
                 "price": (out.get("price") or {}).get("amount"), "draft": out.get("draft"), "payload": payload,
                 "revisions": out.get("revision", 0), "critiques": len(out.get("critiques") or []),
                 "latency_s": lat, "tokens": summ["tokens"], "usd": summ["usd"], "trace_id": tid}

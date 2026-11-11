@@ -38,6 +38,10 @@ ab, cr, fa = L(f"ab_test_{P}.json"), L("change_request.json"), L("failure_analys
 fa0 = L("failure_analysis_before_fixes.json")
 tool, ac, jc = L("tool_study.json"), L("agents_compare.json"), L("judge_calibration.json")
 cfg = L(f"pipeline_{P}_dev.json")["config"]
+rs, rp, rca, rv1 = L("real_scam_external.json"), L(f"pipeline_{P}_real.json"), L("real_category_audit.json"), O(f"{P}_dev_rules_v1")
+REAL = ROOT / "data" / "real"
+rman = json.loads((REAL / "MANIFEST.json").read_text()) if (REAL / "MANIFEST.json").exists() else None
+rcal = json.loads((REAL / "calibration.json").read_text()) if (REAL / "calibration.json").exists() else {}
 C = commit()
 
 
@@ -103,7 +107,8 @@ providers actually used in the main run: {cfg.get('providers_actually_used')}</d
 experiment uses this repository's GigSim stand-in (<code>gigsim/</code>, seeded and reproducible), written by the same author as the system.
 (2) The workspace had no LLM API access while these numbers were produced, so results come from the <code>{P}</code> profile, the deterministic
 rule-based fallback every node has (ADR 0004). Experiments that only make sense with a model (tool-granularity study, single-agent
-comparison, judge calibration) have committed runners and are marked pending. (3) Simulated-client reply rate is a designed proxy.</div>
+comparison, judge calibration) have committed runners and are marked pending. (3) Simulated-client reply rate is a designed proxy. (4) Real Upwork data (six Kaggle datasets, §9) arrived late; it has no gold
+labels, so it is used for a real job board, real prices and checks of the rules, while the labelled metrics stay on the synthetic sets.</div>
 
 <h2>1. Problem and constraints</h2>
 <p>Freelancers spend hours scanning feeds, spend paid Connects on jobs they won't win, send generic proposals, and run into scams that ask for
@@ -111,7 +116,7 @@ free work or off-platform payment. GigBid automates discovery, assessment and dr
 <ul><li><b>Never automated:</b> submitting a proposal, sending a message, spending Connects, claiming experience the portfolio doesn't prove, contacting
 a client off-platform. Enforced by a LangGraph <code>interrupt()</code> <i>and</i> an HMAC approval token checked inside the Marketplace MCP server (ADR 0002).</li>
 <li><b>Allowed automatically:</b> scouting, analysis, skipping (only with autonomy <code>auto_skip_low_fit</code>), drafting.</li>
-<li><b>Budgets</b> (config, enforced per thread): 40 graph steps, 30k tokens per job, max 2 Critic revisions; latency and cost budgets in §10.</li></ul>
+<li><b>Budgets</b> (config, enforced per thread): 40 graph steps, 30k tokens per job, max 2 Critic revisions; latency and cost budgets in §11.</li></ul>
 
 <h2>2. Architecture</h2>
 <div class="two"><div><img src="../images/bid_graph.png" style="max-height:330px"></div><div>
@@ -203,7 +208,33 @@ isolation. <i>Lesson:</i> dedup records need the same lifecycle as the thing the
 <li><b>Generic opening</b>: 0 flagged by simulated clients after the verifier fix; the Critic rejects drafts whose first 80 characters match the generic list.</li>
 </ul>
 
-<h2>9. Safety and platform respect</h2>
+<h2>9. Real data (Kaggle): what it changed</h2>
+<p><b>Selection.</b> Of the six allowed datasets: 60k Upwork posts (Apache 2.0) → the real job board ({rman['jobs60k']['jobs_kept']} posts after cleaning,
+de-duplication, contact-detail removal and category mapping); 1.3M contracts (ODC-By) → real price percentiles ({rman['contracts']['hourly_contracts']:,} hourly,
+{rman['contracts']['fixed_completed_contracts']:,} completed fixed-price); 2024 posts (50k + tracker, ODC-By, {rman['postings_2024']['unique_postings']:,} unique) → recent budgets,
+weekly demand and an untouched test sample; the freelancer-success set was <b>rejected</b> (third-party synthetic; {json.loads((REAL / "freelancer_benchmarks.json").read_text())['quality_check']['share_at_max']}
+of rates sit at a $280 cap); the fake-job set (no stated licence) is used only as an outside test, nothing committed. Every job, client and market number carries
+<code>source: real|synthetic</code>; simulated client preferences stay synthetic for everyone. Category mapping, hand-checked on {rca['n']} posts:
+{rca['category_accuracy']} category, {rca['persona_accuracy']} persona-level. Details, attribution and limits: <code>docs/DATA_CARD.md</code>.</p>
+<p><b>Calibration.</b> The synthetic generator's hourly medians vs real contract medians: {", ".join(f"{k} {v['synthetic_hourly_median']} vs {v['real_hourly_p50']:g}" for k, v in rcal.items() if k in ("llm_apps", "web_app", "backend", "bi", "web_analytics", "research"))}.
+The synthetic world over-prices developer work by 1.4–1.7× and under-prices analyst work. It was not regenerated (that would invalidate the labelled results);
+real posts are priced from the real contracts instead (hourly rate inside the posted range, or real fixed-price percentiles).</p>
+<p><b>Scam rules v1 → v2.</b> {t([["Synthetic scam jobs (text rules), precision / recall", f"{rs['rules_v1_vs_v2']['v1']['synthetic_scam']['precision']} / {rs['rules_v1_vs_v2']['v1']['synthetic_scam']['recall']}", f"{rs['rules_v1_vs_v2']['v2']['synthetic_scam']['precision']} / {rs['rules_v1_vs_v2']['v2']['synthetic_scam']['recall']}"],
+ ["Real board posts flagged (in-sample)", rs['rules_v1_vs_v2']['v1']['real_posts_in_sample_flag_rate'], rs['rules_v1_vs_v2']['v2']['real_posts_in_sample_flag_rate']],
+ ["3,000 held-out 2024 posts flagged", rs['rules_v1_vs_v2']['v1']['real_2024_heldout_flag_rate'], rs['rules_v1_vs_v2']['v2']['real_2024_heldout_flag_rate']],
+ ["Dev pipeline scam precision / bid F1", f"{rv1['scam_precision']} / {rv1['bid_f1']}", f"{dev['scam_precision']} / {dev['bid_f1']}"]], ["", "v1", "v2"])}
+v1 fired on any mention of Telegram, WhatsApp or crypto; on real posts these are usually the product ("build a Telegram bot"). v2 needs an ask
+("contact me on…", "we pay in USDT"). Of the 5 held-out v2 flags, 1 is a true request for free work, 1 ambiguous, 3 false alarms; v2 misses one
+"USDT seller" post that v1 caught by accident. {src('real_scam_external.json')}</p>
+<p><b>Outside scam test.</b> On the fake-job set's test half without the template fakes ({rs['test_without_templated_fakes']['risk_assessor_rules']['n']:,} ads), the freelance rules catch
+{rs['test_without_templated_fakes']['risk_assessor_rules']['recall']} of fakes; TF-IDF + logistic regression trained on its train half gets F1 {rs['test_without_templated_fakes']['tfidf_logreg_trained_without_templates']['f1']}
+there but recall {rs['transfer_to_freelance_posts']['synthetic_dev_scams']['tfidf_logreg']['recall']} on freelance scams. Job-ad fraud and marketplace scams look different, so the classifier is not shipped.</p>
+<p><b>Real posts through the pipeline</b> ({rp['overall']['n_jobs']} posts, no labels): bid rate {rp['overall']['bid_rate_in_domain']} in the persona's market vs
+{rp['overall']['bid_rate_out_of_domain']} outside it; bids inside real p10–p90 {rp['overall']['price_inside_real_p10_p90']}, within posted budget {rp['overall']['price_within_posted_budget']}.
+The main in-market skip reasons are real-market facts the synthetic world under-represents: unverified clients with no spend (30% of real clients are
+unverified) and budgets below the personas' floors. {src(f'pipeline_{P}_real.json')}</p>
+
+<h2>10. Safety and platform respect</h2>
 <ul><li><b>Never:</b> send or spend without approval (interrupt + HMAC token per content hash), scrape or automate a browser (live mode via the
 official MCP only, read polling ≥ 240 min, RUNBOOK), share contact details, claim unproven experience, follow instructions in job posts or client messages.</li>
 <li><b>How:</b> untrusted text is delimited and closing tags are neutralised; the Risk Assessor's rule floor can't be lowered by a model; tool allowlists
@@ -213,7 +244,7 @@ OAuth tokens Fernet-encrypted; every query scoped by user id.</li>
 are shared between users who pick the same demo persona (known tenant-isolation gap for demo personas only); simulated clients cannot test whether
 a real client is misled by a technically-true claim.</li></ul>
 
-<h2>10. Hidden-test results against declared budgets</h2>
+<h2>11. Hidden-test results against declared budgets</h2>
 <p>The instructor's hidden run happens after the deadline. The table reports this repository's own held-out set (180 jobs, separate seed, never used
 for tuning): bid F1 {ho['bid_f1']}, scam recall {ho['scam_recall']}, precision {ho['scam_precision']}, price in band {ho['price_in_band']}, reply rate
 {ho['gigsim_reply_rate']}, injection success {ho['injection_attack_success_rate']}. {src(f'pipeline_{P}_heldout.json')}</p>{budget}

@@ -1,0 +1,128 @@
+{
+ "llm_apps": {
+  "synthetic_hourly_median": 55,
+  "real_hourly_p50": 32.0,
+  "n_real": 1873,
+  "ratio_synthetic_to_real": 1.72
+ },
+ "classical_ml": {
+  "synthetic_hourly_median": 45,
+  "real_hourly_p50": 39.0,
+  "n_real": 1793,
+  "ratio_synthetic_to_real": 1.15
+ },
+ "vision": {
+  "synthetic_hourly_median": 50,
+  "real_hourly_p50": 30.0,
+  "n_real": 508,
+  "ratio_synthetic_to_real": 1.67
+ },
+ "nlp": {
+  "synthetic_hourly_median": 45,
+  "real_hourly_p50": 40.0,
+  "n_real": 371,
+  "ratio_synthetic_to_real": 1.12
+ },
+ "mlops": {
+  "synthetic_hourly_median": 55,
+  "real_hourly_p50": 45.0,
+  "n_real": 61,
+  "ratio_synthetic_to_real": 1.22
+ },
+ "recsys": {
+  "synthetic_hourly_median": 50,
+  "real_hourly_p50": 40.0,
+  "n_real": 40,
+  "ratio_synthetic_to_real": 1.25
+ },
+ "web_app": {
+  "synthetic_hourly_median": 40,
+  "real_hourly_p50": 25.0,
+  "n_real": 13304,
+  "ratio_synthetic_to_real": 1.6
+ },
+ "backend": {
+  "synthetic_hourly_median": 42,
+  "real_hourly_p50": 25.0,
+  "n_real": 4308,
+  "ratio_synthetic_to_real": 1.68
+ },
+ "realtime": {
+  "synthetic_hourly_median": 45,
+  "real_hourly_p50": 32.22,
+  "n_real": 125,
+  "ratio_synthetic_to_real": 1.4
+ },
+ "ecommerce": {
+  "synthetic_hourly_median": 32,
+  "real_hourly_p50": 20.0,
+  "n_real": 15079,
+  "ratio_synthetic_to_real": 1.6
+ },
+ "api": {
+  "synthetic_hourly_median": 42,
+  "real_hourly_p50": 30.0,
+  "n_real": 3373,
+  "ratio_synthetic_to_real": 1.4
+ },
+ "testing": {
+  "synthetic_hourly_median": 35,
+  "real_hourly_p50": 22.0,
+  "n_real": 367,
+  "ratio_synthetic_to_real": 1.59
+ },
+ "mobile": {
+  "synthetic_hourly_median": 40,
+  "real_hourly_p50": 23.0,
+  "n_real": 2514,
+  "ratio_synthetic_to_real": 1.74
+ },
+ "bi": {
+  "synthetic_hourly_median": 32,
+  "real_hourly_p50": 40.0,
+  "n_real": 3640,
+  "ratio_synthetic_to_real": 0.8
+ },
+ "analytics_eng": {
+  "synthetic_hourly_median": 40,
+  "real_hourly_p50": 40.0,
+  "n_real": 1069,
+  "ratio_synthetic_to_real": 1.0
+ },
+ "product_analytics": {
+  "synthetic_hourly_median": 35,
+  "real_hourly_p50": 35.0,
+  "n_real": 1113,
+  "ratio_synthetic_to_real": 1.0
+ },
+ "web_analytics": {
+  "synthetic_hourly_median": 28,
+  "real_hourly_p50": 46.8,
+  "n_real": 3361,
+  "ratio_synthetic_to_real": 0.6
+ },
+ "spreadsheet": {
+  "synthetic_hourly_median": 22,
+  "real_hourly_p50": 25.0,
+  "n_real": 7648,
+  "ratio_synthetic_to_real": 0.88
+ },
+ "forecasting": {
+  "synthetic_hourly_median": 35,
+  "real_hourly_p50": 40.0,
+  "n_real": 347,
+  "ratio_synthetic_to_real": 0.88
+ },
+ "research": {
+  "synthetic_hourly_median": 28,
+  "real_hourly_p50": 40.0,
+  "n_real": 318,
+  "ratio_synthetic_to_real": 0.7
+ },
+ "out_of_domain": {
+  "synthetic_hourly_median": 30,
+  "real_hourly_p50": 20.0,
+  "n_real": 417888,
+  "ratio_synthetic_to_real": 1.5
+ }
+}

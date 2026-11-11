@@ -10,6 +10,14 @@ def job(desc, budget=(500, 1000)):
     return {"job_id": "j1", "title": "Dashboard", "description": desc, "budget": {"min": budget[0], "max": budget[1]}, "client_id": "c"}
 
 
+def test_platform_names_as_the_product_are_not_scam_signals():
+    # real Upwork posts (Kaggle) often ask for a Telegram / WhatsApp bot or a crypto product
+    for text in ("Develop a Telegram bot for our house-building company", "WhatsApp OpenAI chatbot with a subscription model",
+                 "Integrate multiple payment gateways and crypto into the app", "Telegram style chat groups for users",
+                 "If you are an AI expert with a 10x mindset we would like to talk"):
+        assert not rule_signals(text), text
+
+
 def test_scam_signals():
     s = rule_signals("Build it for free as a test task. Contact me on Telegram @x. Pay in USDT.")
     assert {"unpaid_work", "off_platform_contact", "off_platform_payment"} <= set(s)

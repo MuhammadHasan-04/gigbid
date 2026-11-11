@@ -35,7 +35,7 @@ services:
 
   gigsim:
     build: { context: .., dockerfile: infra/docker/gigsim.Dockerfile }
-    environment: { GIGSIM_API_TOKEN: "${GIGSIM_API_TOKEN:-gigsim-dev-token}", GIGSIM_ADMIN_TOKEN: "${GIGSIM_ADMIN_TOKEN:-gigsim-admin-token}", GIGSIM_STATE_FILE: /runtime/gigsim_state.json, GIGSIM_POLICY_VERSION: "${POLICY_VERSION:-2}" }
+    environment: { GIGSIM_API_TOKEN: "${GIGSIM_API_TOKEN:-gigsim-dev-token}", GIGSIM_ADMIN_TOKEN: "${GIGSIM_ADMIN_TOKEN:-gigsim-admin-token}", GIGSIM_STATE_FILE: /runtime/gigsim_state.json, GIGSIM_POLICY_VERSION: "${POLICY_VERSION:-2}", GIGSIM_REAL_JOBS: "${GIGSIM_REAL_JOBS:-1}" }
     volumes: [runtime:/runtime]
     healthcheck: { test: ["CMD", "python", "-c", "import urllib.request;urllib.request.urlopen('http://localhost:8081/health')"], interval: 5s, retries: 20 }
 

@@ -1,0 +1,156 @@
+{
+ "generated_at": "2026-11-11T12:30:24+00:00",
+ "datasets": {
+  "jobs60k": {
+   "kaggle_ref": "ahmedmyalo/upwork-freelance-jobs-60k",
+   "url": "https://www.kaggle.com/datasets/ahmedmyalo/upwork-freelance-jobs-60k",
+   "license": "Apache 2.0",
+   "files": {
+    "Final_Upwork_Dataset.csv": {
+     "bytes": 92485880,
+     "sha256": "6d66e549d764158ec8b1dd8d1cee5bc1c9ed752cbeb68bede06736b56cc008f6"
+    }
+   }
+  },
+  "contracts": {
+   "kaggle_ref": "asaniczka/freelance-contracts-dataset-1-3-million-entries",
+   "url": "https://www.kaggle.com/datasets/asaniczka/freelance-contracts-dataset-1-3-million-entries",
+   "license": "ODC-By 1.0",
+   "files": {
+    "contracts.csv": {
+     "bytes": 162774789,
+     "sha256": "1bb3e9884e62197ac24343cf0400971dc12f99bfcf97972e998112f0b0a7a0e8"
+    }
+   }
+  },
+  "jobs50k": {
+   "kaggle_ref": "asaniczka/upwork-job-postings-dataset-2024-50k-records",
+   "url": "https://www.kaggle.com/datasets/asaniczka/upwork-job-postings-dataset-2024-50k-records",
+   "license": "ODC-By 1.0",
+   "files": {
+    "upwork-jobs.csv": {
+     "bytes": 72174181,
+     "sha256": "e8b3a7cb1c763d7b20451d8008799b2064c0787e2bd183a52896c98a7933410a"
+    }
+   }
+  },
+  "jobs200k": {
+   "kaggle_ref": "asaniczka/all-jobs-on-upwork-200k-plus",
+   "url": "https://www.kaggle.com/datasets/asaniczka/all-jobs-on-upwork-200k-plus",
+   "license": "ODC-By 1.0",
+   "files": {
+    "all_upwork_jobs_2024-02-07-2024-03-24.csv": {
+     "bytes": 50577682,
+     "sha256": "6513e9a744f15726bdb40d6435a60834e864ace08a75e1d7feb75e10ddb78b11"
+    },
+    "all_upwork_jobs_2024-03-24-2024-05-21.csv": {
+     "bytes": 53782241,
+     "sha256": "f4580b6677cfaf98c52a24719fc97a244498a9b410d42d47774c54ab0f49f951"
+    },
+    "all_upwork_jobs_2024-05-21-2024-07-25.csv": {
+     "bytes": 56869517,
+     "sha256": "5f2b60280728590e401314d0ef3b6215d71a84207b1b0285e0e0a205b329408c"
+    }
+   }
+  },
+  "freelancers": {
+   "kaggle_ref": "sarveshchhetri/freelancer-success-earnings-and-churn-prediction",
+   "url": "https://www.kaggle.com/datasets/sarveshchhetri/freelancer-success-earnings-and-churn-prediction",
+   "license": "Apache 2.0",
+   "files": {
+    "freelancer_gig_success_dataset.csv": {
+     "bytes": 1277200,
+     "sha256": "da12b0002a66410eb72a1dc755dc2062e381e3e4bbd025615bc04eadfd61be4f"
+    }
+   }
+  },
+  "fakejobs": {
+   "kaggle_ref": "adityammantri/trial-1",
+   "url": "https://www.kaggle.com/datasets/adityammantri/trial-1",
+   "license": "Unknown (not stated by the author)",
+   "files": {
+    "processed_labeled_dataset_without_encoding.xlsx": {
+     "bytes": 23629039,
+     "sha256": "27bdd0fc03055db65aa299d24f1b22ffab0994b3049060c85e5b61a14331e6f1"
+    }
+   }
+  }
+ },
+ "jobs60k": {
+  "rows_read": 63950,
+  "rows_after_clean_dedupe": 50209,
+  "category_counts_all": {
+   "analytics_eng": 171,
+   "api": 1626,
+   "backend": 727,
+   "bi": 556,
+   "classical_ml": 661,
+   "ecommerce": 1727,
+   "forecasting": 41,
+   "llm_apps": 622,
+   "mlops": 12,
+   "mobile": 530,
+   "nlp": 133,
+   "out_of_domain": 40646,
+   "product_analytics": 112,
+   "realtime": 46,
+   "recsys": 10,
+   "research": 46,
+   "spreadsheet": 242,
+   "testing": 60,
+   "vision": 211,
+   "web_analytics": 274,
+   "web_app": 1756
+  },
+  "jobs_kept": 1295,
+  "category_counts_kept": {
+   "analytics_eng": 60,
+   "api": 60,
+   "backend": 60,
+   "bi": 60,
+   "classical_ml": 60,
+   "ecommerce": 60,
+   "forecasting": 41,
+   "llm_apps": 60,
+   "mlops": 12,
+   "mobile": 60,
+   "nlp": 60,
+   "out_of_domain": 240,
+   "product_analytics": 60,
+   "realtime": 46,
+   "recsys": 10,
+   "research": 46,
+   "spreadsheet": 60,
+   "testing": 60,
+   "vision": 60,
+   "web_analytics": 60,
+   "web_app": 60
+  },
+  "budget_types_kept": {
+   "fixed": 423,
+   "hourly": 859,
+   "unknown": 13
+  }
+ },
+ "contracts": {
+  "rows_read": 1292791,
+  "rows_in_date_range": 1270510,
+  "hourly_contracts": 479100,
+  "fixed_completed_contracts": 427368
+ },
+ "jobs50k": {
+  "rows_read": 53058
+ },
+ "jobs200k": {
+  "rows_read": 826328
+ },
+ "postings_2024": {
+  "unique_postings": 733655,
+  "from": "2022-07-27",
+  "to": "2024-07-25"
+ },
+ "freelancers": {
+  "rows_read": 12000,
+  "note": "third-party SYNTHETIC records (dataset tag 'synthetic'); used only as peer benchmarks"
+ }
+}

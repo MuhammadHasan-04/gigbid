@@ -81,6 +81,9 @@ jobs with everything else unchanged:
 | verifier before the fix | 0.4612 | 0.8362 |
 | verifier after the fix | 0.056 | 0.8793 |
 
+(Files: `pipeline_heuristic_dev_before_verifier_fix.json` and `pipeline_heuristic_dev_rules_v1.json`, the run made before
+the scam-rule change described below.)
+
 That 4.3-point gain from one regular expression is larger than the difference between the naive retriever and the
 sweep-selected one in the end-to-end runs. The unsupported-claim metric dropped by 88%, and almost none of that was
 real fabrication. It was the verifier's false positives counted as if they were the writer's lies.
@@ -103,9 +106,15 @@ and it had. Only the end-to-end run showed that a later layer was throwing away 
 less personal, and the writer revised a draft the verifier would trim again. None of these components was wrong in isolation.
 The loop was. I found this through the failure taxonomy, not through any per-component test.
 
-## The same lesson, twice more
+## The same lesson, three more times
 
-Two smaller bugs had the same shape: a guardrail quietly removing value nobody was measuring.
+Three smaller problems had the same shape: a guardrail quietly removing value nobody was measuring.
+
+The scam rules looked perfect on the synthetic jobs: recall 1.0. When real Upwork posts from Kaggle became available, they
+flagged 2.3% of 3,000 real 2024 posts, nearly all of them false alarms. "Build a Telegram bot" and "integrate crypto
+payments" describe the product, not an off-platform request. The synthetic generator only ever mentioned Telegram in scams,
+so the synthetic data could not show the problem. The rewritten rules need an actual ask ("contact me on…", "we pay in
+USDT") and flag 0.17% of those held-out posts while still catching every synthetic scam.
 
 The Compliance Guard's phone-number pattern (`\+?\d[\d\s-]{8,}\d`) also matched ISO timestamps. When a client asked
 for a call, the Client Liaison drafted a reply offering three calendar slots ("2026-11-10 10:00…"), and Compliance

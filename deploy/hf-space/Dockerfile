@@ -30,6 +30,6 @@ RUN chmod +x /app/start.sh && mkdir -p /app/data/runtime /app/data/processed && 
     && rm -rf /home/user/.cache && chown -R user:user /home/user
 USER user
 RUN python -c "from rag.index.embed import _ensure_wordllama_tokenizer; _ensure_wordllama_tokenizer()"
-ENV MALLOC_ARENA_MAX=2 INLINE_CONCURRENCY=2 RUN_INLINE=1 MCP_TRANSPORT=inproc GIGSIM_BASE_URL=http://127.0.0.1:8081 GIGSIM_RPM=600 GIGSIM_POLICY_VERSION=2 POLICY_VERSION=2
+ENV GIGSIM_REAL_JOBS=1 MALLOC_ARENA_MAX=2 INLINE_CONCURRENCY=2 RUN_INLINE=1 MCP_TRANSPORT=inproc GIGSIM_BASE_URL=http://127.0.0.1:8081 GIGSIM_RPM=600 GIGSIM_POLICY_VERSION=2 POLICY_VERSION=2
 EXPOSE 7860
 CMD ["/app/start.sh"]

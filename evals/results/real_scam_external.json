@@ -1,0 +1,204 @@
+{
+ "meta": {
+  "commit": "a1de0db",
+  "time": "2026-11-11T17:30:01",
+  "python": "3.12.3",
+  "machine": "x86_64",
+  "cpus": 2
+ },
+ "dataset": {
+  "kaggle_ref": "adityammantri/trial-1",
+  "license": "Unknown (not stated by the author)",
+  "rows_read": 54391,
+  "labelled_rows": 44045,
+  "fake": 12523,
+  "real": 31522,
+  "templated_fakes": 10000,
+  "split": "stratified 50/50, seed 7",
+  "train": 22023,
+  "test": 22022,
+  "note": "general job ads (not freelance gigs), lower-cased with punctuation stripped by the dataset author"
+ },
+ "test_all": {
+  "risk_assessor_rules": {
+   "n": 22022,
+   "positives": 6261,
+   "precision": 0.2222,
+   "recall": 0.0006,
+   "f1": 0.0013,
+   "flag_rate": 0.0008
+  },
+  "tfidf_logreg": {
+   "n": 22022,
+   "positives": 6261,
+   "precision": 0.9968,
+   "recall": 0.9559,
+   "f1": 0.9759,
+   "flag_rate": 0.2726
+  }
+ },
+ "test_without_templated_fakes": {
+  "risk_assessor_rules": {
+   "n": 17105,
+   "positives": 1344,
+   "precision": 0.2222,
+   "recall": 0.003,
+   "f1": 0.0059,
+   "flag_rate": 0.0011
+  },
+  "tfidf_logreg_trained_with_templates": {
+   "n": 17105,
+   "positives": 1344,
+   "precision": 0.9825,
+   "recall": 0.7946,
+   "f1": 0.8787,
+   "flag_rate": 0.0635
+  },
+  "tfidf_logreg_trained_without_templates": {
+   "n": 17105,
+   "positives": 1344,
+   "precision": 0.8968,
+   "recall": 0.9442,
+   "f1": 0.9199,
+   "flag_rate": 0.0827
+  }
+ },
+ "test_templated_fakes_only": {
+  "risk_assessor_rules_recall": 0.0,
+  "tfidf_logreg_recall": 1.0
+ },
+ "transfer_to_freelance_posts": {
+  "classifier": "TF-IDF + logistic regression trained on the dataset's train half, templated fakes removed",
+  "real_upwork_posts_flag_rate_tfidf_logreg": 0.0085,
+  "n_real_upwork_posts": 1295,
+  "real_upwork_posts_flag_rate_rules": 0.0008,
+  "synthetic_dev_scams": {
+   "tfidf_logreg": {
+    "n": 600,
+    "positives": 71,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "flag_rate": 0.0
+   },
+   "risk_assessor_rules_text_only": {
+    "n": 600,
+    "positives": 71,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "flag_rate": 0.1183
+   }
+  },
+  "note": "real Upwork posts are unlabelled (assumed mostly legitimate, so the flag rate is an upper bound on false alarms)"
+ },
+ "rules_v1_vs_v2": {
+  "v1": {
+   "synthetic_scam": {
+    "n": 780,
+    "positives": 89,
+    "precision": 0.89,
+    "recall": 1.0,
+    "f1": 0.9418,
+    "flag_rate": 0.1282
+   },
+   "synthetic_injection": {
+    "n": 780,
+    "positives": 63,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "flag_rate": 0.0808
+   },
+   "real_posts_in_sample_flag_rate": 0.0301,
+   "real_2024_heldout_flag_rate": 0.023,
+   "real_2024_heldout_flags": {
+    "upfront_fee": 9,
+    "off_platform_contact": 22,
+    "off_platform_payment": 31,
+    "unpaid_work": 9,
+    "prompt_injection": 1
+   },
+   "real_2024_heldout_flagged_titles": [
+    "Virtual assistant outreach, follow-up, schedule meetings and track metrics for Instagram a",
+    "Administrative Assistant (Malaysian Only)",
+    "WhatsApp x Twilio x Front Integration Expert",
+    "Researcher+Writer With Good understanding Of Bitcoin to create newsletter",
+    "Paiement Circuit for P2P trading",
+    "Online business manager",
+    "Blockchain token and smart contract development",
+    "Coupon System",
+    "Decentralized Identity Management Specialist",
+    "Customer Service Rep",
+    "Chatbot conectado a Telegram",
+    "AI Integration",
+    "Machine Learning Expert for Telegram Trading Messages",
+    "Facebook ad specialist needed for product launch",
+    "VA francophone",
+    "YouTube Growth Partner for Promotions &amp; Advertising",
+    "NFT Game Testing",
+    "Cryptocurrency Investment Researcher",
+    "Partime Personal Admin in KL, Malaysia (RM1,000 for weekend project)",
+    "South Africa- Instant EFT,Bank Transfer- Quick try and test a Crypto On Ramp product",
+    "ATHENS GREECE! DATA ENTRY job",
+    "Looking to hire Facebook Ads Media Buyer within the Bathroom Remodeling Niche",
+    "Virtual Assistants Commission Based",
+    "Business Development",
+    "Crypto Arcade game like roobet chicken",
+    "Copywriter/ translator from English to Russian",
+    "A futuristic crypto website with node.js, express react api project",
+    "Tulsa, 5 Minute Simple, Entry Level Data Input GIG for $10 , virtual assistant,  in Oklaho",
+    "Amazon Product LAUNCH and PPC-Marketing Expert - URGENT in 2 days",
+    "Implement these payment gateways EGP in flutter",
+    "Digital Marketing Virtual Assistant: Content, Video, and Image Specialist",
+    "Hiring VA agencies with Technical expertise",
+    "Japanese language app localisation",
+    "Mobile App for both iOS and Android and Admin Panel (Web)",
+    "WhatsApp Flow Builder (Json)",
+    "Convert Google Doc with equations to Markdown/LaTeX equations",
+    "Phase 1: Zero Knowledge Proof (ZKP) - Cryptography",
+    "Wordpress Directory Theme Configure &amp; Customise",
+    "BOSTON Data Entry",
+    "Website Design and Collaboration"
+   ]
+  },
+  "v2": {
+   "synthetic_scam": {
+    "n": 780,
+    "positives": 89,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "flag_rate": 0.1141
+   },
+   "synthetic_injection": {
+    "n": 780,
+    "positives": 63,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "flag_rate": 0.0808
+   },
+   "real_posts_in_sample_flag_rate": 0.0008,
+   "real_2024_heldout_flag_rate": 0.0017,
+   "real_2024_heldout_flags": {
+    "off_platform_contact": 2,
+    "unpaid_work": 2,
+    "prompt_injection": 1
+   },
+   "real_2024_heldout_flagged_titles": [
+    "Virtual assistant outreach, follow-up, schedule meetings and track metrics for Instagram a",
+    "Excel File Optimisation with Visuals, Macros and Formulas",
+    "Help us to create video using IA video generator",
+    "Laravel Multi-tenancy \u2013 Booking system",
+    "Promotional Products Websites that can be Managed and Resold"
+   ]
+  },
+  "note": "real posts are unlabelled; a flag on them is a false alarm unless the post really asks for off-platform contact/payment, free work or a fee. The v2 flags on the held-out 2024 posts are reviewed by hand in docs/DATA_CARD.md."
+ },
+ "rules_false_positive_signals": {
+  "unpaid_work": 7,
+  "off_platform_payment": 6,
+  "off_platform_contact": 1
+ }
+}

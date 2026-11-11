@@ -55,6 +55,8 @@ class BidDecision(BaseModel):
 class PriceQuote(BaseModel):
     amount: float = Field(gt=0)
     currency: str = "USD"
+    unit: str = Field("fixed", description="'fixed' (total price) or 'hour' (hourly rate, for hourly posts)")
+    market_source: str = Field("synthetic", description="where the market percentiles came from: synthetic | real")
     market_p25: float | None = None
     market_p50: float | None = None
     market_p75: float | None = None

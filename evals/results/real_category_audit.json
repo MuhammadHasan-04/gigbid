@@ -1,0 +1,488 @@
+{
+ "method": "random sample (seed 2024) of 60 ingested real posts; the author read title, tags and description and wrote the category they belong to. Single annotator, so treat as an estimate.",
+ "n": 60,
+ "category_accuracy": 0.7667,
+ "persona_accuracy": 0.85,
+ "rows": [
+  {
+   "job_id": "real-aba72a0ecf",
+   "title": "Programming in R data processing and development of statistical models",
+   "predicted": "research",
+   "judged": "research",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-2c5ccc4c1a",
+   "title": "SPSS and EViews project",
+   "predicted": "forecasting",
+   "judged": "research",
+   "category_correct": false,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-2810ced11d",
+   "title": "Configure business phone / call tracking metrics",
+   "predicted": "web_analytics",
+   "judged": "out_of_domain",
+   "category_correct": false,
+   "persona_correct": false
+  },
+  {
+   "job_id": "real-0e72dbd646",
+   "title": "Use SEMRush to build a competitor kwd gap analysis",
+   "predicted": "out_of_domain",
+   "judged": "out_of_domain",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-b40c47b17b",
+   "title": "Update/modify a python script which uses Openai api",
+   "predicted": "llm_apps",
+   "judged": "llm_apps",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-e4ad2d2dd0",
+   "title": "Compare lead database with LinkedIn (1000 records)",
+   "predicted": "product_analytics",
+   "judged": "out_of_domain",
+   "category_correct": false,
+   "persona_correct": false
+  },
+  {
+   "job_id": "real-2d101f710d",
+   "title": "Low-code Machine learning job - Clean, transform, load, train, deploy 10 text classification models",
+   "predicted": "nlp",
+   "judged": "nlp",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-e2ffd0f0bc",
+   "title": "Test automation Engineer",
+   "predicted": "testing",
+   "judged": "testing",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-a49ccf2d74",
+   "title": "Website development for a cleaning business",
+   "predicted": "mobile",
+   "judged": "web_app",
+   "category_correct": false,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-c5b0e1959c",
+   "title": "Notion builder template",
+   "predicted": "spreadsheet",
+   "judged": "out_of_domain",
+   "category_correct": false,
+   "persona_correct": false
+  },
+  {
+   "job_id": "real-c659a733ac",
+   "title": "SEO Cleanup/optimization for IT firm in CT/USA",
+   "predicted": "out_of_domain",
+   "judged": "out_of_domain",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-9d9acfa841",
+   "title": "Business Analyst with very good experience in e-commerce.",
+   "predicted": "product_analytics",
+   "judged": "product_analytics",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-0b14c0a547",
+   "title": "Azure Backend Developer Node/TypeScript",
+   "predicted": "testing",
+   "judged": "backend",
+   "category_correct": false,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-44201f239b",
+   "title": "JS / Vue.js Developer",
+   "predicted": "web_app",
+   "judged": "web_app",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-c608f99570",
+   "title": "Seeking AI Expert to Create Program for Construction Document Analysis and Generation.",
+   "predicted": "llm_apps",
+   "judged": "llm_apps",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-b6133867cd",
+   "title": "Copywriting for website and new product. Create a strategy for a tech service",
+   "predicted": "out_of_domain",
+   "judged": "out_of_domain",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-6d9602ad2a",
+   "title": "Find domains with links that are not registered anymore for certain top level domains (fix code)",
+   "predicted": "testing",
+   "judged": "testing",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-d059c3c184",
+   "title": "Figma design for SaaS MVP application",
+   "predicted": "out_of_domain",
+   "judged": "out_of_domain",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-a24a5dc39d",
+   "title": "2 Logistic and Geo Projects around Web Dev and Python Programing",
+   "predicted": "testing",
+   "judged": "web_app",
+   "category_correct": false,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-8ca2dcde72",
+   "title": "Expert Needed to Migrate Firebase to MongoDB",
+   "predicted": "backend",
+   "judged": "backend",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-094869ce5b",
+   "title": "Tech Lead for GPT3-powered Microsoft Teams App",
+   "predicted": "llm_apps",
+   "judged": "llm_apps",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-89b5081e44",
+   "title": "Microsoft SQL Data Analyst",
+   "predicted": "research",
+   "judged": "research",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-e50ad6abd9",
+   "title": "Shopify product importing manager",
+   "predicted": "ecommerce",
+   "judged": "out_of_domain",
+   "category_correct": false,
+   "persona_correct": false
+  },
+  {
+   "job_id": "real-dde450b993",
+   "title": "Quality Assurance Lead and Tester for a SaaS Platform",
+   "predicted": "testing",
+   "judged": "testing",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-601d350f12",
+   "title": "Chat gpt - AI Voice Attendant",
+   "predicted": "llm_apps",
+   "judged": "llm_apps",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-0e08517140",
+   "title": "Data analysis logistic rergression",
+   "predicted": "product_analytics",
+   "judged": "product_analytics",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-0a58928b89",
+   "title": "Contract Fullstack Developer for MVP Skilled in API Integration and Web App Dev",
+   "predicted": "api",
+   "judged": "api",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-a1a511a004",
+   "title": "WordPress Website Simple Design Alterations",
+   "predicted": "out_of_domain",
+   "judged": "out_of_domain",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-bd12187fb9",
+   "title": "Small three.js / webgl job - add geo-location and cartesian co-ordinates to an animated earth",
+   "predicted": "web_app",
+   "judged": "web_app",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-d06dad0d55",
+   "title": "Experienced AI Architect to help accelerate Research in a cross-disciplinary Project \u2013 Remote",
+   "predicted": "product_analytics",
+   "judged": "classical_ml",
+   "category_correct": false,
+   "persona_correct": false
+  },
+  {
+   "job_id": "real-cbbabbe614",
+   "title": "SPSS Social Sciences Analyses (Interesting topics)",
+   "predicted": "research",
+   "judged": "research",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-104efa2d87",
+   "title": "Tableau dashboard integrated into Notion",
+   "predicted": "classical_ml",
+   "judged": "bi",
+   "category_correct": false,
+   "persona_correct": false
+  },
+  {
+   "job_id": "real-7767bd548e",
+   "title": "Join the A-team that accelerates scientific discovery",
+   "predicted": "classical_ml",
+   "judged": "out_of_domain",
+   "category_correct": false,
+   "persona_correct": false
+  },
+  {
+   "job_id": "real-489e9be830",
+   "title": "Publicist needed for busy organization",
+   "predicted": "out_of_domain",
+   "judged": "out_of_domain",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-39d4742bd1",
+   "title": "Pinterest marketing and SEO expert for a blog",
+   "predicted": "out_of_domain",
+   "judged": "out_of_domain",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-e60d42dda7",
+   "title": "Vehicle Tracker Android Mobile App",
+   "predicted": "out_of_domain",
+   "judged": "out_of_domain",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-07bf5a6140",
+   "title": "Community Event Website Design",
+   "predicted": "out_of_domain",
+   "judged": "out_of_domain",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-299ef90427",
+   "title": "Open AI API Integration",
+   "predicted": "llm_apps",
+   "judged": "llm_apps",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-2cd25ba38f",
+   "title": "WordPress customize file upload and dynamically generate pages",
+   "predicted": "out_of_domain",
+   "judged": "out_of_domain",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-fc2d93a574",
+   "title": "GHL Expert and Tracking Specialist",
+   "predicted": "product_analytics",
+   "judged": "out_of_domain",
+   "category_correct": false,
+   "persona_correct": false
+  },
+  {
+   "job_id": "real-977e798412",
+   "title": "Data Analyst needed to analyze various categories",
+   "predicted": "product_analytics",
+   "judged": "product_analytics",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-f1763325a1",
+   "title": "Automation garment trading ecom site B2C",
+   "predicted": "out_of_domain",
+   "judged": "out_of_domain",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-68d963e7f0",
+   "title": "Computer vision developer needed for AI project",
+   "predicted": "vision",
+   "judged": "vision",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-fe07af4d13",
+   "title": "Telegram Ai Bot Ecosystem",
+   "predicted": "llm_apps",
+   "judged": "llm_apps",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-5627fb52f3",
+   "title": "GHG Accounting for data centers",
+   "predicted": "product_analytics",
+   "judged": "out_of_domain",
+   "category_correct": false,
+   "persona_correct": false
+  },
+  {
+   "job_id": "real-921080ad1f",
+   "title": "ML Consultant",
+   "predicted": "mlops",
+   "judged": "mlops",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-3e843b6933",
+   "title": "Expert GPT-3 for NLP Davinci fine tuning",
+   "predicted": "llm_apps",
+   "judged": "llm_apps",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-0832758b89",
+   "title": "Arbitrage Trading Startegy using Nodejs",
+   "predicted": "api",
+   "judged": "backend",
+   "category_correct": false,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-583493e0e8",
+   "title": "Classification Engine Review",
+   "predicted": "mlops",
+   "judged": "mlops",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-7aa30a3dd4",
+   "title": "AWS Redshift Consultant for Data Synchronization / ETL",
+   "predicted": "analytics_eng",
+   "judged": "analytics_eng",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-90ab23e403",
+   "title": "Part-time / Full-time / Newbie Mobile Application Developer",
+   "predicted": "mobile",
+   "judged": "mobile",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-2848d47c26",
+   "title": "Data Cleansing and Database Expert",
+   "predicted": "spreadsheet",
+   "judged": "spreadsheet",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-c6c5754a4e",
+   "title": "Mobile App Development that uses ChatGPT",
+   "predicted": "out_of_domain",
+   "judged": "out_of_domain",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-219687051f",
+   "title": "OCR with Deep Learning for reading bank receipts",
+   "predicted": "vision",
+   "judged": "vision",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-0e1b277146",
+   "title": "A/B testing needed",
+   "predicted": "product_analytics",
+   "judged": "product_analytics",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-67e1c1280d",
+   "title": "React developer with admin/spa/saas style app experience",
+   "predicted": "web_app",
+   "judged": "web_app",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-6fa01017d1",
+   "title": "Retail and Manufacturing Data  Analytics",
+   "predicted": "bi",
+   "judged": "bi",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-b728792561",
+   "title": "30-40 hour/week Squarespace Developer",
+   "predicted": "out_of_domain",
+   "judged": "out_of_domain",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-b4eebddb66",
+   "title": "Design of a trading website with funded accounts",
+   "predicted": "web_app",
+   "judged": "web_app",
+   "category_correct": true,
+   "persona_correct": true
+  },
+  {
+   "job_id": "real-059f9cbb8a",
+   "title": "Guidance with Amazon Lex / Lambda / Sagemaker",
+   "predicted": "mlops",
+   "judged": "mlops",
+   "category_correct": true,
+   "persona_correct": true
+  }
+ ]
+}

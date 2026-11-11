@@ -1,0 +1,112 @@
+{
+ "by_primary_skill": {
+  "AI & Machine Learning": {
+   "n": 1403,
+   "hourly_p25": 216.18,
+   "hourly_p50": 280.0,
+   "hourly_p75": 280.0,
+   "job_success_p50": 86.4,
+   "avg_response_time_hrs_p50": 13.1,
+   "earnings_12m_p50": 112689
+  },
+  "Accounting & Finance": {
+   "n": 465,
+   "hourly_p25": 222.51,
+   "hourly_p50": 280.0,
+   "hourly_p75": 280.0,
+   "job_success_p50": 85.7,
+   "avg_response_time_hrs_p50": 12.4,
+   "earnings_12m_p50": 120541
+  },
+  "Content Writing / Copywriting": {
+   "n": 1332,
+   "hourly_p25": 206.75,
+   "hourly_p50": 280.0,
+   "hourly_p75": 280.0,
+   "job_success_p50": 86.8,
+   "avg_response_time_hrs_p50": 12.9,
+   "earnings_12m_p50": 118003
+  },
+  "Data Science & Analytics": {
+   "n": 1063,
+   "hourly_p25": 216.31,
+   "hourly_p50": 280.0,
+   "hourly_p75": 280.0,
+   "job_success_p50": 86.5,
+   "avg_response_time_hrs_p50": 13.3,
+   "earnings_12m_p50": 112319
+  },
+  "Digital Marketing": {
+   "n": 1565,
+   "hourly_p25": 220.23,
+   "hourly_p50": 280.0,
+   "hourly_p75": 280.0,
+   "job_success_p50": 86.7,
+   "avg_response_time_hrs_p50": 12.8,
+   "earnings_12m_p50": 126951
+  },
+  "Graphic Design": {
+   "n": 1104,
+   "hourly_p25": 213.49,
+   "hourly_p50": 280.0,
+   "hourly_p75": 280.0,
+   "job_success_p50": 86.7,
+   "avg_response_time_hrs_p50": 12.9,
+   "earnings_12m_p50": 119280
+  },
+  "Mobile App Development": {
+   "n": 1285,
+   "hourly_p25": 213.61,
+   "hourly_p50": 280.0,
+   "hourly_p75": 280.0,
+   "job_success_p50": 86.2,
+   "avg_response_time_hrs_p50": 13.2,
+   "earnings_12m_p50": 116015
+  },
+  "SEO / SEM": {
+   "n": 231,
+   "hourly_p25": 208.81,
+   "hourly_p50": 280.0,
+   "hourly_p75": 280.0,
+   "job_success_p50": 87.0,
+   "avg_response_time_hrs_p50": 13.2,
+   "earnings_12m_p50": 118400
+  },
+  "Video Editing": {
+   "n": 1035,
+   "hourly_p25": 208.89,
+   "hourly_p50": 280.0,
+   "hourly_p75": 280.0,
+   "job_success_p50": 86.9,
+   "avg_response_time_hrs_p50": 12.9,
+   "earnings_12m_p50": 113817
+  },
+  "Virtual Assistant": {
+   "n": 658,
+   "hourly_p25": 218.73,
+   "hourly_p50": 280.0,
+   "hourly_p75": 280.0,
+   "job_success_p50": 86.9,
+   "avg_response_time_hrs_p50": 13.3,
+   "earnings_12m_p50": 116393
+  },
+  "Web Development": {
+   "n": 1859,
+   "hourly_p25": 212.4,
+   "hourly_p50": 280.0,
+   "hourly_p75": 280.0,
+   "job_success_p50": 86.7,
+   "avg_response_time_hrs_p50": 13.0,
+   "earnings_12m_p50": 119059
+  }
+ },
+ "quality_check": {
+  "hourly_rate_max": 280.0,
+  "share_at_max": 0.6266,
+  "hourly_p50_all": 280.0,
+  "verdict": "REJECTED for pricing: most rates sit at a hard cap and the median is ~10x the real contract median (market_real.json); kept only to document the check"
+ },
+ "used_by_gigbid": false,
+ "kind": "synthetic (third-party)",
+ "source": "sarveshchhetri/freelancer-success-earnings-and-churn-prediction"
+}

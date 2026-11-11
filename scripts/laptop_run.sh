@@ -8,6 +8,7 @@
 #   ./scripts/laptop_run.sh judge-score    # Cohen's kappa between your scores and the LLM judge
 #   ./scripts/laptop_run.sh heldout        # held-out run (15 jobs)
 #   ./scripts/laptop_run.sh compare        # single agent vs supervisor vs graph (R&D question C)
+#   ./scripts/laptop_run.sh real           # the agents on 60 REAL Upwork posts (Kaggle) with gpt-oss
 #   ./scripts/laptop_run.sh results        # regenerate README results block + report PDF inputs
 #   ./scripts/laptop_run.sh push           # commit evals/results + README and push to GitHub
 #   ./scripts/laptop_run.sh all            # dev -> heldout -> compare -> results (no judge steps)
@@ -47,7 +48,7 @@ check_model() {
 start_gigsim() {
   if curl -fs http://127.0.0.1:8081/health >/dev/null 2>&1; then return; fi
   say "Starting GigSim (with held-out jobs) on :8081"
-  GIGSIM_INCLUDE_HELDOUT=1 GIGSIM_RPM=100000 GIGSIM_ERROR_RATE=0 GIGSIM_POLICY_VERSION=2 \
+  GIGSIM_INCLUDE_HELDOUT=1 GIGSIM_REAL_JOBS=1 GIGSIM_RPM=100000 GIGSIM_ERROR_RATE=0 GIGSIM_POLICY_VERSION=2 \
     GIGSIM_STATE_FILE="$ROOT/data/runtime/eval_gigsim_state.json" \
     nohup $PY -m uvicorn gigsim.server:app --host 127.0.0.1 --port 8081 > data/runtime/gigsim.log 2>&1 &
   for _ in $(seq 1 30); do curl -fs http://127.0.0.1:8081/health >/dev/null 2>&1 && return; sleep 1; done
@@ -64,10 +65,12 @@ summary() {
   $PY - <<'EOF'
 import json, glob, os
 for f in sorted(glob.glob("evals/results/pipeline_open*.json")):
-    d = json.load(open(f)); o = d["overall"]["overall"]
+    d = json.load(open(f)); o = d["overall"].get("overall")
+    if o is None:  # the real-posts run has no gold labels
+        continue
     print(f"{os.path.basename(f):45s} jobs={o['n_jobs']:3d} excluded={len(d.get('excluded_quota_fallback', [])):3d} "
           f"F1={o['bid_f1']} props={o['n_proposals']} reply={o['gigsim_reply_rate']} inj_success={o['injection_attack_success_rate']}")
-for name in ("agents_compare.json", "judge_calibration.json", "tool_study.json"):
+for name in ("agents_compare.json", "judge_calibration.json", "tool_study.json", "pipeline_open_real.json"):
     p = f"evals/results/{name}"
     print(name, "OK" if os.path.exists(p) else "not yet")
 EOF
@@ -116,6 +119,14 @@ cmd_compare() {
   [ -f evals/results/pipeline_open_dev.json ] || die "run './scripts/laptop_run.sh dev' first (the graph's results are the baseline)"
   run "R&D C: single ReAct agent vs langgraph-supervisor vs the GigBid graph on the same 9 jobs (gpt-oss-120b)" \
     env MODEL_PROFILE=open $PY -m evals.runners.agents_compare --n 9 --graph-tag open_dev
+  summary
+}
+
+cmd_real() {
+  need_env; start_gigsim
+  curl -fs http://127.0.0.1:8081/health | grep -q '"real_jobs":[1-9]' || die "GigSim is running without real jobs: stop it (it was started outside this script) and rerun"
+  run "Real Upwork posts (Kaggle): 60 posts, 20 per persona, on gpt-oss (no gold labels; see docs/DATA_CARD.md)" \
+    env MODEL_PROFILE=open $PY -m evals.runners.real_data_eval pipeline --tag open_real --concurrency 1
   summary
 }
 
@@ -185,11 +196,12 @@ case "${1:-help}" in
   dev) cmd_dev ;;
   heldout) cmd_heldout ;;
   compare) cmd_compare ;;
+  real) cmd_real ;;
   judge-export) cmd_judge_export ;;
   judge-score) cmd_judge_score ;;
   results) cmd_results ;;
   push) cmd_push ;;
   summary) summary ;;
-  all) cmd_dev; cmd_heldout; cmd_compare; cmd_results ;;
+  all) cmd_dev; cmd_heldout; cmd_compare; cmd_real; cmd_results ;;
   *) sed -n '2,20p' "$0" ;;
 esac

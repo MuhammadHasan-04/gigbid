@@ -52,7 +52,8 @@ def features(job: dict, client: dict, text: str, bid: float, persona_skills: set
     if any(y >= 10 for y in years) or "kubernetes" in lower:
         fabricated.append("inflated_experience")
     contact = bool(EMAIL.search(text) or PHONE.search(text) or "telegram" in lower or "whatsapp" in lower)
-    ceiling = max(job["budget"]["max"], 1) * hidden["budget_flex"]
+    bmax = job["budget"].get("max") or 0
+    ceiling = bmax * hidden["budget_flex"] if bmax > 0 else float("inf")  # real posts may state no budget
     return {
         "must_have_evidenced": mh_ev / max(1, len(mh)),
         "coverage": cov,

@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { api } from "../lib/api/client";
 import { useLoad, useRunStream } from "../lib/hooks";
-import { Badge, ErrorBox, Loading, Score, actionTone } from "../components/ui";
+import { Badge, ErrorBox, Loading, Score, SourceBadge, actionTone, budgetText } from "../components/ui";
 import { RunTimeline } from "../components/RunTimeline";
 
 type Match = { requirement: string; strength: string; evidence_ids: string[]; project_ids: string[]; note: string };
@@ -26,6 +26,7 @@ export default function JobDetail() {
       <div className="page-head">
         <h1>{job.title}</h1>
         <div className="actions">
+          <SourceBadge source={job.source} url={job.source_url} />
           <Badge tone={actionTone(dec.action)}>{dec.action ?? s.status}</Badge>
           {data.interrupt && <Link className="btn primary" to={`/studio/${id}`}>Open proposal studio</Link>}
         </div>
@@ -34,7 +35,7 @@ export default function JobDetail() {
         <div className="card">
           <h2>Job post <span className="muted small">(untrusted text)</span></h2>
           <p className="post">{job.description}</p>
-          <p className="small muted">Budget ${job.budget?.min}–{job.budget?.max} · {job.connects_cost} Connects · {job.proposals_count} proposals · client {job.client_id}</p>
+          <p className="small muted">{budgetText(job.budget)} · {job.connects_cost} Connects · {job.proposals_count} proposals · client {job.client_id}</p>
         </div>
         <div className="card">
           <h2>Bid or skip</h2>
@@ -56,7 +57,7 @@ export default function JobDetail() {
         <div className="card">
           <h2>Price rationale</h2>
           {price ? (<>
-            <p><strong>${price.amount}</strong> (floor ${price.floor}, market p25/p50/p75 {price.market_p25}/{price.market_p50}/{price.market_p75})</p>
+            <p><strong>${price.amount}{price.unit === "hour" ? "/h" : ""}</strong> (floor ${price.floor}{price.unit === "hour" ? "/h" : ""}, {price.market_source === "real" ? "real contracts" : "market"} p25/p50/p75 {price.market_p25}/{price.market_p50}/{price.market_p75})</p>
             <p className="small">{price.connects_cost} Connects · worth it: <Badge tone={price.connects_worth_it ? "good" : "warn"}>{String(price.connects_worth_it)}</Badge> · EV ${price.expected_value_usd}</p>
             <p className="muted small">{price.rationale}</p></>) : <p className="muted">No price: the job was not recommended for a bid.</p>}
         </div>

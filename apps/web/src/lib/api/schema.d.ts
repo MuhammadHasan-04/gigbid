@@ -700,6 +700,11 @@ export interface components {
             budget?: {
                 [key: string]: unknown;
             } | null;
+            /**
+             * Source
+             * @description 'real' (Upwork post from the Kaggle datasets) or 'synthetic' (GigSim stand-in)
+             */
+            source?: string | null;
             /** Thread Id */
             thread_id: string | null;
             /** Trace Id */

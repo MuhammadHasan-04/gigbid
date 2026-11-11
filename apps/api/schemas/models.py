@@ -77,6 +77,7 @@ class JobRow(BaseModel):
     reasons: list[str] = []
     attention_reason: str | None = None
     budget: dict | None = None
+    source: str | None = Field(None, description="'real' (Upwork post from the Kaggle datasets) or 'synthetic' (GigSim stand-in)")
     thread_id: str | None
     trace_id: str | None
     updated_at: Any = None

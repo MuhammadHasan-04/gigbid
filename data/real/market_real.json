@@ -1,0 +1,556 @@
+{
+ "by_category": {
+  "analytics_eng": {
+   "contracts": {
+    "n_hourly": 1069,
+    "hourly_p10": 16.5,
+    "hourly_p25": 25.0,
+    "hourly_p50": 40.0,
+    "hourly_p75": 60.0,
+    "hourly_p90": 90.0,
+    "n_fixed": 430,
+    "fixed_p10": 25.0,
+    "fixed_p25": 50.0,
+    "fixed_p50": 192.0,
+    "fixed_p75": 579.1,
+    "fixed_p90": 1700.0
+   },
+   "postings_2024": {
+    "n": 950,
+    "n_hourly": 472,
+    "hourly_low_p50": 17.0,
+    "hourly_high_p50": 35.0,
+    "n_fixed": 301,
+    "budget_p25": 50.0,
+    "budget_p50": 250.0,
+    "budget_p75": 800.0
+   }
+  },
+  "api": {
+   "contracts": {
+    "n_hourly": 3373,
+    "hourly_p10": 12.5,
+    "hourly_p25": 20.0,
+    "hourly_p50": 30.0,
+    "hourly_p75": 45.0,
+    "hourly_p90": 72.97,
+    "n_fixed": 2788,
+    "fixed_p10": 29.7,
+    "fixed_p25": 60.0,
+    "fixed_p50": 160.0,
+    "fixed_p75": 495.0,
+    "fixed_p90": 1250.0
+   },
+   "postings_2024": {
+    "n": 3723,
+    "n_hourly": 1508,
+    "hourly_low_p50": 16.0,
+    "hourly_high_p50": 35.0,
+    "n_fixed": 1661,
+    "budget_p25": 50.0,
+    "budget_p50": 100.0,
+    "budget_p75": 450.0
+   }
+  },
+  "backend": {
+   "contracts": {
+    "n_hourly": 4308,
+    "hourly_p10": 12.0,
+    "hourly_p25": 16.0,
+    "hourly_p50": 25.0,
+    "hourly_p75": 40.0,
+    "hourly_p90": 60.0,
+    "n_fixed": 2407,
+    "fixed_p10": 20.0,
+    "fixed_p25": 50.0,
+    "fixed_p50": 150.0,
+    "fixed_p75": 455.0,
+    "fixed_p90": 1575.0
+   },
+   "postings_2024": {
+    "n": 4628,
+    "n_hourly": 2171,
+    "hourly_low_p50": 16.0,
+    "hourly_high_p50": 35.0,
+    "n_fixed": 1925,
+    "budget_p25": 30.0,
+    "budget_p50": 100.0,
+    "budget_p75": 500.0
+   }
+  },
+  "bi": {
+   "contracts": {
+    "n_hourly": 3640,
+    "hourly_p10": 15.0,
+    "hourly_p25": 25.0,
+    "hourly_p50": 40.0,
+    "hourly_p75": 60.0,
+    "hourly_p90": 85.0,
+    "n_fixed": 1454,
+    "fixed_p10": 25.0,
+    "fixed_p25": 50.0,
+    "fixed_p50": 150.0,
+    "fixed_p75": 397.0,
+    "fixed_p90": 1000.0
+   },
+   "postings_2024": {
+    "n": 2125,
+    "n_hourly": 1123,
+    "hourly_low_p50": 20.0,
+    "hourly_high_p50": 45.0,
+    "n_fixed": 714,
+    "budget_p25": 25.0,
+    "budget_p50": 70.0,
+    "budget_p75": 200.0
+   }
+  },
+  "classical_ml": {
+   "contracts": {
+    "n_hourly": 1793,
+    "hourly_p10": 15.0,
+    "hourly_p25": 25.0,
+    "hourly_p50": 39.0,
+    "hourly_p75": 60.0,
+    "hourly_p90": 100.0,
+    "n_fixed": 1317,
+    "fixed_p10": 20.0,
+    "fixed_p25": 50.0,
+    "fixed_p50": 140.0,
+    "fixed_p75": 400.0,
+    "fixed_p90": 1280.0
+   },
+   "postings_2024": {
+    "n": 2445,
+    "n_hourly": 1052,
+    "hourly_low_p50": 18.0,
+    "hourly_high_p50": 40.0,
+    "n_fixed": 978,
+    "budget_p25": 40.0,
+    "budget_p50": 100.0,
+    "budget_p75": 450.0
+   }
+  },
+  "ecommerce": {
+   "contracts": {
+    "n_hourly": 15079,
+    "hourly_p10": 7.0,
+    "hourly_p25": 12.0,
+    "hourly_p50": 20.0,
+    "hourly_p75": 33.0,
+    "hourly_p90": 60.0,
+    "n_fixed": 9169,
+    "fixed_p10": 20.0,
+    "fixed_p25": 50.0,
+    "fixed_p50": 150.0,
+    "fixed_p75": 470.0,
+    "fixed_p90": 1287.0
+   },
+   "postings_2024": {
+    "n": 20469,
+    "n_hourly": 9056,
+    "hourly_low_p50": 13.0,
+    "hourly_high_p50": 28.0,
+    "n_fixed": 8152,
+    "budget_p25": 30.0,
+    "budget_p50": 100.0,
+    "budget_p75": 300.0
+   }
+  },
+  "forecasting": {
+   "contracts": {
+    "n_hourly": 347,
+    "hourly_p10": 15.0,
+    "hourly_p25": 25.0,
+    "hourly_p50": 40.0,
+    "hourly_p75": 65.0,
+    "hourly_p90": 100.0,
+    "n_fixed": 247,
+    "fixed_p10": 25.0,
+    "fixed_p25": 74.25,
+    "fixed_p50": 200.0,
+    "fixed_p75": 550.0,
+    "fixed_p90": 1000.0
+   },
+   "postings_2024": {
+    "n": 310,
+    "n_hourly": 156,
+    "hourly_low_p50": 20.0,
+    "hourly_high_p50": 60.0,
+    "n_fixed": 117,
+    "budget_p25": 30.0,
+    "budget_p50": 100.0,
+    "budget_p75": 250.0
+   }
+  },
+  "llm_apps": {
+   "contracts": {
+    "n_hourly": 1873,
+    "hourly_p10": 12.0,
+    "hourly_p25": 20.0,
+    "hourly_p50": 32.0,
+    "hourly_p75": 50.0,
+    "hourly_p90": 80.0,
+    "n_fixed": 1502,
+    "fixed_p10": 30.0,
+    "fixed_p25": 75.0,
+    "fixed_p50": 220.0,
+    "fixed_p75": 650.0,
+    "fixed_p90": 1650.0
+   },
+   "postings_2024": {
+    "n": 4283,
+    "n_hourly": 1828,
+    "hourly_low_p50": 18.0,
+    "hourly_high_p50": 40.0,
+    "n_fixed": 1776,
+    "budget_p25": 50.0,
+    "budget_p50": 150.0,
+    "budget_p75": 500.0
+   }
+  },
+  "mlops": {
+   "contracts": {
+    "n_hourly": 61,
+    "hourly_p10": 20.0,
+    "hourly_p25": 30.0,
+    "hourly_p50": 45.0,
+    "hourly_p75": 55.0,
+    "hourly_p90": 95.0,
+    "n_fixed": 38,
+    "fixed_p10": 20.0,
+    "fixed_p25": 55.0,
+    "fixed_p50": 150.0,
+    "fixed_p75": 300.0,
+    "fixed_p90": 500.0
+   },
+   "postings_2024": {
+    "n": 67,
+    "n_hourly": 39,
+    "hourly_low_p50": 25.0,
+    "hourly_high_p50": 50.0,
+    "n_fixed": 20,
+    "budget_p25": 30.0,
+    "budget_p50": 100.0,
+    "budget_p75": 300.0
+   }
+  },
+  "mobile": {
+   "contracts": {
+    "n_hourly": 2514,
+    "hourly_p10": 10.0,
+    "hourly_p25": 15.0,
+    "hourly_p50": 23.0,
+    "hourly_p75": 35.0,
+    "hourly_p90": 55.0,
+    "n_fixed": 2231,
+    "fixed_p10": 24.75,
+    "fixed_p25": 75.0,
+    "fixed_p50": 250.0,
+    "fixed_p75": 1000.0,
+    "fixed_p90": 3525.0
+   },
+   "postings_2024": {
+    "n": 4557,
+    "n_hourly": 1787,
+    "hourly_low_p50": 15.0,
+    "hourly_high_p50": 30.0,
+    "n_fixed": 2027,
+    "budget_p25": 55.0,
+    "budget_p50": 250.0,
+    "budget_p75": 1000.0
+   }
+  },
+  "nlp": {
+   "contracts": {
+    "n_hourly": 371,
+    "hourly_p10": 15.0,
+    "hourly_p25": 25.0,
+    "hourly_p50": 40.0,
+    "hourly_p75": 60.0,
+    "hourly_p90": 100.0,
+    "n_fixed": 281,
+    "fixed_p10": 40.0,
+    "fixed_p25": 90.0,
+    "fixed_p50": 200.0,
+    "fixed_p75": 400.0,
+    "fixed_p90": 1300.0
+   },
+   "postings_2024": {
+    "n": 267,
+    "n_hourly": 108,
+    "hourly_low_p50": 15.0,
+    "hourly_high_p50": 40.0,
+    "n_fixed": 120,
+    "budget_p25": 30.0,
+    "budget_p50": 80.0,
+    "budget_p75": 200.0
+   }
+  },
+  "out_of_domain": {
+   "contracts": {
+    "n_hourly": 417888,
+    "hourly_p10": 6.0,
+    "hourly_p25": 10.0,
+    "hourly_p50": 20.0,
+    "hourly_p75": 40.0,
+    "hourly_p90": 70.0,
+    "n_fixed": 387027,
+    "fixed_p10": 15.0,
+    "fixed_p25": 40.0,
+    "fixed_p50": 100.0,
+    "fixed_p75": 300.0,
+    "fixed_p90": 900.0
+   },
+   "postings_2024": {
+    "n": 659944,
+    "n_hourly": 269762,
+    "hourly_low_p50": 14.0,
+    "hourly_high_p50": 30.0,
+    "n_fixed": 283074,
+    "budget_p25": 26.0,
+    "budget_p50": 100.0,
+    "budget_p75": 300.0
+   }
+  },
+  "product_analytics": {
+   "contracts": {
+    "n_hourly": 1113,
+    "hourly_p10": 10.0,
+    "hourly_p25": 20.0,
+    "hourly_p50": 35.0,
+    "hourly_p75": 60.0,
+    "hourly_p90": 88.0,
+    "n_fixed": 646,
+    "fixed_p10": 20.0,
+    "fixed_p25": 50.0,
+    "fixed_p50": 115.0,
+    "fixed_p75": 300.0,
+    "fixed_p90": 770.0
+   },
+   "postings_2024": {
+    "n": 1731,
+    "n_hourly": 1004,
+    "hourly_low_p50": 15.0,
+    "hourly_high_p50": 35.0,
+    "n_fixed": 522,
+    "budget_p25": 40.0,
+    "budget_p50": 100.0,
+    "budget_p75": 250.0
+   }
+  },
+  "realtime": {
+   "contracts": {
+    "n_hourly": 125,
+    "hourly_p10": 15.0,
+    "hourly_p25": 20.0,
+    "hourly_p50": 32.22,
+    "hourly_p75": 50.0,
+    "hourly_p90": 70.0,
+    "n_fixed": 126,
+    "fixed_p10": 26.0,
+    "fixed_p25": 50.0,
+    "fixed_p50": 144.0,
+    "fixed_p75": 500.0,
+    "fixed_p90": 1125.0
+   },
+   "postings_2024": {
+    "n": 286,
+    "n_hourly": 87,
+    "hourly_low_p50": 20.0,
+    "hourly_high_p50": 44.0,
+    "n_fixed": 154,
+    "budget_p25": 40.0,
+    "budget_p50": 100.0,
+    "budget_p75": 300.0
+   }
+  },
+  "recsys": {
+   "contracts": {
+    "n_hourly": 40,
+    "hourly_p10": 18.0,
+    "hourly_p25": 25.0,
+    "hourly_p50": 40.0,
+    "hourly_p75": 70.0,
+    "hourly_p90": 100.0,
+    "n_fixed": 32,
+    "fixed_p10": 24.75,
+    "fixed_p25": 50.0,
+    "fixed_p50": 200.0,
+    "fixed_p75": 841.62,
+    "fixed_p90": 2934.0
+   },
+   "postings_2024": {
+    "n": 47,
+    "n_hourly": 28,
+    "hourly_low_p50": 18.0,
+    "hourly_high_p50": 50.0,
+    "n_fixed": 15,
+    "budget_p25": 300.0,
+    "budget_p50": 500.0,
+    "budget_p75": 1000.0
+   }
+  },
+  "research": {
+   "contracts": {
+    "n_hourly": 318,
+    "hourly_p10": 13.0,
+    "hourly_p25": 20.0,
+    "hourly_p50": 40.0,
+    "hourly_p75": 63.0,
+    "hourly_p90": 90.0,
+    "n_fixed": 372,
+    "fixed_p10": 10.0,
+    "fixed_p25": 35.0,
+    "fixed_p50": 80.0,
+    "fixed_p75": 230.4,
+    "fixed_p90": 643.5
+   },
+   "postings_2024": {
+    "n": 437,
+    "n_hourly": 147,
+    "hourly_low_p50": 18.0,
+    "hourly_high_p50": 50.0,
+    "n_fixed": 228,
+    "budget_p25": 20.0,
+    "budget_p50": 50.0,
+    "budget_p75": 100.0
+   }
+  },
+  "spreadsheet": {
+   "contracts": {
+    "n_hourly": 7648,
+    "hourly_p10": 5.0,
+    "hourly_p25": 10.0,
+    "hourly_p50": 25.0,
+    "hourly_p75": 45.0,
+    "hourly_p90": 75.0,
+    "n_fixed": 6957,
+    "fixed_p10": 14.4,
+    "fixed_p25": 27.78,
+    "fixed_p50": 60.5,
+    "fixed_p75": 175.0,
+    "fixed_p90": 450.0
+   },
+   "postings_2024": {
+    "n": 6683,
+    "n_hourly": 2853,
+    "hourly_low_p50": 10.0,
+    "hourly_high_p50": 25.0,
+    "n_fixed": 2716,
+    "budget_p25": 20.0,
+    "budget_p50": 50.0,
+    "budget_p75": 100.0
+   }
+  },
+  "testing": {
+   "contracts": {
+    "n_hourly": 367,
+    "hourly_p10": 10.0,
+    "hourly_p25": 15.0,
+    "hourly_p50": 22.0,
+    "hourly_p75": 35.0,
+    "hourly_p90": 50.0,
+    "n_fixed": 266,
+    "fixed_p10": 10.0,
+    "fixed_p25": 30.0,
+    "fixed_p50": 85.0,
+    "fixed_p75": 180.0,
+    "fixed_p90": 600.0
+   },
+   "postings_2024": {
+    "n": 491,
+    "n_hourly": 198,
+    "hourly_low_p50": 12.0,
+    "hourly_high_p50": 25.0,
+    "n_fixed": 249,
+    "budget_p25": 20.0,
+    "budget_p50": 70.0,
+    "budget_p75": 200.0
+   }
+  },
+  "vision": {
+   "contracts": {
+    "n_hourly": 508,
+    "hourly_p10": 9.86,
+    "hourly_p25": 20.0,
+    "hourly_p50": 30.0,
+    "hourly_p75": 45.0,
+    "hourly_p90": 75.0,
+    "n_fixed": 579,
+    "fixed_p10": 25.0,
+    "fixed_p25": 70.0,
+    "fixed_p50": 249.99,
+    "fixed_p75": 600.0,
+    "fixed_p90": 2000.0
+   },
+   "postings_2024": {
+    "n": 758,
+    "n_hourly": 260,
+    "hourly_low_p50": 18.0,
+    "hourly_high_p50": 40.0,
+    "n_fixed": 370,
+    "budget_p25": 50.0,
+    "budget_p50": 100.0,
+    "budget_p75": 375.0
+   }
+  },
+  "web_analytics": {
+   "contracts": {
+    "n_hourly": 3361,
+    "hourly_p10": 17.0,
+    "hourly_p25": 28.0,
+    "hourly_p50": 46.8,
+    "hourly_p75": 75.0,
+    "hourly_p90": 110.0,
+    "n_fixed": 1699,
+    "fixed_p10": 25.0,
+    "fixed_p25": 50.0,
+    "fixed_p50": 125.0,
+    "fixed_p75": 300.0,
+    "fixed_p90": 750.0
+   },
+   "postings_2024": {
+    "n": 1677,
+    "n_hourly": 858,
+    "hourly_low_p50": 18.0,
+    "hourly_high_p50": 50.0,
+    "n_fixed": 526,
+    "budget_p25": 25.0,
+    "budget_p50": 50.0,
+    "budget_p75": 150.0
+   }
+  },
+  "web_app": {
+   "contracts": {
+    "n_hourly": 13304,
+    "hourly_p10": 10.0,
+    "hourly_p25": 15.0,
+    "hourly_p50": 25.0,
+    "hourly_p75": 39.0,
+    "hourly_p90": 60.0,
+    "n_fixed": 7800,
+    "fixed_p10": 20.0,
+    "fixed_p25": 50.0,
+    "fixed_p50": 200.0,
+    "fixed_p75": 650.0,
+    "fixed_p90": 2170.0
+   },
+   "postings_2024": {
+    "n": 17777,
+    "n_hourly": 8109,
+    "hourly_low_p50": 15.0,
+    "hourly_high_p50": 35.0,
+    "n_fixed": 7206,
+    "budget_p25": 50.0,
+    "budget_p50": 170.0,
+    "budget_p75": 500.0
+   }
+  }
+ },
+ "kind": "real",
+ "source": [
+  "asaniczka/freelance-contracts-dataset-1-3-million-entries",
+  "asaniczka/upwork-job-postings-dataset-2024-50k-records",
+  "asaniczka/all-jobs-on-upwork-200k-plus"
+ ]
+}

@@ -13,6 +13,7 @@ echo "MODEL_PROFILE=open" >> .env
 ./scripts/laptop_run.sh judge-score    # kappa between you and the LLM judge
 ./scripts/laptop_run.sh heldout        # held-out run + second open model (qwen)
 ./scripts/laptop_run.sh compare        # single agent vs supervisor vs graph (R&D C)
+./scripts/laptop_run.sh real           # the agents on 60 real Upwork posts (Kaggle) with gpt-oss
 ./scripts/laptop_run.sh results        # README results block regenerated from the files
 ./scripts/laptop_run.sh push           # commit + push (GitHub sign-in prompt the first time)
 ./scripts/laptop_run.sh summary        # what is done so far

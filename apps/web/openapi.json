@@ -1713,6 +1713,18 @@
       ],
       "title": "Budget"
      },
+     "source": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Source",
+      "description": "'real' (Upwork post from the Kaggle datasets) or 'synthetic' (GigSim stand-in)"
+     },
      "thread_id": {
       "anyOf": [
        {

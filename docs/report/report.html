@@ -11,14 +11,15 @@ img { max-width: 100%; } .two { display: flex; gap: 10px; } .two > div { flex: 1
 code { font-size: 9px; background: #f0f2f1; padding: 0 2px; }
 </style></head><body>
 <h1>GigBid: a multi-agent freelancer copilot</h1>
-<div class="meta">AI-4016 R&amp;D report · Hasan · FAST-NUCES Islamabad · repository commit <code>2baacf0</code> · results profile <code>heuristic</code> ·
+<div class="meta">AI-4016 R&amp;D report · Hasan · FAST-NUCES Islamabad · repository commit <code>a1de0db</code> · results profile <code>heuristic</code> ·
 providers actually used in the main run: {'heuristic': 600}</div>
 
 <div class="box"><b>Read first: threats to validity.</b> (1) The instructor GigSim, persona corpora and dev set were not available; every
 experiment uses this repository's GigSim stand-in (<code>gigsim/</code>, seeded and reproducible), written by the same author as the system.
 (2) The workspace had no LLM API access while these numbers were produced, so results come from the <code>heuristic</code> profile, the deterministic
 rule-based fallback every node has (ADR 0004). Experiments that only make sense with a model (tool-granularity study, single-agent
-comparison, judge calibration) have committed runners and are marked pending. (3) Simulated-client reply rate is a designed proxy.</div>
+comparison, judge calibration) have committed runners and are marked pending. (3) Simulated-client reply rate is a designed proxy. (4) Real Upwork data (six Kaggle datasets, §9) arrived late; it has no gold
+labels, so it is used for a real job board, real prices and checks of the rules, while the labelled metrics stay on the synthetic sets.</div>
 
 <h2>1. Problem and constraints</h2>
 <p>Freelancers spend hours scanning feeds, spend paid Connects on jobs they won't win, send generic proposals, and run into scams that ask for
@@ -26,7 +27,7 @@ free work or off-platform payment. GigBid automates discovery, assessment and dr
 <ul><li><b>Never automated:</b> submitting a proposal, sending a message, spending Connects, claiming experience the portfolio doesn't prove, contacting
 a client off-platform. Enforced by a LangGraph <code>interrupt()</code> <i>and</i> an HMAC approval token checked inside the Marketplace MCP server (ADR 0002).</li>
 <li><b>Allowed automatically:</b> scouting, analysis, skipping (only with autonomy <code>auto_skip_low_fit</code>), drafting.</li>
-<li><b>Budgets</b> (config, enforced per thread): 40 graph steps, 30k tokens per job, max 2 Critic revisions; latency and cost budgets in §10.</li></ul>
+<li><b>Budgets</b> (config, enforced per thread): 40 graph steps, 30k tokens per job, max 2 Critic revisions; latency and cost budgets in §11.</li></ul>
 
 <h2>2. Architecture</h2>
 <div class="two"><div><img src="../images/bid_graph.png" style="max-height:330px"></div><div>
@@ -66,15 +67,15 @@ chunks: <table><thead><tr><th>Config (query-retrieval-mv-ctx-chunk-outcome)</th>
 fixed chunks → 0.8661; adding multi-vector → 0.8172. Context headers and structural chunks carry
 the gain. Held-out: V0 0.8394 vs shipped 0.8634 nDCG@10. V3 (bge-reranker-v2-m3) could not be run: weights on
 Hugging Face were unreachable from the build workspace.</p>
-<h3>End-to-end (results table required by B5)</h3><table><thead><tr><th>Variant</th><th>Evidence R@5</th><th>nDCG@10</th><th>Unsupported / proposal (before → after)</th><th>Judge</th><th>GigSim reply</th><th>Hire</th><th>p95 s/job</th><th>USD/proposal</th></tr></thead><tbody><tr><td>V0</td><td>0.7583</td><td>0.8333</td><td>0.047 → 0.0</td><td>n/a</td><td>0.8333</td><td>0.3675</td><td>0.528</td><td>0.0</td></tr><tr><td>V5</td><td>0.7809</td><td>0.8427</td><td>0.1562 → 0.0</td><td>n/a</td><td>0.875</td><td>0.4777</td><td>0.59</td><td>0.0</td></tr><tr><td>V8</td><td>0.7779</td><td>0.8208</td><td>0.0591 → 0.0</td><td>n/a</td><td>0.8591</td><td>0.4545</td><td>0.5703</td><td>0.0</td></tr><tr><td>Shipped</td><td>0.7662</td><td>0.8799</td><td>0.056 → 0.0</td><td>n/a</td><td>0.8793</td><td>0.4052</td><td>0.5648</td><td>0.0</td></tr></tbody></table><span class="src">[pipeline_heuristic_dev*.json]</span>
-<p>By job type: <table><thead><tr><th>Job type</th><th>R@5 V0</th><th>R@5 shipped</th><th>nDCG V0</th><th>nDCG shipped</th></tr></thead><tbody><tr><td>1-3_requirements</td><td>0.8011</td><td>0.8248</td><td>0.8718</td><td>0.9133</td></tr><tr><td>4+_requirements</td><td>0.7317</td><td>0.7298</td><td>0.8094</td><td>0.8593</td></tr></tbody></table> By persona: <table><thead><tr><th>Persona</th><th>Bid F1</th><th>Scam P</th><th>Scam R</th><th>Price in band</th><th>Proposals</th><th>Reply rate</th><th>R@5 shipped</th><th>R@5 V0</th></tr></thead><tbody><tr><td>ai_ml</td><td>0.9474</td><td>0.9524</td><td>1.0</td><td>0.7317</td><td>82</td><td>0.878</td><td>0.7206</td><td>0.7455</td></tr><tr><td>fullstack</td><td>0.96</td><td>0.8929</td><td>1.0</td><td>0.6471</td><td>85</td><td>0.8941</td><td>0.7969</td><td>0.7653</td></tr><tr><td>data_analyst</td><td>0.9343</td><td>0.9286</td><td>1.0</td><td>0.7385</td><td>65</td><td>0.8615</td><td>0.7802</td><td>0.7639</td></tr></tbody></table></p>
+<h3>End-to-end (results table required by B5)</h3><table><thead><tr><th>Variant</th><th>Evidence R@5</th><th>nDCG@10</th><th>Unsupported / proposal (before → after)</th><th>Judge</th><th>GigSim reply</th><th>Hire</th><th>p95 s/job</th><th>USD/proposal</th></tr></thead><tbody><tr><td>V0</td><td>0.7583</td><td>0.8333</td><td>0.0466 → 0.0</td><td>n/a</td><td>0.8347</td><td>0.3729</td><td>0.3935</td><td>0.0</td></tr><tr><td>V5</td><td>0.7809</td><td>0.8427</td><td>0.1549 → 0.0</td><td>n/a</td><td>0.8761</td><td>0.4823</td><td>0.4915</td><td>0.0</td></tr><tr><td>V8</td><td>0.7779</td><td>0.8208</td><td>0.0586 → 0.0</td><td>n/a</td><td>0.8604</td><td>0.455</td><td>0.4068</td><td>0.0</td></tr><tr><td>Shipped</td><td>0.7662</td><td>0.8799</td><td>0.0556 → 0.0</td><td>n/a</td><td>0.8803</td><td>0.406</td><td>0.4347</td><td>0.0</td></tr></tbody></table><span class="src">[pipeline_heuristic_dev*.json]</span>
+<p>By job type: <table><thead><tr><th>Job type</th><th>R@5 V0</th><th>R@5 shipped</th><th>nDCG V0</th><th>nDCG shipped</th></tr></thead><tbody><tr><td>1-3_requirements</td><td>0.8011</td><td>0.8248</td><td>0.8718</td><td>0.9133</td></tr><tr><td>4+_requirements</td><td>0.7317</td><td>0.7298</td><td>0.8094</td><td>0.8593</td></tr></tbody></table> By persona: <table><thead><tr><th>Persona</th><th>Bid F1</th><th>Scam P</th><th>Scam R</th><th>Price in band</th><th>Proposals</th><th>Reply rate</th><th>R@5 shipped</th><th>R@5 V0</th></tr></thead><tbody><tr><td>ai_ml</td><td>0.9474</td><td>1.0</td><td>1.0</td><td>0.7317</td><td>82</td><td>0.878</td><td>0.7206</td><td>0.7455</td></tr><tr><td>fullstack</td><td>0.9659</td><td>1.0</td><td>1.0</td><td>0.6512</td><td>86</td><td>0.8953</td><td>0.7969</td><td>0.7653</td></tr><tr><td>data_analyst</td><td>0.942</td><td>1.0</td><td>1.0</td><td>0.7273</td><td>66</td><td>0.8636</td><td>0.7802</td><td>0.7639</td></tr></tbody></table></p>
 <p><b>Claim verification (B3).</b> Claims are split by sentence. Each is checked against cited and retrieved evidence by entity (skills incl. ontology
 aliases, numbers, proper names; a wrong name or number is always unsupported) and adjudicated by a model only when it has no checkable entities.
-Unsupported claims are removed before the Critic. Unsupported claims per proposal before verification: 0.056, after: 0.0.
+Unsupported claims are removed before the Critic. Unsupported claims per proposal before verification: 0.0556, after: 0.0.
 <b>LLM-judge calibration:</b> <span class="pending">pending: needs a model endpoint (runner committed)</span>.</p>
-<p><b>Where better retrieval didn't translate into replies, and why.</b> Reply rates across variants (0.8333–0.875)
+<p><b>Where better retrieval didn't translate into replies, and why.</b> Reply rates across variants (0.8347–0.8761)
 moved far less than one verifier rule moved them: before the fix in §8 the shipped pipeline had 0.8362 reply rate with
-0.4612 claims removed per proposal; after, 0.8793 with 0.056. Simulated clients reward
+0.4612 claims removed per proposal; after, 0.8803 with 0.0556. Simulated clients reward
 "must-have evidenced", which saturates once the top 3 items contain one strong match per must-have. Most variants already reach that, so nDCG gains
 deeper in the ranking don't show up in replies. <b>Decision:</b> ship the sweep winner (<code>rag.variant: best</code>); revisit with the model profile.</p>
 
@@ -92,8 +93,8 @@ GitHub) and one new <b>cost</b> (+2 Connects on jobs with 20+ proposals) as <cod
 costs are data read by the Compliance Guard and Pricing Strategist. <b>Caveat:</b> The surcharge and regex-rule mechanisms were designed before the change was known, and the change was authored by the same person, so this is a best case. A rule type the engine cannot express (e.g. time-of-day limits, per-client quotas) would need code in agent/nodes/compliance.py::scan or agent/nodes/pricing.py::connects_cost. <span class="src">[change_request.json]</span></p>
 
 <h2>7. Signature extension: X2 proposal experiments</h2>
-<p>Strategy A (evidence-first) vs B (question-first, short), paired on the same 232 jobs, scored by GigSim's deterministic clients. Reply rate
-A 0.8793 vs B 0.7586, hire A 0.4052 vs B 0.3793. Discordant pairs 46 vs 18,
+<p>Strategy A (evidence-first) vs B (question-first, short), paired on the same 234 jobs, scored by GigSim's deterministic clients. Reply rate
+A 0.8803 vs B 0.7607, hire A 0.406 vs B 0.3803. Discordant pairs 46 vs 18,
 McNemar exact p = 0.0006. B loses because one cited project leaves the second must-have unevidenced. In production, assignment is
 deterministic by job id (<code>experiments.proposal_ab</code>) and the arm is stored on the draft. <span class="src">[ab_test_heuristic.json]</span></p>
 
@@ -101,9 +102,9 @@ deterministic by job id (<code>experiments.proposal_ab</code>) and the arm is st
 <p>All failed dev jobs were grouped by class (<span class="src">[failure_analysis*.json]</span>); examples are listed in the appendix with trace ids.</p><table><thead><tr><th>Failure class</th><th>before fixes</th><th>after fixes</th></tr></thead><tbody><tr><td>injection_reached_writer</td><td>18</td><td>16</td></tr><tr><td>mispriced</td><td>66</td><td>66</td></tr><tr><td>unsupported_claim_removed</td><td>117</td><td>13</td></tr><tr><td>wrong_bid</td><td>28</td><td>3</td></tr><tr><td>wrong_skip</td><td>22</td><td>22</td></tr></tbody></table>
 <ul>
 <li><b>Wrong bid: high-risk new clients</b> (28 → 3). Client with no verified payment and zero spend scored risk below 0.6. <i>Fix:</i> explicit rule
-<code>skip_unverified_new_clients</code> (config). <i>Worked:</i> bid F1 0.9026 → 0.9482.</li>
+<code>skip_unverified_new_clients</code> (config). <i>Worked:</i> bid F1 0.9026 → 0.9526.</li>
 <li><b>Unsupported claim (verifier false positive)</b> (117 → 13 removed sentences). 94 of 107 removals were the writer's framing opener, misread as a claim
-because it contained a skill and "my". <i>Fix:</i> a claim needs a past-work assertion. <i>Worked:</i> reply rate 0.8362 → 0.8793.</li>
+because it contained a skill and "my". <i>Fix:</i> a claim needs a past-work assertion. <i>Worked:</i> reply rate 0.8362 → 0.8803.</li>
 <li><b>Compliance miss (over-blocking)</b>: the phone regex matched ISO slot dates, so offered interview slots were deleted from replies. <i>Fix:</i> stricter
 pattern + regression test. <i>Worked</i> (video, §D).</li>
 <li><b>Mispriced</b> (66): the bid is capped at the posted budget while the gold fair band comes from market history above it. <i>Not
@@ -118,7 +119,30 @@ isolation. <i>Lesson:</i> dedup records need the same lifecycle as the thing the
 <li><b>Generic opening</b>: 0 flagged by simulated clients after the verifier fix; the Critic rejects drafts whose first 80 characters match the generic list.</li>
 </ul>
 
-<h2>9. Safety and platform respect</h2>
+<h2>9. Real data (Kaggle): what it changed</h2>
+<p><b>Selection.</b> Of the six allowed datasets: 60k Upwork posts (Apache 2.0) → the real job board (1295 posts after cleaning,
+de-duplication, contact-detail removal and category mapping); 1.3M contracts (ODC-By) → real price percentiles (479,100 hourly,
+427,368 completed fixed-price); 2024 posts (50k + tracker, ODC-By, 733,655 unique) → recent budgets,
+weekly demand and an untouched test sample; the freelancer-success set was <b>rejected</b> (third-party synthetic; 0.6266
+of rates sit at a $280 cap); the fake-job set (no stated licence) is used only as an outside test, nothing committed. Every job, client and market number carries
+<code>source: real|synthetic</code>; simulated client preferences stay synthetic for everyone. Category mapping, hand-checked on 60 posts:
+0.7667 category, 0.85 persona-level. Details, attribution and limits: <code>docs/DATA_CARD.md</code>.</p>
+<p><b>Calibration.</b> The synthetic generator's hourly medians vs real contract medians: llm_apps 55 vs 32, web_app 40 vs 25, backend 42 vs 25, bi 32 vs 40, web_analytics 28 vs 46.8, research 28 vs 40.
+The synthetic world over-prices developer work by 1.4–1.7× and under-prices analyst work. It was not regenerated (that would invalidate the labelled results);
+real posts are priced from the real contracts instead (hourly rate inside the posted range, or real fixed-price percentiles).</p>
+<p><b>Scam rules v1 → v2.</b> <table><thead><tr><th></th><th>v1</th><th>v2</th></tr></thead><tbody><tr><td>Synthetic scam jobs (text rules), precision / recall</td><td>0.89 / 1.0</td><td>1.0 / 1.0</td></tr><tr><td>Real board posts flagged (in-sample)</td><td>0.0301</td><td>0.0008</td></tr><tr><td>3,000 held-out 2024 posts flagged</td><td>0.023</td><td>0.0017</td></tr><tr><td>Dev pipeline scam precision / bid F1</td><td>0.9221 / 0.9482</td><td>1.0 / 0.9526</td></tr></tbody></table>
+v1 fired on any mention of Telegram, WhatsApp or crypto; on real posts these are usually the product ("build a Telegram bot"). v2 needs an ask
+("contact me on…", "we pay in USDT"). Of the 5 held-out v2 flags, 1 is a true request for free work, 1 ambiguous, 3 false alarms; v2 misses one
+"USDT seller" post that v1 caught by accident. <span class="src">[real_scam_external.json]</span></p>
+<p><b>Outside scam test.</b> On the fake-job set's test half without the template fakes (17,105 ads), the freelance rules catch
+0.003 of fakes; TF-IDF + logistic regression trained on its train half gets F1 0.9199
+there but recall 0.0 on freelance scams. Job-ad fraud and marketplace scams look different, so the classifier is not shipped.</p>
+<p><b>Real posts through the pipeline</b> (60 posts, no labels): bid rate 0.2889 in the persona's market vs
+0.0 outside it; bids inside real p10–p90 1.0, within posted budget 1.0.
+The main in-market skip reasons are real-market facts the synthetic world under-represents: unverified clients with no spend (30% of real clients are
+unverified) and budgets below the personas' floors. <span class="src">[pipeline_heuristic_real.json]</span></p>
+
+<h2>10. Safety and platform respect</h2>
 <ul><li><b>Never:</b> send or spend without approval (interrupt + HMAC token per content hash), scrape or automate a browser (live mode via the
 official MCP only, read polling ≥ 240 min, RUNBOOK), share contact details, claim unproven experience, follow instructions in job posts or client messages.</li>
 <li><b>How:</b> untrusted text is delimited and closing tags are neutralised; the Risk Assessor's rule floor can't be lowered by a model; tool allowlists
@@ -128,10 +152,10 @@ OAuth tokens Fernet-encrypted; every query scoped by user id.</li>
 are shared between users who pick the same demo persona (known tenant-isolation gap for demo personas only); simulated clients cannot test whether
 a real client is misled by a technically-true claim.</li></ul>
 
-<h2>10. Hidden-test results against declared budgets</h2>
+<h2>11. Hidden-test results against declared budgets</h2>
 <p>The instructor's hidden run happens after the deadline. The table reports this repository's own held-out set (180 jobs, separate seed, never used
-for tuning): bid F1 0.9559, scam recall 1.0, precision 0.7826, price in band 0.7077, reply rate
-0.8769, injection success 0.0. <span class="src">[pipeline_heuristic_heldout.json]</span></p><table><thead><tr><th>Budget</th><th>Declared (agent/config.yaml)</th><th>Measured (heuristic profile)</th></tr></thead><tbody><tr><td>p95 latency per job analysed</td><td>20 s</td><td>0.5648 s (dev) / 0.9548 s (held-out)</td></tr><tr><td>p95 latency per proposal</td><td>45 s</td><td>0.6498 s / 1.2444 s</td></tr><tr><td>USD per job analysed</td><td>$0.002</td><td>$0.0 / $0.0</td></tr><tr><td>USD per proposal</td><td>$0.01</td><td>$0.0 / $0.0</td></tr></tbody></table>
+for tuning): bid F1 0.9559, scam recall 1.0, precision 1.0, price in band 0.7077, reply rate
+0.8769, injection success 0.0. <span class="src">[pipeline_heuristic_heldout.json]</span></p><table><thead><tr><th>Budget</th><th>Declared (agent/config.yaml)</th><th>Measured (heuristic profile)</th></tr></thead><tbody><tr><td>p95 latency per job analysed</td><td>20 s</td><td>0.4347 s (dev) / 0.4415 s (held-out)</td></tr><tr><td>p95 latency per proposal</td><td>45 s</td><td>0.481 s / 0.5271 s</td></tr><tr><td>USD per job analysed</td><td>$0.002</td><td>$0.0 / $0.0</td></tr><tr><td>USD per proposal</td><td>$0.01</td><td>$0.0 / $0.0</td></tr></tbody></table>
 <p>Budgets are met trivially on the rule profile (no model calls). One optimisation that helped: passing the scouted job into the graph instead of
 re-fetching it, plus running sync MCP tools off the event loop, cut a 15-job scout+analyse batch from about 75 s to under 25 s under GigSim's rate limit.
 The model-profile numbers will replace these when an endpoint is available.</p>

@@ -11,7 +11,7 @@ strategy is stored on the draft (`ProposalDraft.strategy`), so outcomes in analy
 design, so the client and job are held constant), scores each with GigSim's deterministic simulated clients, and reports reply and
 hire rates, McNemar's exact test on the discordant pairs, and a two-proportion z-test.
 
-**Result (heuristic profile, `evals/results/ab_test_heuristic.json`).** 232 paired jobs. Reply rate A 0.8793 vs B 0.7586; hire rate A 0.4052 vs B 0.3793. Discordant pairs: A-only 46 vs B-only 18. McNemar exact p = 0.0006 (two-proportion z = 3.376, p = 0.0007), so A is significantly better. Shorter
+**Result (heuristic profile, `evals/results/ab_test_heuristic.json`).** 234 paired jobs. Reply rate A 0.8803 vs B 0.7607; hire rate A 0.406 vs B 0.3803. Discordant pairs: A-only 46 vs B-only 18. McNemar exact p = 0.0006 (two-proportion z = 3.373, p = 0.0007), so A is significantly better. Shorter
 proposals lose because B cites only one project, so a client's second must-have skill is left without evidence more often.
 The simulated client rewards "must-have evidenced" more than it penalises length. **Caveat:** the client model is a
 designed proxy, so this tells us what our simulated clients prefer. A real-market test would need X6 (live mode).

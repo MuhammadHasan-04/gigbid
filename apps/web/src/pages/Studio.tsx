@@ -24,7 +24,7 @@ export default function Studio() {
         <ul className="job-list">{list.map((a) => (
           <li key={a.thread_id} className="card job"><div className="job-main"><Link className="job-title" to={`/studio/${a.thread_id.split(":").pop()}`}>{a.title}</Link>
             <div className="chips"><Badge tone={(a.payload as any).compliance?.allowed ? "good" : "bad"}>{(a.payload as any).compliance?.allowed ? "compliant" : "blocked"}</Badge>
-              <Badge>${(a.payload as any).price?.amount}</Badge><Badge>{(a.payload as any).dry_run?.connects_cost} Connects</Badge></div></div></li>))}</ul>
+              <Badge>${(a.payload as any).price?.amount}{(a.payload as any).price?.unit === "hour" ? "/h" : ""}</Badge><Badge>{(a.payload as any).dry_run?.connects_cost} Connects</Badge></div></div></li>))}</ul>
       )}
     </section>
   );
@@ -78,7 +78,7 @@ function ApprovalPanel({ a, onDone }: { a: Approval; onDone: () => void }) {
           <h3>Screening answers</h3>
           {answers.map((ans, i) => <textarea key={i} aria-label={`Screening answer ${i + 1}`} value={ans} rows={3} onChange={(e) => setAnswers(answers.map((x, j) => j === i ? e.target.value : x))} />)}
         </>}
-        <label>Bid (USD)<input type="number" min={1} value={bid} onChange={(e) => setBid(Number(e.target.value))} /></label>
+        <label>{p.price?.unit === "hour" ? "Hourly rate (USD/h)" : "Bid (USD)"}<input type="number" min={1} value={bid} onChange={(e) => setBid(Number(e.target.value))} /></label>
       </div>
       <aside className="side">
         <div className="card">
@@ -96,7 +96,7 @@ function ApprovalPanel({ a, onDone }: { a: Approval; onDone: () => void }) {
         </div>
         <div className="card" data-testid="dry-run">
           <h3>What will be sent (dry run)</h3>
-          <p className="small">Job {p.job_id} · bid <strong>${bid}</strong> · <strong>{p.dry_run?.connects_cost}</strong> Connects (balance {p.dry_run?.connects_balance ?? "?"} → {(p.dry_run?.connects_balance ?? 0) - (p.dry_run?.connects_cost ?? 0)})</p>
+          <p className="small">Job {p.job_id} · bid <strong>${bid}{p.price?.unit === "hour" ? "/h" : ""}</strong> · <strong>{p.dry_run?.connects_cost}</strong> Connects (balance {p.dry_run?.connects_balance ?? "?"} → {(p.dry_run?.connects_balance ?? 0) - (p.dry_run?.connects_cost ?? 0)})</p>
           <p className="small muted">Weekly Connects budget: {me?.settings.weekly_connects_budget}. Approving submits through the marketplace MCP server with an idempotency key; it can never be sent twice.</p>
           <p className="small">Risk {p.risk?.risk_score} · fit {p.fit?.fit_score} · {p.price?.rationale}</p>
         </div>

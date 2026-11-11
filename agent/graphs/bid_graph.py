@@ -139,10 +139,14 @@ async def decide(state: BidState, config) -> dict:
     elif fit["fit_score"] < th["minimum_fit_score"] and action == "bid":
         action = "watch"
         reasons.append(f"fit {fit['fit_score']:.2f} just under threshold")
+    from agent import budget as B
     est_floor = prof["hourly_floor"] * 10
-    if b.get("max", 0) < est_floor and action == "bid":
+    if B.kind(state["job"]) == "fixed" and b.get("max", 0) < est_floor and action == "bid":
         action = "skip"
         reasons.append(f"budget {b.get('max')} below your floor for this scope")
+    elif B.kind(state["job"]) == "hourly" and b.get("max", 0) < prof["hourly_floor"] and action == "bid":
+        action = "skip"
+        reasons.append(f"hourly range tops out at ${b.get('max'):.0f}/h, below your floor ${prof['hourly_floor']}/h")
     stats = await outcome_stats(state["user_id"], state["job"].get("category"))
     if action == "bid" and stats.get("sent", 0) >= 8 and (stats.get("reply_rate") or 0) < 0.05:
         action = "watch"
@@ -173,7 +177,8 @@ async def pricing_node(state: BidState, config) -> dict:
     stats = await outcome_stats(state["user_id"], job.get("category"))
     q = price_fn(job, state["job_spec"], state.get("client") or {}, market if "error" not in market else {}, floor,
                  state["fit"]["fit_score"], settings.policy(), stats.get("reply_rate") or 0.25)
-    b = job.get("budget", {}).get("max") or 0
+    from agent import budget as B
+    b = B.fixed_cap(job) or 0  # hourly posts: the rate is already clamped to the posted range
     if q.floor and b and q.floor > b:
         # the Pricing Strategist can veto: the posted budget cannot cover the user's floor
         d = dict(state["decision"], action="skip", reasons=state["decision"]["reasons"] + [f"budget {b:.0f} below your floor {q.floor:.0f} for this scope"])

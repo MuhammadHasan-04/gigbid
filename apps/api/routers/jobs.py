@@ -14,8 +14,9 @@ router = APIRouter(prefix="/api/jobs", tags=["jobs"])
 
 def to_row(r: dict) -> JobRow:
     posted = r.get("posted") or {}
-    return JobRow(**{k: r.get(k) for k in JobRow.model_fields if k in r and k not in ("flags", "reasons", "budget")},
-                  flags=r.get("flags") or [], reasons=r.get("reasons") or [], budget=posted.get("budget"))
+    return JobRow(**{k: r.get(k) for k in JobRow.model_fields if k in r and k not in ("flags", "reasons", "budget", "source")},
+                  flags=r.get("flags") or [], reasons=r.get("reasons") or [], budget=posted.get("budget"),
+                  source=posted.get("source") or ("synthetic" if posted else None))
 
 
 @router.get("", response_model=list[JobRow])

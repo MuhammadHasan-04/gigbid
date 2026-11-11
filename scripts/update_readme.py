@@ -98,6 +98,30 @@ if jc:
     lines.append(f"**Judge calibration** (`judge_calibration.json`): Cohen's kappa {jc['cohen_kappa']}, quadratic-weighted {jc['quadratic_weighted_kappa']}, "
                  f"exact agreement {jc['exact_agreement']} on {jc['n']} proposals scored by the author.")
     lines.append("")
+rs, rp, ca = load("real_scam_external.json"), load(f"pipeline_{P}_real.json"), load("real_category_audit.json")
+if rs and rp and ca:
+    o, v1, v2 = rp["overall"], rs["rules_v1_vs_v2"]["v1"], rs["rules_v1_vs_v2"]["v2"]
+    ext, tr = rs["test_without_templated_fakes"], rs["transfer_to_freelance_posts"]
+    lines += [f"**Real data (Kaggle, see `docs/DATA_CARD.md`)**", "",
+              f"* Real Upwork posts in the pipeline (`pipeline_{P}_real.json`, {o['n_jobs']} posts, no gold labels): bid rate {o['bid_rate_in_domain']} on posts "
+              f"in the persona's market vs {o['bid_rate_out_of_domain']} outside it; share of bids priced inside the real contracts' p10–p90 "
+              f"{o['price_inside_real_p10_p90']}, within the posted budget {o['price_within_posted_budget']}. Most in-market skips are real-market facts the "
+              f"synthetic world under-represents: unverified clients with no spend, and budgets below the persona's floor.",
+              f"* Category mapping of real posts, checked by hand on {ca['n']} posts (`real_category_audit.json`): {ca['category_accuracy']} category, "
+              f"{ca['persona_accuracy']} persona-level.",
+              f"* Scam rules v1 → v2 (`real_scam_external.json`): false-alarm rate on 3,000 held-out real 2024 posts {v1['real_2024_heldout_flag_rate']} → "
+              f"{v2['real_2024_heldout_flag_rate']}; synthetic scam precision of the text rules {v1['synthetic_scam']['precision']} → {v2['synthetic_scam']['precision']} at recall "
+              f"{v2['synthetic_scam']['recall']}.",
+              f"* Outside scam test (Fake-Job-Posting-Detection, non-templated test half, {ext['risk_assessor_rules']['n']} ads): the freelance-scam rules catch "
+              f"{ext['risk_assessor_rules']['recall']} of fakes; a TF-IDF classifier trained on that dataset gets F1 {ext['tfidf_logreg_trained_without_templates']['f1']} "
+              f"there but recall {tr['synthetic_dev_scams']['tfidf_logreg']['recall']} on freelance scams. Neither transfers, so the classifier is not shipped.",
+              ""]
+ro = load("pipeline_open_real.json")
+if ro:
+    o = ro["overall"]
+    lines += [f"**Real posts on the open profile** (`pipeline_open_real.json`, {o['n_jobs']} posts): bid rate {o['bid_rate_in_domain']} in-market vs "
+              f"{o['bid_rate_out_of_domain']} outside; bids inside real p10–p90 {o['price_inside_real_p10_p90']}; unsupported claims "
+              f"{o['unsupported_before']} → {o['unsupported_after']}; tokens/job {o['tokens_per_job']}.", ""]
 if ab:
     lines.append(f"**Signature extension X2** (`ab_test_{P}.json`): evidence-first (A) {ab['reply_rate_A']} vs question-first (B) {ab['reply_rate_B']} reply rate on "
                  f"{ab['n_paired']} paired jobs, McNemar exact p = {ab['mcnemar_exact_p']}.")
