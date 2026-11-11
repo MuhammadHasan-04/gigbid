@@ -1,5 +1,11 @@
 # Running the remaining model experiments on your laptop
 
+**Easiest (Windows): double-click `RUN_EVERYTHING.bat`.** It clones or updates the repo, asks for your Groq key in
+Notepad (saved to the git-ignored `.env`), then runs every remaining step in order: practice run, held-out run,
+agent comparison, real Upwork posts, your 30 judge scores (the one manual step, skippable), qwen comparison, README
+results, commit + push, and `Documents\gigbid_source.zip`. Run it again if Groq's daily quota runs out; finished calls
+are cached. The step-by-step commands below do the same thing one at a time (`scripts/run_everything.sh` chains them).
+
 Windows: use **Git Bash** (comes with Git for Windows) or **WSL**. You need Python 3.12 and Git.
 
 ```bash

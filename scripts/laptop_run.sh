@@ -7,6 +7,7 @@
 #   ./scripts/laptop_run.sh judge-export   # writes evals/datasets/judge_labels.csv  -> YOU fill human_score (1-5)
 #   ./scripts/laptop_run.sh judge-score    # Cohen's kappa between your scores and the LLM judge
 #   ./scripts/laptop_run.sh heldout        # held-out run (15 jobs)
+#   ./scripts/laptop_run.sh qwen           # second open model on the 30 dev jobs (optional comparison)
 #   ./scripts/laptop_run.sh compare        # single agent vs supervisor vs graph (R&D question C)
 #   ./scripts/laptop_run.sh real           # the agents on 60 REAL Upwork posts (Kaggle) with gpt-oss
 #   ./scripts/laptop_run.sh results        # regenerate README results block + report PDF inputs
@@ -78,10 +79,15 @@ EOF
 
 cmd_setup() {
   say "Python environment"
-  command -v python3 >/dev/null || command -v python >/dev/null || die "Install Python 3.12 first (python.org)"
-  PYBIN=$(command -v python3 || command -v python)
+  # Windows: prefer the py launcher (python3 in Git Bash is often the Microsoft Store stub that does nothing)
+  PYBIN=""
+  for c in "py -3.12" "py -3.11" "py -3" python3.12 python3 python; do
+    if $c -c "import sys; assert sys.version_info >= (3, 11)" >/dev/null 2>&1; then PYBIN="$c"; break; fi
+  done
+  [ -n "$PYBIN" ] || die "Install Python 3.12 from python.org (tick 'Add python.exe to PATH'), then run again"
+  say "Using Python: $PYBIN ($($PYBIN --version 2>&1))"
   if ! [ -x .venv/bin/python ] && ! [ -x .venv/Scripts/python.exe ]; then
-    if command -v uv >/dev/null; then uv venv -p 3.12 .venv; else "$PYBIN" -m venv .venv; fi
+    if command -v uv >/dev/null; then uv venv -p 3.12 .venv; else $PYBIN -m venv .venv; fi
   fi
   if [ -x .venv/Scripts/python.exe ]; then PY=.venv/Scripts/python.exe; else PY=.venv/bin/python; fi
   $PY -m pip install -q --upgrade pip
@@ -109,6 +115,11 @@ cmd_heldout() {
   need_env; start_gigsim
   run "Held-out run: 15 jobs (5 per persona), never used for tuning" \
     env MODEL_PROFILE=open GIGSIM_INCLUDE_HELDOUT=1 $PY -m evals.runners.pipeline_eval --split heldout --tag open_heldout --limit-per-persona 5 --concurrency 1 --require-model
+  summary
+}
+
+cmd_qwen() {
+  need_env; start_gigsim
   run "Second open model (qwen3.8-27b) on the same 30 dev jobs, for the model comparison" \
     env MODEL_PROFILE=open_qwen $PY -m evals.runners.pipeline_eval --tag open_qwen_dev --limit-per-persona 10 --concurrency 1 --require-model
   summary
@@ -125,8 +136,8 @@ cmd_compare() {
 cmd_real() {
   need_env; start_gigsim
   curl -fs http://127.0.0.1:8081/health | grep -q '"real_jobs":[1-9]' || die "GigSim is running without real jobs: stop it (it was started outside this script) and rerun"
-  run "Real Upwork posts (Kaggle): 60 posts, 20 per persona, on gpt-oss (no gold labels; see docs/DATA_CARD.md)" \
-    env MODEL_PROFILE=open $PY -m evals.runners.real_data_eval pipeline --tag open_real --concurrency 1
+  run "Real Upwork posts (Kaggle): 30 posts, 10 per persona, on gpt-oss (no gold labels; see docs/DATA_CARD.md)" \
+    env MODEL_PROFILE=open $PY -m evals.runners.real_data_eval pipeline --tag open_real --per-persona 7 --ood-per-persona 3 --concurrency 1
   summary
 }
 
@@ -186,7 +197,7 @@ cmd_results() {
 
 cmd_push() {
   say "Committing results and pushing to GitHub"
-  git add evals/results evals/datasets/judge_labels.csv evals/datasets/tool_tasks.jsonl README.md docs 2>/dev/null
+  git add evals/results evals/datasets/judge_labels.csv evals/datasets/tool_tasks.jsonl README.md docs/report 2>/dev/null
   git -c user.name="Hasan" -c user.email="${GIT_EMAIL:-ha7971768@gmail.com}" commit -m "Model-backed evaluation runs (Groq gpt-oss / qwen): dev, injection, held-out, agent comparison, judge calibration" || echo "nothing to commit"
   git push origin HEAD:main || die "git push failed: sign in to GitHub when asked, or set a token remote"
 }
@@ -197,11 +208,12 @@ case "${1:-help}" in
   heldout) cmd_heldout ;;
   compare) cmd_compare ;;
   real) cmd_real ;;
+  qwen) cmd_qwen ;;
   judge-export) cmd_judge_export ;;
   judge-score) cmd_judge_score ;;
   results) cmd_results ;;
   push) cmd_push ;;
   summary) summary ;;
-  all) cmd_dev; cmd_heldout; cmd_compare; cmd_real; cmd_results ;;
+  all) cmd_dev; cmd_heldout; cmd_compare; cmd_real; cmd_qwen; cmd_results ;;
   *) sed -n '2,20p' "$0" ;;
 esac
