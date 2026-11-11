@@ -55,6 +55,80 @@ def src(f):
     return f'<span class="src">[{html.escape(f)}]</span>'
 
 
+
+
+def svg_bars(title, cats, series, colors=("#146356", "#c47f17", "#3a6a99"), w=520, h=190, fmt="{:g}", ymax=None):
+    """Grouped bar chart as inline SVG (no plotting dependency). series = [(label, [values])]."""
+    pad_l, pad_b, pad_t = 34, 46, 22
+    vals = [v for _, vs in series for v in vs if v is not None]
+    top = ymax or (max(vals) * 1.15 if vals else 1)
+    cw = (w - pad_l - 6) / max(1, len(cats))
+    bw = cw * 0.8 / len(series)
+    out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" style="font: 8.5px DejaVu Sans, Arial">',
+           f'<text x="{pad_l}" y="11" font-weight="bold" font-size="10">{html.escape(title)}</text>']
+    for i in range(5):
+        y = pad_t + (h - pad_t - pad_b) * i / 4
+        out.append(f'<line x1="{pad_l}" x2="{w - 4}" y1="{y:.1f}" y2="{y:.1f}" stroke="#e3e9e7"/>'
+                   f'<text x="{pad_l - 3}" y="{y + 3:.1f}" text-anchor="end" fill="#666">{fmt.format(round(top * (1 - i / 4), 3))}</text>')
+    for ci, c in enumerate(cats):
+        x0 = pad_l + ci * cw + cw * 0.1
+        for si, (_, vs) in enumerate(series):
+            v = vs[ci]
+            if v is None:
+                continue
+            bh = (h - pad_t - pad_b) * min(v, top) / top
+            x = x0 + si * bw
+            out.append(f'<rect x="{x:.1f}" y="{h - pad_b - bh:.1f}" width="{bw - 1:.1f}" height="{bh:.1f}" fill="{colors[si]}"/>')
+        out.append(f'<text transform="translate({pad_l + ci * cw + cw / 2:.1f},{h - pad_b + 8}) rotate(35)" fill="#333">{html.escape(str(c))}</text>')
+    lx = w - 6
+    for si, (lab, _) in enumerate(reversed(series)):
+        idx = len(series) - 1 - si
+        lx -= 8 + 5.2 * len(lab) + 10
+        out.append(f'<rect x="{lx:.0f}" y="4" width="8" height="8" fill="{colors[idx]}"/><text x="{lx + 11:.0f}" y="11">{html.escape(lab)}</text>')
+    out.append("</svg>")
+    return "".join(out)
+
+
+def svg_lines(title, xs, series, colors=("#146356", "#c47f17", "#3a6a99", "#8a3b8f"), w=520, h=170):
+    pad_l, pad_b, pad_t = 40, 26, 22
+    vals = [v for _, vs in series for v in vs]
+    top = max(vals) * 1.15 if vals else 1
+    out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" style="font: 8.5px DejaVu Sans, Arial">',
+           f'<text x="{pad_l}" y="11" font-weight="bold" font-size="10">{html.escape(title)}</text>']
+    for i in range(5):
+        y = pad_t + (h - pad_t - pad_b) * i / 4
+        out.append(f'<line x1="{pad_l}" x2="{w - 4}" y1="{y:.1f}" y2="{y:.1f}" stroke="#e3e9e7"/>'
+                   f'<text x="{pad_l - 3}" y="{y + 3:.1f}" text-anchor="end" fill="#666">{top * (1 - i / 4) * 100:.1f}%</text>')
+    n = len(xs)
+    X = lambda i: pad_l + (w - pad_l - 8) * i / max(1, n - 1)
+    for i in range(0, n, max(1, n // 6)):
+        out.append(f'<text x="{X(i):.1f}" y="{h - 10}" text-anchor="middle" fill="#333">{html.escape(xs[i])}</text>')
+    for si, (lab, vs) in enumerate(series):
+        pts = " ".join(f"{X(i):.1f},{h - pad_b - (h - pad_t - pad_b) * v / top:.1f}" for i, v in enumerate(vs))
+        out.append(f'<polyline points="{pts}" fill="none" stroke="{colors[si]}" stroke-width="1.6"/>')
+        out.append(f'<rect x="{pad_l + 8 + si * 115}" y="{pad_t - 2}" width="8" height="8" fill="{colors[si]}"/><text x="{pad_l + 19 + si * 115}" y="{pad_t + 5}">{html.escape(lab)}</text>')
+    out.append("</svg>")
+    return "".join(out)
+
+
+def mcp_tools():
+    import asyncio
+    sys.path.insert(0, str(ROOT))
+    rows = []
+    try:
+        from mcp_servers.marketplace.server import mcp as m
+        from mcp_servers.portfolio.server import mcp as pf
+        from mcp_servers.workspace.server import mcp as ws
+        for name, srv in (("Portfolio", pf), ("Marketplace", m), ("Workspace", ws)):
+            for tl in asyncio.run(srv.list_tools()):
+                a = tl.annotations
+                kind = "read" if (a and a.readOnlyHint) else ("write, destructive" if (a and a.destructiveHint) else "write")
+                rows.append([name, f"<code>{tl.name}</code>", kind, "yes" if (a and a.idempotentHint) else "no",
+                             html.escape(tl.description.split(chr(10))[0][:105])])
+    except Exception as e:  # report still builds without the servers importable
+        rows.append(["–", "–", "–", "–", f"tool list unavailable: {html.escape(str(e))[:80]}"])
+    return t(rows, ["Server", "Tool", "Kind", "Idempotent", "Description (first line)"])
+
 pending = '<span class="pending">pending: needs a model endpoint (runner committed)</span>'
 
 rag_tbl = t([[k, v.get("recall5", "–"), v.get("mrr", "–"), v.get("ndcg10", "–"), v.get("by_type", {}).get("4+_requirements", {}).get("recall5", "–"),
@@ -85,16 +159,58 @@ ac_html = (t([[k, v["bid_skip_accuracy"], v["unsupported_claims_per_proposal"], 
               for k, v in ac["results"].items()], ["System", "Bid/skip acc.", "Unsupported/proposal", "Violations", "Reply", "Tokens/job", "p95 s"]) + src("agents_compare.json")) if ac else pending
 jc_html = (f"Cohen's kappa {jc['cohen_kappa']}, quadratic-weighted {jc['quadratic_weighted_kappa']}, exact agreement {jc['exact_agreement']} on {jc['n']} items {src('judge_calibration.json')}") if jc else pending
 
+# ---------- figures and extra tables (all from evals/results and data/real)
+fig_rag = svg_bars("Retrieval quality by variant (dev, 384 jobs)", [k for k in ("v0", "v1", "v2", "v4", "v5", "v8", "best") if k in rag and "ndcg10" in rag[k]],
+                   [("nDCG@10", [rag[k]["ndcg10"] for k in ("v0", "v1", "v2", "v4", "v5", "v8", "best") if k in rag and "ndcg10" in rag[k]]),
+                    ("Recall@5", [rag[k]["recall5"] for k in ("v0", "v1", "v2", "v4", "v5", "v8", "best") if k in rag and "ndcg10" in rag[k]])],
+                   ymax=1.0)
+_cal_keys = list(rcal)
+fig_cal = svg_bars("Median hourly rate (USD): synthetic generator vs real contracts", _cal_keys,
+                   [("synthetic", [rcal[k]["synthetic_hourly_median"] for k in _cal_keys]), ("real (Kaggle contracts)", [rcal[k]["real_hourly_p50"] for k in _cal_keys])],
+                   w=700, h=200)
+_v1, _v2 = rs["rules_v1_vs_v2"]["v1"], rs["rules_v1_vs_v2"]["v2"]
+fig_scam = svg_bars("Real posts flagged as scams (%)", ["board posts", "2024 held-out"],
+                    [("v1", [_v1["real_posts_in_sample_flag_rate"] * 100, _v1["real_2024_heldout_flag_rate"] * 100]),
+                     ("v2", [_v2["real_posts_in_sample_flag_rate"] * 100, _v2["real_2024_heldout_flag_rate"] * 100])], w=400, h=170, fmt="{:.2f}")
+_dem = json.loads((REAL / "demand_real.json").read_text()) if (REAL / "demand_real.json").exists() else None
+fig_dem = svg_lines("2024 share of Upwork posts per week in each persona's market (real, 733k posts)", _dem["weeks"],
+                    [(lab, [sum(_dem["share"].get(c, [0] * len(_dem["weeks"]))[i] for c in cs) for i in range(len(_dem["weeks"]))])
+                     for lab, cs in (("AI/ML", ("llm_apps", "classical_ml", "vision", "nlp", "mlops", "recsys")),
+                                     ("Full-stack", ("web_app", "backend", "realtime", "ecommerce", "api", "testing", "mobile")),
+                                     ("Data analyst", ("bi", "analytics_eng", "product_analytics", "web_analytics", "spreadsheet", "forecasting", "research")))]) if _dem else ""
+_rm = json.loads((REAL / "market_real.json").read_text())["by_category"] if (REAL / "market_real.json").exists() else {}
+market_tbl = t([[k, _rm[k]["contracts"]["n_hourly"], f"{_rm[k]['contracts']['hourly_p25']:g}–{_rm[k]['contracts']['hourly_p75']:g}", _rm[k]["contracts"]["n_fixed"],
+                 f"{_rm[k]['contracts']['fixed_p25']:g}–{_rm[k]['contracts']['fixed_p75']:g}",
+                 f"{(_rm[k].get('postings_2024') or {}).get('hourly_low_p50', '–')}–{(_rm[k].get('postings_2024') or {}).get('hourly_high_p50', '–')}"]
+                for k in ("llm_apps", "classical_ml", "vision", "web_app", "backend", "ecommerce", "bi", "analytics_eng", "spreadsheet") if k in _rm],
+               ["Category", "Hourly contracts", "Hourly p25–p75 ($)", "Fixed contracts", "Fixed p25–p75 ($)", "2024 posted hourly range (medians)"])
+data_tbl = t([["Synthetic (GigSim stand-in)", "600 dev + 180 held-out jobs, 158 live, 260 clients, 1,500 price history, 3 personas", "gold bid/skip, scams, injections, fair price band, relevant evidence", "all labelled metrics"],
+              ["Real: Upwork jobs 60k (Apache 2.0)", f"{rman['jobs60k']['jobs_kept']:,} posts + client stats", "none (skill tags only)", "job board, real-post pipeline run"],
+              ["Real: contracts 1.3M (ODC-By)", f"{rman['contracts']['hourly_contracts']:,} hourly + {rman['contracts']['fixed_completed_contracts']:,} fixed", "–", "real price percentiles"],
+              ["Real: 2024 posts 50k + tracker (ODC-By)", f"{rman['postings_2024']['unique_postings']:,} unique posts", "–", "budgets, demand, 3,000 held-out posts"],
+              ["Freelancer success (Apache 2.0, synthetic)", "12,000 records", "–", "rejected after a quality check"],
+              ["Fake job posts (licence not stated)", "44,045 labelled ads", "real / fake", "outside scam test only, not committed"]],
+             ["Source", "Size used", "Labels", "Role"]) if rman else ""
+tools_tbl = mcp_tools()
+_open = {k: O(k) for k in ("open_dev", "open_heldout", "open_qwen_dev", "open_dev_injection", "open_dev_injection_nodefence")}
+open_tbl = t([[k, ("done" if v else "pending (laptop run)"), v and v["n_jobs"], v and v["bid_f1"], v and v["scam_recall"], v and v["n_proposals"],
+               v and v["unsupported_after"], v and v["gigsim_reply_rate"], v and v["tokens_per_job"], v and v["usd_per_proposal"]] for k, v in _open.items()]
+             + [["tool_study (R&D A)", "done" if tool else "pending", tool and tool["toolsets"]["best"]["n"], None, None, None, None, None, None, None],
+                ["agents_compare (R&D C)", "done" if ac else "pending", None, None, None, None, None, None, None, None],
+                ["judge_calibration (B4)", "done" if jc else "pending", jc and jc["n"], None, None, None, None, None, None, None],
+                ["open_real (real posts)", "done" if L("pipeline_open_real.json") else "pending", None, None, None, None, None, None, None, None]],
+             ["Run (open profile)", "Status", "Jobs", "Bid F1", "Scam R", "Proposals", "Unsupported after", "Reply", "Tokens/job", "USD/prop."])
+
 CSS = """
-@page { size: A4; margin: 16mm 15mm 16mm 15mm; @bottom-center { content: counter(page); font-size: 9px; color: #777; } }
-body { font: 10.2px/1.42 'DejaVu Sans', Arial, sans-serif; color: #1b1f1d; }
-h1 { font-size: 20px; margin: 0 0 2px; color: #0f4c42; } h2 { font-size: 13.5px; color: #0f4c42; border-bottom: 1.5px solid #cfe0db; padding-bottom: 2px; margin: 13px 0 5px; page-break-after: avoid; }
+@page { size: A4; margin: 16mm 15mm 16mm 15mm; }
+body { font: 11px/1.5 'DejaVu Sans', Arial, sans-serif; color: #1b1f1d; }
+h1 { font-size: 20px; margin: 0 0 2px; color: #0f4c42; } h2 { font-size: 14.5px; color: #0f4c42; border-bottom: 1.5px solid #cfe0db; padding-bottom: 2px; margin: 13px 0 5px; page-break-after: avoid; }
 h3 { font-size: 11px; margin: 8px 0 3px; } p { margin: 3px 0 5px; } ul { margin: 2px 0 6px 16px; padding: 0; } li { margin: 1px 0; }
-table { border-collapse: collapse; width: 100%; margin: 4px 0 6px; font-size: 9px; page-break-inside: avoid; }
+table { border-collapse: collapse; width: 100%; margin: 4px 0 6px; font-size: 9.6px; page-break-inside: avoid; }
 th { background: #e8f2ef; text-align: left; } th, td { border: 1px solid #cfd8d4; padding: 2.5px 4px; vertical-align: top; }
 .src { color: #3a6a99; font-size: 8.5px; } .pending { color: #9a5a00; font-style: italic; } .meta { color: #555; font-size: 9.5px; }
 .box { background: #f4f7f6; border-left: 3px solid #146356; padding: 5px 8px; margin: 6px 0; }
-img { max-width: 100%; } .two { display: flex; gap: 10px; } .two > div { flex: 1; }
+img { max-width: 100%; } .two { display: flex; gap: 10px; } .two > div { flex: 1; } figure { margin: 6px 0 8px; text-align: center; page-break-inside: avoid; } figcaption { font-size: 9.3px; color: #555; margin-top: 2px; } .pb { page-break-before: always; }
 code { font-size: 9px; background: #f0f2f1; padding: 0 2px; }
 """
 
@@ -107,19 +223,39 @@ providers actually used in the main run: {cfg.get('providers_actually_used')}</d
 experiment uses this repository's GigSim stand-in (<code>gigsim/</code>, seeded and reproducible), written by the same author as the system.
 (2) The workspace had no LLM API access while these numbers were produced, so results come from the <code>{P}</code> profile, the deterministic
 rule-based fallback every node has (ADR 0004). Experiments that only make sense with a model (tool-granularity study, single-agent
-comparison, judge calibration) have committed runners and are marked pending. (3) Simulated-client reply rate is a designed proxy. (4) Real Upwork data (six Kaggle datasets, §9) arrived late; it has no gold
+comparison, judge calibration) have committed runners and are marked pending. (3) Simulated-client reply rate is a designed proxy. (4) Real Upwork data (six Kaggle datasets, §11) arrived late; it has no gold
 labels, so it is used for a real job board, real prices and checks of the rules, while the labelled metrics stay on the synthetic sets.</div>
 
-<h2>1. Problem and constraints</h2>
+
+<h2>Executive summary</h2>
+<p>GigBid is a LangGraph multi-agent copilot that finds freelance jobs, decides bid / watch / skip with reasons, prices, drafts a proposal whose every
+claim is backed by the freelancer's portfolio, and stops at a human approval gate before anything is sent or any Connects are spent. It talks to the
+marketplace, portfolio and calendar only through three MCP servers. The table lists the headline numbers; each comes from a committed file in
+<code>evals/results/</code> and is rebuilt into this PDF by <code>docs/report/build_report.py</code>.</p>
+{t([["Bid / skip F1 (dev, 600 jobs)", dev['bid_f1'], ho['bid_f1'], "graph + rule floor"],
+    ["Scam recall / precision", f"{dev['scam_recall']} / {dev['scam_precision']}", f"{ho['scam_recall']} / {ho['scam_precision']}", "Risk Assessor v2"],
+    ["Price inside fair band", dev['price_in_band'], ho['price_in_band'], "capped at posted budget (§10)"],
+    ["Unsupported claims per proposal (after verifier)", dev['unsupported_after'], ho['unsupported_after'], "claim verifier"],
+    ["Injection attack success", dev['injection_attack_success_rate'], ho['injection_attack_success_rate'], "defence in depth"],
+    ["Simulated-client reply rate", dev['gigsim_reply_rate'], ho['gigsim_reply_rate'], "designed proxy"],
+    ["Retrieval nDCG@10 (V0 → shipped)", f"{rag['v0']['ndcg10']} → {rag['best']['ndcg10']}", f"{rag_ho['v0']['ndcg10']} → {rag_ho['best']['ndcg10']}", "64-config sweep"],
+    ["X2 A/B reply rate (A vs B)", f"{ab['reply_rate_A']} vs {ab['reply_rate_B']}", "–", f"McNemar p = {ab['mcnemar_exact_p']}"]],
+   ["Metric", "Dev", "Held-out", "Mechanism"])}{src(f'pipeline_{P}_dev.json, pipeline_{P}_heldout.json')}
+<p><b>Answers to the three R&amp;D questions.</b> (A) Mid-grained tools with "what this is not for" descriptions are shipped (§5). (B) The pre-registered
+RAG hypothesis was <i>rejected</i>: decomposition and hybrid search alone lowered Recall@5; context headers and structural chunks carried the gain (§6).
+(C) The hand-built graph is shipped because only it can put the approval interrupt and the compliance pass at a fixed point (§7).
+<b>Real data:</b> 1,295 real Upwork posts form the live job board and 1.3M real contracts price them; they exposed and fixed a scam-rule false-alarm
+problem (§11). <b>Biggest open item:</b> model-backed (Groq gpt-oss) runs are produced by the one-command laptop script; their status is in §12.</p>
+<h2 class="pb">1. Problem and constraints</h2>
 <p>Freelancers spend hours scanning feeds, spend paid Connects on jobs they won't win, send generic proposals, and run into scams that ask for
 free work or off-platform payment. GigBid automates discovery, assessment and drafting. The freelancer makes every decision that leaves the system.</p>
 <ul><li><b>Never automated:</b> submitting a proposal, sending a message, spending Connects, claiming experience the portfolio doesn't prove, contacting
 a client off-platform. Enforced by a LangGraph <code>interrupt()</code> <i>and</i> an HMAC approval token checked inside the Marketplace MCP server (ADR 0002).</li>
 <li><b>Allowed automatically:</b> scouting, analysis, skipping (only with autonomy <code>auto_skip_low_fit</code>), drafting.</li>
-<li><b>Budgets</b> (config, enforced per thread): 40 graph steps, 30k tokens per job, max 2 Critic revisions; latency and cost budgets in §11.</li></ul>
+<li><b>Budgets</b> (config, enforced per thread): 40 graph steps, 30k tokens per job, max 2 Critic revisions; latency and cost budgets in §14.</li></ul>
 
 <h2>2. Architecture</h2>
-<div class="two"><div><img src="../images/bid_graph.png" style="max-height:330px"></div><div>
+<div class="two"><div><img src="../images/bid_graph.png" style="max-height:380px"><div class="meta" style="text-align:center">Figure 1. Bid graph (exported from LangGraph).</div></div><div>
 <p><b>Bid graph</b> (one thread per job): intake → <code>Send</code> to Job Analyst ∥ Risk Assessor ∥ Fit Matcher → decide (bid/watch/skip with reasons)
 → Pricing (can veto) → Writer → claim Verifier → Critic (≤2 loops) → Compliance → approval interrupt → submit (non-LLM executor, idempotency keys
 derived from the thread). <b>Conversation graph</b> (one thread per client conversation): load → classify intent (+injection) → calendar slots →
@@ -131,13 +267,47 @@ audit log), Workspace (calendar, email drafts), plus GitHub MCP for repo ingesti
 <b>Stores:</b> Postgres (app tables, LangGraph checkpointer, LangGraph store for memory), Redis (Arq queue), in-process vectors + BM25 (ADR 0003).</p>
 <p><b>Why each agent exists:</b> parallel analysts cut wall-clock time and keep the Analyst tool-less (an injected post can't trigger tool calls).
 Fit Matcher makes "no evidence" explicit per requirement. Pricing computes numbers in code and the model only explains them. Verifier, Critic and
-Compliance are separated because each failure needs a different fix (§8). Typed hand-offs: <code>JobSpec, RiskReport, FitReport, BidDecision,
+Compliance are separated because each failure needs a different fix (§10). Typed hand-offs: <code>JobSpec, RiskReport, FitReport, BidDecision,
 PriceQuote, ProposalDraft, Critique, ComplianceVerdict</code>. State, execution trace and long-term memory are kept apart (docs/ARCHITECTURE.md).</p></div></div>
 <p><b>Durability (C6)</b> is tested in <code>tests/integration</code>: the graph pauses at approval, the process is replaced, approval resumes from the
 Postgres checkpoint, and replaying the <code>submit</code> node from the previous checkpoint returns <code>idempotent_replay</code> with exactly one GigSim
 submission and one Connects deduction. Public traces: <code>docs/traces/</code> (scam skip, approval, injection, Critic loop, crash-and-resume).</p>
+<figure><img src="../images/conversation_graph.png" style="max-height:250px"><figcaption>Figure 2. Conversation graph: one thread per client conversation; the same approval interrupt guards every send.</figcaption></figure>
 
-<h2>3. R&amp;D question A: tool granularity</h2>
+
+
+<h2>3. MCP servers and tool surface</h2>
+<p>All three servers are FastMCP processes with typed input schemas and MCP tool annotations. The table is generated at build time from
+<code>list_tools()</code>, so it always matches the code. Contract tests snapshot the same list and fail on any unreviewed change.</p>
+{tools_tbl}
+<p><b>Write safety.</b> <code>submit_proposal</code> and <code>send_message</code> are the only destructive tools. Each needs an HMAC approval token bound to
+the content hash the freelancer approved, an idempotency key derived from the graph thread, and accepts <code>dry_run</code>. A replay returns
+<code>idempotent_replay</code> instead of a second submission. Every write is appended to a hash-chained audit log with PII masked.</p>
+<h3>Portfolio MCP: the publishable server</h3>
+<div class="two"><div><p>The Portfolio server is self-contained (<code>mcp_servers/portfolio/</code>, its own <code>pyproject.toml</code>, README and
+<code>server.json</code>). It exposes 3 read-only tools, resources for each case study (<code>portfolio://case/&lt;id&gt;</code>) and a
+<code>proposal_evidence</code> prompt, and runs over stdio or Streamable HTTP. Any MCP client can use it to ground a cover letter in a person's real
+projects. It runs the same hybrid retriever as the agent (decomposition, BM25 + vectors, contextual headers), so the published tool and the evaluated
+pipeline cannot drift apart. It was checked in the official MCP Inspector (right): tool list, a live <code>search_evidence</code> call, resources and prompts.</p>
+<p>Lessons: tool descriptions matter more than names (the model picked <code>get_case_study</code> for searches until its description said
+"only for a known id"); results return short evidence snippets with ids rather than whole documents, which kept tokens per proposal down.</p></div>
+<div><img src="../images/inspector_portfolio_call.png" style="max-height:300px; border:1px solid #cfd8d4"><div class="meta" style="text-align:center">Figure 3. MCP Inspector: <code>search_evidence</code> call.</div></div></div>
+
+<h2>4. Data: synthetic world and real Upwork data</h2>
+<p>Labelled metrics need gold answers (bid or skip, scam or not, fair price band, which project is relevant evidence), and no public dataset has them.
+So the experiments run on a seeded synthetic marketplace (GigSim stand-in), and six permitted Kaggle datasets supply what synthetic data cannot: real
+posts, real prices and real demand. Every record carries <code>source: real|synthetic</code>, and the UI shows a badge for it.</p>
+{data_tbl}
+<figure>{fig_cal}<figcaption>Figure 4. Median hourly rate per category. The synthetic generator over-prices developer work and under-prices analyst work
+(data/real/calibration.json); real posts are therefore priced from the real contracts, not from the generator.</figcaption></figure>
+<p><b>Real price bands used by the Pricing Strategist</b> (completed contracts, 2024 posted ranges):</p>{market_tbl}
+<figure>{fig_dem}<figcaption>Figure 5. Weekly share of 2024 posts in each persona's categories (data/real/demand_real.json). GigSim's live feed uses
+these shares for its arrival mix, so the board's category balance follows the real market.</figcaption></figure>
+<p><b>Preprocessing</b> (<code>scripts/ingest_kaggle.py</code>, deterministic, about 75 s): HTML and contact details stripped, exact and near duplicates
+removed, budgets parsed into hourly range or fixed amount, categories mapped from title and tags first (description only as a fallback with two cues),
+out-of-domain posts kept but marked, client stats joined, and percentiles computed per category. Licences: Apache 2.0 and ODC-By, attributed in
+<code>docs/DATA_CARD.md</code> and <code>data/real/MANIFEST.json</code>.</p>
+<h2>5. R&amp;D question A: tool granularity</h2>
 <p><b>Hypothesis:</b> a small set of mid-grained tools with rewritten, disambiguating descriptions beats both 17 fine-grained tools (selection errors
 between near-duplicates) and 3 coarse tools with an <code>action</code> enum (argument errors) on tool-selection and argument accuracy, at fewer
 tokens per task than fine-grained. <b>Setup:</b> 40 tasks with known correct calls (<code>evals/datasets/tool_tasks.jsonl</code>), same model, native tool
@@ -145,10 +315,11 @@ calling, <code>tool_choice=required</code>. <b>Results:</b> {tool_html}</p>
 <p><b>Shipped design:</b> 10 read tools + 3 write tools; descriptions say what the tool is <i>not</i> for ("never for details of one known job id").
 Contract tests pin schemas and annotations (<code>tests/contract/snapshots</code>).</p>
 
-<h2>4. R&amp;D question B: RAG variants, claim verification, shipped choice</h2>
+<h2>6. R&amp;D question B: RAG variants, claim verification, shipped choice</h2>
 <p><b>Hypothesis (stated before running):</b> requirement decomposition plus hybrid retrieval raises evidence Recall@5 by 5+ points over V0 on jobs
 with 4+ requirements. <b>Result: rejected.</b> Alone, V1 and V2 lowered Recall@5. Corpus: 384 dev jobs with gold evidence; retrieval unit = project.</p>
 {rag_tbl}{src(f'rag_{P}.json')}
+<figure>{fig_rag}<figcaption>Figure 6. nDCG@10 and Recall@5 per variant on 384 dev jobs. The shipped "best" pipeline wins on ranking quality (nDCG), not on Recall@5.</figcaption></figure>
 <p>A 64-config sweep with nDCG@10 declared as the primary metric before running picked decompose + hybrid + contextual header + structural
 chunks: {sweep_top}{src(f'rag_sweep_{P}.json')}</p>
 <p><b>Ablation of the shipped pipeline</b> (one component at a time): no decomposition → nDCG {rag['best-no_decompose']['ndcg10']}; no BM25 →
@@ -163,31 +334,31 @@ aliases, numbers, proper names; a wrong name or number is always unsupported) an
 Unsupported claims are removed before the Critic. Unsupported claims per proposal before verification: {dev['unsupported_before']}, after: {dev['unsupported_after']}.
 <b>LLM-judge calibration:</b> {jc_html}.</p>
 <p><b>Where better retrieval didn't translate into replies, and why.</b> Reply rates across variants ({vrows['v0']['gigsim_reply_rate']}–{vrows['v5']['gigsim_reply_rate']})
-moved far less than one verifier rule moved them: before the fix in §8 the shipped pipeline had {before_fix['gigsim_reply_rate']} reply rate with
+moved far less than one verifier rule moved them: before the fix in §10 the shipped pipeline had {before_fix['gigsim_reply_rate']} reply rate with
 {before_fix['unsupported_before']} claims removed per proposal; after, {dev['gigsim_reply_rate']} with {dev['unsupported_before']}. Simulated clients reward
 "must-have evidenced", which saturates once the top 3 items contain one strong match per must-have. Most variants already reach that, so nDCG gains
 deeper in the ranking don't show up in replies. <b>Decision:</b> ship the sweep winner (<code>rag.variant: best</code>); revisit with the model profile.</p>
 
-<h2>5. R&amp;D question C: single agent vs supervisor vs graph</h2>
+<h2>7. R&amp;D question C: single agent vs supervisor vs graph</h2>
 <p><b>Setup:</b> 50 dev jobs (all scams and injections in the sample plus normal jobs), (a) one ReAct agent holding all tools, (b) prebuilt
 <code>langgraph-supervisor</code> with researcher/matcher/writer, (c) the hand-built graph. Same model, same tools, same verifier and policy scan applied to outputs.
 <b>Results:</b> {ac_html}</p>
 <p><b>Expectation to test:</b> the single agent should match the graph on simple in-domain jobs at lower latency and fail on scams and injections (no
 rule floor, no separate compliance pass), and on claims (no verifier). Whether to ship it: no, because only the graph can enforce the approval interrupt at a fixed point.</p>
 
-<h2>6. The change request</h2>
+<h2>8. The change request</h2>
 <p>The official 2 Nov "platform policy update" text was not available, so the GigSim stand-in models one new <b>rule</b> (no external links except
 GitHub) and one new <b>cost</b> (+2 Connects on jobs with 20+ proposals) as <code>policy_v2.yaml</code>. Absorbing it: {cr['config_lines_changed']} config line
 (<code>policy.version: 2</code>), {cr['code_lines_changed']} code lines, {cr['time_to_absorb_seconds']} s including the full test suite ({cr['tests_after_change']}). Rules and
 costs are data read by the Compliance Guard and Pricing Strategist. <b>Caveat:</b> {html.escape(cr['caveat'])} {src('change_request.json')}</p>
 
-<h2>7. Signature extension: X2 proposal experiments</h2>
+<h2>9. Signature extension: X2 proposal experiments</h2>
 <p>Strategy A (evidence-first) vs B (question-first, short), paired on the same {ab['n_paired']} jobs, scored by GigSim's deterministic clients. Reply rate
 A {ab['reply_rate_A']} vs B {ab['reply_rate_B']}, hire A {ab['hire_rate_A']} vs B {ab['hire_rate_B']}. Discordant pairs {ab['discordant_A_only']} vs {ab['discordant_B_only']},
 McNemar exact p = {ab['mcnemar_exact_p']}. B loses because one cited project leaves the second must-have unevidenced. In production, assignment is
 deterministic by job id (<code>experiments.proposal_ab</code>) and the arm is stored on the draft. {src(f'ab_test_{P}.json')}</p>
 
-<h2>8. Failure analysis</h2>
+<h2>10. Failure analysis</h2>
 <p>All failed dev jobs were grouped by class ({src('failure_analysis*.json')}); examples are listed in the appendix with trace ids.</p>{fa_tbl}
 <ul>
 <li><b>Wrong bid: high-risk new clients</b> (28 → 3). Client with no verified payment and zero spend scored risk below 0.6. <i>Fix:</i> explicit rule
@@ -208,7 +379,7 @@ isolation. <i>Lesson:</i> dedup records need the same lifecycle as the thing the
 <li><b>Generic opening</b>: 0 flagged by simulated clients after the verifier fix; the Critic rejects drafts whose first 80 characters match the generic list.</li>
 </ul>
 
-<h2>9. Real data (Kaggle): what it changed</h2>
+<h2>11. Real data (Kaggle): what it changed</h2>
 <p><b>Selection.</b> Of the six allowed datasets: 60k Upwork posts (Apache 2.0) → the real job board ({rman['jobs60k']['jobs_kept']} posts after cleaning,
 de-duplication, contact-detail removal and category mapping); 1.3M contracts (ODC-By) → real price percentiles ({rman['contracts']['hourly_contracts']:,} hourly,
 {rman['contracts']['fixed_completed_contracts']:,} completed fixed-price); 2024 posts (50k + tracker, ODC-By, {rman['postings_2024']['unique_postings']:,} unique) → recent budgets,
@@ -223,6 +394,7 @@ real posts are priced from the real contracts instead (hourly rate inside the po
  ["Real board posts flagged (in-sample)", rs['rules_v1_vs_v2']['v1']['real_posts_in_sample_flag_rate'], rs['rules_v1_vs_v2']['v2']['real_posts_in_sample_flag_rate']],
  ["3,000 held-out 2024 posts flagged", rs['rules_v1_vs_v2']['v1']['real_2024_heldout_flag_rate'], rs['rules_v1_vs_v2']['v2']['real_2024_heldout_flag_rate']],
  ["Dev pipeline scam precision / bid F1", f"{rv1['scam_precision']} / {rv1['bid_f1']}", f"{dev['scam_precision']} / {dev['bid_f1']}"]], ["", "v1", "v2"])}
+<figure>{fig_scam}<figcaption>Figure 7. False-alarm rate on real posts, rules v1 vs v2.</figcaption></figure>
 v1 fired on any mention of Telegram, WhatsApp or crypto; on real posts these are usually the product ("build a Telegram bot"). v2 needs an ask
 ("contact me on…", "we pay in USDT"). Of the 5 held-out v2 flags, 1 is a true request for free work, 1 ambiguous, 3 false alarms; v2 misses one
 "USDT seller" post that v1 caught by accident. {src('real_scam_external.json')}</p>
@@ -234,7 +406,18 @@ there but recall {rs['transfer_to_freelance_posts']['synthetic_dev_scams']['tfid
 The main in-market skip reasons are real-market facts the synthetic world under-represents: unverified clients with no spend (30% of real clients are
 unverified) and budgets below the personas' floors. {src(f'pipeline_{P}_real.json')}</p>
 
-<h2>10. Safety and platform respect</h2>
+
+<h2>12. Model-backed runs (open profile, Groq)</h2>
+<p>The numbers above come from the deterministic rule profile, which every node has as a fallback. The open profile (gpt-oss-20b for analysts,
+gpt-oss-120b for writer and judge, on Groq's free tier) is run by one command, <code>RUN_EVERYTHING.sh</code>, on the author's laptop, because the build
+workspace has no model access. Groq's free tier allows 200k tokens per model per day, so the runs are cached (<code>LLM_CACHE=1</code>) and resume
+the next day without repeating finished calls. The table shows what exists at the time this PDF was built; anything marked pending is not claimed anywhere in this report.</p>
+{open_tbl}
+<p><b>What these runs answer that the rule profile cannot:</b> whether a model writer follows injected instructions (with vs without defences),
+whether the single ReAct agent really loses on scams and claims (§7), how well the LLM judge agrees with my own 1–5 scores (Cohen's kappa), and the
+real cost and latency per proposal against the budgets in §14. <b>Expected risks:</b> the model writer adds more unsupported claims than the template writer
+(so the verifier does more work), and gpt-oss may follow paraphrased injections that contain no trigger words.</p>
+<h2>13. Safety and platform respect</h2>
 <ul><li><b>Never:</b> send or spend without approval (interrupt + HMAC token per content hash), scrape or automate a browser (live mode via the
 official MCP only, read polling ≥ 240 min, RUNBOOK), share contact details, claim unproven experience, follow instructions in job posts or client messages.</li>
 <li><b>How:</b> untrusted text is delimited and closing tags are neutralised; the Risk Assessor's rule floor can't be lowered by a model; tool allowlists
@@ -244,7 +427,7 @@ OAuth tokens Fernet-encrypted; every query scoped by user id.</li>
 are shared between users who pick the same demo persona (known tenant-isolation gap for demo personas only); simulated clients cannot test whether
 a real client is misled by a technically-true claim.</li></ul>
 
-<h2>11. Hidden-test results against declared budgets</h2>
+<h2>14. Hidden-test results against declared budgets</h2>
 <p>The instructor's hidden run happens after the deadline. The table reports this repository's own held-out set (180 jobs, separate seed, never used
 for tuning): bid F1 {ho['bid_f1']}, scam recall {ho['scam_recall']}, precision {ho['scam_precision']}, price in band {ho['price_in_band']}, reply rate
 {ho['gigsim_reply_rate']}, injection success {ho['injection_attack_success_rate']}. {src(f'pipeline_{P}_heldout.json')}</p>{budget}
@@ -258,7 +441,18 @@ The model-profile numbers will replace these when an endpoint is available.</p>
 <h2>Appendix B: failure examples (trace ids)</h2>
 {t([[k, e['job_id'], e['category'], e.get('action'), e.get('gold_bid'), e.get('price'), str(e.get('band')), e.get('trace_id')] for k, ex in fa['examples'].items() for e in ex[:3]],
    ['Class', 'Job', 'Category', 'Action', 'Gold bid', 'Price', 'Fair band', 'Trace'])}
-<h2>Appendix C: AI usage</h2><p>See <code>docs/AI_USAGE.md</code>: tool used, files, and five mistakes caught.</p>
+
+<h2>Appendix C: tests and configuration budgets</h2>
+<p>Unit tests cover guardrails (risk rules v1/v2, platform-name-as-product, injection delimiting, PII masking), pricing (fixed and hourly, real
+bands), the claim verifier and the approval token. Contract tests pin MCP schemas. Integration tests cover the durable approval and crash-resume
+path. Playwright end-to-end tests cover inbox → job → approve, the Studio, and the reviewer login on the deployed site.</p>
+{t([["max graph steps per job", 40], ["max tokens per job", "30,000"], ["max Critic revisions", 2], ["read polling interval (live Upwork)", "≥ 240 min"],
+    ["Connects spent without approval", 0], ["autonomy default", "<code>suggest_only</code> (skips also need a click)"], ["rag.variant", "best"], ["policy.version", "1 (2 after change request)"]],
+   ["Setting (config/default.yaml)", "Value"])}
+<p><b>Deployment.</b> React/Vite front end and FastAPI back end on Render (Docker), GigSim in the same container with <code>GIGSIM_REAL_JOBS=1</code> so
+the public board shows real posts. CI runs ruff, the tests, the README-numbers check (every number in the README results block must appear in
+<code>evals/results</code>) and the report build.</p>
+<h2>Appendix D: AI usage</h2><p>See <code>docs/AI_USAGE.md</code>: tool used, files, and five mistakes caught.</p>
 """
 
 OUT.mkdir(parents=True, exist_ok=True)
