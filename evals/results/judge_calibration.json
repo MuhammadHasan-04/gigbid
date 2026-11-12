@@ -1,0 +1,318 @@
+{
+ "meta": {
+  "commit": "7d35be0",
+  "time": "2026-11-12T19:38:07",
+  "python": "3.12.3",
+  "machine": "x86_64",
+  "cpus": 32
+ },
+ "n": 30,
+ "cohen_kappa": -0.0145,
+ "quadratic_weighted_kappa": 0.0342,
+ "exact_agreement": 0.0667,
+ "within_one": 0.3333,
+ "disagreements": [
+  {
+   "item": "0",
+   "job_id": "dev-fu-0028",
+   "human": 3,
+   "judge": 5
+  },
+  {
+   "item": "1",
+   "job_id": "dev-fu-0005",
+   "human": 2,
+   "judge": 4
+  },
+  {
+   "item": "2",
+   "job_id": "dev-fu-0042",
+   "human": 3,
+   "judge": 5
+  },
+  {
+   "item": "3",
+   "job_id": "dev-da-0061",
+   "human": 3,
+   "judge": 5
+  },
+  {
+   "item": "5",
+   "job_id": "dev-fu-0185",
+   "human": 3,
+   "judge": 5
+  },
+  {
+   "item": "6",
+   "job_id": "dev-fu-0094",
+   "human": 2,
+   "judge": 4
+  },
+  {
+   "item": "7",
+   "job_id": "dev-ai-0004",
+   "human": 2,
+   "judge": 5
+  },
+  {
+   "item": "10",
+   "job_id": "dev-ai-0036",
+   "human": 3,
+   "judge": 5
+  },
+  {
+   "item": "12",
+   "job_id": "dev-fu-0004",
+   "human": 3,
+   "judge": 5
+  },
+  {
+   "item": "13",
+   "job_id": "dev-ai-0133",
+   "human": 3,
+   "judge": 5
+  },
+  {
+   "item": "14",
+   "job_id": "dev-fu-0182",
+   "human": 2,
+   "judge": 5
+  },
+  {
+   "item": "17",
+   "job_id": "dev-fu-0006",
+   "human": 2,
+   "judge": 5
+  },
+  {
+   "item": "18",
+   "job_id": "dev-fu-0073",
+   "human": 3,
+   "judge": 5
+  },
+  {
+   "item": "19",
+   "job_id": "dev-ai-0069",
+   "human": 3,
+   "judge": 5
+  },
+  {
+   "item": "20",
+   "job_id": "dev-fu-0155",
+   "human": 2,
+   "judge": 4
+  },
+  {
+   "item": "21",
+   "job_id": "dev-fu-0084",
+   "human": 3,
+   "judge": 5
+  },
+  {
+   "item": "24",
+   "job_id": "dev-ai-0007",
+   "human": 3,
+   "judge": 5
+  },
+  {
+   "item": "25",
+   "job_id": "dev-ai-0005",
+   "human": 2,
+   "judge": 5
+  },
+  {
+   "item": "26",
+   "job_id": "dev-ai-0075",
+   "human": 3,
+   "judge": 5
+  },
+  {
+   "item": "28",
+   "job_id": "dev-fu-0004",
+   "human": 2,
+   "judge": 5
+  }
+ ],
+ "items": [
+  {
+   "item": "0",
+   "job_id": "dev-fu-0028",
+   "human": 3,
+   "judge": 5
+  },
+  {
+   "item": "1",
+   "job_id": "dev-fu-0005",
+   "human": 2,
+   "judge": 4
+  },
+  {
+   "item": "2",
+   "job_id": "dev-fu-0042",
+   "human": 3,
+   "judge": 5
+  },
+  {
+   "item": "3",
+   "job_id": "dev-da-0061",
+   "human": 3,
+   "judge": 5
+  },
+  {
+   "item": "4",
+   "job_id": "dev-fu-0009",
+   "human": 2,
+   "judge": 3
+  },
+  {
+   "item": "5",
+   "job_id": "dev-fu-0185",
+   "human": 3,
+   "judge": 5
+  },
+  {
+   "item": "6",
+   "job_id": "dev-fu-0094",
+   "human": 2,
+   "judge": 4
+  },
+  {
+   "item": "7",
+   "job_id": "dev-ai-0004",
+   "human": 2,
+   "judge": 5
+  },
+  {
+   "item": "8",
+   "job_id": "dev-da-0080",
+   "human": 4,
+   "judge": 4
+  },
+  {
+   "item": "9",
+   "job_id": "dev-da-0001",
+   "human": 3,
+   "judge": 4
+  },
+  {
+   "item": "10",
+   "job_id": "dev-ai-0036",
+   "human": 3,
+   "judge": 5
+  },
+  {
+   "item": "11",
+   "job_id": "dev-fu-0079",
+   "human": 3,
+   "judge": 3
+  },
+  {
+   "item": "12",
+   "job_id": "dev-fu-0004",
+   "human": 3,
+   "judge": 5
+  },
+  {
+   "item": "13",
+   "job_id": "dev-ai-0133",
+   "human": 3,
+   "judge": 5
+  },
+  {
+   "item": "14",
+   "job_id": "dev-fu-0182",
+   "human": 2,
+   "judge": 5
+  },
+  {
+   "item": "15",
+   "job_id": "dev-fu-0080",
+   "human": 2,
+   "judge": 3
+  },
+  {
+   "item": "16",
+   "job_id": "dev-da-0072",
+   "human": 3,
+   "judge": 4
+  },
+  {
+   "item": "17",
+   "job_id": "dev-fu-0006",
+   "human": 2,
+   "judge": 5
+  },
+  {
+   "item": "18",
+   "job_id": "dev-fu-0073",
+   "human": 3,
+   "judge": 5
+  },
+  {
+   "item": "19",
+   "job_id": "dev-ai-0069",
+   "human": 3,
+   "judge": 5
+  },
+  {
+   "item": "20",
+   "job_id": "dev-fu-0155",
+   "human": 2,
+   "judge": 4
+  },
+  {
+   "item": "21",
+   "job_id": "dev-fu-0084",
+   "human": 3,
+   "judge": 5
+  },
+  {
+   "item": "22",
+   "job_id": "dev-ai-0008",
+   "human": 4,
+   "judge": 5
+  },
+  {
+   "item": "23",
+   "job_id": "dev-da-0020",
+   "human": 3,
+   "judge": 4
+  },
+  {
+   "item": "24",
+   "job_id": "dev-ai-0007",
+   "human": 3,
+   "judge": 5
+  },
+  {
+   "item": "25",
+   "job_id": "dev-ai-0005",
+   "human": 2,
+   "judge": 5
+  },
+  {
+   "item": "26",
+   "job_id": "dev-ai-0075",
+   "human": 3,
+   "judge": 5
+  },
+  {
+   "item": "27",
+   "job_id": "dev-da-0063",
+   "human": 3,
+   "judge": 4
+  },
+  {
+   "item": "28",
+   "job_id": "dev-fu-0004",
+   "human": 2,
+   "judge": 5
+  },
+  {
+   "item": "29",
+   "job_id": "dev-da-0195",
+   "human": 3,
+   "judge": 4
+  }
+ ]
+}

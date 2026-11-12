@@ -1,0 +1,212 @@
+{
+ "meta": {
+  "commit": "7d35be0",
+  "time": "2026-11-12T19:42:38",
+  "python": "3.12.3",
+  "machine": "x86_64",
+  "cpus": 32
+ },
+ "n_jobs": 9,
+ "model": {
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b"
+ },
+ "results": {
+  "react": {
+   "n": 9,
+   "errors": 3,
+   "bid_skip_accuracy": 0.8333,
+   "unsupported_claims_per_proposal": null,
+   "compliance_violations_in_output": null,
+   "gigsim_reply_rate": null,
+   "tokens_per_job": 1223.3333,
+   "p95_latency_s": 11.7157,
+   "rows": [
+    {
+     "persona": "ai_ml",
+     "job_id": "dev-ai-0003",
+     "gold_bid": false,
+     "action": "skip",
+     "latency_s": 2.120314121246338,
+     "tokens": 1283,
+     "error": null
+    },
+    {
+     "persona": "fullstack",
+     "job_id": "dev-fu-0001",
+     "gold_bid": false,
+     "action": null,
+     "latency_s": 1.465954065322876,
+     "tokens": 458,
+     "error": "OpenAIInvalidRequestError: Error code: 400 - Tool call validation failed: tool call validation failed: attempted to call tool 'JSON' which was not in request.tools"
+    },
+    {
+     "persona": "data_analyst",
+     "job_id": "dev-da-0018",
+     "gold_bid": false,
+     "action": "skip",
+     "latency_s": 1.4177579879760742,
+     "tokens": 1175,
+     "error": null
+    },
+    {
+     "persona": "ai_ml",
+     "job_id": "dev-ai-0014",
+     "gold_bid": false,
+     "action": null,
+     "latency_s": 2.9173765182495117,
+     "tokens": 452,
+     "error": "OpenAIInvalidRequestError: Error code: 400 - Tool call validation failed: tool call validation failed: attempted to call tool 'json' which was not in request.tools"
+    },
+    {
+     "persona": "fullstack",
+     "job_id": "dev-fu-0007",
+     "gold_bid": false,
+     "action": "skip",
+     "latency_s": 1.6324677467346191,
+     "tokens": 1272,
+     "error": null
+    },
+    {
+     "persona": "data_analyst",
+     "job_id": "dev-da-0019",
+     "gold_bid": true,
+     "action": "skip",
+     "latency_s": 3.5618491172790527,
+     "tokens": 3348,
+     "error": null
+    },
+    {
+     "persona": "ai_ml",
+     "job_id": "dev-ai-0027",
+     "gold_bid": false,
+     "action": null,
+     "latency_s": 8.793535709381104,
+     "tokens": 452,
+     "error": "OpenAIInvalidRequestError: Error code: 400 - Tool call validation failed: tool call validation failed: attempted to call tool 'JSON' which was not in request.tools"
+    },
+    {
+     "persona": "fullstack",
+     "job_id": "dev-fu-0010",
+     "gold_bid": false,
+     "action": "skip",
+     "latency_s": 8.770370721817017,
+     "tokens": 1304,
+     "error": null
+    },
+    {
+     "persona": "data_analyst",
+     "job_id": "dev-da-0023",
+     "gold_bid": false,
+     "action": "skip",
+     "latency_s": 11.715709686279297,
+     "tokens": 1266,
+     "error": null
+    }
+   ]
+  },
+  "supervisor": {
+   "n": 9,
+   "errors": 6,
+   "bid_skip_accuracy": 1.0,
+   "unsupported_claims_per_proposal": null,
+   "compliance_violations_in_output": null,
+   "gigsim_reply_rate": null,
+   "tokens_per_job": 2162.0,
+   "p95_latency_s": 43.5769,
+   "rows": [
+    {
+     "persona": "ai_ml",
+     "job_id": "dev-ai-0003",
+     "gold_bid": false,
+     "action": "skip",
+     "latency_s": 27.029717922210693,
+     "tokens": 4356,
+     "error": null
+    },
+    {
+     "persona": "fullstack",
+     "job_id": "dev-fu-0001",
+     "gold_bid": false,
+     "action": "skip",
+     "latency_s": 38.71825671195984,
+     "tokens": 4503,
+     "error": null
+    },
+    {
+     "persona": "data_analyst",
+     "job_id": "dev-da-0018",
+     "gold_bid": false,
+     "action": "skip",
+     "latency_s": 43.57688665390015,
+     "tokens": 5753,
+     "error": null
+    },
+    {
+     "persona": "ai_ml",
+     "job_id": "dev-ai-0014",
+     "gold_bid": false,
+     "action": null,
+     "latency_s": 34.18858885765076,
+     "tokens": 3467,
+     "error": "OpenAIInvalidRequestError: Error code: 400 - Tool call validation failed: tool call validation failed: attempted to call tool 'json' which was not in request.tools"
+    },
+    {
+     "persona": "fullstack",
+     "job_id": "dev-fu-0007",
+     "gold_bid": false,
+     "action": null,
+     "latency_s": 12.88556170463562,
+     "tokens": 1379,
+     "error": "OpenAIRateLimitError: Error code: 429 - Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3cby4tce8fsgtnapwwyzknq` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199206, Requested 1588. Please try again in 5m43.008s. Need more tokens? Upgrade to Dev Tie"
+    },
+    {
+     "persona": "data_analyst",
+     "job_id": "dev-da-0019",
+     "gold_bid": true,
+     "action": null,
+     "latency_s": 0.26540184020996094,
+     "tokens": 0,
+     "error": "OpenAIRateLimitError: Error code: 429 - Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3cby4tce8fsgtnapwwyzknq` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199205, Requested 1244. Please try again in 3m13.968s. Need more tokens? Upgrade to Dev Tie"
+    },
+    {
+     "persona": "ai_ml",
+     "job_id": "dev-ai-0027",
+     "gold_bid": false,
+     "action": null,
+     "latency_s": 0.21537113189697266,
+     "tokens": 0,
+     "error": "OpenAIRateLimitError: Error code: 429 - Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3cby4tce8fsgtnapwwyzknq` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199205, Requested 1557. Please try again in 5m29.184s. Need more tokens? Upgrade to Dev Tie"
+    },
+    {
+     "persona": "fullstack",
+     "job_id": "dev-fu-0010",
+     "gold_bid": false,
+     "action": null,
+     "latency_s": 0.23423242568969727,
+     "tokens": 0,
+     "error": "OpenAIRateLimitError: Error code: 429 - Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3cby4tce8fsgtnapwwyzknq` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199204, Requested 1556. Please try again in 5m28.32s. Need more tokens? Upgrade to Dev Tier"
+    },
+    {
+     "persona": "data_analyst",
+     "job_id": "dev-da-0023",
+     "gold_bid": false,
+     "action": null,
+     "latency_s": 0.13538098335266113,
+     "tokens": 0,
+     "error": "OpenAIRateLimitError: Error code: 429 - Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3cby4tce8fsgtnapwwyzknq` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199204, Requested 1244. Please try again in 3m13.535999999s. Need more tokens? Upgrade to D"
+    }
+   ]
+  },
+  "graph": {
+   "n": 9,
+   "errors": 0,
+   "bid_skip_accuracy": 0.8889,
+   "unsupported_claims_per_proposal": null,
+   "compliance_violations_in_output": null,
+   "gigsim_reply_rate": null,
+   "tokens_per_job": 3536.4444,
+   "p95_latency_s": 1.2841
+  }
+ }
+}

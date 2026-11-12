@@ -56,7 +56,13 @@ Held-out (`rag_heuristic_heldout.json`): V0 nDCG@10 0.8394 vs shipped 0.8634.
 
 **Decisions and safety** (dev, 600 jobs, `pipeline_heuristic_dev.json`): bid-or-skip F1 0.9526, scam precision 1.0, recall 1.0, price inside the fair band 0.7009, injection attack success 0.0 on the 18 drafted injected jobs (43 injected jobs in total). Held-out (`pipeline_heuristic_heldout.json`): F1 0.9559, GigSim reply rate 0.8769.
 
-**Multi-agent comparison** (R&D C): single ReAct agent vs `langgraph-supervisor` vs this graph needs a model endpoint. Runner: `evals/runners/agents_compare.py`. Pending.
+**Multi-agent comparison** (`agents_compare.json`)
+
+| System | Bid/skip accuracy | Unsupported claims / proposal | Compliance violations | GigSim reply rate | Tokens / job | p95 latency (s) |
+|---|---|---|---|---|---|---|
+| Single ReAct agent | 0.8333 | None | None | None | 1223.3333 | 11.7157 |
+| langgraph-supervisor | 1.0 | None | None | None | 2162.0 | 43.5769 |
+| GigBid graph | 0.8889 | None | None | None | 3536.4444 | 1.2841 |
 
 **Tool granularity** (R&D A, `tool_study.json`, openai/gpt-oss-120b on Groq, 38 tasks)
 
@@ -66,12 +72,25 @@ Held-out (`rag_heuristic_heldout.json`): V0 nDCG@10 0.8394 vs shipped 0.8634.
 | Coarse (action enum) | 3 | 0.7895 | 0.1316 | 345.1316 |
 | Shipped, rewritten descriptions | 10 | 1.0 | 1.0 | 543.3947 |
 
+**Model-backed runs (open profile on Groq free tier; small samples, jobs that fell back to rules excluded)**
+
+| Run | Model(s) | Jobs | Bid F1 | Scam recall | Price in band | Proposals | Unsupported before → after | Judge | GigSim reply | Tokens/job | USD/proposal |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Dev (`pipeline_open_dev.json`) | gpt-oss-20b + 120b | 30 | 0.8571 | 1.0 | 0.8889 | 9 | 0.7778 → 0.0 | 4.5556 | 0.7778 | 5865.3333 | 0.0026 |
+| Held-out (`pipeline_open_heldout.json`) | gpt-oss-20b + 120b | 15 | 0.7273 | 1.0 | 0.75 | 4 | 1.0 → 0.0 | n/a | 0.75 | 6128.9333 | 0.0031 |
+
+**Prompt injection, model writer** (`pipeline_open_dev_injection*.json`): attack success 0.0 with defences vs 0.5 without, on 1 / 2 drafted injected jobs.
+
+**Judge calibration** (`judge_calibration.json`): Cohen's kappa -0.0145, quadratic-weighted 0.0342, exact agreement 0.0667 on 30 proposals scored by the author.
+
 **Real data (Kaggle, see `docs/DATA_CARD.md`)**
 
 * Real Upwork posts in the pipeline (`pipeline_heuristic_real.json`, 60 posts, no gold labels): bid rate 0.2889 on posts in the persona's market vs 0.0 outside it; share of bids priced inside the real contracts' p10–p90 1.0, within the posted budget 1.0. Most in-market skips are real-market facts the synthetic world under-represents: unverified clients with no spend, and budgets below the persona's floor.
 * Category mapping of real posts, checked by hand on 60 posts (`real_category_audit.json`): 0.7667 category, 0.85 persona-level.
 * Scam rules v1 → v2 (`real_scam_external.json`): false-alarm rate on 3,000 held-out real 2024 posts 0.023 → 0.0017; synthetic scam precision of the text rules 0.89 → 1.0 at recall 1.0.
 * Outside scam test (Fake-Job-Posting-Detection, non-templated test half, 17105 ads): the freelance-scam rules catch 0.003 of fakes; a TF-IDF classifier trained on that dataset gets F1 0.9199 there but recall 0.0 on freelance scams. Neither transfers, so the classifier is not shipped.
+
+**Real posts on the open profile** (`pipeline_open_real.json`, 30 posts): bid rate 0.1905 in-market vs 0.0 outside; bids inside real p10–p90 1.0; unsupported claims 0.5 → 0.0; tokens/job 3480.7667.
 
 **Signature extension X2** (`ab_test_heuristic.json`): evidence-first (A) 0.8803 vs question-first (B) 0.7607 reply rate on 234 paired jobs, McNemar exact p = 0.0006.
 <!-- results:end -->
